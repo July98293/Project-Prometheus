@@ -47,6 +47,8 @@ import seaborn as sns
 from tqdm import tqdm
 from loguru import logger
 
+from xenarch_live import LiveRun
+
 # Configure logger
 logger.remove()
 logger.add(sys.stderr, level="INFO")
@@ -60,12 +62,14 @@ logger.add("logs/xenarch_mk14_{time}.log", rotation="10 MB")
 class StableConvolutionalVAE(nn.Module):
     """VAE with enhanced stability features"""
     
-    def __init__(self, latent_dim=64, input_size=256):
+    def __init__(self, latent_dim=64, input_size=256, latent_channels=0):
+        """latent_channels > 0: spatial latent — a C×16×16 grid instead of a latent_dim vector, so the
+        decoder keeps *where* things are and rebuilds a sharper image (8 channels = 2,048 numbers vs 56)."""
         super(StableConvolutionalVAE, self).__init__()
-        self.latent_dim = latent_dim
-        self.input_size = input_size
-        
         final_size = input_size // 16
+        self.spatial = latent_channels > 0
+        self.latent_dim = latent_channels * final_size * final_size if self.spatial else latent_dim
+        self.input_size = input_size
         
         # Encoder with LayerNorm for stability
         self.encoder_conv = nn.Sequential(
@@ -84,17 +88,20 @@ class StableConvolutionalVAE(nn.Module):
         )
         
         # Use smaller initialization for latent layers
-        self.fc_mu = nn.Linear(256 * final_size * final_size, latent_dim)
-        self.fc_logvar = nn.Linear(256 * final_size * final_size, latent_dim)
+        if self.spatial:                   # 1×1 convs: one latent vector per 16×16-pixel cell
+            self.fc_mu = nn.Conv2d(256, latent_channels, 1)
+            self.fc_logvar = nn.Conv2d(256, latent_channels, 1)
+            self.decoder_input = nn.Conv2d(latent_channels, 256, 1)
+        else:
+            self.fc_mu = nn.Linear(256 * final_size * final_size, latent_dim)
+            self.fc_logvar = nn.Linear(256 * final_size * final_size, latent_dim)
+            self.decoder_input = nn.Linear(latent_dim, 256 * final_size * final_size)
         
         # Initialize with smaller weights
         nn.init.xavier_uniform_(self.fc_mu.weight, gain=0.01)
         nn.init.xavier_uniform_(self.fc_logvar.weight, gain=0.01)
         nn.init.constant_(self.fc_mu.bias, 0)
         nn.init.constant_(self.fc_logvar.bias, 0)
-        
-        # Decoder
-        self.decoder_input = nn.Linear(latent_dim, 256 * final_size * final_size)
         nn.init.xavier_uniform_(self.decoder_input.weight, gain=0.01)
         
         self.final_size = final_size
@@ -113,11 +120,13 @@ class StableConvolutionalVAE(nn.Module):
             nn.Sigmoid()
         )
         
-        logger.info(f"Stable VAE initialized: latent_dim={latent_dim}, input_size={input_size}")
+        logger.info(f"Stable VAE initialized: latent {'%d×%d×%d grid' % (latent_channels, final_size, final_size) if self.spatial else latent_dim} "
+                    f"({self.latent_dim} numbers), input_size={input_size}")
     
     def encode(self, x):
         h = self.encoder_conv(x)
-        h = torch.flatten(h, 1)
+        if not self.spatial:
+            h = torch.flatten(h, 1)
         mu = self.fc_mu(h)
         logvar = self.fc_logvar(h)
         
@@ -133,7 +142,8 @@ class StableConvolutionalVAE(nn.Module):
     
     def decode(self, z):
         h = self.decoder_input(z)
-        h = h.view(-1, 256, self.final_size, self.final_size)
+        if not self.spatial:
+            h = h.view(-1, 256, self.final_size, self.final_size)
         return self.decoder_conv(h)
     
     def forward(self, x):
@@ -247,6 +257,11 @@ class LunarDataset(Dataset):
 # 3. MULTI-METRIC ANOMALY SCORER (Same as Mk13)
 # ============================================
 
+# How much each feature counts: in the anomaly score, and in the final confidence
+SCORE_WEIGHTS = {'mse': 0.30, 'density': 0.20, 'contextual': 0.30, 'gradient': 0.15, 'regularity': 0.05}
+CONFIDENCE_WEIGHTS = {'anomaly_score': 0.50, 'contextual': 0.30, 'mse': 0.20}
+
+
 class MultiMetricAnomalyScorer:
     """Combines multiple metrics - optimized for circular features"""
     
@@ -264,7 +279,7 @@ class MultiMetricAnomalyScorer:
     def compute_latent_density(self, image):
         with torch.no_grad():
             mu, logvar = self.model.encode(image)
-            distances = torch.sqrt(torch.sum(mu ** 2, dim=1))
+            distances = torch.sqrt(torch.sum(mu.flatten(1) ** 2, dim=1))
             density_scores = torch.exp(-distances / self.model.latent_dim)
             return 1.0 - density_scores.cpu().numpy()
     
@@ -446,11 +461,11 @@ class MultiMetricAnomalyScorer:
         regularity_norm = normalize(regularity_scores)
         
         combined = (
-            0.30 * mse_norm +
-            0.20 * density_norm +
-            0.30 * contextual_norm +
-            0.15 * gradient_norm +
-            0.05 * regularity_norm
+            SCORE_WEIGHTS['mse'] * mse_norm +
+            SCORE_WEIGHTS['density'] * density_norm +
+            SCORE_WEIGHTS['contextual'] * contextual_norm +
+            SCORE_WEIGHTS['gradient'] * gradient_norm +
+            SCORE_WEIGHTS['regularity'] * regularity_norm
         )
         
         metric_dict = {
@@ -550,14 +565,14 @@ class AdvancedAnomalyDetector:
         
         if not clustering_active:
             logger.info("   Using non-clustering confidence weights (optimized for circular lander)")
-            confidence += 0.50 * score_norm
+            confidence += CONFIDENCE_WEIGHTS['anomaly_score'] * score_norm
             
             if 'metric_contextual_norm' in df.columns:
-                confidence += 0.30 * df['metric_contextual_norm']
+                confidence += CONFIDENCE_WEIGHTS['contextual'] * df['metric_contextual_norm']
                 logger.info("   Applied 30% weight to contextual metric")
             
             if 'metric_mse_norm' in df.columns:
-                confidence += 0.20 * df['metric_mse_norm']
+                confidence += CONFIDENCE_WEIGHTS['mse'] * df['metric_mse_norm']
         
         return np.clip(confidence, 0, 1)
 
@@ -582,6 +597,7 @@ class StableVAETrainer:
         self.optimizer = optim.Adam(self.model.parameters(), lr=lr)
         self.warmup_epochs = warmup_epochs
         self.best_loss = float('inf')
+        self.on_batch = None            # optional callback(step, n_steps) for live progress
         self.patience_counter = 0
         
         # Learning rate scheduler
@@ -601,7 +617,7 @@ class StableVAETrainer:
         
         kl_weight = self.get_kl_weight(epoch, total_epochs)
         
-        for images, _ in tqdm(loader, desc=f"Epoch {epoch+1} (KL weight={kl_weight:.2f})"):
+        for step, (images, _) in enumerate(tqdm(loader, desc=f"Epoch {epoch+1} (KL weight={kl_weight:.2f})"), 1):
             images = images.to(self.device)
             
             self.optimizer.zero_grad()
@@ -620,6 +636,8 @@ class StableVAETrainer:
             torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
             
             self.optimizer.step()
+            if self.on_batch:
+                self.on_batch(step, len(loader))
             
             total_loss += loss.item()
             total_mse += mse.item()
@@ -702,10 +720,113 @@ class HighResVisualizer:
 
 
 # ============================================
-# 7. MAIN PIPELINE
+# 7. RUN LOG (read by dashboard/index.html)
 # ============================================
 
-def main():
+VAL_SEED = 7
+
+
+def inject_object(chip, rng):
+    """Paste one sharp-edged artificial object (rectangle / ring / line) into a [0, 1] chip."""
+    h, w = chip.shape
+    out = chip.copy()
+    size = int(rng.integers(14, 40))
+    cy, cx = int(rng.integers(size, h - size)), int(rng.integers(size, w - size))
+    delta = float(rng.uniform(0.15, 0.35) * rng.choice([-1, 1]))
+    yy, xx = np.ogrid[:h, :w]
+    kind = int(rng.integers(3))
+    if kind == 0:                                # rectangle (lander deck, module)
+        mask = (np.abs(yy - cy) <= size // 2) & (np.abs(xx - cx) <= size // 3)
+    elif kind == 1:                              # ring (circular structure)
+        mask = np.abs(np.hypot(yy - cy, xx - cx) - size / 2) <= 1.5
+    else:                                        # straight line (track, cable)
+        th = rng.uniform(0, np.pi)
+        along = (xx - cx) * np.cos(th) + (yy - cy) * np.sin(th)
+        across = -(xx - cx) * np.sin(th) + (yy - cy) * np.cos(th)
+        mask = (np.abs(across) <= 1.0) & (np.abs(along) <= size)
+    out[mask] = np.clip(out[mask] + delta, 0, 1)
+    return out
+
+
+def build_eval_set(val_ds):
+    """Held-out natural chips (label 0) + one copy of each with an artificial object (label 1).
+    Natural terrain is the ground truth for "normal", so this gives labels for accuracy/AUROC."""
+    rng = np.random.default_rng(VAL_SEED)
+    clean = [val_ds[i][0][0].numpy() for i in range(len(val_ds))]
+    chips = clean + [inject_object(c, rng) for c in clean]
+    labels = np.array([0] * len(clean) + [1] * len(clean))
+    return torch.from_numpy(np.stack(chips)[:, None]), labels
+
+
+def _local_std(t, k=7):
+    mu = F.avg_pool2d(t, k, stride=1, padding=k // 2, count_include_pad=False)
+    sq = F.avg_pool2d(t * t, k, stride=1, padding=k // 2, count_include_pad=False)
+    return torch.sqrt(torch.clamp(sq - mu * mu, min=1e-6))
+
+
+def _grad_mag(t):
+    dx = F.pad(t[..., :, 1:] - t[..., :, :-1], (0, 1))
+    dy = F.pad(t[..., 1:, :] - t[..., :-1, :], (0, 0, 0, 1))
+    return torch.sqrt(dx ** 2 + dy ** 2 + 1e-12)
+
+
+def epoch_validation(model, eval_set, device, kl_weight, percentile=95, bs=8):
+    """Validation loss on held-out natural chips, plus how well each feature separates
+    natural chips from ones with a pasted artificial object.
+    Every feature is measured on the model's residual (image vs reconstruction), so all of
+    them change as the model learns what natural terrain looks like."""
+    from sklearn.metrics import roc_auc_score
+    chips, labels = eval_set
+    scorer = MultiMetricAnomalyScorer(model, device)      # also puts the model in eval mode
+    feats = {m: [] for m in ('mse', 'gradient', 'contrast', 'edge_regularity')}
+    val_loss = 0.0
+    with torch.no_grad():
+        for i in range(0, len(chips), bs):
+            x = chips[i:i + bs].to(device)
+            mu, logvar = model.encode(x)
+            r = model.decode(mu)                           # deterministic reconstruction
+            clean = torch.from_numpy(labels[i:i + bs] == 0).to(device)
+            if clean.any():
+                val_loss += stable_vae_loss(r[clean], x[clean], mu[clean], logvar[clean],
+                                            kl_weight=kl_weight)[0].item()
+            maps = {'mse': (x - r) ** 2,
+                    'gradient': (_grad_mag(x) - _grad_mag(r)).abs(),
+                    'contrast': (_local_std(x) - _local_std(r)).abs()}
+            for m, mp in maps.items():
+                # 99th percentile, not the mean: a 20-px object barely moves a 256² mean
+                feats[m].append(torch.quantile(mp.flatten(1), 0.99, dim=1).cpu().numpy())
+            feats['edge_regularity'].append(scorer.compute_edge_regularity((x - r).abs()))
+    model.train()
+    feats = {m: np.concatenate(v) for m, v in feats.items()}
+    clean = labels == 0
+    z = [(v - v[clean].mean()) / (v[clean].std() + 1e-8) for v in feats.values()]
+    combined = np.mean(z, axis=0)
+    # Flag a chip when it scores above the natural chips' percentile, as detection does
+    flagged = combined > np.percentile(combined[clean], percentile)
+    return {
+        'val_loss': float(val_loss / clean.sum()),
+        'accuracy': float((flagged == (labels == 1)).mean()),
+        'detection_rate': float(flagged[~clean].mean()),
+        'false_alarm_rate': float(flagged[clean].mean()),
+        'auroc': float(roc_auc_score(labels, combined)),
+        **{f'auroc_{m}': float(roc_auc_score(labels, v)) for m, v in feats.items()},
+    }
+
+
+def save_run_record(record, path=Path("dashboard") / "runs.json"):
+    runs = json.loads(path.read_text()) if path.exists() else []
+    runs.append(record)
+    path.parent.mkdir(exist_ok=True)
+    path.write_text(json.dumps(runs, indent=1))
+    logger.info(f"Run record saved: {path}")
+
+
+# ============================================
+# 8. MAIN PIPELINE
+# ============================================
+
+def main(live=None):
+    started = datetime.now()
     logger.info("="*70)
     logger.info("XENARCH Mk14: STABLE TRAINING FOR LANDER DETECTION")
     logger.info("="*70)
@@ -713,19 +834,24 @@ def main():
     config = {
         'chip_size': 256,
         'latent_dim': 56,
+        # --latent-channels C: spatial C×16×16 latent (sharper reconstructions); 0 = the original 56-number vector
+        'latent_channels': int(sys.argv[sys.argv.index("--latent-channels") + 1]) if "--latent-channels" in sys.argv else 0,
         'batch_size': 4,
         'num_epochs': 15,
         'learning_rate': 0.0005,  # Lower LR
         'warmup_epochs': 3,
         'base_percentile': 95,
         'use_spatial_filter': False,
-        'device': 'cuda' if torch.cuda.is_available() else 'cpu'
+        'val_chips': 150,
+        'device': ('cuda' if torch.cuda.is_available()
+                   else 'mps' if torch.backends.mps.is_available() else 'cpu')
     }
     
     logger.info(f"Configuration: {json.dumps(config, indent=2)}")
     
     data_root = Path("data")
-    results_dir = Path("results") / "mk14_stable"
+    variant = f"mk15_spatial{config['latent_channels']}" if config['latent_channels'] else "mk14"
+    results_dir = Path("results") / ("mk14_stable" if variant == "mk14" else variant)
     results_dir.mkdir(exist_ok=True, parents=True)
     
     # 1. Chip Extraction
@@ -736,9 +862,15 @@ def main():
     test_chips_dir = data_root / "processed" / "test_chips_256"
     
     all_train_chips = []
-    train_imgs = list(Path("training data").glob("*"))
-    for img in train_imgs:
-        if img.suffix.lower() in ['.png', '.jpg', '.tif', '.tiff']:
+    # --data <dir> trains on another image folder (searched recursively), e.g. a HF dataset download
+    train_dir = sys.argv[sys.argv.index("--data") + 1] if "--data" in sys.argv else "training data"
+    train_imgs = sorted(Path(train_dir).rglob("*"))
+    if live:
+        live.step("Chip extraction")
+    for i, img in enumerate(train_imgs, 1):
+        if live:
+            live.progress(i, len(train_imgs), "files")
+        if img.suffix.lower() in ['.png', '.jpg', '.jpeg', '.tif', '.tiff']:
             chips = extractor.extract_grid(str(img), str(train_chips_dir))
             all_train_chips.extend(chips)
     
@@ -756,9 +888,17 @@ def main():
         
     train_df = pd.DataFrame(all_train_chips)
     test_df = pd.DataFrame(all_test_chips)
+    # Hold out natural-feature chips the model never trains on, to validate against
+    val_df = train_df.sample(n=min(config['val_chips'], len(train_df) // 10), random_state=VAL_SEED)
+    train_df = train_df.drop(val_df.index)
     
     logger.info(f"Training chips: {len(train_df)}")
+    logger.info(f"Validation chips: {len(val_df)} (+ {len(val_df)} with a synthetic object)")
     logger.info(f"Test chips: {len(test_df)}")
+    if live:
+        sample_ds = LunarDataset(train_df.sample(n=min(12, len(train_df)), random_state=1))
+        live.samples([sample_ds[i][0][0].numpy() for i in range(len(sample_ds))])
+        live.log(f"{len(train_df)} training chips · {len(val_df)} validation · {len(test_df)} test")
     
     # 2. Create datasets
     logger.info("\n[STEP 2/5] Creating datasets...")
@@ -769,6 +909,7 @@ def main():
     
     train_ds = LunarDataset(train_df, transform=train_transform)
     test_ds = LunarDataset(test_df)
+    eval_set = build_eval_set(LunarDataset(val_df))
     
     train_loader = DataLoader(train_ds, batch_size=config['batch_size'], shuffle=True, num_workers=0)
     test_loader = DataLoader(test_ds, batch_size=config['batch_size'], shuffle=False, num_workers=0)
@@ -777,7 +918,8 @@ def main():
     logger.info(f"\n[STEP 3/5] Training Stable VAE on {config['device']}...")
     model = StableConvolutionalVAE(
         latent_dim=config['latent_dim'],
-        input_size=config['chip_size']
+        input_size=config['chip_size'],
+        latent_channels=config['latent_channels']
     )
     
     trainer = StableVAETrainer(
@@ -788,6 +930,10 @@ def main():
     )
     
     best_loss = float('inf')
+    epoch_log = []
+    if live:
+        live.step("Training")
+        trainer.on_batch = lambda s, n: live.progress(s, n, f"batches · epoch {epoch + 1}/{config['num_epochs']}")
     for epoch in range(config['num_epochs']):
         loss, mse, kld = trainer.train_epoch(train_loader, epoch, config['num_epochs'])
         
@@ -795,16 +941,25 @@ def main():
             logger.error("Training stopped due to NaN")
             break
             
-        logger.info(f"Epoch {epoch+1}/{config['num_epochs']} - Loss: {loss:.2f}, MSE: {mse:.2f}, KLD: {kld:.2f}")
+        kl_weight = trainer.get_kl_weight(epoch, config['num_epochs'])
+        val = epoch_validation(model, eval_set, config['device'], kl_weight, config['base_percentile'])
+        logger.info(f"Epoch {epoch+1}/{config['num_epochs']} - Loss: {loss:.2f}, Val loss: {val['val_loss']:.2f}, "
+                    f"MSE: {mse:.2f}, KLD: {kld:.2f} | Accuracy: {val['accuracy']:.3f}, AUROC: {val['auroc']:.3f}")
+        epoch_log.append({'epoch': epoch + 1, 'loss': loss, 'mse': mse, 'kld': kld, **val,
+                          'lr': trainer.optimizer.param_groups[0]['lr'], 'kl_weight': kl_weight})
+        if live:
+            live.metric(epoch=epoch + 1, loss=loss, val_loss=val['val_loss'], accuracy=val['accuracy'], auroc=val['auroc'])
         
         if loss < best_loss:
             best_loss = loss
-            model_path = data_root / "models" / "xenarch_mk14_best.pth"
+            model_path = data_root / "models" / f"xenarch_{variant}_best.pth"
             model_path.parent.mkdir(exist_ok=True, parents=True)
             trainer.save_checkpoint(model_path, epoch, loss)
     
     # 4. Detection
     logger.info("\n[STEP 4/5] Running anomaly detection...")
+    if live:
+        live.step("Detection")
     detector = AdvancedAnomalyDetector(model, device=config['device'])
     
     results_df = detector.detect_anomalies(
@@ -813,8 +968,30 @@ def main():
         base_percentile=config['base_percentile']
     )
     
-    results_df.to_csv(results_dir / "xenarch_mk14_results.csv", index=False)
-    logger.info(f"Results saved: {results_dir / 'xenarch_mk14_results.csv'}")
+    results_df.to_csv(results_dir / f"xenarch_{variant}_results.csv", index=False)
+
+    top = results_df.nlargest(min(10, len(results_df)), 'confidence')
+    save_run_record({
+        'id': started.strftime('%Y-%m-%d %H:%M'),
+        'script': Path(__file__).name,
+        'data': train_dir,
+        'train_chips': len(train_df),
+        'val_chips': len(val_df),
+        'test_chips': len(test_df),
+        'minutes': round((datetime.now() - started).total_seconds() / 60, 1),
+        'config': config,
+        'epochs': epoch_log,
+        'weights': {'score': SCORE_WEIGHTS, 'confidence': CONFIDENCE_WEIGHTS},
+        'performance': {
+            'anomalies': int(results_df['is_anomaly_final'].sum()),
+            'high_confidence': int((results_df['confidence'] > 0.8).sum()),
+            'mean_confidence': float(results_df['confidence'].mean()),
+            'top': [{'chip': Path(r.chip_path).name, 'confidence': float(r.confidence),
+                     'score': float(r.anomaly_score), 'anomaly': bool(r.is_anomaly_final)}
+                    for r in top.itertuples()],
+        },
+    })
+    logger.info(f"Results saved: {results_dir / f'xenarch_{variant}_results.csv'}")
     
     # Print top detections
     logger.info("\n" + "="*70)
@@ -842,4 +1019,11 @@ def main():
     logger.info(f"High confidence: {(results_df['confidence'] > 0.8).sum()}")
     
 if __name__ == "__main__":
-    main()
+    live = LiveRun(__file__, sys.argv[sys.argv.index("--data") + 1] if "--data" in sys.argv else "training data",
+                   ["Chip extraction", "Training", "Detection"])
+    try:
+        main(live)
+        live.done()
+    except BaseException as e:
+        live.fail(e)
+        raise

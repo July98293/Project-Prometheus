@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xenarch Training Runs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="xenarch.css">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="brand">Xenarch <span class="label">Mission control</span></div>
+    <div class="links">
+      <a class="label" href="#telemetry">Telemetry ↓</a>
+      <a class="label" href="#weights">Weights ↓</a>
+      <a class="label" href="#detection">Detection ↓</a>
+      <a class="label" href="#finetune">Finetuning ↓</a>
+      <select id="pick" aria-label="Training run"></select>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label" id="kicker">Training telemetry</div>
+    <h1>Xenarch flight log</h1>
+    <div class="stats" id="stats"></div>
+    <p class="note" id="note"></p>
+    <div class="coords label"><span>Target · Apollo 11 · 0.67° N 23.47° E</span><span id="clock"></span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="history">
+    <div class="head"><span class="label">—</span><h2>All training runs</h2><span class="label">click a row to open it</span></div>
+    <div class="scroll"><table id="runsTable" class="pick"></table></div>
+  </section>
+
+  <section id="live" hidden>
+    <div class="head"><span class="label">00</span><h2>Live</h2><span class="label" id="liveMeta"></span></div>
+    <div class="stats flush" id="liveStats"></div>
+    <p class="verdict" id="liveError" hidden></p>
+    <div class="mt">
+      <span class="label sub" id="liveStepLabel"></span>
+      <div class="track big"><div class="bar" id="liveBar"></div></div>
+      <ol class="stepline" id="liveSteps"></ol>
+    </div>
+    <div class="two mt">
+      <div>
+        <span class="label sub">Metrics as they arrive</span>
+        <div class="scroll"><table id="liveMetrics"></table></div>
+        <div class="chart mt" id="liveChart"></div>
+      </div>
+      <div>
+        <span class="label sub">Log</span>
+        <pre class="log" id="liveLog"></pre>
+        <span class="label sub mt">Training data · sample chips</span>
+        <div class="thumbs" id="liveSamples"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="patchcore" hidden>
+    <div class="head"><span class="label">01</span><h2>PatchCore validation</h2></div>
+    <div class="stats flush" id="pcStats"></div>
+    <div class="two mt">
+      <div>
+        <span class="label sub">Synthetic objects found · at 5% false alarms on natural terrain</span>
+        <div class="bars" id="pcBars"></div>
+        <p class="caption tight">Held-out natural chips from images the memory never saw, each shown clean and with a pasted
+          object: subtle (faint thin shapes, as Mk15) or obvious (a lander-sized solid block). AUROC: 0.5 is a coin flip, 1.0 perfect.</p>
+      </div>
+      <div>
+        <span class="label sub" id="pcWhyTitle">Why the top detection stands out</span>
+        <div class="bars" id="pcWhy"></div>
+        <p class="caption tight">Hand-crafted features at the hottest patch, in standard deviations from natural terrain.
+          They explain the detection; the score itself comes from the CNN features (adding these to it lowered AUROC).</p>
+      </div>
+    </div>
+    <div class="chart mt half" id="pcCurve"></div>
+    <p class="caption tight">Mk18 has no training loop, so no loss. Its counterpart: validation AUROC as the memory grows —
+      a curve still rising means more memory would help; a flat one means it has seen enough terrain.</p>
+    <div id="pcHeat"></div>
+  </section>
+
+  <section id="telemetry">
+    <div class="head"><span class="label">01</span><h2>Telemetry per epoch</h2></div>
+    <div class="two">
+      <div class="scroll"><table id="epochs"></table></div>
+      <div>
+        <div class="chart" id="lossChart"></div>
+        <div class="chart" id="metricChart"></div>
+      </div>
+    </div>
+    <p class="caption">Validated every epoch on held-out natural-terrain chips the model never trains on, each shown
+      clean and again with a synthetic artificial object pasted in. Accuracy: share of chips called correctly, flagging
+      anything above the clean chips’ 95th percentile. AUROC per feature: 0.5 is a coin flip, 1.0 is perfect. Gradient,
+      contrast and edge regularity are measured on the residual (image minus reconstruction), so they move as the model learns.
+      Val loss rising while train loss falls means overfitting.</p>
+  </section>
+
+  <div class="two">
+    <section id="weights">
+      <div class="head"><span class="label">02</span><h2>Feature weights</h2></div>
+      <div class="label sub">Share of the anomaly score</div>
+      <div class="bars" id="scoreW"></div>
+      <div class="label sub">Share of the final confidence</div>
+      <div class="bars" id="confW"></div>
+    </section>
+    <section id="detection">
+      <div class="head"><span class="label">03</span><h2>Detection</h2></div>
+      <div class="stats flush" id="perf"></div>
+      <div class="scroll mt"><table id="top"></table></div>
+    </section>
+  </div>
+
+  <section id="finetune">
+    <div class="head"><span class="label">04</span><h2>Finetuning</h2><span class="label" id="ftMeta"></span></div>
+    <div class="stats flush" id="ftStats"></div>
+    <p class="verdict" id="ftVerdict"></p>
+    <div class="two mt">
+      <div class="chart" id="ftChart"></div>
+      <div>
+        <span class="label sub" id="ftBarsTitle">Best config · AUROC per metric</span>
+        <div class="bars" id="ftBars"></div>
+        <p class="caption tight">Tick = 0.5, a coin flip. Edge regularity reads only the image, so it is identical for every config.</p>
+      </div>
+    </div>
+    <div class="scroll"><table id="ftBoard"></table></div>
+    <p class="caption">How it was scored: every held-out chip is shown to the model clean and again with a synthetic
+      artificial object pasted in (rectangle, ring or straight line). A config scores well if its combined anomaly score
+      — reconstruction error, gradient residual, contrast residual, edge regularity — ranks the doctored chips above the clean
+      ones. The loss adds λg·gradient mismatch and λc·local-contrast mismatch to MSE + β·KL; 0 switches a term off.
+      Successive halving trains all configs briefly, keeps the best third, and trains the survivors longer.</p>
+    <div id="ftNext"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="label">Ground station · localhost</span>
+    <span class="label">New run <code>./train.sh</code> — appears here when it lands</span>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const fmt = (v, d = 2) => v == null ? "—" : Number(v).toLocaleString("en-US", { maximumFractionDigits: d, minimumFractionDigits: d });
+const LABELS = { mse: "Reconstruction error", density: "Latent density", contextual: "Contrast",
+                 gradient: "Gradient", regularity: "Edge regularity", anomaly_score: "Anomaly score" };
+const stat = ([b, s]) => `<div class="stat"><span class="label">${s}</span><b>${b}</b></div>`;
+
+let runs = [];
+$("pick").onchange = e => render(+e.target.value);
+function load() {
+  fetch("runs.json", { cache: "no-store" }).then(r => r.json()).then(next => {
+    if (next.length === runs.length) return;          // nothing new
+    runs = next;
+    $("pick").innerHTML = "";
+    runs.slice().reverse().forEach((r, i) => $("pick").add(new Option(`Run ${String(runs.length - i).padStart(2, "0")} · ${modelName(r)}`, runs.length - 1 - i)));
+    render(runs.length - 1);
+  }).catch(() => { if (!runs.length) $("stats").innerHTML = stat(["—", "No runs yet · ./train.sh"]); });
+}
+load();
+loadFt();
+setInterval(load, 15000);
+setInterval(loadFt, 15000);   // a finished ./train.sh run shows up on its own
+setInterval(() => $("clock").textContent = new Date().toISOString().slice(11, 19) + " UTC", 1000);
+
+// ---- Live run (dashboard/live.json, written by the scripts while they run) ----
+let liveSig = null, live = null, stepClock = null;
+function loadLive() {
+  fetch("live.json", { cache: "no-store" }).then(r => r.json()).then(L => {
+    const sig = [L.started, L.updated, L.status, L.metrics.length].join("|");
+    if (sig === liveSig) return;
+    const wasRunning = live && live.status === "running";
+    liveSig = sig; live = L;
+    renderLive();
+    if (wasRunning && L.status !== "running") { load(); loadFt(); }   // the finished run's record
+  }).catch(() => {});
+}
+loadLive();
+setInterval(loadLive, 2000);
+setInterval(() => live && renderLiveClock(), 1000);
+
+const dur = s => s < 60 ? `${Math.round(s)} s` : s < 3600 ? `${Math.floor(s / 60)} min ${Math.round(s % 60)} s` : `${(s / 3600).toFixed(1)} h`;
+
+function renderLiveClock() {
+  const L = live, now = L.status === "running" ? Date.now() : Date.parse(L.updated);
+  const el = (now - Date.parse(L.started)) / 1000, pr = L.progress;
+  let eta = "—";
+  if (pr && pr.total && stepClock && stepClock.step === L.step && pr.done > stepClock.done) {
+    const rate = (pr.done - stepClock.done) / ((Date.now() - stepClock.t) / 1000);
+    eta = dur((pr.total - pr.done) / rate);
+  }
+  $("liveStats").innerHTML = [
+    [L.status.toUpperCase(), "Status"], [L.script.replace(/^xenarch_|_script\.py$|\.py$/g, "").toUpperCase(), "Script"],
+    [dur(el), "Elapsed"], [L.status === "running" ? eta : "—", "Step ETA"],
+    [L.updated ? L.updated.slice(11) : "—", "Last update"]].map(stat).join("");
+  $("liveStats").firstElementChild.classList.toggle("hot", L.status !== "done");
+}
+
+function renderLive() {
+  const L = live, pr = L.progress;
+  $("live").hidden = false;
+  $("liveMeta").textContent = `${L.data} · started ${L.started.slice(11, 16)}`;
+  if (!stepClock || stepClock.step !== L.step || !pr) stepClock = { step: L.step, t: Date.now(), done: pr ? pr.done : 0 };
+  renderLiveClock();
+  $("liveError").hidden = !L.error;
+  $("liveError").textContent = L.error || "";
+
+  const pct = L.status === "done" ? 100 : pr && pr.total ? pr.done / pr.total * 100 : 0;
+  $("liveBar").style.width = pct + "%";
+  $("liveStepLabel").textContent = L.status === "done" ? "Finished"
+    : `${L.step || "Starting"}${pr ? ` · ${pr.done.toLocaleString("en-US")} / ${pr.total.toLocaleString("en-US")} ${pr.unit} · ${Math.round(pct)}%` : ""}`;
+  const cur = L.steps.findIndex(n => L.step && L.step.startsWith(n));
+  $("liveSteps").innerHTML = L.steps.map((n, i) => {
+    const state = L.status === "done" || i < cur ? "past" : i === cur ? "now" : "";
+    return `<li class="${state}"><span>${String(i + 1).padStart(2, "0")}</span>${n}</li>`;
+  }).join("");
+
+  const rows = L.metrics, keys = [...new Set(rows.flatMap(Object.keys))];
+  const cell = v => typeof v !== "number" ? (v ?? "—") : Number.isInteger(v) ? v : Math.abs(v) >= 10 ? fmt(v, 1) : fmt(v, 3);
+  $("liveMetrics").innerHTML = rows.length ? `<tr>${keys.map(k => `<th>${k.replace(/_/g, " ")}</th>`).join("")}</tr>` +
+    rows.slice(-15).map(r => `<tr>${keys.map(k => `<td>${cell(r[k])}</td>`).join("")}</tr>`).join("")
+    : `<tr><td class="none">Waiting for the first result…</td></tr>`;
+
+  if (rows.length > 1 && "epoch" in rows[0]) {
+    lineChart($("liveChart"), "Loss", rows, [{ key: "loss", name: "Train loss", color: "var(--ink)", d: 1 },
+      { key: "val_loss", name: "Val loss", color: "var(--s1)", d: 1 }]);
+  } else if (rows.length > 1 && "memory" in rows[0]) {
+    lineChart($("liveChart"), "Validation AUROC vs memory size", rows.map(r => ({ ...r, epoch: `${r.memory / 1000}k` })), [
+      { key: "auroc_obvious", name: "Obvious", color: "var(--s1)", d: 3 },
+      { key: "auroc_subtle", name: "Subtle", color: "var(--s2)", d: 3 }], { lo: 0.5, hi: 1 });
+  } else if (rows.length > 1 && "cfg" in rows[0]) {
+    lineChart($("liveChart"), "AUROC per config tried · 0.5 = chance", rows.map((r, i) => ({ ...r, epoch: i + 1 })),
+      [{ key: "auroc", name: "AUROC", color: "var(--s1)", d: 3 }]);
+  } else $("liveChart").innerHTML = "";
+
+  $("liveLog").textContent = L.log.join("\n");
+  $("liveSamples").innerHTML = L.samples.map(src => `<img src="${src}?v=${encodeURIComponent(L.started)}" alt="Training chip">`).join("");
+}
+
+// "MK15 · VAE 56" · "MK15 · VAE 8×16×16" · "MK18 · PatchCore"
+function modelName(r) {
+  const mk = r.script.replace(/^xenarch_|_script\.py$|\.py$/g, "").toUpperCase();
+  if (r.kind === "patchcore") return `${mk} · PatchCore`;
+  const c = r.config || {};
+  return c.latent_channels ? `${mk} · VAE ${c.latent_channels}×16×16` : `${mk} · VAE ${c.latent_dim ?? 56}`;
+}
+
+function renderHistory(sel) {
+  const pad = n => String(n).padStart(2, "0");
+  $("runsTable").innerHTML = "<tr><th>Run</th><th>Started</th><th>Model</th><th>Data</th><th>Epochs / memory</th>" +
+    "<th>Final loss</th><th>Val loss</th><th>AUROC</th><th>Duration</th></tr>" +
+    runs.map((r, i) => {
+      const last = r.epochs[r.epochs.length - 1] || {}, pc = r.kind === "patchcore";
+      const auroc = pc ? `${fmt(r.patchcore.auroc_obvious, 3)} / ${fmt(r.patchcore.auroc_subtle, 3)}` : fmt(last.auroc, 3);
+      return `<tr data-i="${i}" class="${i === sel ? "sel" : ""}"><td>${pad(i + 1)}</td><td>${r.id}</td><td>${modelName(r)}</td>
+        <td>${r.data.split("/").pop()}</td><td>${pc ? `${r.patchcore.bank_size.toLocaleString("en-US")} patches` : r.epochs.length}</td>
+        <td>${pc ? "—" : fmt(last.loss, 1)}</td><td>${pc ? "—" : fmt(last.val_loss, 1)}</td><td>${auroc}</td><td>${r.minutes} min</td></tr>`;
+    }).reverse().join("");
+  $("runsTable").querySelectorAll("tr[data-i]").forEach(tr => tr.onclick = () => {
+    $("pick").value = tr.dataset.i; render(+tr.dataset.i);
+  });
+}
+
+function render(i) {
+  const run = runs[i], e = run.epochs, p = run.performance, pad = n => String(n).padStart(2, "0");
+  const pc = run.kind === "patchcore";              // Mk18: memory bank, no epochs
+  renderHistory(i);
+  $("patchcore").hidden = !pc; $("telemetry").hidden = pc; $("weights").hidden = pc;
+  $("detection").parentElement.classList.toggle("solo", pc);
+  $("kicker").textContent = `Training telemetry · Run ${pad(i + 1)} of ${pad(runs.length)}`;
+  $("stats").innerHTML = [
+    [runs.length, "Runs"], [modelName(run), "Model"],
+    pc ? [run.patchcore.bank_size.toLocaleString("en-US"), "Memory patches"] : [e.length, "Epochs"],
+    [run.train_chips.toLocaleString("en-US"), pc ? "Memory chips" : "Training chips"],
+    [run.minutes + " min", "Duration · " + run.config.device], [run.data.split("/").pop(), "Data"],
+  ].map(stat).join("");
+  $("note").textContent = run.note || "";
+  if (pc) renderPc(run); else renderVae(run, e);
+  renderPerf(run, p);
+}
+
+function renderVae(run, e) {
+  const pad = n => String(n).padStart(2, "0");
+  const hasVal = e.some(r => r.accuracy != null);   // runs before validation existed only have the old columns
+  $("epochs").innerHTML = hasVal
+    ? "<tr><th>Epoch</th><th>Loss</th><th>Val loss</th><th>KLD</th><th>Accuracy</th><th>AUROC</th><th>Detected</th><th>False alarms</th><th>LR</th></tr>" +
+      e.map(r => `<tr><td>${pad(r.epoch)}</td><td>${fmt(r.loss, 1)}</td><td>${fmt(r.val_loss, 1)}</td><td>${fmt(r.kld, 0)}</td>
+        <td>${fmt(r.accuracy, 3)}</td><td>${fmt(r.auroc, 3)}</td><td>${fmt(r.detection_rate, 2)}</td><td>${fmt(r.false_alarm_rate, 2)}</td>
+        <td>${r.lr == null ? "—" : r.lr.toExponential(1)}</td></tr>`).join("")
+    : "<tr><th>Epoch</th><th>Loss</th><th>MSE</th><th>KLD</th><th>Contrast</th><th>Edge reg.</th><th>Gradient</th></tr>" +
+      e.map(r => `<tr><td>${pad(r.epoch)}</td><td>${fmt(r.loss, 1)}</td><td>${fmt(r.mse, 1)}</td><td>${fmt(r.kld, 0)}</td>
+        <td>${fmt(r.contrast, 3)}</td><td>${fmt(r.edge_regularity, 3)}</td><td>${fmt(r.gradient, 4)}</td></tr>`).join("");
+
+  lineChart($("lossChart"), "Loss", e, [{ key: "loss", name: "Train loss", color: "var(--ink)", d: 1 },
+    ...(hasVal ? [{ key: "val_loss", name: "Val loss", color: "var(--s1)", d: 1 }] : [])]);
+  lineChart($("metricChart"), hasVal ? "Accuracy · AUROC per feature" : "Contrast · edge regularity · gradient", e, hasVal ? [
+    { key: "accuracy", name: "Accuracy", color: "var(--ink)", d: 3 },
+    { key: "auroc_gradient", name: "Gradient", color: "var(--s3)", d: 3 },
+    { key: "auroc_contrast", name: "Contrast", color: "var(--s1)", d: 3 },
+    { key: "auroc_edge_regularity", name: "Edge regularity", color: "var(--s2)", d: 3 },
+  ] : [
+    { key: "contrast", name: "Contrast", color: "var(--s1)", d: 3 },
+    { key: "edge_regularity", name: "Edge regularity", color: "var(--s2)", d: 3 },
+    { key: "gradient", name: "Gradient", color: "var(--s3)", d: 4 },
+  ]);
+
+  bars($("scoreW"), run.weights.score);
+  bars($("confW"), run.weights.confidence);
+}
+
+function renderPc(run) {
+  const v = run.patchcore, top = run.performance.top[0];
+  $("pcStats").innerHTML = [[fmt(v.auroc_obvious, 3), "AUROC · obvious"], [fmt(v.auroc_subtle, 3), "AUROC · subtle"],
+    [v.val_chips, "Validation chips"], [v.pool_patches.toLocaleString("en-US"), "Candidate patches"],
+    [run.config.backbone.split(" ")[0], "Backbone"]].map(stat).join("");
+  $("pcBars").innerHTML = [["Obvious · detected", v.detect_obvious], ["Obvious · on target", v.locate_obvious],
+    ["Subtle · detected", v.detect_subtle], ["Subtle · on target", v.locate_subtle]].map(([k, x]) =>
+    `<span>${k}</span><div class="track"><div class="bar" style="width:${x * 100}%"></div></div><b>${Math.round(x * 100)}%</b>`).join("");
+  $("pcWhyTitle").textContent = top ? `Why the top detection stands out · ${top.chip.replace(/^.* · /, "")}` : "Why the top detection stands out";
+  const NAMES = { gradient: "Gradient", edge_sharpness: "Edge sharpness", contrast: "Contrast", edge_straightness: "Edge straightness" };
+  $("pcWhy").innerHTML = top && top.why ? Object.entries(top.why).map(([k, z]) =>
+    `<span>${NAMES[k] || k}</span><div class="track"><div class="bar" style="width:${Math.min(Math.abs(z) / 4, 1) * 100}%"></div></div><b>${z >= 0 ? "+" : "−"}${fmt(Math.abs(z), 1)}σ</b>`).join("") : "";
+  const curve = (v.curve || []).map(r => ({ ...r, epoch: r.memory >= 1000 ? `${r.memory / 1000}k` : r.memory }));
+  if (curve.length > 1) lineChart($("pcCurve"), "Validation AUROC vs memory size · patches", curve, [
+    { key: "auroc_obvious", name: "Obvious objects", color: "var(--s1)", d: 3 },
+    { key: "auroc_subtle", name: "Subtle objects", color: "var(--s2)", d: 3 }], { lo: 0.5, hi: 1 });
+  else $("pcCurve").innerHTML = "";
+  $("pcHeat").innerHTML = (run.heatmaps || []).map(h =>
+    `<span class="label sub" style="margin-top:28px">Heatmap · ${h.split("_").slice(3).join(" ").replace(/\.png$/, "")} · numbers = table rank · orange = flagged (≥ ${v.scene_z || "—"}σ above the scene)</span>
+     <img class="heatmap" src="${h}" alt="Anomaly heatmap">`).join("");
+}
+
+function renderPerf(run, p) {
+  const sc = p.top.some(t => t.scene_z != null), pad = n => String(n).padStart(2, "0");
+  $("perf").innerHTML = (sc
+    ? [[p.anomalies, `Hotspots ≥ ${run.patchcore.scene_z}σ`], [p.top.length, "Hotspots ranked"], [run.test_chips, "Chips scanned"]]
+    : [[`${p.anomalies} / ${run.test_chips}`, "Chips flagged"], [p.high_confidence, "Confidence > 0.8"], [fmt(p.mean_confidence), "Mean confidence"]]
+  ).map(stat).join("");
+  $("top").innerHTML = `<tr>${sc ? "<th>#</th><th>Hotspot</th><th>Above scene</th>" : "<th>Chip</th>"}<th>Confidence</th><th>Score</th><th>Status</th></tr>` +
+    p.top.map((t, k) => `<tr>${sc ? `<td>${pad(k + 1)}</td>` : ""}<td>${t.chip.replace(/\.tif$/, "").replace(/^.*_chip_/, "chip ").replace(/^.* · /, "")}</td>
+      ${sc ? `<td>${fmt(t.scene_z, 1)}σ</td>` : ""}<td>${fmt(t.confidence, 3)}</td>
+      <td>${fmt(t.score, 3)}</td><td class="${t.anomaly ? "flag" : "none"}">${t.anomaly ? "FLAGGED" : "—"}</td></tr>`).join("");
+}
+
+let ftStamp = null;
+function loadFt() {
+  fetch("finetune.json", { cache: "no-store" }).then(r => r.json()).then(ft => {
+    if (ft.id === ftStamp) return;
+    ftStamp = ft.id;
+    renderFt(ft);
+  }).catch(() => { if (!ftStamp) $("ftStats").innerHTML = stat(["—", "No tuning run yet · --tune"]); });
+}
+
+const RUNG_COLORS = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--ink-2)"];
+const knobText = c => `latent ${c.latent_dim} · lr ${c.lr.toExponential(1)} · bs ${c.batch_size} · wu ${c.warmup_epochs} · β ${c.beta.toExponential(1)} · λg ${c.lam_grad} · λc ${c.lam_con}`;
+
+function renderFt(ft) {
+  const b = ft.best.result, pad = n => String(n).padStart(2, "0");
+  $("ftMeta").textContent = `${ft.id} · ${ft.script.replace(/^xenarch_|\.py$/g, "").toUpperCase()}`;
+  $("ftStats").innerHTML = [
+    [fmt(b.auc, 3), "Best AUROC · 0.5 = chance"], [ft.configs.length, "Configs tried"],
+    [ft.rungs.join(" → ") + " ep", "Rungs"], [ft.minutes + " min", "Duration · " + ft.device],
+    [ft.train_chips, "Training chips"], [`${ft.val_chips} + ${ft.injected}`, "Val clean + doctored"],
+  ].map(stat).join("");
+
+  const aucs = ft.history.map(h => h.auc), spread = Math.max(...aucs) - Math.min(...aucs);
+  $("ftVerdict").textContent =
+    b.auc < 0.6 ? `At chance. Every config scored between ${fmt(Math.min(...aucs), 3)} and ${fmt(Math.max(...aucs), 3)} — the model cannot tell doctored chips from clean ones, so the “best” config was picked on noise. Don’t copy it into Mk15 yet.`
+    : b.auc < 0.8 ? `Some signal: the best config reaches ${fmt(b.auc, 3)}, with a spread of ${fmt(spread, 3)} across configs.`
+    : `Strong separation: the best config reaches ${fmt(b.auc, 3)}.`;
+
+  ftDotChart($("ftChart"), ft);
+
+  $("ftBarsTitle").textContent = `Best config · cfg ${pad(ft.best.cfg)} · ${ft.confirm} epochs`;
+  $("ftBars").innerHTML = [["Combined", b.auc], ["Reconstruction error", b.auc_mse], ["Gradient", b.auc_gradient],
+    ["Contrast", b.auc_contrast], ["Edge regularity", b.auc_edge]].map(([k, v]) =>
+    `<span>${k}</span><div class="track mark"><div class="bar" style="width:${v * 100}%"></div></div><b>${fmt(v, 2)}</b>`).join("");
+
+  const deepest = {};
+  ft.history.forEach(h => { if (!deepest[h.cfg] || h.rung >= deepest[h.cfg].rung) deepest[h.cfg] = h; });
+  const board = Object.values(deepest).sort((a, c) => c.auc - a.auc || a.val_mse - c.val_mse);
+  $("ftBoard").innerHTML = "<tr><th>Config</th><th>AUROC</th><th>MSE</th><th>Grad</th><th>Contr.</th><th>Edge</th><th>Val MSE</th>" +
+    "<th>Latent</th><th>LR</th><th>Batch</th><th>Warmup</th><th>β</th><th>λg</th><th>λc</th><th>Reached</th></tr>" +
+    board.map(h => `<tr><td>cfg ${pad(h.cfg)}</td><td>${fmt(h.auc, 3)}</td><td>${fmt(h.auc_mse)}</td><td>${fmt(h.auc_gradient)}</td>
+      <td>${fmt(h.auc_contrast)}</td><td>${fmt(h.auc_edge)}</td><td>${fmt(h.val_mse, 4)}</td><td>${h.latent_dim}</td>
+      <td>${h.lr.toExponential(1)}</td><td>${h.batch_size}</td><td>${h.warmup_epochs}</td><td>${h.beta.toExponential(1)}</td>
+      <td>${h.lam_grad}</td><td>${h.lam_con}</td><td class="${h.cfg === ft.best.cfg ? "flag" : "none"}">${h.epochs} ep${h.cfg === ft.best.cfg ? " · BEST" : ""}</td></tr>`).join("");
+
+  $("ftNext").innerHTML = b.auc >= 0.6 ? "" : `<span class="label" style="display:block;margin:28px 0 4px">Why · and what next</span>
+    <p class="caption">The VAE squeezes a 256×256 chip into ${ft.best.config.latent_dim}–96 numbers, so it rebuilds a blur: its typical
+      per-pixel error (√val MSE ≈ ${fmt(Math.sqrt(b.val_mse), 2)}) is about as large as the pasted objects’ brightness change (0.15–0.35).
+      Tuning learning rate or batch size cannot fix that, which is why all configs land on the same line.</p>
+    <ol class="steps">
+      <li><b>Sanity check.</b> Re-score with very obvious objects. Still ≈ 0.5 → the test is at fault, not the model.</li>
+      <li><b>Score windows, not chips.</b> Look for the 32×32 area whose error stands out from its own surroundings.</li>
+      <li><b>Sharper model.</b> 64 px chips, or an autoencoder without the tight fully-connected bottleneck.</li>
+    </ol>`;
+}
+
+function ftDotChart(el, ft) {
+  const W = 520, H = 220, L = 40, R = 12, T = 8, B = 28, w = W - L - R, h = H - T - B;
+  const n = ft.configs.length, lo = 0.4, hi = 1.0, nr = ft.rungs.length;
+  const x = (c, r) => L + (c + 0.5) / n * w + (r - (nr - 1) / 2) * 9;
+  const y = v => T + h - (Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo) * h;
+  let svg = [0.4, 0.6, 0.8, 1.0].map(t => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/>
+    <text x="${L - 8}" y="${y(t) + 3}" text-anchor="end">${t.toFixed(1)}</text>`).join("");
+  svg += `<line class="chance" x1="${L}" x2="${W - R}" y1="${y(0.5)}" y2="${y(0.5)}"/>
+    <text x="${W - R}" y="${y(0.5) - 6}" text-anchor="end">chance 0.5</text>`;
+  for (let c = 0; c < n; c++) svg += `<text x="${L + (c + 0.5) / n * w}" y="${H - 8}" text-anchor="middle">${c}</text>`;
+  ft.history.forEach((p, i) => {
+    const best = p.cfg === ft.best.cfg && p.rung === nr - 1;
+    svg += `<circle data-i="${i}" cx="${x(p.cfg, p.rung)}" cy="${y(p.auc)}" r="${best ? 6 : 4.5}" fill="${RUNG_COLORS[p.rung] || "var(--ink)"}"
+      stroke="${best ? "var(--accent)" : "var(--bg)"}" stroke-width="2"/>
+      <circle data-i="${i}" cx="${x(p.cfg, p.rung)}" cy="${y(p.auc)}" r="10" fill="transparent" style="cursor:default"/>`;
+  });
+  const legend = `<div class="legend">${ft.rungs.map((e, r) => `<span><i style="background:${RUNG_COLORS[r]};height:8px;width:8px;border-radius:50%"></i>Rung ${r} · ${e} ep</span>`).join("")}</div>`;
+  el.innerHTML = `<span class="label">AUROC by config · y from 0.4</span>${legend}<svg viewBox="0 0 ${W} ${H}">${svg}</svg><div class="tip"></div>`;
+  const sv = el.querySelector("svg"), tip = el.querySelector(".tip");
+  sv.onmousemove = ev => {
+    const i = ev.target.getAttribute && ev.target.getAttribute("data-i");
+    if (i == null) { tip.style.display = "none"; return; }
+    const p = ft.history[+i], bx = sv.getBoundingClientRect();
+    tip.innerHTML = `cfg ${String(p.cfg).padStart(2, "0")} · rung ${p.rung} · ${p.epochs} ep<br>AUROC ${fmt(p.auc, 3)} · val MSE ${fmt(p.val_mse, 4)}<br>${knobText(p)}`;
+    tip.style.display = "block";
+    const left = ev.clientX - bx.left;
+    tip.style.left = (left > bx.width / 2 ? left - tip.offsetWidth - 12 : left + 12) + "px";
+    tip.style.top = (ev.clientY - bx.top + 24) + "px";
+  };
+  sv.onmouseleave = () => tip.style.display = "none";
+}
+
+function bars(el, w) {
+  const max = Math.max(...Object.values(w));
+  el.innerHTML = Object.entries(w).sort((a, b) => b[1] - a[1]).map(([k, v]) =>
+    `<span>${LABELS[k] || k}</span><div class="track"><div class="bar" style="width:${v / max * 100}%"></div></div><b>${Math.round(v * 100)}%</b>`).join("");
+}
+
+function lineChart(el, title, rows, series, range = {}) {
+  const W = 520, H = 200, L = 48, R = 12, T = 8, B = 24, w = W - L - R, h = H - T - B;
+  const vals = series.flatMap(s => rows.map(r => r[s.key])).filter(v => v != null);
+  const lo = range.lo ?? (series.length > 1 ? 0 : Math.min(...vals) * 0.95), hi = range.hi ?? (Math.max(...vals) * 1.05 || 1);
+  const x = i => L + (rows.length > 1 ? i / (rows.length - 1) : .5) * w;
+  const y = v => T + h - (v - lo) / (hi - lo) * h;
+  const ticks = [0, .5, 1].map(f => lo + f * (hi - lo));
+  let svg = ticks.map(t => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/>
+    <text x="${L - 8}" y="${y(t) + 3}" text-anchor="end">${fmt(t, hi <= 1 ? 2 : 0)}</text>`).join("");
+  rows.forEach((r, i) => { if (i % Math.ceil(rows.length / 8) === 0 || i === rows.length - 1)
+    svg += `<text x="${x(i)}" y="${H - 6}" text-anchor="middle">${r.epoch}</text>`; });
+  for (const s of series) {
+    const pts = rows.map((r, i) => r[s.key] == null ? null : [x(i), y(r[s.key])]);
+    let d = "", pen = false;
+    pts.forEach(p => { if (!p) { pen = false; return; } d += (pen ? "L" : "M") + p[0].toFixed(1) + "," + p[1].toFixed(1); pen = true; });
+    svg += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round"/>`;
+    const last = pts.map((q, i) => [q, i]).filter(([q]) => q).pop();      // direct label: the latest value
+    if (last) svg += `<circle cx="${last[0][0]}" cy="${last[0][1]}" r="3.5" fill="${s.color}"/>
+      <text class="val" x="${last[0][0] - 6}" y="${last[0][1] - 8}" text-anchor="end">${fmt(rows[last[1]][s.key], s.d)}</text>`;
+    pts.forEach((p, i) => { if (p && !pts[i - 1] && !pts[i + 1])
+      svg += `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${s.color}" stroke="var(--bg)" stroke-width="2"/>`; });
+  }
+  svg += `<line class="cross" y1="${T}" y2="${T + h}" stroke="var(--muted)" stroke-dasharray="2 3" visibility="hidden"/>
+    <rect x="${L}" y="${T}" width="${w}" height="${h}" fill="transparent"/>`;
+  const legend = series.length > 1 ? `<div class="legend">${series.map(s => `<span><i style="background:${s.color}"></i>${s.name}</span>`).join("")}</div>` : "";
+  el.innerHTML = `<span class="label">${title}</span>${legend}<svg viewBox="0 0 ${W} ${H}">${svg}</svg><div class="tip"></div>`;
+
+  const sv = el.querySelector("svg"), tip = el.querySelector(".tip"), cross = sv.querySelector(".cross");
+  sv.onmousemove = ev => {
+    const b = sv.getBoundingClientRect(), px = (ev.clientX - b.left) / b.width * W;
+    const i = Math.max(0, Math.min(rows.length - 1, Math.round((px - L) / w * (rows.length - 1))));
+    cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.setAttribute("visibility", "visible");
+    tip.innerHTML = `Epoch ${rows[i].epoch}<br>` + series.map(s =>
+      `<span style="color:${s.color}">■</span> ${s.name} ${fmt(rows[i][s.key], s.d)}`).join("<br>");
+    tip.style.display = "block";
+    const left = x(i) / W * b.width;
+    tip.style.left = (left > b.width / 2 ? left - tip.offsetWidth - 12 : left + 12) + "px";
+    tip.style.top = "48px";
+  };
+  sv.onmouseleave = () => { tip.style.display = "none"; cross.setAttribute("visibility", "hidden"); };
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1035 @@
+[
+ {
+  "id": "2026-09-23 11:20",
+  "script": "xenarch_mk15_script.py",
+  "data": "data/xenarch-imagery",
+  "train_chips": 4893,
+  "test_chips": 8,
+  "minutes": 16.4,
+  "config": {
+   "chip_size": 256,
+   "latent_dim": 56,
+   "batch_size": 4,
+   "num_epochs": 15,
+   "learning_rate": 0.0005,
+   "warmup_epochs": 3,
+   "base_percentile": 95,
+   "use_spatial_filter": false,
+   "device": "mps"
+  },
+  "note": "Recorded before per-epoch logging existed: gradient is only known for the final epoch.",
+  "epochs": [
+   {
+    "epoch": 1,
+    "loss": 1891.12,
+    "mse": 1891.12,
+    "kld": 750521.76,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 2,
+    "loss": 1532.65,
+    "mse": 1458.39,
+    "kld": 222772.96,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 3,
+    "loss": 1383.91,
+    "mse": 1307.18,
+    "kld": 115103.18,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 4,
+    "loss": 1280.41,
+    "mse": 1240.1,
+    "kld": 40303.65,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 5,
+    "loss": 1180.82,
+    "mse": 1171.21,
+    "kld": 9606.52,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 6,
+    "loss": 1140.19,
+    "mse": 1133.54,
+    "kld": 6648.47,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 7,
+    "loss": 1109.81,
+    "mse": 1103.78,
+    "kld": 6028.1,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 8,
+    "loss": 1084.24,
+    "mse": 1079.55,
+    "kld": 4692.88,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 9,
+    "loss": 1069.32,
+    "mse": 1065.25,
+    "kld": 4065.44,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 10,
+    "loss": 1063.71,
+    "mse": 1059.7,
+    "kld": 4012.21,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 11,
+    "loss": 1052.32,
+    "mse": 1048.74,
+    "kld": 3580.7,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 12,
+    "loss": 1042.71,
+    "mse": 1039.33,
+    "kld": 3378.3,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 13,
+    "loss": 1037.42,
+    "mse": 1034.16,
+    "kld": 3264.42,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 14,
+    "loss": 1026.95,
+    "mse": 1023.94,
+    "kld": 3008.01,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": null
+   },
+   {
+    "epoch": 15,
+    "loss": 1023.1,
+    "mse": 1020.16,
+    "kld": 2937.05,
+    "contrast": 0.5016308564692735,
+    "edge_regularity": 0.07745173661406923,
+    "gradient": 0.024923978
+   }
+  ],
+  "weights": {
+   "score": {
+    "mse": 0.3,
+    "density": 0.2,
+    "contextual": 0.3,
+    "gradient": 0.15,
+    "regularity": 0.05
+   },
+   "confidence": {
+    "anomaly_score": 0.5,
+    "contextual": 0.3,
+    "mse": 0.2
+   }
+  },
+  "performance": {
+   "anomalies": 1,
+   "high_confidence": 1,
+   "mean_confidence": 0.5270737586791399,
+   "top": [
+    {
+     "chip": "Apollo 11 landing site_chip_0002.tif",
+     "confidence": 0.995832355843314,
+     "score": 0.7657304660677341,
+     "anomaly": true
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0000.tif",
+     "confidence": 0.7045541180505012,
+     "score": 0.531957135357831,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0003.tif",
+     "confidence": 0.6348815459818429,
+     "score": 0.5528779509223902,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0007.tif",
+     "confidence": 0.6269411213966564,
+     "score": 0.5630139395594598,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0006.tif",
+     "confidence": 0.4809336695041942,
+     "score": 0.4762638493522638,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0004.tif",
+     "confidence": 0.4304612668918829,
+     "score": 0.4500000178813934,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0005.tif",
+     "confidence": 0.3429859917647274,
+     "score": 0.366862210118177,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0001.tif",
+     "confidence": 0.0,
+     "score": 0.1800438642501831,
+     "anomaly": false
+    }
+   ]
+  }
+ },
+ {
+  "kind": "patchcore",
+  "id": "2026-09-23 15:48",
+  "script": "xenarch_mk18_script.py",
+  "data": "data/xenarch-imagery",
+  "train_chips": 8027,
+  "test_chips": 36,
+  "minutes": 5.4,
+  "config": {
+   "chip_size": 256,
+   "backbone": "resnet18 \u00b7 layer2+layer3",
+   "bank_size": 30000,
+   "per_chip": 24,
+   "hand_weight": 0.0,
+   "val_frac": 0.1,
+   "val_chips": 150,
+   "device": "mps"
+  },
+  "epochs": [],
+  "patchcore": {
+   "threshold": 3.264427661895752,
+   "val_chips": 150,
+   "patch_p50": 2.1322288513183594,
+   "patch_p999": 3.102440357208252,
+   "auroc_subtle": 0.7479999999999999,
+   "detect_subtle": 0.34,
+   "locate_subtle": 0.4866666666666667,
+   "auroc_obvious": 0.9871111111111112,
+   "detect_obvious": 0.9466666666666667,
+   "locate_obvious": 0.9666666666666667,
+   "bank_size": 30000,
+   "pool_patches": 192648
+  },
+  "heatmaps": [
+   "heatmaps/mk18_20260923_154841_Apollo_11_landing_site.png"
+  ],
+  "performance": {
+   "anomalies": 11,
+   "high_confidence": 27,
+   "mean_confidence": 0.8551851851851853,
+   "top": [
+    {
+     "chip": "Apollo 11 landing site \u00b7 y295 x512",
+     "score": 3.463441848754883,
+     "confidence": 0.9866666666666667,
+     "anomaly": true,
+     "hotspot": [
+      531,
+      596
+     ],
+     "why": {
+      "gradient": 0.754730224609375,
+      "edge_sharpness": 1.1780325174331665,
+      "contrast": 1.099433183670044,
+      "edge_straightness": 1.297908902168274
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y128 x384",
+     "score": 3.4510812759399414,
+     "confidence": 0.9866666666666667,
+     "anomaly": true,
+     "hotspot": [
+      228,
+      500
+     ],
+     "why": {
+      "gradient": 1.1902861595153809,
+      "edge_sharpness": 1.8736605644226074,
+      "contrast": 2.266122579574585,
+      "edge_straightness": 2.0173614025115967
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y295 x988",
+     "score": 3.4076662063598633,
+     "confidence": 0.9866666666666667,
+     "anomaly": true,
+     "hotspot": [
+      323,
+      1064
+     ],
+     "why": {
+      "gradient": 1.2033978700637817,
+      "edge_sharpness": 1.3952292203903198,
+      "contrast": 1.8131756782531738,
+      "edge_straightness": 1.5757726430892944
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y0 x384",
+     "score": 3.339637517929077,
+     "confidence": 0.9733333333333334,
+     "anomaly": true,
+     "hotspot": [
+      228,
+      500
+     ],
+     "why": {
+      "gradient": 1.1052398681640625,
+      "edge_sharpness": 1.9273043870925903,
+      "contrast": 2.1983773708343506,
+      "edge_straightness": 2.127537488937378
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y0 x0",
+     "score": 3.3343162536621094,
+     "confidence": 0.9733333333333334,
+     "anomaly": true,
+     "hotspot": [
+      108,
+      228
+     ],
+     "why": {
+      "gradient": 0.22891461849212646,
+      "edge_sharpness": 0.5944598913192749,
+      "contrast": 0.8314000368118286,
+      "edge_straightness": 2.2758491039276123
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y0 x256",
+     "score": 3.3341078758239746,
+     "confidence": 0.9733333333333334,
+     "anomaly": true,
+     "hotspot": [
+      228,
+      492
+     ],
+     "why": {
+      "gradient": 0.5082371830940247,
+      "edge_sharpness": 1.3563674688339233,
+      "contrast": 1.238240361213684,
+      "edge_straightness": 1.6440021991729736
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y128 x256",
+     "score": 3.314554452896118,
+     "confidence": 0.9666666666666667,
+     "anomaly": true,
+     "hotspot": [
+      228,
+      492
+     ],
+     "why": {
+      "gradient": 0.6507852077484131,
+      "edge_sharpness": 1.284563422203064,
+      "contrast": 1.3934286832809448,
+      "edge_straightness": 1.4590396881103516
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y295 x384",
+     "score": 3.29764986038208,
+     "confidence": 0.96,
+     "anomaly": true,
+     "hotspot": [
+      539,
+      596
+     ],
+     "why": {
+      "gradient": -0.035108670592308044,
+      "edge_sharpness": 0.09095364063978195,
+      "contrast": 0.05913039296865463,
+      "edge_straightness": 0.711334228515625
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y0 x512",
+     "score": 3.2837252616882324,
+     "confidence": 0.9533333333333334,
+     "anomaly": true,
+     "hotspot": [
+      236,
+      748
+     ],
+     "why": {
+      "gradient": 0.2371254861354828,
+      "edge_sharpness": 0.3137187659740448,
+      "contrast": 0.4397275447845459,
+      "edge_straightness": 0.08862017840147018
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y128 x0",
+     "score": 3.27392578125,
+     "confidence": 0.9533333333333334,
+     "anomaly": true,
+     "hotspot": [
+      156,
+      116
+     ],
+     "why": {
+      "gradient": 0.12443938106298447,
+      "edge_sharpness": 0.4025813043117523,
+      "contrast": 0.5277101397514343,
+      "edge_straightness": 1.9251447916030884
+     }
+    }
+   ]
+  }
+ },
+ {
+  "kind": "patchcore",
+  "id": "2026-09-23 17:30",
+  "script": "xenarch_mk18_script.py",
+  "data": "data/xenarch-imagery",
+  "train_chips": 8027,
+  "test_chips": 36,
+  "minutes": 5.7,
+  "config": {
+   "chip_size": 256,
+   "backbone": "resnet18 \u00b7 layer2+layer3",
+   "bank_size": 30000,
+   "per_chip": 24,
+   "scene_z": 6.0,
+   "hand_weight": 0.0,
+   "val_frac": 0.1,
+   "val_chips": 150,
+   "device": "mps"
+  },
+  "epochs": [],
+  "patchcore": {
+   "threshold": 3.264427661895752,
+   "val_chips": 150,
+   "auroc_subtle": 0.7479999999999999,
+   "detect_subtle": 0.34,
+   "locate_subtle": 0.4866666666666667,
+   "auroc_obvious": 0.9871111111111112,
+   "detect_obvious": 0.9466666666666667,
+   "locate_obvious": 0.9666666666666667,
+   "curve": [
+    {
+     "memory": 1000,
+     "auroc_subtle": 0.7228666666666667,
+     "auroc_obvious": 0.9736888888888888
+    },
+    {
+     "memory": 2000,
+     "auroc_subtle": 0.7414666666666667,
+     "auroc_obvious": 0.9864888888888889
+    },
+    {
+     "memory": 5000,
+     "auroc_subtle": 0.7433555555555555,
+     "auroc_obvious": 0.9878888888888888
+    },
+    {
+     "memory": 10000,
+     "auroc_subtle": 0.7422666666666666,
+     "auroc_obvious": 0.9883777777777778
+    },
+    {
+     "memory": 20000,
+     "auroc_subtle": 0.7441777777777778,
+     "auroc_obvious": 0.9869333333333333
+    },
+    {
+     "memory": 30000,
+     "auroc_subtle": 0.7479999999999999,
+     "auroc_obvious": 0.9871111111111112
+    }
+   ],
+   "bank_size": 30000,
+   "pool_patches": 192648,
+   "scene_z": 6.0,
+   "scenes": [
+    {
+     "image": "Apollo 11 landing site.png",
+     "median": 2.4197590351104736,
+     "mad": 0.15718097494674682,
+     "tiles": 36
+    }
+   ],
+   "reused_bank": false
+  },
+  "heatmaps": [
+   "heatmaps/mk18_20260923_173043_Apollo_11_landing_site.png"
+  ],
+  "performance": {
+   "anomalies": 3,
+   "high_confidence": 15,
+   "mean_confidence": 0.9311111111111112,
+   "top": [
+    {
+     "chip": "Apollo 11 landing site \u00b7 y527 x592",
+     "score": 3.463441848754883,
+     "scene_z": 6.640007019042969,
+     "confidence": 0.9866666666666667,
+     "anomaly": true,
+     "hotspot": [
+      527,
+      592
+     ],
+     "why": {
+      "gradient": 0.7251744866371155,
+      "edge_sharpness": 1.008776068687439,
+      "contrast": 1.0619972944259644,
+      "edge_straightness": 1.1330560445785522
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y224 x496",
+     "score": 3.4510812759399414,
+     "scene_z": 6.561367988586426,
+     "confidence": 0.9866666666666667,
+     "anomaly": true,
+     "hotspot": [
+      224,
+      496
+     ],
+     "why": {
+      "gradient": 1.1902861595153809,
+      "edge_sharpness": 1.8736605644226074,
+      "contrast": 2.266122579574585,
+      "edge_straightness": 2.0173614025115967
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y319 x1060",
+     "score": 3.4076662063598633,
+     "scene_z": 6.285157203674316,
+     "confidence": 0.9866666666666667,
+     "anomaly": true,
+     "hotspot": [
+      319,
+      1060
+     ],
+     "why": {
+      "gradient": -0.10422048717737198,
+      "edge_sharpness": -0.1701340526342392,
+      "contrast": 0.06846439093351364,
+      "edge_straightness": 1.243316650390625
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y104 x224",
+     "score": 3.3343162536621094,
+     "scene_z": 5.818498134613037,
+     "confidence": 0.9733333333333334,
+     "anomaly": false,
+     "hotspot": [
+      104,
+      224
+     ],
+     "why": {
+      "gradient": 0.20297743380069733,
+      "edge_sharpness": 0.6091492772102356,
+      "contrast": 0.8032638430595398,
+      "edge_straightness": 2.2919814586639404
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y232 x744",
+     "score": 3.2837252616882324,
+     "scene_z": 5.496633529663086,
+     "confidence": 0.9533333333333334,
+     "anomaly": false,
+     "hotspot": [
+      232,
+      744
+     ],
+     "why": {
+      "gradient": 0.09001312404870987,
+      "edge_sharpness": 0.16752491891384125,
+      "contrast": 0.2773779332637787,
+      "edge_straightness": 0.09481007605791092
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y152 x112",
+     "score": 3.27392578125,
+     "scene_z": 5.434288024902344,
+     "confidence": 0.9533333333333334,
+     "anomaly": false,
+     "hotspot": [
+      152,
+      112
+     ],
+     "why": {
+      "gradient": -0.062385085970163345,
+      "edge_sharpness": 0.15921345353126526,
+      "contrast": 0.32389625906944275,
+      "edge_straightness": 2.511091709136963
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y224 x656",
+     "score": 3.2696034908294678,
+     "scene_z": 5.406789302825928,
+     "confidence": 0.9533333333333334,
+     "anomaly": false,
+     "hotspot": [
+      224,
+      656
+     ],
+     "why": {
+      "gradient": 0.17777171730995178,
+      "edge_sharpness": 0.25378599762916565,
+      "contrast": 0.8733676075935364,
+      "edge_straightness": 2.0097012519836426
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y248 x912",
+     "score": 3.253474473953247,
+     "scene_z": 5.304174900054932,
+     "confidence": 0.9266666666666666,
+     "anomaly": false,
+     "hotspot": [
+      248,
+      912
+     ],
+     "why": {
+      "gradient": 0.6342578530311584,
+      "edge_sharpness": 0.7618603110313416,
+      "contrast": 1.2971100807189941,
+      "edge_straightness": 2.4067044258117676
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y120 x872",
+     "score": 3.227928876876831,
+     "scene_z": 5.141651630401611,
+     "confidence": 0.92,
+     "anomaly": false,
+     "hotspot": [
+      120,
+      872
+     ],
+     "why": {
+      "gradient": 0.3725724518299103,
+      "edge_sharpness": 0.264056921005249,
+      "contrast": 0.8623935580253601,
+      "edge_straightness": 1.5994305610656738
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y423 x688",
+     "score": 3.219313383102417,
+     "scene_z": 5.086839199066162,
+     "confidence": 0.9133333333333333,
+     "anomaly": false,
+     "hotspot": [
+      423,
+      688
+     ],
+     "why": {
+      "gradient": 0.753751277923584,
+      "edge_sharpness": 0.8268929719924927,
+      "contrast": 1.5090231895446777,
+      "edge_straightness": 2.0874404907226562
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "2026-09-23 23:12",
+  "script": "xenarch_mk15_script.py",
+  "data": "data/xenarch-imagery",
+  "train_chips": 4743,
+  "val_chips": 150,
+  "test_chips": 8,
+  "minutes": 22.1,
+  "config": {
+   "chip_size": 256,
+   "latent_dim": 56,
+   "latent_channels": 8,
+   "batch_size": 4,
+   "num_epochs": 15,
+   "learning_rate": 0.0005,
+   "warmup_epochs": 3,
+   "base_percentile": 95,
+   "use_spatial_filter": false,
+   "val_chips": 150,
+   "device": "mps"
+  },
+  "epochs": [
+   {
+    "epoch": 1,
+    "loss": 1244.4955016330605,
+    "mse": 1244.4955016330605,
+    "kld": 12392.25844310793,
+    "val_loss": 826.434208984375,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5150444444444444,
+    "auroc_mse": 0.5114444444444445,
+    "auroc_gradient": 0.5205777777777777,
+    "auroc_contrast": 0.5145333333333333,
+    "auroc_edge_regularity": 0.5153111111111112,
+    "lr": 0.0005,
+    "kl_weight": 0.0
+   },
+   {
+    "epoch": 2,
+    "loss": 816.1801673524018,
+    "mse": 812.3282125828111,
+    "kld": 11555.863790223751,
+    "val_loss": 736.4013802083333,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5166666666666667,
+    "auroc_mse": 0.5103777777777777,
+    "auroc_gradient": 0.5164888888888889,
+    "auroc_contrast": 0.5156444444444445,
+    "auroc_edge_regularity": 0.5162888888888888,
+    "lr": 0.0005,
+    "kl_weight": 0.3333333333333333
+   },
+   {
+    "epoch": 3,
+    "loss": 739.9998894855742,
+    "mse": 734.2495548538636,
+    "kld": 8625.501843176788,
+    "val_loss": 694.5130777994792,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5166888888888889,
+    "auroc_mse": 0.5125555555555557,
+    "auroc_gradient": 0.5146666666666667,
+    "auroc_contrast": 0.5162,
+    "auroc_edge_regularity": 0.5209555555555556,
+    "lr": 0.0005,
+    "kl_weight": 0.6666666666666666
+   },
+   {
+    "epoch": 4,
+    "loss": 715.3288600277403,
+    "mse": 708.8434959410013,
+    "kld": 6485.363464497022,
+    "val_loss": 673.2553694661458,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5162,
+    "auroc_mse": 0.5106222222222222,
+    "auroc_gradient": 0.5119333333333332,
+    "auroc_contrast": 0.5153555555555556,
+    "auroc_edge_regularity": 0.5228222222222222,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 5,
+    "loss": 640.7725426780255,
+    "mse": 633.8189210966119,
+    "kld": 6953.6219016840605,
+    "val_loss": 574.4319368489583,
+    "accuracy": 0.5033333333333333,
+    "detection_rate": 0.06,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5126222222222222,
+    "auroc_mse": 0.5097111111111111,
+    "auroc_gradient": 0.5136666666666667,
+    "auroc_contrast": 0.5145111111111111,
+    "auroc_edge_regularity": 0.5128,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 6,
+    "loss": 590.639494144537,
+    "mse": 583.5350685578068,
+    "kld": 7104.425819546569,
+    "val_loss": 577.5167594401041,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5150888888888889,
+    "auroc_mse": 0.5119555555555556,
+    "auroc_gradient": 0.512888888888889,
+    "auroc_contrast": 0.5160444444444444,
+    "auroc_edge_regularity": 0.511911111111111,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 7,
+    "loss": 578.7391757438285,
+    "mse": 571.878439240332,
+    "kld": 6860.735121577192,
+    "val_loss": 566.7548372395834,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.512,
+    "auroc_mse": 0.5127777777777778,
+    "auroc_gradient": 0.513311111111111,
+    "auroc_contrast": 0.5118888888888888,
+    "auroc_edge_regularity": 0.5134,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 8,
+    "loss": 569.3554595876489,
+    "mse": 562.805249877904,
+    "kld": 6550.2098161929425,
+    "val_loss": 566.167060546875,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5144,
+    "auroc_mse": 0.5114444444444444,
+    "auroc_gradient": 0.5132666666666666,
+    "auroc_contrast": 0.5147111111111111,
+    "auroc_edge_regularity": 0.5179555555555555,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 9,
+    "loss": 556.3394721954301,
+    "mse": 549.8395443071224,
+    "kld": 6499.927173103784,
+    "val_loss": 563.494755859375,
+    "accuracy": 0.49666666666666665,
+    "detection_rate": 0.04666666666666667,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5159777777777778,
+    "auroc_mse": 0.5096444444444445,
+    "auroc_gradient": 0.5119555555555555,
+    "auroc_contrast": 0.5150222222222223,
+    "auroc_edge_regularity": 0.5222222222222221,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 10,
+    "loss": 529.3042899479022,
+    "mse": 522.4880994120756,
+    "kld": 6816.1909067474435,
+    "val_loss": 541.01998046875,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.516,
+    "auroc_mse": 0.51,
+    "auroc_gradient": 0.5115555555555555,
+    "auroc_contrast": 0.5164,
+    "auroc_edge_regularity": 0.5222444444444445,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 11,
+    "loss": 526.8821526756021,
+    "mse": 520.1506231325276,
+    "kld": 6731.5298025544225,
+    "val_loss": 520.8509521484375,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5147777777777778,
+    "auroc_mse": 0.5105111111111111,
+    "auroc_gradient": 0.5125333333333333,
+    "auroc_contrast": 0.5155777777777777,
+    "auroc_edge_regularity": 0.5271777777777777,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 12,
+    "loss": 521.0921016840298,
+    "mse": 514.6193917692901,
+    "kld": 6472.709864784288,
+    "val_loss": 520.27525390625,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5154888888888889,
+    "auroc_mse": 0.5109555555555556,
+    "auroc_gradient": 0.5120666666666667,
+    "auroc_contrast": 0.5147111111111111,
+    "auroc_edge_regularity": 0.5226,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 13,
+    "loss": 518.7467150590652,
+    "mse": 512.6653566885266,
+    "kld": 6081.357621593665,
+    "val_loss": 506.8182430013021,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5165333333333333,
+    "auroc_mse": 0.5120666666666667,
+    "auroc_gradient": 0.5118444444444443,
+    "auroc_contrast": 0.5142,
+    "auroc_edge_regularity": 0.5234888888888889,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 14,
+    "loss": 518.0947914935857,
+    "mse": 512.1274424357276,
+    "kld": 5967.349043985874,
+    "val_loss": 509.05523193359375,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5166444444444444,
+    "auroc_mse": 0.5103555555555556,
+    "auroc_gradient": 0.5119555555555555,
+    "auroc_contrast": 0.5144222222222222,
+    "auroc_edge_regularity": 0.5262222222222221,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   },
+   {
+    "epoch": 15,
+    "loss": 509.4984146944963,
+    "mse": 503.3878965689466,
+    "kld": 6110.5176518356,
+    "val_loss": 502.4603466796875,
+    "accuracy": 0.5,
+    "detection_rate": 0.05333333333333334,
+    "false_alarm_rate": 0.05333333333333334,
+    "auroc": 0.5157555555555555,
+    "auroc_mse": 0.5101555555555555,
+    "auroc_gradient": 0.5126444444444445,
+    "auroc_contrast": 0.515888888888889,
+    "auroc_edge_regularity": 0.5225111111111111,
+    "lr": 0.0005,
+    "kl_weight": 1.0
+   }
+  ],
+  "weights": {
+   "score": {
+    "mse": 0.3,
+    "density": 0.2,
+    "contextual": 0.3,
+    "gradient": 0.15,
+    "regularity": 0.05
+   },
+   "confidence": {
+    "anomaly_score": 0.5,
+    "contextual": 0.3,
+    "mse": 0.2
+   }
+  },
+  "performance": {
+   "anomalies": 1,
+   "high_confidence": 1,
+   "mean_confidence": 0.46741802690250733,
+   "top": [
+    {
+     "chip": "Apollo 11 landing site_chip_0002.tif",
+     "confidence": 0.9958323576652521,
+     "score": 0.8847877637743381,
+     "anomaly": true
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0007.tif",
+     "confidence": 0.5829076638058048,
+     "score": 0.5614955922588707,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0000.tif",
+     "confidence": 0.5479759769593101,
+     "score": 0.4418377660298089,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0003.tif",
+     "confidence": 0.5436242335239765,
+     "score": 0.5089402985505664,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0006.tif",
+     "confidence": 0.440810899042512,
+     "score": 0.4571354149922365,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0004.tif",
+     "confidence": 0.43094993278776084,
+     "score": 0.48412054777145386,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0005.tif",
+     "confidence": 0.19724315143544272,
+     "score": 0.1830799306267524,
+     "anomaly": false
+    },
+    {
+     "chip": "Apollo 11 landing site_chip_0001.tif",
+     "confidence": 0.0,
+     "score": 0.1401917479932308,
+     "anomaly": false
+    }
+   ]
+  }
+ }
+]

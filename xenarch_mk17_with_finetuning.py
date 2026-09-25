@@ -1439,28 +1439,46 @@ def api_results(job_id):
 # Same method as xenarch_hpo_sim.py, but on the *real* Mk17 VAE:
 #   • sample N configs at random  (a grid would spend equal compute on the bad ones)
 #   • train them all briefly, keep the best 1/ETA, train the survivors longer, repeat
-#   • objective = reconstruction MSE on a held-out slice of natural terrain that was
-#     never trained on — lower means the model rebuilds normal terrain more faithfully
 #
-# NOTE: this optimises faithful terrain reconstruction, NOT lander detection directly.
-# To tune for detection, add a few labelled positive chips and score those instead.
+# Training loss = MSE + β·KL + λ_grad·(gradient mismatch) + λ_con·(local-contrast mismatch),
+# so the VAE learns to rebuild edges and texture instead of a blurry average.
+#
+# Objective = detection AUROC on held-out natural terrain: every val chip is scored clean
+# and with a synthetic artificial object pasted in (rectangle, ring or straight line).
+# Each chip gets four metrics — reconstruction MSE, gradient residual, contrast residual,
+# edge regularity — and the combined score (mean of their z-scores) should rank the
+# injected chips above the clean ones. Held-out MSE is kept as a tiebreak.
+#
+# Synthetic objects are a stand-in: swap in labelled lander chips when they exist.
 
 _FT_SEED = 0
+_FT_METRICS = ("mse", "gradient", "contrast", "edge")
 
 
-def _ft_prepare_chips(image_dir, chip_size, tmp_dir, max_total, val_frac):
+def _ft_device():
+    if torch.cuda.is_available():
+        return "cuda"
+    if getattr(torch.backends, "mps", None) and torch.backends.mps.is_available():
+        return "mps"
+    return "cpu"
+
+
+def _ft_prepare_chips(image_dir, chip_size, tmp_dir, max_total, val_frac, per_image=6):
     exts = (".png", ".jpg", ".jpeg", ".tif", ".tiff")
-    imgs = sorted(p for p in Path(image_dir).iterdir() if p.suffix.lower() in exts)
+    imgs = sorted(p for p in Path(image_dir).rglob("*") if p.suffix.lower() in exts)
     if not imgs:
         raise SystemExit(f"finetune: no images found in '{image_dir}'")
+    rng = np.random.default_rng(_FT_SEED)
+    rng.shuffle(imgs)                            # sample across all sub-folders / missions
     chip_dir = os.path.join(tmp_dir, "ft_chips")
     paths = []
     for im in imgs:
-        for c in extract_chips(str(im), chip_dir, chip_size=chip_size, max_chips=40):
+        if len(paths) >= max_total:
+            break
+        for c in extract_chips(str(im), chip_dir, chip_size=chip_size, max_chips=per_image):
             paths.append(c["chip_path"])
     if len(paths) < 8:
         raise SystemExit(f"finetune: only {len(paths)} chips — need images ≥ {chip_size}px")
-    rng = np.random.default_rng(_FT_SEED)
     rng.shuffle(paths)
     paths = paths[:max_total]
     n_val = max(4, int(len(paths) * val_frac))
@@ -1474,11 +1492,71 @@ def _ft_sample_cfg(rng):
         batch_size    = int(rng.choice([2, 4, 8])),
         warmup_epochs = int(rng.choice([1, 2, 3, 5])),
         beta          = float(10 ** rng.uniform(-4, -2)),         # KL weight 1e-4 .. 1e-2
+        lam_grad      = float(rng.choice([0.0, 0.3, 1.0, 3.0])),  # 0 = plain MSE baseline
+        lam_con       = float(rng.choice([0.0, 0.3, 1.0, 3.0])),
     )
 
 
-def _ft_train_eval(cfg, epochs, train_paths, val_paths, chip_size, device):
-    """Fresh model, train `epochs`, return held-out reconstruction MSE (inf on NaN)."""
+def _ft_diffs(t):
+    return t[..., :, 1:] - t[..., :, :-1], t[..., 1:, :] - t[..., :-1, :]
+
+
+def _ft_grad_mag(t):
+    dx, dy = _ft_diffs(t)
+    return torch.sqrt(F.pad(dx, (0, 1)) ** 2 + F.pad(dy, (0, 0, 0, 1)) ** 2 + 1e-12)
+
+
+def _ft_local_std(t, k=7):
+    mu = F.avg_pool2d(t, k, stride=1, padding=k // 2, count_include_pad=False)
+    sq = F.avg_pool2d(t * t, k, stride=1, padding=k // 2, count_include_pad=False)
+    return torch.sqrt(torch.clamp(sq - mu * mu, min=1e-6))
+
+
+def _ft_loss(recon, x, mu, logvar, cfg, kl_w):
+    loss, mse, kld = stable_vae_loss(recon, x, mu, logvar, beta=cfg["beta"], kl_weight=kl_w)
+    if cfg["lam_grad"]:
+        (rx, ry), (xx, xy) = _ft_diffs(recon), _ft_diffs(x)
+        loss = loss + cfg["lam_grad"] * (torch.sum((rx - xx) ** 2) + torch.sum((ry - xy) ** 2))
+    if cfg["lam_con"]:
+        loss = loss + cfg["lam_con"] * torch.sum((_ft_local_std(recon) - _ft_local_std(x)) ** 2)
+    return loss
+
+
+def _ft_inject(chip, rng):
+    """Paste one sharp-edged artificial object (rectangle / ring / line) into a chip."""
+    h, w = chip.shape
+    out = chip.copy()
+    size = int(rng.integers(14, 40))
+    cy, cx = int(rng.integers(size, h - size)), int(rng.integers(size, w - size))
+    delta = float(rng.uniform(0.15, 0.35) * rng.choice([-1, 1]))
+    yy, xx = np.ogrid[:h, :w]
+    kind = int(rng.integers(3))
+    if kind == 0:                                # rectangle (lander deck, module)
+        mask = (np.abs(yy - cy) <= size // 2) & (np.abs(xx - cx) <= size // 3)
+    elif kind == 1:                              # ring (circular structure)
+        mask = np.abs(np.hypot(yy - cy, xx - cx) - size / 2) <= 1.5
+    else:                                        # straight line (track, cable)
+        th = rng.uniform(0, np.pi)
+        along = (xx - cx) * np.cos(th) + (yy - cy) * np.sin(th)
+        across = -(xx - cx) * np.sin(th) + (yy - cy) * np.cos(th)
+        mask = (np.abs(across) <= 1.0) & (np.abs(along) <= size)
+    out[mask] = np.clip(out[mask] + delta, 0, 1)
+    return out
+
+
+def _ft_build_eval_set(val_paths, n_inject=3):
+    """Clean val chips (label 0) + n_inject synthetic-object copies of each (label 1)."""
+    rng = np.random.default_rng(_FT_SEED + 1)
+    clean = [np.load(p).astype(np.float32) for p in val_paths]
+    chips = clean + [_ft_inject(c, rng) for c in clean for _ in range(n_inject)]
+    labels = np.array([0] * len(clean) + [1] * (len(chips) - len(clean)))
+    scorer = NumpyAnomalyScorer([])
+    edge = np.array([scorer.edge_regularity_score(c) for c in chips])  # image-only metric
+    return np.stack(chips)[:, None], labels, edge
+
+
+def _ft_train(cfg, epochs, train_paths, chip_size, device):
+    """Fresh model trained `epochs` epochs; None if the loss went NaN."""
     torch.manual_seed(_FT_SEED)
     model = StableConvolutionalVAE(latent_dim=cfg["latent_dim"], input_size=chip_size).to(device)
     opt = torch.optim.Adam(model.parameters(), lr=cfg["lr"])
@@ -1491,37 +1569,90 @@ def _ft_train_eval(cfg, epochs, train_paths, val_paths, chip_size, device):
             imgs = imgs.to(device)
             opt.zero_grad()
             recon, mu, logvar = model(imgs)
-            loss, _, _ = stable_vae_loss(recon, imgs, mu, logvar,
-                                         beta=cfg["beta"], kl_weight=kl_w)
+            loss = _ft_loss(recon, imgs, mu, logvar, cfg, kl_w)
             if torch.isnan(loss):
-                return float("inf")
+                return None
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             opt.step()
+    return model
+
+
+def _ft_evaluate(model, eval_set, device, bs=8):
+    """Held-out MSE on the clean chips + detection AUROC per metric and combined."""
+    from sklearn.metrics import roc_auc_score
+    fail = {"val_mse": float("inf"), "auc": 0.0, **{f"auc_{m}": 0.0 for m in _FT_METRICS}}
+    if model is None:
+        return fail
+    chips, labels, edge = eval_set
     model.eval()
-    se, n = 0.0, 0
+    per = {m: [] for m in ("mse", "gradient", "contrast")}
+    sq_err = []
     with torch.no_grad():
-        for imgs, _ in DataLoader(TorchDataset(val_paths), batch_size=cfg["batch_size"]):
-            imgs = imgs.to(device)
-            recon, _, _ = model(imgs)
-            se += torch.sum((imgs - recon) ** 2).item()
-            n  += imgs.numel()
-    return se / max(n, 1)
+        for i in range(0, len(chips), bs):
+            x = torch.from_numpy(chips[i:i + bs]).to(device)
+            mu, _ = model.encode(x)
+            r = model.decode(mu)                           # deterministic reconstruction
+            maps = {"mse":      (x - r) ** 2,
+                    "gradient": (_ft_grad_mag(x) - _ft_grad_mag(r)).abs(),
+                    "contrast": (_ft_local_std(x) - _ft_local_std(r)).abs()}
+            for m, mp in maps.items():
+                # 99th percentile, not the mean: a 20-px object barely moves a 256² mean
+                per[m].append(torch.quantile(mp.flatten(1), 0.99, dim=1).cpu().numpy())
+            sq_err.append(((x - r) ** 2).mean(dim=(1, 2, 3)).cpu().numpy())
+    per = {m: np.concatenate(v) for m, v in per.items()}
+    per["edge"] = edge
+    val_mse = float(np.concatenate(sq_err)[labels == 0].mean())
+    if not np.isfinite(val_mse):
+        return fail
+    clean = labels == 0
+    z = [(per[m] - per[m][clean].mean()) / (per[m][clean].std() + 1e-8) for m in _FT_METRICS]
+    out = {"val_mse": val_mse, "auc": float(roc_auc_score(labels, np.mean(z, axis=0)))}
+    for m in _FT_METRICS:
+        out[f"auc_{m}"] = float(roc_auc_score(labels, per[m]))
+    return out
+
+
+def _ft_rank_key(res):
+    return (-res["auc"], res["val_mse"])          # best detection first, then best recon
+
+
+def _ft_write_dashboard(record, path=Path("dashboard") / "finetune.json"):
+    """Latest tuning run for the Mission Control page (dashboard/index.html, section 04)."""
+    path.parent.mkdir(exist_ok=True)
+    path.write_text(json.dumps(record, indent=1, default=float))
+    print(f"  wrote {path}")
 
 
 def run_finetuning(image_dir="training data", chip_size=256, n_configs=9, eta=3,
                    rungs=(1, 3, 8), confirm=10, max_total=150, val_frac=0.15,
-                   out_csv="results/mk17_finetune.csv"):
+                   out_csv="results/mk17_finetune.csv",
+                   out_model="data/models/mk17_finetuned.pt", live=None):
     if not HAS_TORCH:
         raise SystemExit("finetune: PyTorch is required")
     import csv
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = _ft_device()
     t0 = time.time()
     Path("results").mkdir(exist_ok=True)
+    knobs = ("latent_dim", "lr", "batch_size", "warmup_epochs", "beta", "lam_grad", "lam_con")
+
+    def fmt(c):
+        return (f"latent={c['latent_dim']:>2} lr={c['lr']:.2e} bs={c['batch_size']} "
+                f"wu={c['warmup_epochs']} beta={c['beta']:.1e} "
+                f"λg={c['lam_grad']:g} λc={c['lam_con']:g}")
+
+    def fmt_res(r):
+        return (f"AUROC {r['auc']:.3f} (mse {r['auc_mse']:.2f} grad {r['auc_gradient']:.2f} "
+                f"con {r['auc_contrast']:.2f} edge {r['auc_edge']:.2f}) | val_mse {r['val_mse']:.5f}")
 
     with tempfile.TemporaryDirectory() as tmp:
         train_p, val_p = _ft_prepare_chips(image_dir, chip_size, tmp, max_total, val_frac)
-        logger.info(f"finetune: {len(train_p)} train / {len(val_p)} val chips | device={device}")
+        eval_set = _ft_build_eval_set(val_p)
+        if live:
+            live.samples([np.load(q) for q in train_p[:12]])
+            live.log(f"{len(train_p)} train / {len(val_p)} val chips · {n_configs} configs · rungs {list(rungs)}")
+        logger.info(f"finetune: {len(train_p)} train / {len(val_p)} val chips "
+                    f"(+{int(eval_set[1].sum())} with synthetic objects) | device={device}")
         logger.info(f"random search + successive halving | {n_configs} configs, rungs {list(rungs)}")
 
         rng = np.random.default_rng(_FT_SEED)
@@ -1530,30 +1661,43 @@ def run_finetuning(image_dir="training data", chip_size=256, n_configs=9, eta=3,
 
         for r, ep in enumerate(rungs):
             scored = []
-            for idx in alive:
-                vl = _ft_train_eval(configs[idx], ep, train_p, val_p, chip_size, device)
-                scored.append((vl, idx))
-                history.append({"rung": r, "epochs": ep, "val_mse": vl, **configs[idx]})
-                c = configs[idx]
-                logger.info(f"  r{r} cfg{idx:2d} [{ep}ep] latent={c['latent_dim']:>2} "
-                            f"lr={c['lr']:.2e} bs={c['batch_size']} wu={c['warmup_epochs']} "
-                            f"beta={c['beta']:.1e} -> val_mse {vl:.6f}")
-            scored.sort()
+            if live:
+                live.step(f"Rung {r} · {ep} epochs")
+            for k, idx in enumerate(alive):
+                if live:
+                    live.progress(k, len(alive), "configs")
+                res = _ft_evaluate(_ft_train(configs[idx], ep, train_p, chip_size, device),
+                                   eval_set, device)
+                scored.append((_ft_rank_key(res), idx, res))
+                history.append({"rung": r, "epochs": ep, **res, **configs[idx]})
+                logger.info(f"  r{r} cfg{idx:2d} [{ep}ep] {fmt(configs[idx])} -> {fmt_res(res)}")
+                if live:
+                    live.metric(rung=r, cfg=idx, epochs=ep, auroc=res["auc"], val_mse=res["val_mse"])
+            scored.sort(key=lambda s: s[0])
             keep = max(1, len(alive) // eta)
-            alive = [i for _, i in scored[:keep]]
+            alive = [i for _, i, _ in scored[:keep]]
             logger.info(f"rung {r}: {len(scored)} configs @ {ep}ep -> keep {keep} "
-                        f"(best {scored[0][0]:.6f})")
+                        f"(best AUROC {scored[0][2]['auc']:.3f})")
 
         best = configs[alive[0]]
-        best_vl = _ft_train_eval(best, confirm, train_p, val_p, chip_size, device)
+        if live:
+            live.step(f"Confirming best config · {confirm} epochs")
+        best_model = _ft_train(best, confirm, train_p, chip_size, device)
+        best_res = _ft_evaluate(best_model, eval_set, device)
+        if best_model is not None:
+            Path(out_model).parent.mkdir(parents=True, exist_ok=True)
+            torch.save({"config": best, "result": best_res, "chip_size": chip_size,
+                        "state_dict": best_model.state_dict()}, out_model)
         dt = time.time() - t0
 
-        print("\n" + "=" * 66)
+        print("\n" + "=" * 70)
         print("BEST CONFIG   (drop into config={...} of run_analysis / the web form)")
-        print("=" * 66)
-        for k in ("latent_dim", "lr", "batch_size", "warmup_epochs", "beta"):
+        print("=" * 70)
+        for k in knobs:
             print(f"  {k:<14}: {best[k]}")
-        print(f"  val_mse @{confirm:<3}  : {best_vl:.6f}")
+        print(f"  @{confirm} epochs    : {fmt_res(best_res)}")
+        if best_model is not None:
+            print(f"  weights       : {out_model}")
         spent = sum(len([h for h in history if h['rung'] == r]) * ep
                     for r, ep in enumerate(rungs))
         print(f"\n  epoch-units spent : {spent}   (wall {dt/60:.1f} min)")
@@ -1562,21 +1706,34 @@ def run_finetuning(image_dir="training data", chip_size=256, n_configs=9, eta=3,
 
         deepest = {}
         for h in history:
-            k = (h['latent_dim'], h['lr'], h['batch_size'], h['warmup_epochs'], h['beta'])
+            k = tuple(h[n] for n in knobs)
             if k not in deepest or h['rung'] >= deepest[k]['rung']:
                 deepest[k] = h
-        board = sorted(deepest.values(), key=lambda h: h['val_mse'])
-        print("\n  rank  val_mse    latent  lr        bs  wu  beta      rung")
+        board = sorted(deepest.values(), key=_ft_rank_key)
+        print("\n  rank  AUROC  mse   grad  con   edge  val_mse   latent lr       bs wu "
+              "beta     λg  λc  rung")
         for i, h in enumerate(board, 1):
-            print(f"  {i:>3}   {h['val_mse']:.6f}  {h['latent_dim']:>5}  {h['lr']:.1e}  "
-                  f"{h['batch_size']:>2}  {h['warmup_epochs']:>2}  {h['beta']:.1e}  {h['rung']}")
+            print(f"  {i:>3}   {h['auc']:.3f}  {h['auc_mse']:.2f}  {h['auc_gradient']:.2f}  "
+                  f"{h['auc_contrast']:.2f}  {h['auc_edge']:.2f}  {h['val_mse']:.5f}  "
+                  f"{h['latent_dim']:>5}  {h['lr']:.1e}  {h['batch_size']:>2} "
+                  f"{h['warmup_epochs']:>2} {h['beta']:.1e}  {h['lam_grad']:<3g} "
+                  f"{h['lam_con']:<3g} {h['rung']}")
 
+        fields = ["rung", "epochs", "auc", *(f"auc_{m}" for m in _FT_METRICS), "val_mse", *knobs]
         with open(out_csv, "w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=["rung", "epochs", "val_mse", "latent_dim",
-                                              "lr", "batch_size", "warmup_epochs", "beta"])
+            w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(history)
         print(f"\n  wrote {out_csv}")
+
+        _ft_write_dashboard({
+            "id": time.strftime("%Y-%m-%d %H:%M"), "script": Path(__file__).name,
+            "data": str(image_dir), "device": device, "minutes": round(dt / 60, 1),
+            "train_chips": len(train_p), "val_chips": len(val_p),
+            "injected": int(eval_set[1].sum()), "rungs": list(rungs), "confirm": confirm,
+            "configs": configs, "best": {"cfg": alive[0], "config": best, "result": best_res},
+            "history": [{"cfg": configs.index({k: h[k] for k in knobs}), **h} for h in history],
+        })
 
         try:
             import matplotlib
@@ -1585,15 +1742,14 @@ def run_finetuning(image_dir="training data", chip_size=256, n_configs=9, eta=3,
             fig, ax = plt.subplots(figsize=(7, 4.5))
             for r in range(len(rungs)):
                 pts = [h for h in history if h["rung"] == r]
-                ax.scatter([p["lr"] for p in pts], [p["val_mse"] for p in pts],
+                ax.scatter([p["lr"] for p in pts], [p["auc"] for p in pts],
                            s=[16 + p["latent_dim"] for p in pts], alpha=.7,
                            label=f"rung {r} ({rungs[r]} ep)")
-            ax.scatter([best["lr"]], [best_vl], marker="*", s=340, c="#c0392b",
+            ax.scatter([best["lr"]], [best_res["auc"]], marker="*", s=340, c="#c0392b",
                        zorder=5, label="best")
             ax.set_xscale("log")
-            ax.set_yscale("log")
             ax.set_xlabel("learning rate")
-            ax.set_ylabel("held-out reconstruction MSE")
+            ax.set_ylabel("detection AUROC (synthetic objects)")
             ax.set_title("Mk17 finetuning — successive halving (point size = latent dim)")
             ax.legend(fontsize=8)
             ax.grid(alpha=.25, which="both")
@@ -1613,18 +1769,31 @@ def _cli_arg(flag, default=None, cast=str):
     return cast(sys.argv[sys.argv.index(flag) + 1]) if flag in sys.argv else default
 
 
+def _tune_main(live=None):
+    run_finetuning(
+        image_dir = _cli_arg("--data", "training data"),
+        chip_size = _cli_arg("--chip-size", 256, int),
+        n_configs = _cli_arg("--configs", 9, int),
+        rungs     = tuple(int(x) for x in _cli_arg("--rungs", "1,3,8").split(",")),
+        confirm   = _cli_arg("--confirm", 10, int),
+        max_total = _cli_arg("--max-chips", 150, int),
+        live      = live,
+    )
+
+
 if __name__ == "__main__":
     import sys
 
     if "--tune" in sys.argv or "--finetune" in sys.argv:
-        run_finetuning(
-            image_dir = _cli_arg("--data", "training data"),
-            chip_size = _cli_arg("--chip-size", 256, int),
-            n_configs = _cli_arg("--configs", 9, int),
-            rungs     = tuple(int(x) for x in _cli_arg("--rungs", "1,3,8").split(",")),
-            confirm   = _cli_arg("--confirm", 10, int),
-            max_total = _cli_arg("--max-chips", 150, int),
-        )
+        from xenarch_live import LiveRun
+        live = LiveRun(__file__, _cli_arg("--data", "training data"),
+                       [f"Rung {r}" for r in range(len(_cli_arg("--rungs", "1,3,8").split(",")))] + ["Confirming best config"])
+        try:
+            _tune_main(live)
+            live.done()
+        except BaseException as e:
+            live.fail(e)
+            raise
         sys.exit(0)
 
     port = int(os.environ.get("PORT", 5000))
