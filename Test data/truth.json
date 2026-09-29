@@ -1,0 +1,7 @@
+{
+  "_about": "Known hardware in the test images, as pixel boxes [x0, y0, x1, y1]. Mk18 reports how far above the most anomalous natural spot each one scores (scene z). Boxes read off the image by eye.",
+  "Apollo 11 landing site": {
+    "lunar module (with shadow)": [425, 192, 537, 250],
+    "EASEP instruments (laser reflector, seismometer)": [495, 415, 515, 442]
+  }
+}

@@ -15,8 +15,12 @@ What changed from Mk15:
 
 Usage:
     python xenarch_mk18_script.py [--data DIR] [--test DIR] [--bank 30000] [--per-chip 24] [--hand 0]
-                                  [--scene-z 6] [--reuse]
+                                  [--scene-z 6] [--reuse] [--backbone PATH]
 
+    --data    one image folder, or several separated by commas (searched recursively). Each folder is split
+              on its own, by source image (tiles of one image/observation never straddle memory and validation);
+              AUROC is reported per folder, the first folder's being the headline number.
+    --backbone ResNet18 weights fine-tuned by xenarch_mk18_finetune.py (default: ImageNet)
     --reuse   rescan with the memory bank saved in data/models (skips building it)
     --scene-z flag a hotspot when it is this many robust σ above the rest of its own image
 
@@ -25,6 +29,7 @@ Usage:
 """
 
 import json
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -101,6 +106,30 @@ def natural_chips(paths, on_image=None):
                 yield normalize(c)
 
 
+SOURCE_SUFFIX = re.compile(r"(_(RED|IR|BG)\d+_\d)$|^(M\d+[LRC][CE])_.*$")
+
+
+def source_of(path):
+    """Id of the image a file was cut from: tiles of one HiRISE observation (ESP_…_RED5_0) or of one
+    LROC product (M…LC_target_k) share it, so a split by source keeps neighbours on one side."""
+    stem = re.sub(r"_browse$", "", Path(path).stem)
+    m = SOURCE_SUFFIX.search(stem)
+    if not m:
+        return stem
+    return m.group(3) if m.group(3) else stem[:m.start()]
+
+
+def split_by_source(imgs, frac, rng):
+    """(validation, memory) lists with whole sources on one side; about `frac` of the sources validate."""
+    groups = {}
+    for p in imgs:
+        groups.setdefault(source_of(p), []).append(p)
+    keys = sorted(groups)
+    rng.shuffle(keys)
+    n_val = max(1, int(round(len(keys) * frac)))
+    return ([p for k in keys[:n_val] for p in groups[k]], [p for k in keys[n_val:] for p in groups[k]])
+
+
 # ============================================
 # 2. SYNTHETIC OBJECTS (validation only)
 # ============================================
@@ -171,12 +200,16 @@ def handcrafted(x):
 class PatchCoreScorer:
     """Memory of natural-terrain patch features; anomaly = distance to the nearest known patch."""
 
-    def __init__(self, device, bank_size=30000, per_chip=24, proj_dim=128, hand_weight=0.0):
+    def __init__(self, device, bank_size=30000, per_chip=24, proj_dim=128, hand_weight=0.0, backbone=None):
         self.device, self.bank_size, self.per_chip, self.proj_dim = device, bank_size, per_chip, proj_dim
         self.hand_weight = hand_weight          # 0 = CNN features only
         self.hand_mu = self.hand_sd = None
         weights = torchvision.models.ResNet18_Weights.IMAGENET1K_V1
-        self.net = torchvision.models.resnet18(weights=weights).to(device).eval()
+        self.net = torchvision.models.resnet18(weights=weights)
+        if backbone:                            # fine-tuned on natural planetary chips (xenarch_mk18_finetune.py)
+            state = torch.load(backbone, map_location="cpu", weights_only=False)
+            self.net.load_state_dict(state.get("resnet18", state), strict=False)
+        self.net = self.net.to(device).eval()
         self.mean = torch.tensor([0.485, 0.456, 0.406], device=device).view(1, 3, 1, 1)
         self.std = torch.tensor([0.229, 0.224, 0.225], device=device).view(1, 3, 1, 1)
         self.bank = None
@@ -235,7 +268,7 @@ class PatchCoreScorer:
         if self.live:
             self.live.step("Building memory bank")
             self.live.log(f"{n_chips} chips -> {len(pool):,} candidate patches")
-        self.bank = self._coreset(pool.to(self.device), g)
+        self.bank = self._coreset(pool, g)
         return n_chips
 
     def _sample(self, buf, g):
@@ -248,18 +281,20 @@ class PatchCoreScorer:
     def _coreset(self, pool, g):
         """Greedy k-center on a random projection: keeps rare terrain types, not just the common ones."""
         if len(pool) <= self.bank_size:
-            return pool
+            return pool.to(self.device)
         proj = torch.randn(pool.shape[1], self.proj_dim, generator=g).to(self.device) / self.proj_dim ** 0.5
-        p = pool @ proj
+        # the full pool stays in CPU memory; only its 128-d projection goes to the GPU (unified memory is tight)
+        p = torch.cat([pool[i:i + 65536].to(self.device) @ proj for i in range(0, len(pool), 65536)])
+        sq = (p * p).sum(1)                     # squared distances via |a|² - 2a·b + |b|²: no (N, d) temporary
         sel = [torch.tensor(0, device=self.device)]
-        mind = torch.linalg.norm(p - p[0], dim=1)
+        mind = sq - 2 * (p @ p[0]) + sq[0]
         for k in range(self.bank_size - 1):
             if self.live and k % 500 == 0:
                 self.live.progress(k, self.bank_size, "patches kept")
             i = torch.argmax(mind)
             sel.append(i)
-            mind = torch.minimum(mind, torch.linalg.norm(p - p[i], dim=1))
-        return pool[torch.stack(sel)]
+            mind = torch.minimum(mind, sq - 2 * (p @ p[i]) + sq[i])
+        return pool[torch.stack(sel).cpu()].to(self.device)
 
     @torch.no_grad()
     def score_maps(self, chips, batch=16, bank=None):
@@ -381,6 +416,8 @@ def detect(scorer, image_path, clean_sorted, out_png, scene_z=6.0, n_peaks=15, s
                      "anomaly": bool(z[cy, cx] >= scene_z), "hotspot": [cy, cx],
                      "why": _why(scorer, arr, cy, cx)})
 
+    check = hardware_check(image_path, z, rows)
+
     smooth = F.avg_pool2d(torch.from_numpy(np.where(valid, z, 0).astype(np.float32))[None, None], 9, stride=1,
                           padding=4, count_include_pad=False)[0, 0].numpy()
     alpha = np.clip((smooth - 2) / (scene_z - 2), 0, 1)          # 2σ: starts to glow · scene_z σ: full
@@ -396,7 +433,33 @@ def detect(scorer, image_path, clean_sorted, out_png, scene_z=6.0, n_peaks=15, s
     out_png.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_png, dpi=100)
     plt.close(fig)
-    return rows, {"image": Path(image_path).name, "median": med, "mad": mad, "tiles": len(tiles)}
+    return rows, {"image": Path(image_path).name, "median": med, "mad": mad, "tiles": len(tiles),
+                  **({"hardware_check": check} if check else {})}
+
+
+def hardware_check(image_path, z, rows, pad=24):
+    """Known hardware (Test data/truth.json): each object's peak scene z, its hotspot rank, and its margin over
+    the most anomalous natural spot (everything outside the boxes padded by `pad` px). margin > 0: the
+    object is hotter than any natural feature in the scene."""
+    truth_path = Path(image_path).parent / "truth.json"
+    if not truth_path.exists():
+        return None
+    boxes = json.loads(truth_path.read_text()).get(Path(image_path).stem)
+    if not boxes:
+        return None
+    natural = np.isfinite(z).copy()
+    for x0, y0, x1, y1 in boxes.values():
+        natural[max(0, y0 - pad):y1 + pad, max(0, x0 - pad):x1 + pad] = False
+    top_natural = float(z[natural].max())
+    out = {"top_natural_z": top_natural, "objects": {}}
+    for name, (x0, y0, x1, y1) in boxes.items():
+        peak = float(np.nanmax(np.where(np.isfinite(z[y0:y1, x0:x1]), z[y0:y1, x0:x1], np.nan)))
+        rank = next((k for k, r in enumerate(rows, 1)
+                     if x0 - pad <= r["hotspot"][1] <= x1 + pad and y0 - pad <= r["hotspot"][0] <= y1 + pad), None)
+        out["objects"][name] = {"peak_z": peak, "margin": peak - top_natural, "rank": rank}
+        logger.info(f"   CHECK {name}: {peak:.1f}σ · margin over top natural spot {peak - top_natural:+.1f}σ · "
+                    f"hotspot rank {rank if rank else '> ' + str(len(rows))}")
+    return out
 
 
 # ============================================
@@ -423,7 +486,8 @@ def main(live=None):
     started = datetime.now()
     config = {
         "chip_size": CHIP,
-        "backbone": "resnet18 · layer2+layer3",
+        "backbone": "resnet18 · layer2+layer3" + (" · fine-tuned" if "--backbone" in sys.argv else ""),
+        "backbone_weights": _arg("--backbone", None),
         "bank_size": _arg("--bank", 30000, int),
         "per_chip": _arg("--per-chip", 24, int),
         "scene_z": _arg("--scene-z", 6.0, float),       # flag hotspots this many σ above their own scene
@@ -438,27 +502,33 @@ def main(live=None):
     logger.info("=" * 70)
     logger.info(f"Configuration: {json.dumps(config, indent=2)}")
 
-    # 1. Split by image, so validation chips come from images the memory never saw
-    imgs = sorted(p for p in Path(train_dir).rglob("*") if p.suffix.lower() in EXTS)
-    if not imgs:
-        raise SystemExit(f"Mk18: no images in '{train_dir}'")
-    rng = np.random.default_rng(SEED)
-    rng.shuffle(imgs)
-    n_val = max(1, int(len(imgs) * config["val_frac"]))
-    val_imgs, train_imgs = imgs[:n_val], imgs[n_val:]
-    val_chips = list(natural_chips(val_imgs))
-    rng.shuffle(val_chips)
-    val_chips = val_chips[:config["val_chips"]]
+    # 1. Split each folder by source image, so validation chips come from images the memory never saw
+    folders = [d for d in train_dir.split(",") if d]
+    train_imgs, val_sets, n_val_imgs = [], {}, 0
+    for d in folders:
+        imgs = sorted(p for p in Path(d).rglob("*") if p.suffix.lower() in EXTS)
+        if not imgs:
+            raise SystemExit(f"Mk18: no images in '{d}'")
+        rng = np.random.default_rng(SEED)
+        val_d, train_d = split_by_source(imgs, config["val_frac"], rng)
+        chips = list(natural_chips(val_d))
+        rng.shuffle(chips)
+        val_sets[Path(d).name] = chips[:config["val_chips"]]
+        train_imgs += train_d
+        n_val_imgs += len(val_d)
+        logger.info(f"   {d}: {len(train_d)} memory images · {len(val_d)} validation images "
+                    f"({len(val_sets[Path(d).name])} chips)")
+    val_chips = val_sets[Path(folders[0]).name]
     if live:
         live.samples(val_chips[:12])
-        live.log(f"{len(train_imgs)} memory images · {len(val_imgs)} validation images · {len(val_chips)} validation chips")
-    logger.info(f"\n[STEP 1/4] {len(train_imgs)} memory images · {len(val_imgs)} validation images "
-                f"({len(val_chips)} chips)")
+        live.log(f"{len(train_imgs)} memory images · {n_val_imgs} validation images · "
+                 + " · ".join(f"{k} {len(v)} chips" for k, v in val_sets.items()))
+    logger.info(f"\n[STEP 1/4] {len(train_imgs)} memory images · {n_val_imgs} validation images")
 
     # 2. Memory bank of natural terrain
     logger.info(f"\n[STEP 2/4] Building the memory bank on {config['device']}...")
     scorer = PatchCoreScorer(config["device"], config["bank_size"], config["per_chip"],
-                             hand_weight=config["hand_weight"])
+                             hand_weight=config["hand_weight"], backbone=config["backbone_weights"])
     scorer.live = live
     bank_path = Path("data") / "models" / "xenarch_mk18_bank.pt"
     bank_path.parent.mkdir(parents=True, exist_ok=True)
@@ -480,6 +550,12 @@ def main(live=None):
     if live:
         live.step("Validation")
     val, clean_sorted = validate(scorer, val_chips, live=live)
+    val["per_set"] = {}
+    for name, chips in val_sets.items():
+        sets = _score_sets(scorer, chips)
+        val["per_set"][name] = {"chips": len(chips), **{f"auroc_{k}": _auroc(sets, k) for k, _ in KINDS}}
+        logger.info(f"   {name:<20} AUROC subtle {val['per_set'][name]['auroc_subtle']:.3f} · "
+                    f"obvious {val['per_set'][name]['auroc_obvious']:.3f}  ({len(chips)} chips)")
     torch.save({"train_chips": n_train, "pool_patches": scorer.pool_size,
                 "bank": scorer.bank.cpu(), "hand_mu": scorer.hand_mu.cpu(), "hand_sd": scorer.hand_sd.cpu(),
                 "config": config, "validation": val,

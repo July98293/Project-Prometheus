@@ -1031,5 +1031,859 @@
     }
    ]
   }
+ },
+ {
+  "kind": "patchcore",
+  "id": "2026-09-29 13:04",
+  "script": "xenarch_mk18_script.py",
+  "data": "data/xenarch-imagery",
+  "train_chips": 8228,
+  "test_chips": 36,
+  "minutes": 10.4,
+  "config": {
+   "chip_size": 256,
+   "backbone": "resnet18 \u00b7 layer2+layer3",
+   "backbone_weights": null,
+   "bank_size": 30000,
+   "per_chip": 24,
+   "scene_z": 6.0,
+   "hand_weight": 0.0,
+   "val_frac": 0.1,
+   "val_chips": 150,
+   "device": "mps"
+  },
+  "epochs": [],
+  "patchcore": {
+   "threshold": 3.5349104404449463,
+   "val_chips": 150,
+   "auroc_subtle": 0.7111777777777779,
+   "detect_subtle": 0.23333333333333334,
+   "locate_subtle": 0.49333333333333335,
+   "auroc_obvious": 0.9680888888888889,
+   "detect_obvious": 0.8866666666666667,
+   "locate_obvious": 0.96,
+   "curve": [
+    {
+     "memory": 1000,
+     "auroc_subtle": 0.6986444444444444,
+     "auroc_obvious": 0.9734222222222222
+    },
+    {
+     "memory": 2000,
+     "auroc_subtle": 0.7032444444444446,
+     "auroc_obvious": 0.9757333333333333
+    },
+    {
+     "memory": 5000,
+     "auroc_subtle": 0.7123777777777778,
+     "auroc_obvious": 0.9762888888888889
+    },
+    {
+     "memory": 10000,
+     "auroc_subtle": 0.7140222222222221,
+     "auroc_obvious": 0.9761777777777778
+    },
+    {
+     "memory": 20000,
+     "auroc_subtle": 0.7127777777777778,
+     "auroc_obvious": 0.9725777777777778
+    },
+    {
+     "memory": 30000,
+     "auroc_subtle": 0.7111777777777779,
+     "auroc_obvious": 0.9680888888888889
+    }
+   ],
+   "per_set": {
+    "xenarch-imagery": {
+     "chips": 150,
+     "auroc_subtle": 0.7111777777777779,
+     "auroc_obvious": 0.9680888888888889
+    }
+   },
+   "bank_size": 30000,
+   "pool_patches": 197472,
+   "scene_z": 6.0,
+   "scenes": [
+    {
+     "image": "Apollo 11 landing site.png",
+     "median": 2.429805278778076,
+     "mad": 0.1600162337882614,
+     "tiles": 36,
+     "hardware_check": {
+      "top_natural_z": 6.62988805770874,
+      "objects": {
+       "lunar module (with shadow)": {
+        "peak_z": 6.774879455566406,
+        "margin": 0.14499139785766602,
+        "rank": 1
+       },
+       "EASEP instruments (laser reflector, seismometer)": {
+        "peak_z": 4.6108527183532715,
+        "margin": -2.0190353393554688,
+        "rank": 14
+       }
+      }
+     }
+    }
+   ],
+   "reused_bank": false
+  },
+  "heatmaps": [
+   "heatmaps/mk18_20260929_130420_Apollo_11_landing_site.png"
+  ],
+  "performance": {
+   "anomalies": 4,
+   "high_confidence": 15,
+   "mean_confidence": 0.8733333333333334,
+   "top": [
+    {
+     "chip": "Apollo 11 landing site \u00b7 y224 x504",
+     "score": 3.5138959884643555,
+     "scene_z": 6.774879455566406,
+     "confidence": 0.9466666666666667,
+     "anomaly": true,
+     "hotspot": [
+      224,
+      504
+     ],
+     "why": {
+      "gradient": 0.8252712488174438,
+      "edge_sharpness": 1.6241947412490845,
+      "contrast": 1.8173997402191162,
+      "edge_straightness": 1.406885027885437
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y96 x224",
+     "score": 3.490694999694824,
+     "scene_z": 6.62988805770874,
+     "confidence": 0.94,
+     "anomaly": true,
+     "hotspot": [
+      96,
+      224
+     ],
+     "why": {
+      "gradient": 0.3349335491657257,
+      "edge_sharpness": 0.5355474948883057,
+      "contrast": 1.0580211877822876,
+      "edge_straightness": 2.2509074211120605
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y319 x1068",
+     "score": 3.457099199295044,
+     "scene_z": 6.41993522644043,
+     "confidence": 0.9266666666666666,
+     "anomaly": true,
+     "hotspot": [
+      319,
+      1068
+     ],
+     "why": {
+      "gradient": -0.07441142201423645,
+      "edge_sharpness": -0.14429637789726257,
+      "contrast": 0.21227718889713287,
+      "edge_straightness": 1.1215301752090454
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y120 x872",
+     "score": 3.4006569385528564,
+     "scene_z": 6.067207336425781,
+     "confidence": 0.9066666666666666,
+     "anomaly": true,
+     "hotspot": [
+      120,
+      872
+     ],
+     "why": {
+      "gradient": 0.3676895499229431,
+      "edge_sharpness": 0.25990864634513855,
+      "contrast": 0.8549603819847107,
+      "edge_straightness": 1.6054211854934692
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y136 x112",
+     "score": 3.365860939025879,
+     "scene_z": 5.849754333496094,
+     "confidence": 0.8933333333333333,
+     "anomaly": false,
+     "hotspot": [
+      136,
+      112
+     ],
+     "why": {
+      "gradient": -0.03895182907581329,
+      "edge_sharpness": 0.004620521329343319,
+      "contrast": 0.3284095227718353,
+      "edge_straightness": 2.107347011566162
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y527 x592",
+     "score": 3.3603298664093018,
+     "scene_z": 5.815188407897949,
+     "confidence": 0.8933333333333333,
+     "anomaly": false,
+     "hotspot": [
+      527,
+      592
+     ],
+     "why": {
+      "gradient": 0.7218398451805115,
+      "edge_sharpness": 1.0084176063537598,
+      "contrast": 1.054871678352356,
+      "edge_straightness": 1.1375645399093628
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y232 x656",
+     "score": 3.3400700092315674,
+     "scene_z": 5.688577175140381,
+     "confidence": 0.8933333333333333,
+     "anomaly": false,
+     "hotspot": [
+      232,
+      656
+     ],
+     "why": {
+      "gradient": 0.22453008592128754,
+      "edge_sharpness": 0.14455002546310425,
+      "contrast": 0.8116423487663269,
+      "edge_straightness": 1.8699424266815186
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y232 x736",
+     "score": 3.2710459232330322,
+     "scene_z": 5.257220268249512,
+     "confidence": 0.8733333333333333,
+     "anomaly": false,
+     "hotspot": [
+      232,
+      736
+     ],
+     "why": {
+      "gradient": 0.4691075086593628,
+      "edge_sharpness": 0.6864352226257324,
+      "contrast": 0.8520975112915039,
+      "edge_straightness": 0.29373061656951904
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y415 x688",
+     "score": 3.22172212600708,
+     "scene_z": 4.948977947235107,
+     "confidence": 0.8466666666666667,
+     "anomaly": false,
+     "hotspot": [
+      415,
+      688
+     ],
+     "why": {
+      "gradient": 0.8780422806739807,
+      "edge_sharpness": 0.8626672029495239,
+      "contrast": 1.7661314010620117,
+      "edge_straightness": 2.1276683807373047
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y248 x920",
+     "score": 3.215719699859619,
+     "scene_z": 4.911466598510742,
+     "confidence": 0.8466666666666667,
+     "anomaly": false,
+     "hotspot": [
+      248,
+      920
+     ],
+     "why": {
+      "gradient": 0.4414485991001129,
+      "edge_sharpness": 0.5159049034118652,
+      "contrast": 0.8465262651443481,
+      "edge_straightness": 1.9949402809143066
+     }
+    }
+   ]
+  }
+ },
+ {
+  "kind": "patchcore",
+  "id": "2026-09-29 13:14",
+  "script": "xenarch_mk18_script.py",
+  "data": "data/xenarch-imagery,data/lroc-nac-set,data/hirise-set",
+  "train_chips": 17338,
+  "test_chips": 36,
+  "minutes": 54.8,
+  "config": {
+   "chip_size": 256,
+   "backbone": "resnet18 \u00b7 layer2+layer3",
+   "backbone_weights": null,
+   "bank_size": 30000,
+   "per_chip": 24,
+   "scene_z": 6.0,
+   "hand_weight": 0.0,
+   "val_frac": 0.1,
+   "val_chips": 150,
+   "device": "mps"
+  },
+  "epochs": [],
+  "patchcore": {
+   "threshold": 3.4748079776763916,
+   "val_chips": 150,
+   "auroc_subtle": 0.7155777777777779,
+   "detect_subtle": 0.26,
+   "locate_subtle": 0.5266666666666666,
+   "auroc_obvious": 0.9734888888888888,
+   "detect_obvious": 0.9133333333333333,
+   "locate_obvious": 0.96,
+   "curve": [
+    {
+     "memory": 1000,
+     "auroc_subtle": 0.7146444444444444,
+     "auroc_obvious": 0.9721777777777778
+    },
+    {
+     "memory": 2000,
+     "auroc_subtle": 0.7164666666666667,
+     "auroc_obvious": 0.9739777777777778
+    },
+    {
+     "memory": 5000,
+     "auroc_subtle": 0.7127111111111111,
+     "auroc_obvious": 0.9782444444444444
+    },
+    {
+     "memory": 10000,
+     "auroc_subtle": 0.7160888888888889,
+     "auroc_obvious": 0.9746444444444443
+    },
+    {
+     "memory": 20000,
+     "auroc_subtle": 0.7139555555555556,
+     "auroc_obvious": 0.9736444444444445
+    },
+    {
+     "memory": 30000,
+     "auroc_subtle": 0.7155777777777779,
+     "auroc_obvious": 0.9734888888888888
+    }
+   ],
+   "per_set": {
+    "xenarch-imagery": {
+     "chips": 150,
+     "auroc_subtle": 0.7155777777777779,
+     "auroc_obvious": 0.9734888888888888
+    },
+    "lroc-nac-set": {
+     "chips": 150,
+     "auroc_subtle": 0.6199111111111112,
+     "auroc_obvious": 0.9888444444444445
+    },
+    "hirise-set": {
+     "chips": 150,
+     "auroc_subtle": 0.5463333333333333,
+     "auroc_obvious": 0.9844222222222223
+    }
+   },
+   "bank_size": 30000,
+   "pool_patches": 416112,
+   "scene_z": 6.0,
+   "scenes": [
+    {
+     "image": "Apollo 11 landing site.png",
+     "median": 2.545806884765625,
+     "mad": 0.14615030096603393,
+     "tiles": 36,
+     "hardware_check": {
+      "top_natural_z": 5.573186874389648,
+      "objects": {
+       "lunar module (with shadow)": {
+        "peak_z": 5.744935989379883,
+        "margin": 0.17174911499023438,
+        "rank": 1
+       },
+       "EASEP instruments (laser reflector, seismometer)": {
+        "peak_z": 4.198464870452881,
+        "margin": -1.3747220039367676,
+        "rank": 13
+       }
+      }
+     }
+    }
+   ],
+   "reused_bank": false
+  },
+  "heatmaps": [
+   "heatmaps/mk18_20260929_131449_Apollo_11_landing_site.png"
+  ],
+  "performance": {
+   "anomalies": 0,
+   "high_confidence": 15,
+   "mean_confidence": 0.8666666666666665,
+   "top": [
+    {
+     "chip": "Apollo 11 landing site \u00b7 y224 x504",
+     "score": 3.3854310512542725,
+     "scene_z": 5.744935989379883,
+     "confidence": 0.9133333333333333,
+     "anomaly": false,
+     "hotspot": [
+      224,
+      504
+     ],
+     "why": {
+      "gradient": 0.6553153991699219,
+      "edge_sharpness": 1.5281554460525513,
+      "contrast": 1.7233502864837646,
+      "edge_straightness": 1.6120582818984985
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y527 x592",
+     "score": 3.3603298664093018,
+     "scene_z": 5.573186874389648,
+     "confidence": 0.9133333333333333,
+     "anomaly": false,
+     "hotspot": [
+      527,
+      592
+     ],
+     "why": {
+      "gradient": 0.5432218909263611,
+      "edge_sharpness": 0.8548018932342529,
+      "contrast": 0.8909557461738586,
+      "edge_straightness": 1.3271288871765137
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y319 x1068",
+     "score": 3.338080883026123,
+     "scene_z": 5.420953273773193,
+     "confidence": 0.9066666666666666,
+     "anomaly": false,
+     "hotspot": [
+      319,
+      1068
+     ],
+     "why": {
+      "gradient": -0.31971296668052673,
+      "edge_sharpness": -0.4056929647922516,
+      "contrast": -0.02884140983223915,
+      "edge_straightness": 1.3101651668548584
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y120 x872",
+     "score": 3.33731746673584,
+     "scene_z": 5.415729999542236,
+     "confidence": 0.9066666666666666,
+     "anomaly": false,
+     "hotspot": [
+      120,
+      872
+     ],
+     "why": {
+      "gradient": 0.15941259264945984,
+      "edge_sharpness": 0.03630596026778221,
+      "contrast": 0.6727275252342224,
+      "edge_straightness": 1.8221008777618408
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y232 x656",
+     "score": 3.2956509590148926,
+     "scene_z": 5.130636215209961,
+     "confidence": 0.9,
+     "anomaly": false,
+     "hotspot": [
+      232,
+      656
+     ],
+     "why": {
+      "gradient": 0.004263966344296932,
+      "edge_sharpness": -0.0898388996720314,
+      "contrast": 0.6254405379295349,
+      "edge_straightness": 2.1019527912139893
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y88 x224",
+     "score": 3.278667449951172,
+     "scene_z": 5.014430522918701,
+     "confidence": 0.9,
+     "anomaly": false,
+     "hotspot": [
+      88,
+      224
+     ],
+     "why": {
+      "gradient": 0.006686818320304155,
+      "edge_sharpness": 0.034406501799821854,
+      "contrast": 0.5402064323425293,
+      "edge_straightness": 2.6004202365875244
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y152 x96",
+     "score": 3.254000663757324,
+     "scene_z": 4.845653533935547,
+     "confidence": 0.8866666666666667,
+     "anomaly": false,
+     "hotspot": [
+      152,
+      96
+     ],
+     "why": {
+      "gradient": 0.0432840995490551,
+      "edge_sharpness": 0.06688131392002106,
+      "contrast": 0.45309966802597046,
+      "edge_straightness": 2.7263612747192383
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y216 x448",
+     "score": 3.230742931365967,
+     "scene_z": 4.68651819229126,
+     "confidence": 0.8666666666666667,
+     "anomaly": false,
+     "hotspot": [
+      216,
+      448
+     ],
+     "why": {
+      "gradient": -0.712073802947998,
+      "edge_sharpness": -0.7694060206413269,
+      "contrast": -0.43761146068573,
+      "edge_straightness": 1.9937989711761475
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y415 x688",
+     "score": 3.22172212600708,
+     "scene_z": 4.624795436859131,
+     "confidence": 0.86,
+     "anomaly": false,
+     "hotspot": [
+      415,
+      688
+     ],
+     "why": {
+      "gradient": 0.7125057578086853,
+      "edge_sharpness": 0.6954235434532166,
+      "contrast": 1.6673845052719116,
+      "edge_straightness": 2.3746156692504883
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y248 x912",
+     "score": 3.2000672817230225,
+     "scene_z": 4.476626873016357,
+     "confidence": 0.84,
+     "anomaly": false,
+     "hotspot": [
+      248,
+      912
+     ],
+     "why": {
+      "gradient": 0.4442586302757263,
+      "edge_sharpness": 0.5834250450134277,
+      "contrast": 1.1480063199996948,
+      "edge_straightness": 2.678875684738159
+     }
+    }
+   ]
+  }
+ },
+ {
+  "kind": "patchcore",
+  "id": "2026-09-29 14:26",
+  "script": "xenarch_mk18_script.py",
+  "data": "data/xenarch-imagery,data/lroc-nac-set,data/hirise-set",
+  "train_chips": 17338,
+  "test_chips": 36,
+  "minutes": 4.8,
+  "config": {
+   "chip_size": 256,
+   "backbone": "resnet18 \u00b7 layer2+layer3 \u00b7 fine-tuned",
+   "backbone_weights": "data/models/mk18_backbone_ft.pt",
+   "bank_size": 30000,
+   "per_chip": 24,
+   "scene_z": 6.0,
+   "hand_weight": 0.0,
+   "val_frac": 0.1,
+   "val_chips": 150,
+   "device": "mps"
+  },
+  "epochs": [],
+  "patchcore": {
+   "threshold": 3.929795980453491,
+   "val_chips": 150,
+   "auroc_subtle": 0.678111111111111,
+   "detect_subtle": 0.23333333333333334,
+   "locate_subtle": 0.44,
+   "auroc_obvious": 0.9688888888888889,
+   "detect_obvious": 0.9333333333333333,
+   "locate_obvious": 0.96,
+   "curve": [
+    {
+     "memory": 1000,
+     "auroc_subtle": 0.6602444444444444,
+     "auroc_obvious": 0.9576222222222223
+    },
+    {
+     "memory": 2000,
+     "auroc_subtle": 0.6663333333333332,
+     "auroc_obvious": 0.9648222222222221
+    },
+    {
+     "memory": 5000,
+     "auroc_subtle": 0.671,
+     "auroc_obvious": 0.9663333333333333
+    },
+    {
+     "memory": 10000,
+     "auroc_subtle": 0.6753777777777777,
+     "auroc_obvious": 0.9698222222222223
+    },
+    {
+     "memory": 20000,
+     "auroc_subtle": 0.6811777777777777,
+     "auroc_obvious": 0.9683111111111111
+    },
+    {
+     "memory": 30000,
+     "auroc_subtle": 0.678111111111111,
+     "auroc_obvious": 0.9688888888888889
+    }
+   ],
+   "per_set": {
+    "xenarch-imagery": {
+     "chips": 150,
+     "auroc_subtle": 0.678111111111111,
+     "auroc_obvious": 0.9688888888888889
+    },
+    "lroc-nac-set": {
+     "chips": 150,
+     "auroc_subtle": 0.5867333333333332,
+     "auroc_obvious": 0.9851777777777777
+    },
+    "hirise-set": {
+     "chips": 150,
+     "auroc_subtle": 0.5370222222222222,
+     "auroc_obvious": 0.9836666666666667
+    }
+   },
+   "bank_size": 30000,
+   "pool_patches": 416112,
+   "scene_z": 6.0,
+   "scenes": [
+    {
+     "image": "Apollo 11 landing site.png",
+     "median": 3.0212838649749756,
+     "mad": 0.172841886745224,
+     "tiles": 36,
+     "hardware_check": {
+      "top_natural_z": 4.559406280517578,
+      "objects": {
+       "lunar module (with shadow)": {
+        "peak_z": 6.222840309143066,
+        "margin": 1.6634340286254883,
+        "rank": 1
+       },
+       "EASEP instruments (laser reflector, seismometer)": {
+        "peak_z": 2.9657599925994873,
+        "margin": -1.5936462879180908,
+        "rank": null
+       }
+      }
+     }
+    }
+   ],
+   "reused_bank": false
+  },
+  "heatmaps": [
+   "heatmaps/mk18_20260929_142658_Apollo_11_landing_site.png"
+  ],
+  "performance": {
+   "anomalies": 1,
+   "high_confidence": 12,
+   "mean_confidence": 0.8422222222222222,
+   "top": [
+    {
+     "chip": "Apollo 11 landing site \u00b7 y224 x488",
+     "score": 4.096851348876953,
+     "scene_z": 6.222840309143066,
+     "confidence": 0.9666666666666667,
+     "anomaly": true,
+     "hotspot": [
+      224,
+      488
+     ],
+     "why": {
+      "gradient": 0.41078466176986694,
+      "edge_sharpness": 1.2069469690322876,
+      "contrast": 1.1831550598144531,
+      "edge_straightness": 1.7308562994003296
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y216 x440",
+     "score": 3.8238048553466797,
+     "scene_z": 4.643093109130859,
+     "confidence": 0.8933333333333333,
+     "anomaly": false,
+     "hotspot": [
+      216,
+      440
+     ],
+     "why": {
+      "gradient": -0.4293712377548218,
+      "edge_sharpness": -0.4561096727848053,
+      "contrast": 0.023909760639071465,
+      "edge_straightness": 2.3676512241363525
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y88 x224",
+     "score": 3.809340238571167,
+     "scene_z": 4.559406280517578,
+     "confidence": 0.8666666666666667,
+     "anomaly": false,
+     "hotspot": [
+      88,
+      224
+     ],
+     "why": {
+      "gradient": 0.006686818320304155,
+      "edge_sharpness": 0.034406501799821854,
+      "contrast": 0.5402064323425293,
+      "edge_straightness": 2.6004202365875244
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y272 x104",
+     "score": 3.710277557373047,
+     "scene_z": 3.9862656593322754,
+     "confidence": 0.8466666666666667,
+     "anomaly": false,
+     "hotspot": [
+      272,
+      104
+     ],
+     "why": {
+      "gradient": -0.07730191200971603,
+      "edge_sharpness": -0.08694405853748322,
+      "contrast": 0.15432541072368622,
+      "edge_straightness": 0.9754604697227478
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y232 x920",
+     "score": 3.7074472904205322,
+     "scene_z": 3.969890832901001,
+     "confidence": 0.84,
+     "anomaly": false,
+     "hotspot": [
+      232,
+      920
+     ],
+     "why": {
+      "gradient": -0.12323746830224991,
+      "edge_sharpness": -0.16051502525806427,
+      "contrast": 0.27414554357528687,
+      "edge_straightness": 1.2546262741088867
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y455 x584",
+     "score": 3.7058544158935547,
+     "scene_z": 3.960675001144409,
+     "confidence": 0.84,
+     "anomaly": false,
+     "hotspot": [
+      455,
+      584
+     ],
+     "why": {
+      "gradient": -0.11965708434581757,
+      "edge_sharpness": 0.03542590141296387,
+      "contrast": 0.27146294713020325,
+      "edge_straightness": 2.00639271736145
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y232 x656",
+     "score": 3.700544834136963,
+     "scene_z": 3.9299557209014893,
+     "confidence": 0.84,
+     "anomaly": false,
+     "hotspot": [
+      232,
+      656
+     ],
+     "why": {
+      "gradient": 0.004263966344296932,
+      "edge_sharpness": -0.0898388996720314,
+      "contrast": 0.6254405379295349,
+      "edge_straightness": 2.1019527912139893
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y216 x872",
+     "score": 3.6992292404174805,
+     "scene_z": 3.922344207763672,
+     "confidence": 0.84,
+     "anomaly": false,
+     "hotspot": [
+      216,
+      872
+     ],
+     "why": {
+      "gradient": -0.7555229067802429,
+      "edge_sharpness": -0.7273498177528381,
+      "contrast": -0.512864351272583,
+      "edge_straightness": 1.8439099788665771
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y519 x592",
+     "score": 3.6856346130371094,
+     "scene_z": 3.8436906337738037,
+     "confidence": 0.84,
+     "anomaly": false,
+     "hotspot": [
+      519,
+      592
+     ],
+     "why": {
+      "gradient": 0.532831609249115,
+      "edge_sharpness": 0.8259986639022827,
+      "contrast": 0.9284844994544983,
+      "edge_straightness": 0.9560292363166809
+     }
+    },
+    {
+     "chip": "Apollo 11 landing site \u00b7 y168 x1092",
+     "score": 3.6819663047790527,
+     "scene_z": 3.822467088699341,
+     "confidence": 0.8333333333333334,
+     "anomaly": false,
+     "hotspot": [
+      168,
+      1092
+     ],
+     "why": {
+      "gradient": -0.9088754057884216,
+      "edge_sharpness": -0.8515202403068542,
+      "contrast": -0.7473657131195068,
+      "edge_straightness": 0.9805101752281189
+     }
+    }
+   ]
+  }
  }
 ]
