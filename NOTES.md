@@ -21,3 +21,4 @@ Once the anomaly detection model has found the top anomalies, a second model cou
 
 - Skyfall: a possible partnership with Caltech for this model.
 - NASA Ames: work on caves.
+- Stromatolites: search for them. They are layered rock structures built by microbial mats, a bit like a coral reef, and would be a possible sign of past life.
