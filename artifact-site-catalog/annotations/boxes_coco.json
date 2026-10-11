@@ -1,0 +1,78 @@
+{
+ "images": [
+  {
+   "id": 1,
+   "file_name": "moon/apollo11_lm/M175124932RC.png",
+   "width": 2048,
+   "height": 2048,
+   "site_id": "apollo11_lm"
+  }
+ ],
+ "annotations": [
+  {
+   "id": 1,
+   "image_id": 1,
+   "category_id": 1,
+   "bbox": [
+    795,
+    1068,
+    46,
+    21
+   ],
+   "area": 966,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "note": "verified against NASA's labeled release of this frame (science.nasa.gov Apollo 11 landing site); bright body x797-820 with black shadow x820-838 to the east; 217 px west of the nominal crop centre"
+  },
+  {
+   "id": 2,
+   "image_id": 1,
+   "category_id": 2,
+   "bbox": [
+    800,
+    1116,
+    11,
+    9
+   ],
+   "area": 99,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "medium",
+   "note": "small bright bar 42 px south of the LM; matches the LRRR callout in NASA's labeled release"
+  },
+  {
+   "id": 3,
+   "image_id": 1,
+   "category_id": 3,
+   "bbox": [
+    804,
+    1125,
+    14,
+    10
+   ],
+   "area": 140,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "medium",
+   "note": "bright dot 52 px south-southeast of the LM, below-right of the LRRR; matches the PSE callout in NASA's labeled release"
+  }
+ ],
+ "categories": [
+  {
+   "id": 1,
+   "name": "apollo11_lm",
+   "supercategory": "artifact"
+  },
+  {
+   "id": 2,
+   "name": "apollo11_lrrr",
+   "supercategory": "artifact"
+  },
+  {
+   "id": 3,
+   "name": "apollo11_pse",
+   "supercategory": "artifact"
+  }
+ ]
+}

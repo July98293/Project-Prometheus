@@ -1,0 +1,4 @@
+file_name,site_id,object_id,label,x_min,y_min,x_max,y_max,width_px,height_px,includes_shadow,confidence,annotator,note
+moon/apollo11_lm/M175124932RC.png,apollo11_lm,apollo11_lm,Apollo 11 LM descent stage,795,1068,840,1088,46,21,yes,high,claude,"verified against NASA's labeled release of this frame (science.nasa.gov Apollo 11 landing site); bright body x797-820 with black shadow x820-838 to the east; 217 px west of the nominal crop centre"
+moon/apollo11_lm/M175124932RC.png,apollo11_lm,apollo11_lrrr,Apollo 11 Laser Ranging Retroreflector,800,1116,810,1124,11,9,no,medium,claude,"small bright bar 42 px south of the LM; matches the LRRR callout in NASA's labeled release"
+moon/apollo11_lm/M175124932RC.png,apollo11_lm,apollo11_pse,Apollo 11 Passive Seismic Experiment,804,1125,817,1134,14,10,yes,medium,claude,"bright dot 52 px south-southeast of the LM, below-right of the LRRR; matches the PSE callout in NASA's labeled release"
