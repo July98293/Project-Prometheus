@@ -1,0 +1,3494 @@
+{
+ "generated": "2026-10-14T18:05Z",
+ "n_boxes": 102,
+ "positives": {
+  "Moon": 127,
+  "Mars": 118
+ },
+ "boxed": {
+  "Moon": 63,
+  "Mars": 13
+ },
+ "confidence": {
+  "high": 48,
+  "medium": 41,
+  "low": 13
+ },
+ "frames": [
+  {
+   "file": "moon/apollo11_lm/M117338434RC.png",
+   "site_id": "apollo11_lm",
+   "object": "Apollo 11 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.484,
+   "incidence_deg": 83.63,
+   "utc": "2010-01-05",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo11_lm_M117338434RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo11_lm",
+     "label": "Apollo 11 LM descent stage",
+     "x_min": 305,
+     "y_min": 1238,
+     "x_max": 405,
+     "y_max": 1256,
+     "width_px": 101,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "near-terminator frame (incidence 83.6): bright point with a 75 px shadow east at the position predicted independently by terrain matches from two other frames"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo11_lm/M150361817RC.png",
+   "site_id": "apollo11_lm",
+   "object": "Apollo 11 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.474,
+   "incidence_deg": 62.61,
+   "utc": "2011-01-22",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo11_lm_M150361817RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo11_lm",
+     "label": "Apollo 11 LM descent stage",
+     "x_min": 1597,
+     "y_min": 1165,
+     "x_max": 1638,
+     "y_max": 1183,
+     "width_px": 42,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "located by terrain match from M177481212RC then by eye: bright body x1600-1615 with 20 px shadow east; 590 px east of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo11_lm/M175124932RC.png",
+   "site_id": "apollo11_lm",
+   "object": "Apollo 11 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.399,
+   "incidence_deg": 40.98,
+   "utc": "2011-11-05",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo11_lm_M175124932RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo11_lm",
+     "label": "Apollo 11 LM descent stage",
+     "x_min": 795,
+     "y_min": 1068,
+     "x_max": 840,
+     "y_max": 1088,
+     "width_px": 46,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "verified against NASA's labeled release of this frame (science.nasa.gov Apollo 11 landing site); bright body x797-820 with black shadow x820-838 to the east; 217 px west of the nominal crop centre"
+    },
+    {
+     "object_id": "apollo11_lrrr",
+     "label": "Apollo 11 Laser Ranging Retroreflector",
+     "x_min": 800,
+     "y_min": 1116,
+     "x_max": 810,
+     "y_max": 1124,
+     "width_px": 11,
+     "height_px": 9,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "small bright bar 42 px south of the LM; matches the LRRR callout in NASA's labeled release"
+    },
+    {
+     "object_id": "apollo11_pse",
+     "label": "Apollo 11 Passive Seismic Experiment",
+     "x_min": 804,
+     "y_min": 1125,
+     "x_max": 817,
+     "y_max": 1134,
+     "width_px": 14,
+     "height_px": 10,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "bright dot 52 px south-southeast of the LM, below-right of the LRRR; matches the PSE callout in NASA's labeled release"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo11_lm/M177481212RC.png",
+   "site_id": "apollo11_lm",
+   "object": "Apollo 11 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.473,
+   "incidence_deg": 69.07,
+   "utc": "2011-12-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo11_lm_M177481212RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo11_lm",
+     "label": "Apollo 11 LM descent stage",
+     "x_min": 363,
+     "y_min": 1279,
+     "x_max": 404,
+     "y_max": 1294,
+     "width_px": 42,
+     "height_px": 16,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "located by terrain match from M175124932RC then by eye: bright body x365-382 with 20 px shadow east; crater just SE as in the labeled reference; 650 px west of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo12_alsep/M168353795LC.png",
+   "site_id": "apollo12_alsep",
+   "object": "Apollo 12 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.424,
+   "incidence_deg": 36.19,
+   "utc": "2011-08-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo12_alsep_M168353795LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 1046,
+     "y_min": 1000,
+     "x_max": 1096,
+     "y_max": 1020,
+     "width_px": 51,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo12_lm/M168353795LC.png (same frame, offset +304,+162)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo12_alsep/M175428601RC.png",
+   "site_id": "apollo12_alsep",
+   "object": "Apollo 12 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.395,
+   "incidence_deg": 45.16,
+   "utc": "2011-11-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo12_alsep_M175428601RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_alsep",
+     "label": "Apollo 12 ALSEP central station",
+     "x_min": 884,
+     "y_min": 856,
+     "x_max": 921,
+     "y_max": 870,
+     "width_px": 38,
+     "height_px": 15,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
+    },
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 514,
+     "y_min": 1015,
+     "x_max": 563,
+     "y_max": 1032,
+     "width_px": 50,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
+    },
+    {
+     "object_id": "surveyor3",
+     "label": "Surveyor 3 lander",
+     "x_min": 33,
+     "y_min": 1205,
+     "x_max": 73,
+     "y_max": 1222,
+     "width_px": 41,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo12_alsep/M177785917RC.png",
+   "site_id": "apollo12_alsep",
+   "object": "Apollo 12 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.466,
+   "incidence_deg": 73.16,
+   "utc": "2011-12-06",
+   "nominal": [
+    290,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo12_alsep_M177785917RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 217,
+     "y_min": 1359,
+     "x_max": 268,
+     "y_max": 1376,
+     "width_px": 52,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo12_lm/M177785917RC.png (same frame, offset +0,+162)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo12_lm/M168353795LC.png",
+   "site_id": "apollo12_lm",
+   "object": "Apollo 12 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.424,
+   "incidence_deg": 36.19,
+   "utc": "2011-08-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo12_lm_M168353795LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 742,
+     "y_min": 838,
+     "x_max": 792,
+     "y_max": 858,
+     "width_px": 51,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "oblique frame (emission 28): largest bright object with a 15 px shadow west inside the bright blast zone; terrain match failed, identified by eye only"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo12_lm/M175428601RC.png",
+   "site_id": "apollo12_lm",
+   "object": "Apollo 12 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.395,
+   "incidence_deg": 45.16,
+   "utc": "2011-11-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo12_lm_M175428601RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_alsep",
+     "label": "Apollo 12 ALSEP central station",
+     "x_min": 1263,
+     "y_min": 694,
+     "x_max": 1300,
+     "y_max": 708,
+     "width_px": 38,
+     "height_px": 15,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "cluster of small bright points with shadows at the position predicted from the LM box plus the catalog's relative offset; tracks lead to it"
+    },
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 893,
+     "y_min": 853,
+     "x_max": 942,
+     "y_max": 870,
+     "width_px": 50,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "by eye: bright body x895-925 with shadow east, inside the bright blast zone, astronaut tracks radiate from it; 100 px west / 170 px north of nominal"
+    },
+    {
+     "object_id": "surveyor3",
+     "label": "Surveyor 3 lander",
+     "x_min": 412,
+     "y_min": 1043,
+     "x_max": 452,
+     "y_max": 1060,
+     "width_px": 41,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright point with 15 px shadow east at the position predicted from the LM box; astronaut tracks reach it"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo12_lm/M177785917RC.png",
+   "site_id": "apollo12_lm",
+   "object": "Apollo 12 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.466,
+   "incidence_deg": 73.16,
+   "utc": "2011-12-06",
+   "nominal": [
+    39,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo12_lm_M177785917RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 217,
+     "y_min": 1197,
+     "x_max": 268,
+     "y_max": 1214,
+     "width_px": 52,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "terrain match from M175428601RC then by eye: bright body with 30 px shadow east; 800 px west of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo13_sivb/M117677653LC.png",
+   "site_id": "apollo13_sivb",
+   "object": "Apollo 13 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.495,
+   "incidence_deg": 80.0,
+   "utc": "2010-01-09",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo13_sivb_M117677653LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo13_sivb",
+     "label": "Apollo 13 S-IVB impact crater",
+     "x_min": 1238,
+     "y_min": 938,
+     "x_max": 1302,
+     "y_max": 1008,
+     "width_px": 65,
+     "height_px": 71,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "terrain match from M160139273LC then by eye: 30 m crater with shadowed floor and bright east rim at low sun"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo13_sivb/M140087684LC.png",
+   "site_id": "apollo13_sivb",
+   "object": "Apollo 13 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.484,
+   "incidence_deg": 4.27,
+   "utc": "2010-09-25",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo13_sivb_M140087684LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo13_sivb",
+     "label": "Apollo 13 S-IVB impact crater",
+     "x_min": 1062,
+     "y_min": 1060,
+     "x_max": 1122,
+     "y_max": 1112,
+     "width_px": 61,
+     "height_px": 53,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "high-sun frame (incidence 4): dark-floored 30 m crater at the centre of a bright ray system, 60 px east of nominal; box covers the crater, not the rays"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo13_sivb/M160139273LC.png",
+   "site_id": "apollo13_sivb",
+   "object": "Apollo 13 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.518,
+   "incidence_deg": 49.95,
+   "utc": "2011-05-15",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo13_sivb_M160139273LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo13_sivb",
+     "label": "Apollo 13 S-IVB impact crater",
+     "x_min": 1836,
+     "y_min": 848,
+     "x_max": 1903,
+     "y_max": 918,
+     "width_px": 68,
+     "height_px": 71,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "sharp 30 m crater with bright ejecta and faint rays, 840 px east of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo13_sivb/M162493915RC.png",
+   "site_id": "apollo13_sivb",
+   "object": "Apollo 13 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.493,
+   "incidence_deg": 76.9,
+   "utc": "2011-06-12",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo13_sivb_M162493915RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo13_sivb",
+     "label": "Apollo 13 S-IVB impact crater",
+     "x_min": 1090,
+     "y_min": 1255,
+     "x_max": 1160,
+     "y_max": 1325,
+     "width_px": 71,
+     "height_px": 71,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "terrain match from M160139273LC then by eye: 30 m crater, shadowed west floor, bright east wall"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_alsep/M119971387RC.png",
+   "site_id": "apollo14_alsep",
+   "object": "Apollo 14 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.487,
+   "incidence_deg": 53.37,
+   "utc": "2010-02-05",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_alsep_M119971387RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_alsep",
+     "label": "Apollo 14 ALSEP central station",
+     "x_min": 561,
+     "y_min": 1009,
+     "x_max": 574,
+     "y_max": 1020,
+     "width_px": 14,
+     "height_px": 12,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo14_lm/M119971387RC.png (same frame, offset +414,-94)"
+    },
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 942,
+     "y_min": 900,
+     "x_max": 974,
+     "y_max": 930,
+     "width_px": 33,
+     "height_px": 31,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo14_lm/M119971387RC.png (same frame, offset +414,-94)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_alsep/M131765772RC.png",
+   "site_id": "apollo14_alsep",
+   "object": "Apollo 14 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.473,
+   "incidence_deg": 81.84,
+   "utc": "2010-06-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_alsep_M131765772RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_alsep",
+     "label": "Apollo 14 ALSEP central station",
+     "x_min": 1099,
+     "y_min": 1306,
+     "x_max": 1126,
+     "y_max": 1326,
+     "width_px": 28,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo14_lm/M131765772RC.png (same frame, offset -416,-94)"
+    },
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 677,
+     "y_min": 1214,
+     "x_max": 756,
+     "y_max": 1230,
+     "width_px": 80,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo14_lm/M131765772RC.png (same frame, offset -416,-94)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_alsep/M162426054LC.png",
+   "site_id": "apollo14_alsep",
+   "object": "Apollo 14 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.477,
+   "incidence_deg": 76.07,
+   "utc": "2011-06-11",
+   "nominal": [
+    1414,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_alsep_M162426054LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_alsep",
+     "label": "Apollo 14 ALSEP central station",
+     "x_min": 1454,
+     "y_min": 1036,
+     "x_max": 1480,
+     "y_max": 1058,
+     "width_px": 27,
+     "height_px": 23,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo14_lm/M162426054LC.png (same frame, offset -52,-94)"
+    },
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 1033,
+     "y_min": 951,
+     "x_max": 1080,
+     "y_max": 970,
+     "width_px": 48,
+     "height_px": 20,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo14_lm/M162426054LC.png (same frame, offset -52,-94)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_alsep/M168319885RC.png",
+   "site_id": "apollo14_alsep",
+   "object": "Apollo 14 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.431,
+   "incidence_deg": 37.38,
+   "utc": "2011-08-18",
+   "nominal": [
+    707,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_alsep_M168319885RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 822,
+     "y_min": 1150,
+     "x_max": 853,
+     "y_max": 1182,
+     "width_px": 32,
+     "height_px": 33,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "oblique frame (emission 25): LM as a dark halo with bright centre inside the bright blast zone, tracks lead to it"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_lm/M119971387RC.png",
+   "site_id": "apollo14_lm",
+   "object": "Apollo 14 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.487,
+   "incidence_deg": 53.37,
+   "utc": "2010-02-05",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_lm_M119971387RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_alsep",
+     "label": "Apollo 14 ALSEP central station",
+     "x_min": 147,
+     "y_min": 1103,
+     "x_max": 160,
+     "y_max": 1114,
+     "width_px": 14,
+     "height_px": 12,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "bright 4 px dot where the track from the LM ends, 25 px from the position predicted by the catalog offset from the LM"
+    },
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 528,
+     "y_min": 994,
+     "x_max": 560,
+     "y_max": 1024,
+     "width_px": 33,
+     "height_px": 31,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright LM at the hub of the astronaut tracks, inside a dark disturbed halo; box includes the halo; 480 px west of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_lm/M131765772RC.png",
+   "site_id": "apollo14_lm",
+   "object": "Apollo 14 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.473,
+   "incidence_deg": 81.84,
+   "utc": "2010-06-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_lm_M131765772RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_alsep",
+     "label": "Apollo 14 ALSEP central station",
+     "x_min": 1515,
+     "y_min": 1400,
+     "x_max": 1542,
+     "y_max": 1420,
+     "width_px": 28,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "bright dots with small shadows 10 px from the position predicted by the catalog offset from the LM"
+    },
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 1093,
+     "y_min": 1308,
+     "x_max": 1172,
+     "y_max": 1324,
+     "width_px": 80,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "low sun (incidence 82): bright body with 60 px shadow east; tracks visible"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_lm/M162426054LC.png",
+   "site_id": "apollo14_lm",
+   "object": "Apollo 14 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.477,
+   "incidence_deg": 76.07,
+   "utc": "2011-06-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_lm_M162426054LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_alsep",
+     "label": "Apollo 14 ALSEP central station",
+     "x_min": 1506,
+     "y_min": 1130,
+     "x_max": 1532,
+     "y_max": 1152,
+     "width_px": 27,
+     "height_px": 23,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "cluster of bright dots 18 px from the position predicted by the catalog offset from the LM"
+    },
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 1085,
+     "y_min": 1045,
+     "x_max": 1132,
+     "y_max": 1064,
+     "width_px": 48,
+     "height_px": 20,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "low sun (incidence 76): bright body with 30 px shadow east, tracks lead away from it"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_lm/M175388134RC.png",
+   "site_id": "apollo14_lm",
+   "object": "Apollo 14 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.417,
+   "incidence_deg": 44.91,
+   "utc": "2011-11-08",
+   "nominal": [
+    1634,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_lm_M175388134RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_lm",
+     "label": "Apollo 14 LM descent stage",
+     "x_min": 272,
+     "y_min": 1005,
+     "x_max": 345,
+     "y_max": 1040,
+     "width_px": 74,
+     "height_px": 36,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright LM inside dark halo with a shadow streak east; tracks radiate from it; 1340 px west of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_sivb/M111762553RC.png",
+   "site_id": "apollo14_sivb",
+   "object": "Apollo 14 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.492,
+   "incidence_deg": 31.3,
+   "utc": "2009-11-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_sivb_M111762553RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_sivb",
+     "label": "Apollo 14 S-IVB impact crater",
+     "x_min": 665,
+     "y_min": 960,
+     "x_max": 748,
+     "y_max": 1032,
+     "width_px": 84,
+     "height_px": 73,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "35 m crater with shadowed floor at the centre of a bright ray system; 320 px west of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo14_sivb/M1139080306RC.png",
+   "site_id": "apollo14_sivb",
+   "object": "Apollo 14 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.879,
+   "incidence_deg": 67.14,
+   "utc": "2013-11-14",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo14_sivb_M1139080306RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo14_sivb",
+     "label": "Apollo 14 S-IVB impact crater",
+     "x_min": 940,
+     "y_min": 1078,
+     "x_max": 1003,
+     "y_max": 1125,
+     "width_px": 64,
+     "height_px": 48,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "35 m crater, shadowed west floor, bright east wall; 90 px from nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_lm/M122184104RC.png",
+   "site_id": "apollo15_lm",
+   "object": "Apollo 15 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.485,
+   "incidence_deg": 35.07,
+   "utc": "2010-03-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_lm_M122184104RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_alsep",
+     "label": "Apollo 15 ALSEP central station",
+     "x_min": 1420,
+     "y_min": 1198,
+     "x_max": 1500,
+     "y_max": 1228,
+     "width_px": 81,
+     "height_px": 31,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "cluster of 6 bright dots in a dark disturbed patch at the position predicted from the LM box; box covers the cluster"
+    },
+    {
+     "object_id": "apollo15_lm",
+     "label": "Apollo 15 LM descent stage",
+     "x_min": 1636,
+     "y_min": 1102,
+     "x_max": 1675,
+     "y_max": 1124,
+     "width_px": 40,
+     "height_px": 23,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright body with 15 px shadow east at the end of the LRV tracks; 625 px east of nominal"
+    },
+    {
+     "object_id": "apollo15_lrv",
+     "label": "Apollo 15 Lunar Roving Vehicle",
+     "x_min": 1950,
+     "y_min": 1068,
+     "x_max": 1972,
+     "y_max": 1082,
+     "width_px": 23,
+     "height_px": 15,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "dark object with bright centre at the end of a long track, 7 px from the position predicted from the LM box"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_lm/M131623862LC.png",
+   "site_id": "apollo15_lm",
+   "object": "Apollo 15 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.474,
+   "incidence_deg": 81.58,
+   "utc": "2010-06-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_lm_M131623862LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_lm",
+     "label": "Apollo 15 LM descent stage",
+     "x_min": 1378,
+     "y_min": 897,
+     "x_max": 1462,
+     "y_max": 916,
+     "width_px": 85,
+     "height_px": 20,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "low sun (incidence 82): bright body with 60 px shadow east; terrain match from M122184104RC"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_lm/M162284113RC.png",
+   "site_id": "apollo15_lm",
+   "object": "Apollo 15 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.475,
+   "incidence_deg": 76.48,
+   "utc": "2011-06-09",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_lm_M162284113RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_lm",
+     "label": "Apollo 15 LM descent stage",
+     "x_min": 288,
+     "y_min": 846,
+     "x_max": 352,
+     "y_max": 866,
+     "width_px": 65,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "low sun (incidence 76): bright body with 40 px shadow east; terrain match from M122184104RC"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_lm/M175252641RC.png",
+   "site_id": "apollo15_lm",
+   "object": "Apollo 15 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.406,
+   "incidence_deg": 49.39,
+   "utc": "2011-11-06",
+   "nominal": [
+    380,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_lm_M175252641RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_alsep",
+     "label": "Apollo 15 ALSEP central station",
+     "x_min": 818,
+     "y_min": 850,
+     "x_max": 858,
+     "y_max": 868,
+     "width_px": 41,
+     "height_px": 19,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "row of bright dots 30 px west of the position predicted from the LM box; mid-sun frame"
+    },
+    {
+     "object_id": "apollo15_lm",
+     "label": "Apollo 15 LM descent stage",
+     "x_min": 460,
+     "y_min": 942,
+     "x_max": 522,
+     "y_max": 966,
+     "width_px": 63,
+     "height_px": 25,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright body with 30 px shadow east inside the bright blast zone; tracks radiate from it"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_lrv/M131623862LC.png",
+   "site_id": "apollo15_lrv",
+   "object": "Apollo 15 Lunar Roving Vehicle",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.474,
+   "incidence_deg": 81.58,
+   "utc": "2010-06-19",
+   "nominal": [
+    857,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_lrv_M131623862LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_lm",
+     "label": "Apollo 15 LM descent stage",
+     "x_min": 1550,
+     "y_min": 929,
+     "x_max": 1634,
+     "y_max": 948,
+     "width_px": 85,
+     "height_px": 20,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo15_lm/M131623862LC.png (same frame, offset +172,+32)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_lrv/M162284113RC.png",
+   "site_id": "apollo15_lrv",
+   "object": "Apollo 15 Lunar Roving Vehicle",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.475,
+   "incidence_deg": 76.48,
+   "utc": "2011-06-09",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_lrv_M162284113RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_lm",
+     "label": "Apollo 15 LM descent stage",
+     "x_min": 607,
+     "y_min": 882,
+     "x_max": 671,
+     "y_max": 902,
+     "width_px": 65,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo15_lm/M162284113RC.png (same frame, offset +319,+36)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_lrv/M175252641LC.png",
+   "site_id": "apollo15_lrv",
+   "object": "Apollo 15 Lunar Roving Vehicle",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.406,
+   "incidence_deg": 49.36,
+   "utc": "2011-11-06",
+   "nominal": [
+    1900,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_lrv_M175252641LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_lrv",
+     "label": "Apollo 15 Lunar Roving Vehicle",
+     "x_min": 1865,
+     "y_min": 1022,
+     "x_max": 1898,
+     "y_max": 1040,
+     "width_px": 34,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "oblique frame: dark LRV with bright spots at the end of its track, 850 px east of nominal LM; same offset as the LM box in the RC crop"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_sivb/M160030722LC.png",
+   "site_id": "apollo15_sivb",
+   "object": "Apollo 15 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.47,
+   "incidence_deg": 49.17,
+   "utc": "2011-05-14",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_sivb_M160030722LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_sivb",
+     "label": "Apollo 15 S-IVB impact crater",
+     "x_min": 1200,
+     "y_min": 965,
+     "x_max": 1270,
+     "y_max": 1045,
+     "width_px": 71,
+     "height_px": 81,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "35 m crater at the centre of a bright ray system, shadowed west floor; 220 px east of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo15_sivb/M175354355LC.png",
+   "site_id": "apollo15_sivb",
+   "object": "Apollo 15 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.419,
+   "incidence_deg": 43.96,
+   "utc": "2011-11-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo15_sivb_M175354355LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo15_sivb",
+     "label": "Apollo 15 S-IVB impact crater",
+     "x_min": 1845,
+     "y_min": 810,
+     "x_max": 1920,
+     "y_max": 875,
+     "width_px": 76,
+     "height_px": 66,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "35 m crater with bright ejecta and dark rays, 840 px east of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo16_alsep/M175179080LC.png",
+   "site_id": "apollo16_alsep",
+   "object": "Apollo 16 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.405,
+   "incidence_deg": 41.91,
+   "utc": "2011-11-06",
+   "nominal": [
+    1436,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo16_alsep_M175179080LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo16_alsep",
+     "label": "Apollo 16 ALSEP central station",
+     "x_min": 826,
+     "y_min": 844,
+     "x_max": 892,
+     "y_max": 872,
+     "width_px": 67,
+     "height_px": 29,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo16_lm/M175179080LC.png (same frame, offset +0,-136)"
+    },
+    {
+     "object_id": "apollo16_lm",
+     "label": "Apollo 16 LM descent stage",
+     "x_min": 1148,
+     "y_min": 872,
+     "x_max": 1195,
+     "y_max": 906,
+     "width_px": 48,
+     "height_px": 35,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo16_lm/M175179080LC.png (same frame, offset +0,-136)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo16_lm/M129187331LC.png",
+   "site_id": "apollo16_lm",
+   "object": "Apollo 16 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.486,
+   "incidence_deg": 54.19,
+   "utc": "2010-05-22",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo16_lm_M129187331LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo16_lm",
+     "label": "Apollo 16 LM descent stage",
+     "x_min": 866,
+     "y_min": 1244,
+     "x_max": 910,
+     "y_max": 1284,
+     "width_px": 45,
+     "height_px": 41,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright LM dots in dark halo, shadow east; 170 px west / 240 px south of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo16_lm/M175179080LC.png",
+   "site_id": "apollo16_lm",
+   "object": "Apollo 16 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.405,
+   "incidence_deg": 41.91,
+   "utc": "2011-11-06",
+   "nominal": [
+    1116,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo16_lm_M175179080LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo16_alsep",
+     "label": "Apollo 16 ALSEP central station",
+     "x_min": 826,
+     "y_min": 980,
+     "x_max": 892,
+     "y_max": 1008,
+     "width_px": 67,
+     "height_px": 29,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "dark disturbed patch with bright dots at its east end and a track leading to it, 300 px west of the LM; ALSEP identification not certain"
+    },
+    {
+     "object_id": "apollo16_lm",
+     "label": "Apollo 16 LM descent stage",
+     "x_min": 1148,
+     "y_min": 1008,
+     "x_max": 1195,
+     "y_max": 1042,
+     "width_px": 48,
+     "height_px": 35,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright LM with dark disturbed halo and shadow east; tracks lead to it; 130 px east of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo16_lm/M177535538LC.png",
+   "site_id": "apollo16_lm",
+   "object": "Apollo 16 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.469,
+   "incidence_deg": 69.64,
+   "utc": "2011-12-03",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo16_lm_M177535538LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo16_lm",
+     "label": "Apollo 16 LM descent stage",
+     "x_min": 1146,
+     "y_min": 895,
+     "x_max": 1192,
+     "y_max": 927,
+     "width_px": 47,
+     "height_px": 33,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright LM in dark halo with shadow east; same crater pair west of it as in M175179080LC"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo16_sivb/M1219118344RC.png",
+   "site_id": "apollo16_sivb",
+   "object": "Apollo 16 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.783,
+   "incidence_deg": 65.06,
+   "utc": "2016-05-28",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo16_sivb_M1219118344RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo16_sivb",
+     "label": "Apollo 16 S-IVB impact crater",
+     "x_min": 1052,
+     "y_min": 973,
+     "x_max": 1098,
+     "y_max": 1018,
+     "width_px": 47,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "20 m crater with dark floor and bright rim 50 px from nominal; smaller than the rayed crater seen in the two high-sun frames"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo16_sivb/M1458711401RC.png",
+   "site_id": "apollo16_sivb",
+   "object": "Apollo 16 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.613,
+   "incidence_deg": 32.15,
+   "utc": "2024-01-01",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo16_sivb_M1458711401RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo16_sivb",
+     "label": "Apollo 16 S-IVB impact crater",
+     "x_min": 945,
+     "y_min": 1030,
+     "x_max": 990,
+     "y_max": 1085,
+     "width_px": 46,
+     "height_px": 56,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "rayed crater with dark floor at the centre of bright rays, 60 px from nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo16_sivb/M1521941644RC.png",
+   "site_id": "apollo16_sivb",
+   "object": "Apollo 16 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.682,
+   "incidence_deg": 46.48,
+   "utc": "2026-01-01",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo16_sivb_M1521941644RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo16_sivb",
+     "label": "Apollo 16 S-IVB impact crater",
+     "x_min": 900,
+     "y_min": 1112,
+     "x_max": 950,
+     "y_max": 1162,
+     "width_px": 51,
+     "height_px": 51,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "rayed crater, dark floor, bright ejecta; 160 px from nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_alsep/M116113215RC.png",
+   "site_id": "apollo17_alsep",
+   "object": "Apollo 17 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.503,
+   "incidence_deg": 81.99,
+   "utc": "2009-12-22",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_alsep_M116113215RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_lm",
+     "label": "Apollo 17 LM descent stage",
+     "x_min": 64,
+     "y_min": 1180,
+     "x_max": 111,
+     "y_max": 1196,
+     "width_px": 48,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo17_lm/M116113215RC.png (same frame, offset -431,+68)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_alsep/M165645700LC.png",
+   "site_id": "apollo17_alsep",
+   "object": "Apollo 17 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.478,
+   "incidence_deg": 69.21,
+   "utc": "2011-07-18",
+   "nominal": [
+    1990,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_alsep_M165645700LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_alsep",
+     "label": "Apollo 17 ALSEP central station",
+     "x_min": 1912,
+     "y_min": 966,
+     "x_max": 1948,
+     "y_max": 978,
+     "width_px": 37,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "bright point with 15 px shadow east, 60 px from nominal; nearest raised object to the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_alsep/M172717297RC.png",
+   "site_id": "apollo17_alsep",
+   "object": "Apollo 17 ALSEP central station",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.476,
+   "incidence_deg": 25.1,
+   "utc": "2011-10-08",
+   "nominal": [
+    1253,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_alsep_M172717297RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_alsep",
+     "label": "Apollo 17 ALSEP central station",
+     "x_min": 428,
+     "y_min": 1233,
+     "x_max": 498,
+     "y_max": 1263,
+     "width_px": 71,
+     "height_px": 31,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset -262,+68)"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_lm/M116113215RC.png",
+   "site_id": "apollo17_lm",
+   "object": "Apollo 17 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.503,
+   "incidence_deg": 81.99,
+   "utc": "2009-12-22",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_lm_M116113215RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_alsep",
+     "label": "Apollo 17 ALSEP central station",
+     "x_min": 88,
+     "y_min": 1086,
+     "x_max": 142,
+     "y_max": 1100,
+     "width_px": 55,
+     "height_px": 15,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "second shadowed object 410 px west of the LM candidate; the catalog puts the ALSEP 300 px west; could be the ALSEP central station or a boulder"
+    },
+    {
+     "object_id": "apollo17_lm",
+     "label": "Apollo 17 LM descent stage",
+     "x_min": 495,
+     "y_min": 1112,
+     "x_max": 542,
+     "y_max": 1128,
+     "width_px": 48,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "low sun (incidence ~80): bright object with 30 px shadow east, 500 px west of nominal; two other shadowed objects nearby; identification by size only"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_lm/M165645700RC.png",
+   "site_id": "apollo17_lm",
+   "object": "Apollo 17 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.477,
+   "incidence_deg": 69.27,
+   "utc": "2011-07-18",
+   "nominal": [
+    433,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_lm_M165645700RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_lm",
+     "label": "Apollo 17 LM descent stage",
+     "x_min": 505,
+     "y_min": 983,
+     "x_max": 548,
+     "y_max": 1005,
+     "width_px": 44,
+     "height_px": 23,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright LM with 25 px shadow east, 500 px west of nominal"
+    },
+    {
+     "object_id": "apollo17_lrv",
+     "label": "Apollo 17 Lunar Roving Vehicle",
+     "x_min": 815,
+     "y_min": 1072,
+     "x_max": 848,
+     "y_max": 1084,
+     "width_px": 34,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "bright point with 20 px shadow streak east, 35 px from the position predicted from the LM box"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_lm/M172717297RC.png",
+   "site_id": "apollo17_lm",
+   "object": "Apollo 17 LM descent stage",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.476,
+   "incidence_deg": 25.1,
+   "utc": "2011-10-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_lm_M172717297RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_alsep",
+     "label": "Apollo 17 ALSEP central station",
+     "x_min": 690,
+     "y_min": 1165,
+     "x_max": 760,
+     "y_max": 1195,
+     "width_px": 71,
+     "height_px": 31,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "cluster of bright dots around the position predicted from the LM box via the catalog offset"
+    },
+    {
+     "object_id": "apollo17_lm",
+     "label": "Apollo 17 LM descent stage",
+     "x_min": 228,
+     "y_min": 1236,
+     "x_max": 270,
+     "y_max": 1262,
+     "width_px": 43,
+     "height_px": 27,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright LM in dark halo with tracks converging on it, 780 px west of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_lrv/M172717297RC.png",
+   "site_id": "apollo17_lrv",
+   "object": "Apollo 17 Lunar Roving Vehicle",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.476,
+   "incidence_deg": 25.1,
+   "utc": "2011-10-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_lrv_M172717297RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_alsep",
+     "label": "Apollo 17 ALSEP central station",
+     "x_min": 1021,
+     "y_min": 1081,
+     "x_max": 1091,
+     "y_max": 1111,
+     "width_px": 71,
+     "height_px": 31,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset +331,-84)"
+    },
+    {
+     "object_id": "apollo17_lm",
+     "label": "Apollo 17 LM descent stage",
+     "x_min": 559,
+     "y_min": 1152,
+     "x_max": 601,
+     "y_max": 1178,
+     "width_px": 43,
+     "height_px": 27,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset +331,-84)"
+    },
+    {
+     "object_id": "apollo17_lrv",
+     "label": "Apollo 17 Lunar Roving Vehicle",
+     "x_min": 245,
+     "y_min": 1243,
+     "x_max": 280,
+     "y_max": 1260,
+     "width_px": 36,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "bright point with dark shadow blob east at the position predicted from the LM box via the catalog offset"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_sivb/M131731837RC.png",
+   "site_id": "apollo17_sivb",
+   "object": "Apollo 17 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.469,
+   "incidence_deg": 81.54,
+   "utc": "2010-06-21",
+   "nominal": [
+    830,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_sivb_M131731837RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_sivb",
+     "label": "Apollo 17 S-IVB impact crater",
+     "x_min": 760,
+     "y_min": 1118,
+     "x_max": 860,
+     "y_max": 1185,
+     "width_px": 101,
+     "height_px": 68,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "low sun (incidence 82): 35 m crater with shadowed west floor and bright east wall, blocky floor; terrain match from both high-sun frames agrees; 150 px from nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_sivb/M144701329LC.png",
+   "site_id": "apollo17_sivb",
+   "object": "Apollo 17 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.519,
+   "incidence_deg": 49.75,
+   "utc": "2010-11-18",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_sivb_M144701329LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_sivb",
+     "label": "Apollo 17 S-IVB impact crater",
+     "x_min": 448,
+     "y_min": 872,
+     "x_max": 505,
+     "y_max": 922,
+     "width_px": 58,
+     "height_px": 51,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "rayed crater with dark pits, 540 px west of nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_sivb/M1524206750LC.png",
+   "site_id": "apollo17_sivb",
+   "object": "Apollo 17 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.746,
+   "incidence_deg": 75.21,
+   "utc": "2026-01-28",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_sivb_M1524206750LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_sivb",
+     "label": "Apollo 17 S-IVB impact crater",
+     "x_min": 920,
+     "y_min": 1080,
+     "x_max": 965,
+     "y_max": 1125,
+     "width_px": 46,
+     "height_px": 46,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "0.75 m/px frame: 45 px crater with dark floor and bright east wall at nominal; matcher inconclusive at this resolution"
+    }
+   ]
+  },
+  {
+   "file": "moon/apollo17_sivb/M157675965LC.png",
+   "site_id": "apollo17_sivb",
+   "object": "Apollo 17 S-IVB impact crater",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.462,
+   "incidence_deg": 22.89,
+   "utc": "2011-04-17",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_apollo17_sivb_M157675965LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo17_sivb",
+     "label": "Apollo 17 S-IVB impact crater",
+     "x_min": 1080,
+     "y_min": 1050,
+     "x_max": 1120,
+     "y_max": 1090,
+     "width_px": 41,
+     "height_px": 41,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "rayed crater at the centre of a bright ray system, 90 px from nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/change3/M1514853442RC.png",
+   "site_id": "change3",
+   "object": "Chang'e 3 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.566,
+   "incidence_deg": 57.59,
+   "utc": "2025-10-11",
+   "nominal": [
+    114,
+    1024
+   ],
+   "sheet": "boxes/moon_change3_M1514853442RC.jpg",
+   "boxes": [
+    {
+     "object_id": "change3",
+     "label": "Chang'e 3 lander",
+     "x_min": 112,
+     "y_min": 1038,
+     "x_max": 155,
+     "y_max": 1078,
+     "width_px": 44,
+     "height_px": 41,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "30 px bright blob (lander plus blast-brightened halo) with a dark patch on its west side, 35 px from nominal; nominal is on the crop edge"
+    },
+    {
+     "object_id": "yutu",
+     "label": "Yutu rover (final position)",
+     "x_min": 118,
+     "y_min": 1092,
+     "x_max": 140,
+     "y_max": 1112,
+     "width_px": 23,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "bright object with dark side 45 px south of the lander candidate; Yutu's final position is 21 m (37 px) SSW of the lander"
+    }
+   ]
+  },
+  {
+   "file": "moon/lunokhod1/M175502049RC.png",
+   "site_id": "lunokhod1",
+   "object": "Lunokhod 1 rover (final position)",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.43,
+   "incidence_deg": 57.78,
+   "utc": "2011-11-09",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_lunokhod1_M175502049RC.jpg",
+   "boxes": [
+    {
+     "object_id": "lunokhod1",
+     "label": "Lunokhod 1 rover (final position)",
+     "x_min": 656,
+     "y_min": 1043,
+     "x_max": 684,
+     "y_max": 1056,
+     "width_px": 29,
+     "height_px": 14,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "10 px bright compact object with a dark shadow east (craters in this frame are dark-west, so a raised object); 360 px west of nominal; size fits the 2.2 m rover"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor1/M122495769LC.png",
+   "site_id": "surveyor1",
+   "object": "Surveyor 1 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.497,
+   "incidence_deg": 23.27,
+   "utc": "2010-03-06",
+   "nominal": [
+    738,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor1_M122495769LC.jpg",
+   "boxes": [
+    {
+     "object_id": "surveyor1",
+     "label": "Surveyor 1 lander",
+     "x_min": 860,
+     "y_min": 1136,
+     "x_max": 875,
+     "y_max": 1148,
+     "width_px": 16,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "high sun (incidence 23): isolated 6 px bright dot with no crater rim, 175 px from nominal; the only non-crater candidate within 450 px"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor3/M168353795LC.png",
+   "site_id": "surveyor3",
+   "object": "Surveyor 3 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.424,
+   "incidence_deg": 36.19,
+   "utc": "2011-08-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor3_M168353795LC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 347,
+     "y_min": 655,
+     "x_max": 397,
+     "y_max": 675,
+     "width_px": 51,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "transferred from crop moon/apollo12_lm/M168353795LC.png (same frame, offset -395,-183)"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor3/M175428601RC.png",
+   "site_id": "surveyor3",
+   "object": "Surveyor 3 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.395,
+   "incidence_deg": 45.16,
+   "utc": "2011-11-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor3_M175428601RC.jpg",
+   "boxes": [
+    {
+     "object_id": "apollo12_alsep",
+     "label": "Apollo 12 ALSEP central station",
+     "x_min": 1757,
+     "y_min": 511,
+     "x_max": 1794,
+     "y_max": 525,
+     "width_px": 38,
+     "height_px": 15,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
+    },
+    {
+     "object_id": "apollo12_lm",
+     "label": "Apollo 12 LM descent stage",
+     "x_min": 1387,
+     "y_min": 670,
+     "x_max": 1436,
+     "y_max": 687,
+     "width_px": 50,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
+    },
+    {
+     "object_id": "surveyor3",
+     "label": "Surveyor 3 lander",
+     "x_min": 906,
+     "y_min": 860,
+     "x_max": 946,
+     "y_max": 877,
+     "width_px": 41,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor6/M131657295LC.png",
+   "site_id": "surveyor6",
+   "object": "Surveyor 6 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.473,
+   "incidence_deg": 81.08,
+   "utc": "2010-06-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor6_M131657295LC.jpg",
+   "boxes": [
+    {
+     "object_id": "surveyor6",
+     "label": "Surveyor 6 lander",
+     "x_min": 843,
+     "y_min": 1060,
+     "x_max": 885,
+     "y_max": 1071,
+     "width_px": 43,
+     "height_px": 12,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "low sun (incidence 81): 5 px bright point with a 30 px thin shadow east, 90 px from the terrain-matched position of the M152885739LC box; thin long shadow fits a mast"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor6/M152885739LC.png",
+   "site_id": "surveyor6",
+   "object": "Surveyor 6 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.469,
+   "incidence_deg": 33.03,
+   "utc": "2011-02-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor6_M152885739LC.jpg",
+   "boxes": [
+    {
+     "object_id": "surveyor6",
+     "label": "Surveyor 6 lander",
+     "x_min": 1100,
+     "y_min": 974,
+     "x_max": 1125,
+     "y_max": 988,
+     "width_px": 26,
+     "height_px": 15,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "mid sun (incidence 33): 6 px bright point with a 10 px shadow streak east, 95 px from nominal; strongest raised-object candidate in a 450 px radius"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor7/M131724362LC.png",
+   "site_id": "surveyor7",
+   "object": "Surveyor 7 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.509,
+   "incidence_deg": 83.96,
+   "utc": "2010-06-21",
+   "nominal": [
+    1251,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor7_M131724362LC.jpg",
+   "boxes": [
+    {
+     "object_id": "surveyor7",
+     "label": "Surveyor 7 lander",
+     "x_min": 1183,
+     "y_min": 1145,
+     "x_max": 1228,
+     "y_max": 1160,
+     "width_px": 46,
+     "height_px": 16,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "low sun (incidence 84): bright point with a 35 px thin shadow east in a boulder field, 130 px from nominal; thin shadow suggests a mast rather than a boulder"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor7/M150598504RC.png",
+   "site_id": "surveyor7",
+   "object": "Surveyor 7 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.516,
+   "incidence_deg": 69.07,
+   "utc": "2011-01-25",
+   "nominal": [
+    832,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor7_M150598504RC.jpg",
+   "boxes": [
+    {
+     "object_id": "surveyor7",
+     "label": "Surveyor 7 lander",
+     "x_min": 1128,
+     "y_min": 1210,
+     "x_max": 1162,
+     "y_max": 1232,
+     "width_px": 35,
+     "height_px": 23,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "terrain match from M131724362LC (ratio 1.6): bright blob with shadow east; identification uncertain"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor7/M155307738RC.png",
+   "site_id": "surveyor7",
+   "object": "Surveyor 7 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.509,
+   "incidence_deg": 42.96,
+   "utc": "2011-03-21",
+   "nominal": [
+    476,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor7_M155307738RC.jpg",
+   "boxes": [
+    {
+     "object_id": "surveyor7",
+     "label": "Surveyor 7 lander",
+     "x_min": 730,
+     "y_min": 1312,
+     "x_max": 752,
+     "y_max": 1330,
+     "width_px": 23,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "terrain match from M131724362LC (vote ratio 4.2) then by eye: 8 px bright object with dark shadow east; 290 px from nominal"
+    }
+   ]
+  },
+  {
+   "file": "moon/surveyor7/M175355093LC.png",
+   "site_id": "surveyor7",
+   "object": "Surveyor 7 lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.429,
+   "incidence_deg": 56.22,
+   "utc": "2011-11-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_surveyor7_M175355093LC.jpg",
+   "boxes": [
+    {
+     "object_id": "surveyor7",
+     "label": "Surveyor 7 lander",
+     "x_min": 415,
+     "y_min": 776,
+     "x_max": 446,
+     "y_max": 793,
+     "width_px": 32,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "terrain match from M131724362LC (ratio 2.1): two bright specks with shadow east; identification uncertain"
+    }
+   ]
+  },
+  {
+   "file": "moon/yutu/M1514853442RC.png",
+   "site_id": "yutu",
+   "object": "Yutu rover (final position)",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.566,
+   "incidence_deg": 57.59,
+   "utc": "2025-10-11",
+   "nominal": [
+    91,
+    1024
+   ],
+   "sheet": "boxes/moon_yutu_M1514853442RC.jpg",
+   "boxes": [
+    {
+     "object_id": "change3",
+     "label": "Chang'e 3 lander",
+     "x_min": 112,
+     "y_min": 1007,
+     "x_max": 155,
+     "y_max": 1047,
+     "width_px": 44,
+     "height_px": 41,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "transferred from crop moon/change3/M1514853442RC.png (same frame, offset +0,-31)"
+    },
+    {
+     "object_id": "yutu",
+     "label": "Yutu rover (final position)",
+     "x_min": 118,
+     "y_min": 1061,
+     "x_max": 140,
+     "y_max": 1081,
+     "width_px": 23,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "transferred from crop moon/change3/M1514853442RC.png (same frame, offset +0,-31)"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_rover/ESP_036128_1755.png",
+   "site_id": "curiosity_rover",
+   "object": "Curiosity rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 57.45,
+   "utc": "2014-04-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_rover_ESP_036128_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_rover",
+     "label": "Curiosity rover (latest published position)",
+     "x_min": 1018,
+     "y_min": 1018,
+     "x_max": 1030,
+     "y_max": 1030,
+     "width_px": 13,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "sol 613: single bright 4 px point exactly at the waypoint position on a dark surface; rover moved up to 23 m that sol"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_rover/ESP_053600_1750.png",
+   "site_id": "curiosity_rover",
+   "object": "Curiosity rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 53.36,
+   "utc": "2018-01-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_rover_ESP_053600_1750.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_rover",
+     "label": "Curiosity rover (latest published position)",
+     "x_min": 1017,
+     "y_min": 1014,
+     "x_max": 1035,
+     "y_max": 1030,
+     "width_px": 19,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "sol 1975: bright blob at the waypoint position; uncertain"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_rover/ESP_058071_1750.png",
+   "site_id": "curiosity_rover",
+   "object": "Curiosity rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 35.57,
+   "utc": "2018-12-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_rover_ESP_058071_1750.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_rover",
+     "label": "Curiosity rover (latest published position)",
+     "x_min": 1016,
+     "y_min": 1016,
+     "x_max": 1032,
+     "y_max": 1032,
+     "width_px": 17,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "sol 2323: bright blob at the waypoint position; rocky terrain, uncertain"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_058005_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 39.08,
+   "utc": "2018-12-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_ESP_058005_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 990,
+     "y_min": 950,
+     "x_max": 1045,
+     "y_max": 1000,
+     "width_px": 56,
+     "height_px": 51,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "sol 15: row of bright objects 50 px north of the catalog position with a dark blast-scoured area east of them; lander plus solar panels span 6 m (24 px)"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_072143_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 55.73,
+   "utc": "2021-12-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_ESP_072143_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 992,
+     "y_min": 985,
+     "x_max": 1052,
+     "y_max": 1038,
+     "width_px": 61,
+     "height_px": 54,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "sol 1116: bright cluster centred 10 px NE of the catalog position; lander and dust-brightened surroundings"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_088417_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 48.51,
+   "utc": "2025-06-06",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_088417_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1010,
+     "y_min": 1008,
+     "x_max": 1030,
+     "y_max": 1028,
+     "width_px": 21,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "sol 1569, 0.5 m/px: bright object with dark shadow SE at the catalog position of the descent-stage debris field"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_rover/ESP_068360_1985.png",
+   "site_id": "perseverance_rover",
+   "object": "Perseverance rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 45.99,
+   "utc": "2021-02-25",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_rover_ESP_068360_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_rover",
+     "label": "Perseverance rover (latest published position)",
+     "x_min": 1013,
+     "y_min": 1010,
+     "x_max": 1025,
+     "y_max": 1022,
+     "width_px": 13,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "sol 7: bright blob 8 px NW of the waypoint position; rover had not yet driven far"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_rover/ESP_068426_1985.png",
+   "site_id": "perseverance_rover",
+   "object": "Perseverance rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.17,
+   "utc": "2021-03-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_rover_ESP_068426_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_rover",
+     "label": "Perseverance rover (latest published position)",
+     "x_min": 1022,
+     "y_min": 1023,
+     "x_max": 1033,
+     "y_max": 1034,
+     "width_px": 12,
+     "height_px": 12,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "sol 12: 6 px bright object with dark shadow east, 4 px from the waypoint position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_rover/ESP_073068_1985.png",
+   "site_id": "perseverance_rover",
+   "object": "Perseverance rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.87,
+   "utc": "2022-02-26",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_rover_ESP_073068_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_rover",
+     "label": "Perseverance rover (latest published position)",
+     "x_min": 1015,
+     "y_min": 1010,
+     "x_max": 1032,
+     "y_max": 1036,
+     "width_px": 18,
+     "height_px": 27,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "sol 373: bright blob NW of the waypoint with a dark blob SE of it; rocky terrain makes this uncertain"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_rover/ESP_073635_1985.png",
+   "site_id": "perseverance_rover",
+   "object": "Perseverance rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.17,
+   "utc": "2022-04-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_rover_ESP_073635_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_rover",
+     "label": "Perseverance rover (latest published position)",
+     "x_min": 996,
+     "y_min": 1000,
+     "x_max": 1012,
+     "y_max": 1012,
+     "width_px": 17,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "sol 417: bright blob 20 px NW of the waypoint; uncertain"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/ESP_032155_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 82.06,
+   "utc": "2013-06-06",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_ESP_032155_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1010,
+     "y_min": 1004,
+     "x_max": 1040,
+     "y_max": 1034,
+     "width_px": 31,
+     "height_px": 31,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "sol 1838, low sun: bright blob at the catalog position; uncertain"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/ESP_043034_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 54.49,
+   "utc": "2015-10-01",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_ESP_043034_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1012,
+     "y_min": 1012,
+     "x_max": 1040,
+     "y_max": 1036,
+     "width_px": 29,
+     "height_px": 25,
+     "includes_shadow": "yes",
+     "confidence": "low",
+     "note": "sol 2685 (long after the mission, winter frost): bright specks at the catalog position; uncertain"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_008591_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 48.8,
+   "utc": "2008-05-26",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_008591_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1012,
+     "y_min": 1016,
+     "x_max": 1034,
+     "y_max": 1038,
+     "width_px": 23,
+     "height_px": 23,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "sol 1: bright blob with dark halo at the catalog position; lander plus solar panels span 22 px at 0.25 m/px"
+    }
+   ]
+  }
+ ],
+ "unboxed": [
+  {
+   "file_name": "moon/apollo12_lm/M116466489RC.png",
+   "site_id": "apollo12_lm",
+   "reason": "unusable: near-terminator (incidence 85.7), crop is dominated by column striping; no terrain visible"
+  },
+  {
+   "file_name": "moon/apollo12_alsep/M168353795LC.png",
+   "site_id": "apollo12_alsep",
+   "reason": "ALSEP not identifiable in this oblique frame (emission 28, 0.42 m/px); LM box transferred instead"
+  },
+  {
+   "file_name": "moon/apollo14_alsep/M168319885RC.png",
+   "site_id": "apollo14_alsep",
+   "reason": "ALSEP not identifiable in this oblique frame; LM boxed instead"
+  },
+  {
+   "file_name": "moon/apollo14_sivb/M175448936LC.png",
+   "site_id": "apollo14_sivb",
+   "reason": "crater not identifiable: crop is a saturated bright patch with no sharp crater at mid sun; terrain match failed"
+  },
+  {
+   "file_name": "moon/apollo15_sivb/M1367135045LC.png",
+   "site_id": "apollo15_sivb",
+   "reason": "crater not identifiable: no rayed crater visible in the crop; probably mislocated frame"
+  },
+  {
+   "file_name": "moon/apollo15_sivb/M1524199681RC.png",
+   "site_id": "apollo15_sivb",
+   "reason": "crater not identifiable: no rayed crater visible in the crop; probably mislocated frame"
+  },
+  {
+   "file_name": "moon/apollo16_lm/M117392541LC.png",
+   "site_id": "apollo16_lm",
+   "reason": "LM not identifiable: near-terminator frame (incidence 83), only craters visible near the matched position"
+  },
+  {
+   "file_name": "moon/apollo16_sivb/M1276746552RC.png",
+   "site_id": "apollo16_sivb",
+   "reason": "crater not identifiable: low-sun frame, no crater at or near the nominal position"
+  },
+  {
+   "file_name": "moon/apollo17_lrv/M168000580RC.png",
+   "site_id": "apollo17_lrv",
+   "reason": "not identifiable: crop is saturated bright blast-zone terrain at 0.42 m/px, no shadowed object stands out"
+  },
+  {
+   "file_name": "moon/apollo17_lm/M168000580LC.png",
+   "site_id": "apollo17_lm",
+   "reason": "LM not identifiable: oblique frame (emission 45) over the bright blast zone; terrain match failed"
+  },
+  {
+   "file_name": "moon/apollo17_alsep/M168000580LC.png",
+   "site_id": "apollo17_alsep",
+   "reason": "ALSEP not identifiable: oblique frame (emission 45); terrain match failed"
+  },
+  {
+   "file_name": "moon/surveyor1/M129574162RC.png",
+   "site_id": "surveyor1",
+   "reason": "nominal position on the crop edge (x=2034); lander not found; terrain match from M122495769LC failed"
+  },
+  {
+   "file_name": "moon/surveyor1/M1096779945RC.png",
+   "site_id": "surveyor1",
+   "reason": "0.89 m/px: lander would be 3 px; not identifiable"
+  },
+  {
+   "file_name": "moon/surveyor1/M1276865940RC.png",
+   "site_id": "surveyor1",
+   "reason": "1.7 m/px near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/surveyor3/M177785917LC.png",
+   "site_id": "surveyor3",
+   "reason": "lander not identified; nominal near the crop edge; terrain match from the M175428601RC box failed"
+  },
+  {
+   "file_name": "moon/surveyor5/M1376299219RC.png",
+   "site_id": "surveyor5",
+   "reason": "high sun at 0.73 m/px: hundreds of bright specks (boulders, fresh craters); lander not distinguishable"
+  },
+  {
+   "file_name": "moon/surveyor5/M1514615937RC.png",
+   "site_id": "surveyor5",
+   "reason": "nominal on the crop edge (x=60); lander not found"
+  },
+  {
+   "file_name": "moon/surveyor5/M1218808909RC.png",
+   "site_id": "surveyor5",
+   "reason": "0.8 m/px: all candidates within 450 px are craters; lander not found"
+  },
+  {
+   "file_name": "moon/surveyor5/M1276430230LC.png",
+   "site_id": "surveyor5",
+   "reason": "0.78 m/px low sun: all candidates within 450 px are craters; lander not found"
+  },
+  {
+   "file_name": "moon/surveyor6/M1323607494RC.png",
+   "site_id": "surveyor6",
+   "reason": "1.9 m/px: not identifiable"
+  },
+  {
+   "file_name": "moon/surveyor6/M1456219989RC.png",
+   "site_id": "surveyor6",
+   "reason": "0.73 m/px: terrain match from M152885739LC failed; all candidates craters"
+  },
+  {
+   "file_name": "moon/luna16/M1523757896LC.png",
+   "site_id": "luna16",
+   "reason": "0.9 m/px: lander would be 4 px; not identifiable"
+  },
+  {
+   "file_name": "moon/luna16/M1527260530RC.png",
+   "site_id": "luna16",
+   "reason": "0.77 m/px: not identifiable among craters"
+  },
+  {
+   "file_name": "moon/luna16/M174909036LC.png",
+   "site_id": "luna16",
+   "reason": "0.43 m/px mid sun: no raised object with shadow within 450 px of nominal; only craters and pixel-scale specks"
+  },
+  {
+   "file_name": "moon/luna17/M131881859LC.png",
+   "site_id": "luna17",
+   "reason": "near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/luna17/M157825905LC.png",
+   "site_id": "luna17",
+   "reason": "no raised object found near nominal or among the 16 strongest candidates"
+  },
+  {
+   "file_name": "moon/luna17/M162542164RC.png",
+   "site_id": "luna17",
+   "reason": "low sun: not identifiable"
+  },
+  {
+   "file_name": "moon/luna17/M175502049RC.png",
+   "site_id": "luna17",
+   "reason": "no raised object with shadow found within 450 px of nominal"
+  },
+  {
+   "file_name": "moon/luna20/M119482862RC.png",
+   "site_id": "luna20",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/luna20/M1468729978LC.png",
+   "site_id": "luna20",
+   "reason": "near-terminator 0.73 m/px: not identifiable"
+  },
+  {
+   "file_name": "moon/luna20/M174902210RC.png",
+   "site_id": "luna20",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/luna20/M177264491LC.png",
+   "site_id": "luna20",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/luna21/M122007650LC.png",
+   "site_id": "luna21",
+   "reason": "no raised object found; terrain is a smooth slope"
+  },
+  {
+   "file_name": "moon/luna21/M1277550966LC.png",
+   "site_id": "luna21",
+   "reason": "1.05 m/px near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/luna21/M1369194823LC.png",
+   "site_id": "luna21",
+   "reason": "not identifiable"
+  },
+  {
+   "file_name": "moon/luna21/M1409094614RC.png",
+   "site_id": "luna21",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/luna23/M119449091LC.png",
+   "site_id": "luna23",
+   "reason": "candidates are boulders of a boulder field east of nominal; the toppled lander cannot be told from them"
+  },
+  {
+   "file_name": "moon/luna23/M1468695090LC.png",
+   "site_id": "luna23",
+   "reason": "near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/luna23/M174868307LC.png",
+   "site_id": "luna23",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/luna23/M177223697LC.png",
+   "site_id": "luna23",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/luna24/M119449091RC.png",
+   "site_id": "luna24",
+   "reason": "not identifiable"
+  },
+  {
+   "file_name": "moon/luna24/M139497036RC.png",
+   "site_id": "luna24",
+   "reason": "high sun: single bright 5 px dot 380 px from nominal is as likely a boulder; not boxed"
+  },
+  {
+   "file_name": "moon/luna24/M1412427826LC.png",
+   "site_id": "luna24",
+   "reason": "0.84 m/px: only craters among candidates"
+  },
+  {
+   "file_name": "moon/luna24/M1468695090LC.png",
+   "site_id": "luna24",
+   "reason": "near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/lunokhod1/M131881859LC.png",
+   "site_id": "lunokhod1",
+   "reason": "near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/lunokhod1/M157825905RC.png",
+   "site_id": "lunokhod1",
+   "reason": "nominal on the crop edge; nearest candidate is crater-like"
+  },
+  {
+   "file_name": "moon/lunokhod1/M162542164RC.png",
+   "site_id": "lunokhod1",
+   "reason": "low sun: only craters among candidates"
+  },
+  {
+   "file_name": "moon/lunokhod2/M119646179LC.png",
+   "site_id": "lunokhod2",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/lunokhod2/M132630442RC.png",
+   "site_id": "lunokhod2",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/lunokhod2/M139707174RC.png",
+   "site_id": "lunokhod2",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/lunokhod2/M177433351LC.png",
+   "site_id": "lunokhod2",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/change3/M1456303368LC.png",
+   "site_id": "change3",
+   "reason": "0.77 m/px: not identifiable"
+  },
+  {
+   "file_name": "moon/change3/M1524212845RC.png",
+   "site_id": "change3",
+   "reason": "near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/change3/M1532478305RC.png",
+   "site_id": "change3",
+   "reason": "many bright specks with shadows in the Zi Wei ejecta; lander not distinguishable from boulders"
+  },
+  {
+   "file_name": "moon/change4/M1305967189RC.png",
+   "site_id": "change4",
+   "reason": "0.84 m/px low sun: not identifiable"
+  },
+  {
+   "file_name": "moon/change4/M1311886645LC.png",
+   "site_id": "change4",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/change4/M1349482902RC.png",
+   "site_id": "change4",
+   "reason": "nominal on the crop edge; not identifiable"
+  },
+  {
+   "file_name": "moon/change4/M1403481082RC.png",
+   "site_id": "change4",
+   "reason": "0.99 m/px: only craters among candidates"
+  },
+  {
+   "file_name": "moon/change5/M1461200914RC.png",
+   "site_id": "change5",
+   "reason": "no raised object found near nominal"
+  },
+  {
+   "file_name": "moon/change5/M1524423204LC.png",
+   "site_id": "change5",
+   "reason": "near-terminator: not identifiable"
+  },
+  {
+   "file_name": "moon/change5/M1528011618RC.png",
+   "site_id": "change5",
+   "reason": "nominal on the crop edge; only craters among candidates"
+  },
+  {
+   "file_name": "moon/change5/M1535030715RC.png",
+   "site_id": "change5",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/change6/M1472410644LC.png",
+   "site_id": "change6",
+   "reason": "0.95 m/px: only craters among candidates"
+  },
+  {
+   "file_name": "moon/change6/M1490040481LC.png",
+   "site_id": "change6",
+   "reason": "1.0 m/px: only craters among candidates"
+  },
+  {
+   "file_name": "moon/change6/M1494730035LC.png",
+   "site_id": "change6",
+   "reason": "1.0 m/px: not identifiable"
+  },
+  {
+   "file_name": "moon/change6/M1525154169RC.png",
+   "site_id": "change6",
+   "reason": "1.2 m/px near-terminator: not identifiable"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_028678_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_029957_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_030168_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_030313_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_032436_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_034572_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_035350_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_036128_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_037117_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_040269_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_078499_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_083233_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_028269_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_028335_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_028401_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_028612_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_028678_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_030168_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_030313_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_032436_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_034572_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_035350_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_037117_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_039280_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_040770_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_042682_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_043539_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_044172_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_045293_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_046137_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_047416_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_049552_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_050897_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_052176_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_053732_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_056409_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_058361_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_060207_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_060840_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_061961_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_064519_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_069031_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_073567_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_076811_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_083233_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_085725_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_087149_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/insight/ESP_057939_1845.png",
+   "site_id": "insight",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/insight/ESP_058717_1845.png",
+   "site_id": "insight",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/insight/ESP_058928_1845.png",
+   "site_id": "insight",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/insight/ESP_059284_1845.png",
+   "site_id": "insight",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/insight/ESP_067157_1845.png",
+   "site_id": "insight",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/insight/ESP_087004_1845.png",
+   "site_id": "insight",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_071077_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_073068_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_073635_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_083512_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_084883_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_088351_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_090619_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_090685_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_093546_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_068294_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_068822_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_071077_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_082945_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_085582_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_085714_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_085859_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_093190_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_011268_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_011980_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_014103_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_014393_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_015949_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_016160_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_016437_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_018494_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_023175_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_023452_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_045566_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_053451_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_008585_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_008644_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_008855_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009066_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009073_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009086_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009284_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009290_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009376_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009488_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009495_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009501_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009653_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_009725_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010009_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010068_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010279_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010286_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010365_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010424_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010431_2915.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010569_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  },
+  {
+   "file_name": "mars/phoenix/PSP_010780_2485.png",
+   "site_id": "phoenix",
+   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+  }
+ ]
+}

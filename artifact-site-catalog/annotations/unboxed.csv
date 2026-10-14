@@ -1,0 +1,172 @@
+file_name,site_id,reason
+moon/apollo12_lm/M116466489RC.png,apollo12_lm,"unusable: near-terminator (incidence 85.7), crop is dominated by column striping; no terrain visible"
+moon/apollo12_alsep/M168353795LC.png,apollo12_alsep,"ALSEP not identifiable in this oblique frame (emission 28, 0.42 m/px); LM box transferred instead"
+moon/apollo14_alsep/M168319885RC.png,apollo14_alsep,"ALSEP not identifiable in this oblique frame; LM boxed instead"
+moon/apollo14_sivb/M175448936LC.png,apollo14_sivb,"crater not identifiable: crop is a saturated bright patch with no sharp crater at mid sun; terrain match failed"
+moon/apollo15_sivb/M1367135045LC.png,apollo15_sivb,"crater not identifiable: no rayed crater visible in the crop; probably mislocated frame"
+moon/apollo15_sivb/M1524199681RC.png,apollo15_sivb,"crater not identifiable: no rayed crater visible in the crop; probably mislocated frame"
+moon/apollo16_lm/M117392541LC.png,apollo16_lm,"LM not identifiable: near-terminator frame (incidence 83), only craters visible near the matched position"
+moon/apollo16_sivb/M1276746552RC.png,apollo16_sivb,"crater not identifiable: low-sun frame, no crater at or near the nominal position"
+moon/apollo17_lrv/M168000580RC.png,apollo17_lrv,"not identifiable: crop is saturated bright blast-zone terrain at 0.42 m/px, no shadowed object stands out"
+moon/apollo17_lm/M168000580LC.png,apollo17_lm,"LM not identifiable: oblique frame (emission 45) over the bright blast zone; terrain match failed"
+moon/apollo17_alsep/M168000580LC.png,apollo17_alsep,"ALSEP not identifiable: oblique frame (emission 45); terrain match failed"
+moon/surveyor1/M129574162RC.png,surveyor1,"nominal position on the crop edge (x=2034); lander not found; terrain match from M122495769LC failed"
+moon/surveyor1/M1096779945RC.png,surveyor1,"0.89 m/px: lander would be 3 px; not identifiable"
+moon/surveyor1/M1276865940RC.png,surveyor1,"1.7 m/px near-terminator: not identifiable"
+moon/surveyor3/M177785917LC.png,surveyor3,"lander not identified; nominal near the crop edge; terrain match from the M175428601RC box failed"
+moon/surveyor5/M1376299219RC.png,surveyor5,"high sun at 0.73 m/px: hundreds of bright specks (boulders, fresh craters); lander not distinguishable"
+moon/surveyor5/M1514615937RC.png,surveyor5,"nominal on the crop edge (x=60); lander not found"
+moon/surveyor5/M1218808909RC.png,surveyor5,"0.8 m/px: all candidates within 450 px are craters; lander not found"
+moon/surveyor5/M1276430230LC.png,surveyor5,"0.78 m/px low sun: all candidates within 450 px are craters; lander not found"
+moon/surveyor6/M1323607494RC.png,surveyor6,"1.9 m/px: not identifiable"
+moon/surveyor6/M1456219989RC.png,surveyor6,"0.73 m/px: terrain match from M152885739LC failed; all candidates craters"
+moon/luna16/M1523757896LC.png,luna16,"0.9 m/px: lander would be 4 px; not identifiable"
+moon/luna16/M1527260530RC.png,luna16,"0.77 m/px: not identifiable among craters"
+moon/luna16/M174909036LC.png,luna16,"0.43 m/px mid sun: no raised object with shadow within 450 px of nominal; only craters and pixel-scale specks"
+moon/luna17/M131881859LC.png,luna17,"near-terminator: not identifiable"
+moon/luna17/M157825905LC.png,luna17,"no raised object found near nominal or among the 16 strongest candidates"
+moon/luna17/M162542164RC.png,luna17,"low sun: not identifiable"
+moon/luna17/M175502049RC.png,luna17,"no raised object with shadow found within 450 px of nominal"
+moon/luna20/M119482862RC.png,luna20,"only craters among candidates"
+moon/luna20/M1468729978LC.png,luna20,"near-terminator 0.73 m/px: not identifiable"
+moon/luna20/M174902210RC.png,luna20,"only craters among candidates"
+moon/luna20/M177264491LC.png,luna20,"only craters among candidates"
+moon/luna21/M122007650LC.png,luna21,"no raised object found; terrain is a smooth slope"
+moon/luna21/M1277550966LC.png,luna21,"1.05 m/px near-terminator: not identifiable"
+moon/luna21/M1369194823LC.png,luna21,"not identifiable"
+moon/luna21/M1409094614RC.png,luna21,"only craters among candidates"
+moon/luna23/M119449091LC.png,luna23,"candidates are boulders of a boulder field east of nominal; the toppled lander cannot be told from them"
+moon/luna23/M1468695090LC.png,luna23,"near-terminator: not identifiable"
+moon/luna23/M174868307LC.png,luna23,"only craters among candidates"
+moon/luna23/M177223697LC.png,luna23,"only craters among candidates"
+moon/luna24/M119449091RC.png,luna24,"not identifiable"
+moon/luna24/M139497036RC.png,luna24,"high sun: single bright 5 px dot 380 px from nominal is as likely a boulder; not boxed"
+moon/luna24/M1412427826LC.png,luna24,"0.84 m/px: only craters among candidates"
+moon/luna24/M1468695090LC.png,luna24,"near-terminator: not identifiable"
+moon/lunokhod1/M131881859LC.png,lunokhod1,"near-terminator: not identifiable"
+moon/lunokhod1/M157825905RC.png,lunokhod1,"nominal on the crop edge; nearest candidate is crater-like"
+moon/lunokhod1/M162542164RC.png,lunokhod1,"low sun: only craters among candidates"
+moon/lunokhod2/M119646179LC.png,lunokhod2,"only craters among candidates"
+moon/lunokhod2/M132630442RC.png,lunokhod2,"only craters among candidates"
+moon/lunokhod2/M139707174RC.png,lunokhod2,"only craters among candidates"
+moon/lunokhod2/M177433351LC.png,lunokhod2,"only craters among candidates"
+moon/change3/M1456303368LC.png,change3,"0.77 m/px: not identifiable"
+moon/change3/M1524212845RC.png,change3,"near-terminator: not identifiable"
+moon/change3/M1532478305RC.png,change3,"many bright specks with shadows in the Zi Wei ejecta; lander not distinguishable from boulders"
+moon/change4/M1305967189RC.png,change4,"0.84 m/px low sun: not identifiable"
+moon/change4/M1311886645LC.png,change4,"only craters among candidates"
+moon/change4/M1349482902RC.png,change4,"nominal on the crop edge; not identifiable"
+moon/change4/M1403481082RC.png,change4,"0.99 m/px: only craters among candidates"
+moon/change5/M1461200914RC.png,change5,"no raised object found near nominal"
+moon/change5/M1524423204LC.png,change5,"near-terminator: not identifiable"
+moon/change5/M1528011618RC.png,change5,"nominal on the crop edge; only craters among candidates"
+moon/change5/M1535030715RC.png,change5,"only craters among candidates"
+moon/change6/M1472410644LC.png,change6,"0.95 m/px: only craters among candidates"
+moon/change6/M1490040481LC.png,change6,"1.0 m/px: only craters among candidates"
+moon/change6/M1494730035LC.png,change6,"1.0 m/px: not identifiable"
+moon/change6/M1525154169RC.png,change6,"1.2 m/px near-terminator: not identifiable"
+mars/curiosity_landing/ESP_028678_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_029957_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_030168_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_030313_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_032436_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_034572_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_035350_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_036128_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_037117_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_040269_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_078499_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_landing/ESP_083233_1755.png,curiosity_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/curiosity_rover/ESP_028269_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_028335_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_028401_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_028612_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_028678_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_030168_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_030313_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_032436_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_034572_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_035350_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_037117_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_039280_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_040770_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_042682_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_043539_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_044172_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_045293_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_046137_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_047416_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_049552_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_050897_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_052176_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_053732_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_056409_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_058361_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_060207_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_060840_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_061961_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_064519_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_069031_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_073567_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_076811_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_083233_1755.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_085725_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/curiosity_rover/ESP_087149_1750.png,curiosity_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/insight/ESP_057939_1845.png,insight,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/insight/ESP_058717_1845.png,insight,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/insight/ESP_058928_1845.png,insight,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/insight/ESP_059284_1845.png,insight,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/insight/ESP_067157_1845.png,insight,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/insight/ESP_087004_1845.png,insight,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/perseverance_landing/ESP_071077_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_073068_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_073635_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_083512_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_084883_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_088351_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_090619_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_090685_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_landing/ESP_093546_1985.png,perseverance_landing,landing-site hardware not distinguishable at the catalog position in this frame
+mars/perseverance_rover/ESP_068294_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/perseverance_rover/ESP_068822_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/perseverance_rover/ESP_071077_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/perseverance_rover/ESP_082945_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/perseverance_rover/ESP_085582_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/perseverance_rover/ESP_085714_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/perseverance_rover/ESP_085859_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/perseverance_rover/ESP_093190_1985.png,perseverance_rover,"rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
+mars/phoenix/ESP_011268_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_011980_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_014103_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_014393_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_015949_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_016160_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_016437_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_018494_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_023175_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_023452_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_045566_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/ESP_053451_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_008585_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_008644_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_008855_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009066_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009073_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009086_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009284_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009290_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009376_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009488_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009495_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009501_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009653_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_009725_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010009_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010068_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010279_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010286_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010365_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010424_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010431_2915.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010569_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame
+mars/phoenix/PSP_010780_2485.png,phoenix,lander not distinguishable from polygon terrain / rocks at the catalog position in this frame

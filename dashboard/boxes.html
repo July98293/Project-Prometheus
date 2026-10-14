@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xenarch Artifact Boxes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="xenarch.css">
+<style>
+  .card { border: 1px solid var(--line); background: var(--paper); padding: 12px; margin: 0 0 16px; min-width: 0; }
+  .card .label { display: block; margin-bottom: 8px; }
+  .card img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+  .card .scroll { margin-top: 10px; }
+  td.hi { color: var(--accent); } td.med { color: var(--s1); } td.lo { color: var(--s3); }
+  td.note { white-space: normal; text-align: left; min-width: 320px; color: var(--ink-2); font: 300 12px/1.5 var(--font); }
+  .key { display: flex; flex-wrap: wrap; gap: 20px; font: 12px var(--mono); color: var(--ink-2); margin: 0 0 24px; }
+  .key i { display: inline-block; width: 14px; height: 9px; border: 2px solid currentColor; vertical-align: -1px; margin-right: 6px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 20px; }
+  .site-head { margin: 40px 0 16px; }
+  td.left { text-align: left; white-space: normal; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="brand">Xenarch <span class="label">Mission control</span></div>
+    <div class="links">
+      <a class="label" href="index.html">Flight log</a>
+      <a class="label" href="#moon">Moon ↓</a>
+      <a class="label" href="#mars">Mars ↓</a>
+      <a class="label" href="#unboxed">Not identified ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Ground truth</div>
+    <h1>Artifact boxes</h1>
+    <p class="lede">Bounding boxes around human-made hardware in the artifact-site crops. Boxes include the object's shadow. Coordinates are pixels in the 2048 × 2048 crop, origin top-left, edges inclusive.</p>
+    <div class="stats" id="stats"></div>
+    <div class="coords label"><span id="gen">—</span><span>Source · artifact-site-catalog/annotations/boxes.csv</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <div class="head"><span class="label">01</span><h2>How to read a sheet</h2></div>
+    <p class="caption">Left: tight zoom with the boxes. Right: 600 px of context, where the red cross is the catalog's nominal pixel. The catalog position is interpolated from the frame footprint and can be more than a thousand pixels off on LROC NAC crops, so the distance between the cross and the box is itself a measurement.</p>
+    <div class="key"><span style="color:var(--accent)"><i></i>HIGH confidence</span><span style="color:var(--s1)"><i></i>MEDIUM</span><span style="color:var(--s3)"><i></i>LOW · candidate only</span></div>
+    <div class="filters">
+      <select id="conf" aria-label="Minimum confidence"><option value="all">All confidences</option><option value="medium">Medium and high</option><option value="high">High only</option></select>
+      <select id="site" aria-label="Site"><option value="all">All sites</option></select>
+    </div>
+  </section>
+
+  <section id="moon"><div class="head"><span class="label">02</span><h2>Moon · LROC NAC</h2><span class="label" id="moonCount"></span></div><div id="moonCards"></div></section>
+  <section id="mars"><div class="head"><span class="label">03</span><h2>Mars · HiRISE</h2><span class="label" id="marsCount"></span></div><div id="marsCards"></div></section>
+
+  <section id="unboxed">
+    <div class="head"><span class="label">04</span><h2>Not identified</h2><span class="label" id="unbCount"></span></div>
+    <p class="caption tight">Positive crops with no box. The hardware could not be told from boulders, craters or rocks. They still count as positives for the detector; they have no pixel-level truth yet.</p>
+    <div class="scroll"><table id="unbTable"></table></div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span class="label">Xenarch · Project Prometheus</span><span class="label">Rebuild with boxtool.py review</span></div></footer>
+
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cls = {high: 'hi', medium: 'med', low: 'lo'};
+const rank = {high: 2, medium: 1, low: 0};
+let D = null;
+fetch('boxes.json').then(r => r.json()).then(d => { D = d; init(); }).catch(() => {
+  document.getElementById('stats').innerHTML = '<div class="stat"><span class="label">No boxes.json</span><b>run boxtool.py review</b></div>';
+});
+function init() {
+  document.getElementById('gen').textContent = 'Generated ' + D.generated;
+  document.getElementById('stats').innerHTML = [
+    ['Boxes', D.n_boxes], ['Crops boxed', D.frames.length],
+    ['Moon boxed / positive', D.boxed.Moon + ' / ' + D.positives.Moon], ['Mars boxed / positive', D.boxed.Mars + ' / ' + D.positives.Mars],
+    ['High · medium · low', D.confidence.high + ' · ' + D.confidence.medium + ' · ' + D.confidence.low], ['Not identified', D.unboxed.length]
+  ].map(([k, v]) => `<div class="stat"><span class="label">${k}</span><b>${v}</b></div>`).join('');
+  const sites = [...new Set(D.frames.map(f => f.site_id))].sort();
+  document.getElementById('site').innerHTML += sites.map(s => `<option value="${s}">${s}</option>`).join('');
+  document.getElementById('conf').onchange = render; document.getElementById('site').onchange = render;
+  const t = document.getElementById('unbTable');
+  t.innerHTML = '<tr><th>crop</th><th>site</th><th>reason</th></tr>' + D.unboxed.map(u => `<tr><td>${esc(u.file_name)}</td><td class="left">${esc(u.site_id)}</td><td class="note">${esc(u.reason)}</td></tr>`).join('');
+  document.getElementById('unbCount').textContent = D.unboxed.length + ' crops';
+  render();
+}
+function render() {
+  const minc = document.getElementById('conf').value, site = document.getElementById('site').value;
+  for (const body of ['Moon', 'Mars']) {
+    const el = document.getElementById(body.toLowerCase() + 'Cards'); let cur = null, html = '', n = 0;
+    const frames = D.frames.filter(f => f.body === body && (site === 'all' || f.site_id === site))
+      .sort((a, b) => (b.site_id.startsWith('apollo') - a.site_id.startsWith('apollo')) || a.site_id.localeCompare(b.site_id) || a.file.localeCompare(b.file));
+    for (const f of frames) {
+      const rows = f.boxes.filter(b => minc === 'all' || rank[b.confidence] >= rank[minc]);
+      if (!rows.length) continue; n++;
+      if (f.site_id !== cur) { cur = f.site_id; html += `<div class="site-head"><span class="label sub">${esc(f.site_id)}</span><h2>${esc(f.object)}</h2></div>`; }
+      html += `<div class="card"><span class="label">${esc(f.file)} · ${esc(f.instrument)} ${f.resolution_m_px} m/px · incidence ${f.incidence_deg}° · ${f.utc}</span>
+        <img src="${f.sheet}" alt="Review sheet for ${esc(f.file)}" loading="lazy">
+        <div class="scroll"><table><tr><th>object</th><th>x_min</th><th>y_min</th><th>x_max</th><th>y_max</th><th>w</th><th>h</th><th>shadow</th><th>conf</th><th>note</th></tr>` +
+        rows.map(b => `<tr><td class="${cls[b.confidence]}">${esc(b.object_id)}</td><td>${b.x_min}</td><td>${b.y_min}</td><td>${b.x_max}</td><td>${b.y_max}</td><td>${b.width_px}</td><td>${b.height_px}</td><td>${b.includes_shadow}</td><td class="${cls[b.confidence]}">${b.confidence}</td><td class="note">${esc(b.note)}</td></tr>`).join('') +
+        `</table></div></div>`;
+    }
+    el.innerHTML = html || '<p class="caption">No crops match the filter.</p>';
+    document.getElementById(body.toLowerCase() + 'Count').textContent = n + ' crops';
+  }
+}
+</script>
+</body>
+</html>

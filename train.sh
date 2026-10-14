@@ -5,6 +5,7 @@
 #   ./train.sh --mk18 [folder]     Mk18 PatchCore instead of the Mk15 VAE (no training, ~5 min)
 #   ./train.sh data/xenarch-imagery --latent-channels 8   Mk15 with a sharper spatial latent
 #   ./train.sh --view              only open the dashboard
+#   ./train.sh --boxes             only open the artifact bounding-box review page
 set -euo pipefail
 cd "$(dirname "$0")"
 PORT="${PORT:-8050}"
@@ -29,8 +30,9 @@ else
   sleep 1
 fi
 echo "Dashboard: http://localhost:$PORT"
-open "http://localhost:$PORT" 2>/dev/null || true
-[ "$DATA" = "--view" ] && exit 0
+PAGE=""; [ "$DATA" = "--boxes" ] && PAGE="boxes.html"
+open "http://localhost:$PORT/$PAGE" 2>/dev/null || true
+[ "$DATA" = "--view" ] || [ "$DATA" = "--boxes" ] && exit 0
 
 if [ ! -d "$DATA" ]; then
   echo "No image folder '$DATA'. Download the dataset with:"
