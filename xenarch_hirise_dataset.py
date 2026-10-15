@@ -19,7 +19,7 @@ RED3 / RED6 — RED4 is missing from many recent observations): one HTTP range r
 within 15 km of a lander, rover or crash site, are skipped, as are observations already in xenarch-imagery.
 
   .venv/bin/python xenarch_hirise_dataset.py [--out data/hirise-set] [--per-category 16]
-  .venv/bin/python xenarch_hirise_dataset.py --upload jules1235813/xenarch   (-> terrain/mars, after `hf auth login`)
+  .venv/bin/python xenarch_hirise_dataset.py --upload jules1235813/xenarch   (-> natural-terrain_training/mars_hirise, after `hf auth login`)
 """
 import csv, math, re, sys, time, urllib.error
 from pathlib import Path
@@ -27,6 +27,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
+from xenarch_hf import split_of
 from xenarch_live import LiveRun
 from xenarch_lroc_nac_dataset import http, upload
 
@@ -181,15 +182,17 @@ def fetch_tile(url):
     return (np.clip((t - lo) / (hi - lo), 0, 1) * 255).astype(np.uint8), dict(lines=lines, binning=binning, line0=l0)
 
 
-FIELDS = ["file", "category", "landform", "observation_id", "rationale", "channel", "lat", "lon",
-          "incidence_deg", "emission_deg", "solar_longitude", "utc_start", "line0", "source_url"]
+# column names shared by every table of the HF dataset (xenarch_hf.py); lat / lon_east are the observation centre
+FIELDS = ["file_name", "split", "body", "instrument", "landform", "sub_landform", "frame_id", "channel", "lat", "lon_east",
+          "incidence_deg", "emission_deg", "resolution_m_px", "solar_longitude_ls", "utc_start", "line0", "rationale",
+          "source_url"]
 
 
 def build(out, per_category):
     out.mkdir(parents=True, exist_ok=True)
     meta_path = out / "metadata.csv"
     rows = list(csv.DictReader(meta_path.open())) if meta_path.exists() else []
-    done = {(r["observation_id"], r["channel"]) for r in rows}
+    done = {(r["frame_id"], r["channel"]) for r in rows}
     known = {re.sub(r"_(RED|IR|BG).*", "", p.stem) for p in Path("data/xenarch-imagery/hirise_png").glob("*.png")}
 
     live.step("Choosing observations")
@@ -229,24 +232,26 @@ def build(out, per_category):
         with meta_path.open("w", newline="") as fh:
             w = csv.DictWriter(fh, FIELDS); w.writeheader(); w.writerows(rows)
     write_card(out, rows)
-    counts = {cat: sum(r["category"] == cat for r in rows) for cat in CATEGORIES}
+    counts = {cat: sum(r["landform"] == cat for r in rows) for cat in CATEGORIES}
     live.metric(tiles=len(rows), **counts)
     _log(f"Done: {len(rows)} tiles in {out}  " + "  ".join(f"{k} {v}" for k, v in counts.items()))
 
 
 def save_tile(out, rows, cat, o, ch, url, tile, info):
-    f = f"{cat}/{o['obs']}_{ch}.png"
+    f = f"{cat}/{o['obs']}_{ch}_{o['sub'].replace('_', '-')}.png"     # the sub-landform says what the tile shows
     (out / cat).mkdir(exist_ok=True)
     Image.fromarray(tile).save(out / f, optimize=True)
-    rows.append(dict(file=f, category=cat, landform=o["sub"], observation_id=o["obs"], rationale=o["why"],
-                     channel=ch, lat=f"{o['lat']:.4f}", lon=f"{o['lon']:.4f}", incidence_deg=o["inc"],
-                     emission_deg=o["emi"], solar_longitude=o["ls"], utc_start=o["time"],
-                     line0=info["line0"], source_url=url))
+    rows.append(dict(file_name=f, split=split_of(o["obs"]), body="Mars", instrument="HiRISE RED", landform=cat,
+                     sub_landform=o["sub"], frame_id=o["obs"], channel=ch, lat=f"{o['lat']:.4f}",
+                     lon_east=f"{o['lon']:.4f}", incidence_deg=o["inc"], emission_deg=o["emi"],
+                     resolution_m_px=o["scale"],                 # RDR map scale of this bin-2 observation
+                     solar_longitude_ls=o["ls"], utc_start=o["time"], line0=info["line0"], rationale=o["why"],
+                     source_url=url))
 
 
 def write_card(out, rows):
-    counts = {cat: sum(r["category"] == cat for r in rows) for cat in CATEGORIES}
-    subs = {cat: sorted({r["landform"] for r in rows if r["category"] == cat}) for cat in CATEGORIES}
+    counts = {cat: sum(r["landform"] == cat for r in rows) for cat in CATEGORIES}
+    subs = {cat: sorted({r["sub_landform"] for r in rows if r["landform"] == cat}) for cat in CATEGORIES}
     inc = np.array([float(r["incidence_deg"]) for r in rows]) if rows else np.zeros(0)
     bins = "  ".join(f"{lo}-{hi}°: {int(((inc >= lo) & (inc < hi)).sum())}" for lo, hi in INCIDENCE_BINS)
     table = "\n".join(f"| {cat} | {', '.join(subs[cat]).replace('_', ' ')} | {counts[cat]} |" for cat in CATEGORIES)
@@ -293,7 +298,7 @@ def _arg(name, default):
 if __name__ == "__main__":
     out = Path(_arg("--out", "data/hirise-set"))
     if "--upload" in sys.argv:
-        upload(_arg("--upload", ""), out, "terrain/mars"); sys.exit()
+        upload(_arg("--upload", ""), out, "mars"); sys.exit()
     live = LiveRun(__file__, str(out), ["Choosing observations", "Downloading"])
     try:
         build(out, int(_arg("--per-category", 16)))

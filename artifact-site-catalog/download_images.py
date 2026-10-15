@@ -15,7 +15,7 @@ Writes PNGs and metadata.csv (Hugging Face imagefolder layout) to data/artifact-
 Needs `opj_decompress` (brew install openjpeg).
 
   .venv/bin/python artifact-site-catalog/download_images.py [--out data/artifact-site-images] [--only moon|mars] [--no-live]
-  .venv/bin/python artifact-site-catalog/download_images.py --upload jules1235813/xenarch   (into hardware/images/ of the single dataset)
+  .venv/bin/python artifact-site-catalog/download_images.py --upload jules1235813/xenarch   (into human-hardware_ground-truth/crops_lroc-nac_hirise/ of the single dataset)
 """
 import csv, math, re, struct, subprocess, sys, tempfile, time
 from pathlib import Path
@@ -309,7 +309,7 @@ def build(out, only):
                 note, nbytes = "footprint corners, about ±60 px", CROP * 5064 * 2
             else:
                 lat = float(f.get("object_lat") or sites[f["site_id"]]["lat"])
-                lon = float(f.get("object_lon") or sites[f["site_id"]]["lon_east"])
+                lon = float(f.get("object_lon_east") or sites[f["site_id"]]["lon_east"])
                 img, x0, y0, (ox, oy), bad, nbytes = hirise_crop(f, lat, lon)
                 unc = f.get("position_uncertainty_m") or ""
                 note = "map projection" + (f", rover moved up to {unc} m that sol" if unc not in ("", "0", "0.0") else "")
@@ -360,10 +360,9 @@ def merge_metadata(out):
 
 def upload(repo, out):
     merge_metadata(out)
-    hf = str(Path(sys.executable).with_name("hf"))
-    subprocess.run([hf, "upload", repo, str(out), "hardware/images", "--repo-type", "dataset", "--exclude", "metadata_*.csv",
-                    "--exclude", "previews/**", "--commit-message", "hardware/images: crops centred on each catalogued object"], check=True)
-    print(f"https://huggingface.co/datasets/{repo}/tree/main/hardware/images")
+    sys.path.insert(0, str(HERE.parent))
+    import xenarch_hf                                     # renames moon/<site>/ to moon_lroc-nac/<site>_lroc-nac/ etc.
+    xenarch_hf.publish_crops(out, repo or xenarch_hf.REPO)
 
 
 def _arg(name, default):

@@ -2,9 +2,12 @@
 Xenarch artifact site catalog — known human-made objects on the Moon and Mars, and every orbital frame that
 covers them, with sun angle and resolution. The positive (anomaly) counterpart of the natural-terrain sets.
 
-  Moon  Apollo LMs, ALSEPs, LRVs and S-IVB impact craters; Surveyor 1-7; Luna 16-24 and Lunokhods; Chang'e 3-6.
+  Moon  Every object in the LROC anthropogenic-objects table: Apollo, Surveyor, Luna / Lunokhod, Chang'e / Yutu,
+        Chandrayaan, SLIM, IM-1/2, Blue Ghost landers and experiments; spacecraft and rocket-stage impact craters.
+        Plus Yutu-2, Pragyan and candidate positions (Apollo 14 LM ascent stage, SMART-1, Chang'e 1, Luna 9).
         Frames: LROC NAC calibrated images (CDRNAC4) whose footprint contains the object, found with NASA ODE.
-  Mars  Phoenix, Curiosity, InSight and Perseverance landing sites.
+  Mars  Phoenix, Curiosity, InSight, Perseverance (+ its landing hardware and Ingenuity), Viking 1/2, Pathfinder,
+        Spirit, Opportunity, Beagle 2, Schiaparelli, Tianwen-1 / Zhurong, the Mars 3 candidate.
         Frames: HiRISE RED observations whose footprint contains the site, from the HiRISE RDR cumulative index
         (cached in data/cache/hirise/ by xenarch_hirise_dataset.py).
         mars_mission_frames.csv: frames containing the Curiosity / Perseverance rover where it was on that sol
@@ -34,6 +37,9 @@ ODE_CACHE = HERE.parent / "data/cache/ode_nac"
 HIRISE_PDS = "https://hirise-pds.lpl.arizona.edu/PDS"
 
 LROC_2016 = "LROC 2016 Coordinates of Lunar Anthropogenic Targets (Wagner et al. 2016, Icarus)"
+LROC_2026 = "LROC anthropogenic-objects table (Wagner et al. 2017, Icarus; PDS EXTRAS/SHAPEFILE, 2026-08-14)"
+FOLKNER_1997 = "Folkner et al. 1997, radio tracking, as listed by PDS ODE Mars landing sites"
+STOOKE_2017 = "Stooke 2017, Finding spacecraft impacts on the Moon (planetary.org/articles/0207-finding-spacecraft-impacts-on-the-moon)"
 # site_id, body, mission, object, object_type, lat, east lon, elevation m, uncertainty m, arrival (UTC date), source
 SITES = [
     ("apollo11_lm", "Moon", "Apollo 11", "Apollo 11 LM descent stage", "crewed lander", 0.67416, 23.47314, -1926, 0.3, "1969-07-20", LROC_2016),
@@ -77,6 +83,56 @@ SITES = [
      "LROC, First Look: Chang'e 5 (lroc.asu.edu/posts/1172)"),
     ("change6", "Moon", "Chang'e 6", "Chang'e 6 lander", "robotic lander", -41.6385, 206.0148, -5256, 30, "2024-06-01",
      "LROC, First Look: Chang'e 6 (lroc.asu.edu/images/1374)"),
+    # LROC anthropogenic-objects table (PDS, 2026-08-14), first reference after the semicolon
+    ("apollo11_lrrr", "Moon", "Apollo 11", "Apollo 11 Laser Ranging Retroreflector", "surface experiment", 0.67345, 23.47307, -1928, 0.5, "1969-07-20", f"{LROC_2026}; https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de430_moon_coord.pdf"),
+    ("apollo12_pse", "Moon", "Apollo 12", "Apollo 12 Passive Seismic Experiment", "surface experiment", -3.0099, 336.5751, -1423, 2.6, "1969-11-19", f"{LROC_2026}; https://doi.org/10.1016/j.icarus.2016.05.011"),
+    ("apollo14_lrrr", "Moon", "Apollo 14", "Apollo 14 Laser Ranging Retroreflector", "surface experiment", -3.64417, 342.52135, -1064, 0.5, "1971-02-05", f"{LROC_2026}; https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de430_moon_coord.pdf"),
+    ("apollo14_pse", "Moon", "Apollo 14", "Apollo 14 Passive Seismic Experiment", "surface experiment", -3.64408, 342.52233, -1064, 0.4, "1971-02-05", f"{LROC_2026}; https://doi.org/10.1016/j.icarus.2016.05.011"),
+    ("apollo15_lrrr", "Moon", "Apollo 15", "Apollo 15 Laser Ranging Retroreflector", "surface experiment", 26.1334, 3.6285, -1923, 0.5, "1971-07-30", f"{LROC_2026}; https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de430_moon_coord.pdf"),
+    ("apollo15_pse", "Moon", "Apollo 15", "Apollo 15 Passive Seismic Experiment", "surface experiment", 26.13411, 3.6298, -1924, 0.3, "1971-07-30", f"{LROC_2026}; https://doi.org/10.1016/j.icarus.2016.05.011"),
+    ("apollo16_pse", "Moon", "Apollo 16", "Apollo 16 Passive Seismic Experiment", "surface experiment", -8.9759, 15.4986, 12, 2.5, "1972-04-21", f"{LROC_2026}; https://doi.org/10.1016/j.icarus.2016.05.011"),
+    ("apollo17_sep", "Moon", "Apollo 17", "Apollo 17 Surface Electrical Properties transmitter", "surface experiment", 20.192, 30.7768, -2627, 3.7, "1972-12-11", f"{LROC_2026}; https://doi.org/10.1016/j.icarus.2016.05.011"),
+    ("apollo12_lm_ascent", "Moon", "Apollo 12", "Apollo 12 LM ascent stage impact", "impact crater", -3.9195, 338.8279, -1085, 10.0, "1969-11-20", f"{LROC_2026}; https://doi.org/10.1016/j.icarus.2019.05.002"),
+    ("surveyor3_retrorocket", "Moon", "Surveyor 3", "Surveyor 3 retrorocket impact", "impact crater", -3.0086, 336.5816, -1421, 10.0, "1967-04-20", f"{LROC_2026}; https://www.lpi.usra.edu/meetings/lpsc2010/pdf/1116.pdf"),
+    ("surveyor5_retrorocket", "Moon", "Surveyor 5", "Surveyor 5 retrorocket impact", "impact crater", 1.4464, 23.1982, -2048, 7.5, "1967-09-11", f"{LROC_2026}; https://www.hou.usra.edu/meetings/lpsc2016/pdf/1025.pdf"),
+    ("surveyor6_retrorocket", "Moon", "Surveyor 6", "Surveyor 6 retrorocket impact", "impact crater", 0.4862, 358.5813, -762, 6.5, "1967-11-10", f"{LROC_2026}; https://www.hou.usra.edu/meetings/lpsc2016/pdf/1025.pdf"),
+    ("ranger6", "Moon", "Ranger 6", "Ranger 6 impact crater", "impact crater", 9.3864, 21.4806, -1996, 4.4, "1964-02-02", f"{LROC_2026}; https://doi.org/10.1016/j.pss.2016.01.002"),
+    ("ranger7", "Moon", "Ranger 7", "Ranger 7 impact crater", "impact crater", -10.634, 339.323, -1793, 4.8, "1964-07-31", f"{LROC_2026}; https://doi.org/10.1016/j.pss.2016.01.002"),
+    ("ranger8", "Moon", "Ranger 8", "Ranger 8 impact crater", "impact crater", 2.6377, 24.788, -2158, 4.6, "1965-02-20", f"{LROC_2026}; https://doi.org/10.1016/j.pss.2016.01.002"),
+    ("ranger9", "Moon", "Ranger 9", "Ranger 9 impact crater", "impact crater", -12.8281, 357.6116, -1531, 5.8, "1965-03-24", f"{LROC_2026}; https://doi.org/10.1016/j.pss.2016.01.002"),
+    ("lcross_centaur", "Moon", "LCROSS", "LCROSS Centaur upper-stage impact crater (permanent shadow)", "impact crater", -84.678, 311.3063, -3833, 10.0, "2009-10-09", f"{LROC_2026}; https://doi.org/10.1029/2024GL110355"),
+    ("grail_ebb", "Moon", "GRAIL", "GRAIL-A (Ebb) impact crater", "impact crater", 75.6088, 333.406, 750, 10.7, "2012-12-17", f"{LROC_2026}; https://lroc.im-ldi.com/images/596"),
+    ("grail_flow", "Moon", "GRAIL", "GRAIL-B (Flow) impact crater", "impact crater", 75.6508, 333.1659, 1039, 12.2, "2012-12-17", f"{LROC_2026}; https://lroc.im-ldi.com/images/596"),
+    ("ladee", "Moon", "LADEE", "LADEE impact crater", "impact crater", 11.8493, 266.7507, 2803, 6.7, "2014-04-18", f"{LROC_2026}; https://lroc.im-ldi.com/images/822"),
+    ("beresheet", "Moon", "Beresheet", "Beresheet crash site", "impact crater", 32.5953, 19.3495, -2616, 10.0, "2019-04-11", f"{LROC_2026}; https://lroc.im-ldi.com/images/1101"),
+    ("longjiang2", "Moon", "Longjiang-2", "Longjiang-2 impact crater", "impact crater", 16.6956, 159.517, -1484, 7.1, "2019-07-31", f"{LROC_2026}; https://destevez.net/2019/08/trying-to-find-the-dslwp-b-crash-site/"),
+    ("chandrayaan2_vikram", "Moon", "Chandrayaan-2", "Chandrayaan-2 Vikram lander crash site", "impact crater", -70.8811, 22.7834, 834, 9.1, "2019-09-06", f"{LROC_2026}; https://lroc.im-ldi.com/images/1131"),
+    ("change5t1_booster", "Moon", "Chang'e 5-T1", "Rocket-body double crater, 2022 (Chang'e 5-T1 booster, identity disputed)", "impact crater", 5.2269, 234.4848, 1833, 10.0, "2022-03-04", f"{LROC_2026}; https://projectpluto.com/temp/dscovr.htm"),
+    ("hakuto_r1", "Moon", "Hakuto-R 1", "Hakuto-R Mission 1 crash site", "impact crater", 47.58, 44.0938, -2910, 10.0, "2023-04-25", f"{LROC_2026}; https://lroc.im-ldi.com/images/1302"),
+    ("luna25", "Moon", "Luna 25", "Luna 25 crash crater", "impact crater", -57.8651, 61.3588, -342, 18.5, "2023-08-19", f"{LROC_2026}; https://lroc.im-ldi.com/images/1311"),
+    ("chandrayaan3_vikram", "Moon", "Chandrayaan-3", "Chandrayaan-3 Vikram lander", "robotic lander", -69.374, 32.3187, 532, 10.0, "2023-08-23", f"{LROC_2026}; https://lroc.im-ldi.com/images/1314"),
+    ("slim", "Moon", "SLIM", "SLIM lander", "robotic lander", -13.316, 25.251, -913, 10.0, "2024-01-19", f"{LROC_2026}; https://lroc.im-ldi.com/images/1358"),
+    ("im1_odysseus", "Moon", "IM-1", "IM-1 Odysseus lander", "robotic lander", -80.1276, 1.4367, 2580, 10.0, "2024-02-22", f"{LROC_2026}; https://lroc.im-ldi.com/images/1360"),
+    ("blue_ghost1", "Moon", "Blue Ghost 1", "Blue Ghost Mission 1 lander", "robotic lander", 18.5622, 61.8102, -3650, 10.0, "2025-03-02", f"{LROC_2026}; https://lroc.im-ldi.com/images/1407"),
+    ("im2_athena", "Moon", "IM-2", "IM-2 Athena lander", "robotic lander", -84.7906, 29.19567, 5321, 5.0, "2025-03-06", f"{LROC_2026}; https://lroc.im-ldi.com/images/1409"),
+    ("hakuto_r2", "Moon", "Hakuto-R 2", "Hakuto-R Mission 2 (Resilience) crash site", "impact crater", 60.4445, 355.412, -2432, 10.0, "2025-06-05", f"{LROC_2026}; https://lroc.im-ldi.com/images/1456"),
+    ("falcon9_2025_upper_stage", "Moon", "Blue Ghost 1 / Hakuto-R 2 launch", "Falcon 9 upper-stage impact crater (Blue Ghost 1 / Hakuto-R 2 launch)", "impact crater", 19.4759, 266.7138, 511, 100, "2026-08-05", "LROC, lroc.im-ldi.com/images/1499 (the 2026-08-14 table puts it ~90 m away)"),
+    ("chandrayaan3_pragyan", "Moon", "Chandrayaan-3", "Pragyan rover (final position, ~8 m from Vikram)", "rover", -69.374, 32.3187, 532, 50, "2023-08-23",
+     "Vikram's LROC position; offset from Tungathurthi 2026 (arXiv:2602.14993, Chandrayaan-2 OHRC image)"),
+    # candidate positions only: not in the LROC table, identification published but not confirmed
+    ("yutu2", "Moon", "Chang'e 4", "Yutu-2 rover (last published position, 2024-09)", "rover", -45.42414, 177.563727, None, 450, "2024-03-01",
+     "CNSA/NAOC rover-camera caption, lunar day 71 (SpaceNews 2025-01-14); Chinese mission frame, ~400 m off LROC's; "
+     "parked there since ~March 2024 (P. Stooke, same article), so earlier frames show it elsewhere"),
+    ("apollo14_lm_ascent", "Moon", "Apollo 14", "Apollo 14 LM ascent stage impact (candidate position)", "impact crater", -3.420, 340.363, None, 50, "1971-02-07",
+     STOOKE_2017),
+    ("smart1", "Moon", "SMART-1", "SMART-1 impact gouge (candidate position)", "impact crater", -34.262, 313.807, None, 100, "2006-09-03",
+     STOOKE_2017 + "; EPSC 2017 (europlanet.org/?p=2860)"),
+    ("change1", "Moon", "Chang'e 1", "Chang'e 1 impact (candidate position)", "impact crater", -1.66, 52.27, None, 300, "2009-03-01",
+     STOOKE_2017),
+    ("luna9_pinault", "Moon", "Luna 9", "Luna 9 lander (candidate position, Pinault et al.)", "robotic lander", 7.02907, 295.67133, None, None, "1966-02-03",
+     "Pinault, Yano & Crawford 2026, npj Space Exploration (nature.com/articles/s44453-025-00020-x); rival of luna9_egorov, ~28 km away"),
+    ("luna9_egorov", "Moon", "Luna 9", "Luna 9 lander (candidate position, Egorov)", "robotic lander", 7.86159, 296.14438, None, None, "1966-02-03",
+     "V. Egorov, reported by Scientific American 2026-02-05; rival of luna9_pinault, ~28 km away"),
     ("phoenix", "Mars", "Phoenix", "Phoenix lander", "robotic lander", 68.218830, 234.250778, None, 50, "2008-05-25",
      "NASA Phoenix landing site (areocentric, from HiRISE)"),
     ("curiosity_landing", "Mars", "Curiosity", "Curiosity landing site (Bradbury Landing)", "rover landing site", -4.5895, 137.4417, None, 50, "2012-08-06T05:17:57",
@@ -85,6 +141,35 @@ SITES = [
      "Golombek et al. 2020, Earth and Space Science"),
     ("perseverance_landing", "Mars", "Perseverance", "Perseverance landing site (Octavia E. Butler Landing)", "rover landing site", 18.4447, 77.4508, None, 50, "2021-02-18T20:43:49",
      "NASA / JPL Mars 2020 landing site"),
+    ("perseverance_heatshield", "Mars", "Perseverance", "Perseverance heat shield", "landing hardware", 18.45533, 77.47444, None, 50, "2021-02-18T20:43:49",
+     "Way et al. 2022, AIAA SciTech, Table 1 (ntrs.nasa.gov/citations/20210024480)"),
+    ("perseverance_backshell", "Mars", "Perseverance", "Perseverance backshell and parachute", "landing hardware", 18.45160, 77.43216, None, 50, "2021-02-18T20:43:49",
+     "Way et al. 2022, AIAA SciTech, Table 1 (ntrs.nasa.gov/citations/20210024480)"),
+    ("perseverance_descent_stage", "Mars", "Perseverance", "Perseverance descent stage (sky crane) crash site", "landing hardware", 18.45209, 77.44193, None, 50, "2021-02-18T20:43:49",
+     "Way et al. 2022, AIAA SciTech, Table 1 (ntrs.nasa.gov/citations/20210024480)"),
+    ("ingenuity", "Mars", "Perseverance", "Ingenuity helicopter (final position, flight 72)", "helicopter", 18.49726866, 77.32253449, -2399, 50, "2024-01-18",
+     "NASA/JPL MMGIS helicopter waypoints (m20_heli_waypoints.json)"),
+    ("insight_heatshield", "Mars", "InSight", "InSight heat shield", "landing hardware", 4.508346, 135.634845, -2618, 1, "2018-11-26",
+     "Golombek et al. 2020, Earth and Space Science (lat/lon labels swapped in the paper)"),
+    ("insight_backshell", "Mars", "InSight", "InSight backshell and parachute", "landing hardware", 4.49413, 135.627781, -2614, 1, "2018-11-26",
+     "Golombek et al. 2020, Earth and Space Science"),
+    ("viking1", "Mars", "Viking 1", "Viking 1 lander", "robotic lander", 22.269, 312.049, None, 300, "1976-07-20", FOLKNER_1997),
+    ("viking2", "Mars", "Viking 2", "Viking 2 lander", "robotic lander", 47.668, 134.280, None, 300, "1976-09-03", FOLKNER_1997),
+    ("pathfinder", "Mars", "Mars Pathfinder", "Mars Pathfinder lander (Carl Sagan Memorial Station)", "robotic lander", 19.095, 326.747, None, 300, "1997-07-04", FOLKNER_1997),
+    ("spirit", "Mars", "Spirit", "Spirit rover (final position, Troy)", "rover", -14.600366, 175.525377, None, 10, "2009-04-27",
+     "PDS MER Analyst's Notebook corrected traverse (Parker); within 0.5 m of this point from sol 1889"),
+    ("opportunity", "Mars", "Opportunity", "Opportunity rover (final position, Perseverance Valley)", "rover", -2.330925, 354.651023, None, 10, "2018-05-05",
+     "PDS MER Analyst's Notebook corrected traverse (Parker); last drive sol 5076"),
+    ("beagle2", "Mars", "Beagle 2", "Beagle 2 lander (partly deployed)", "robotic lander", 11.52879, 90.43139, None, 100, "2003-12-25",
+     "Bridges et al. 2017, Royal Society Open Science"),
+    ("schiaparelli", "Mars", "ExoMars 2016", "Schiaparelli crash site (position = HiRISE image centre)", "impact crater", -2.047, 353.790, None, 1000, "2016-10-19",
+     "HiRISE ESP_062731_1780 image centre (uahirise.org); no measured point published"),
+    ("tianwen1_lander", "Mars", "Tianwen-1", "Tianwen-1 lander", "robotic lander", 25.066, 109.925, -4099, 100, "2021-05-14",
+     "Liu J. et al. 2022, Nature Astronomy"),
+    ("zhurong", "Mars", "Tianwen-1", "Zhurong rover (final position = HiRISE image centre)", "rover", 25.059, 109.918, None, 2500, "2022-05-18",
+     "HiRISE ESP_075559_2055 image centre (uahirise.org); hibernating since 2022-05-18, unmoved Sep 2022 - Feb 2023"),
+    ("mars3", "Mars", "Mars 3", "Mars 3 lander (candidate position = HiRISE image centre)", "robotic lander", -45.058, 202.031, None, 3000, "1971-12-02",
+     "HiRISE ESP_031036_1345 image centre (uahirise.org); candidate only, other explanations not ruled out"),
 ]
 
 # HiRISE rationale text that names a mission (for rover-tracking observations away from the landing site).
@@ -114,7 +199,7 @@ FRAME_FIELDS = ["site_id", "object", "mission", "body", "frame_id", "instrument"
                 "phase_deg", "resolution_m_px", "local_solar_time_h", "solar_longitude_ls", "obj_sample_frac",
                 "obj_line_frac", "frame_center_lat", "frame_center_lon", "team_rationale", "image_url", "label_url",
                 "browse_url"]
-MISSION_FIELDS = FRAME_FIELDS + ["object_lat", "object_lon", "rover_sol", "position_uncertainty_m", "found_by"]
+MISSION_FIELDS = FRAME_FIELDS + ["object_lat", "object_lon_east", "rover_sol", "position_uncertainty_m", "found_by"]
 
 live = None
 
@@ -277,7 +362,7 @@ def rover_frames(mission, obs, site):
         if not (inside(*b, o["corners"]) or inside(*a, o["corners"])):
             continue
         rows.append(hirise_row(site, o) | dict(site_id=f"{mission.lower()}_rover", object=f"{mission} rover",
-                                               object_lat=round(b[0], 6), object_lon=round(b[1], 6), rover_sol=sol,
+                                               object_lat=round(b[0], 6), object_lon_east=round(b[1], 6), rover_sol=sol,
                                                position_uncertainty_m=round(km_mars(a, b) * 1000, 1),
                                                found_by="rover waypoint"))
     return rows, wp, late
@@ -323,7 +408,7 @@ def build():
     live.step("Mars (HiRISE)")
     obs = hirise_index()
     _log(f"   HiRISE index: {len(obs)} RED observations, latest {max(o['time'] for o in obs)[:10]}")
-    extra, covered = [], set()
+    extra, covered, found = [], set(), set()
     for k, site in enumerate(mars):
         live.progress(k, len(mars), "sites")
         _, _, mission, obj, _, lat, lon, *_ = site
@@ -334,27 +419,33 @@ def build():
         s = sites_out[-1]
         _log(f"   {obj:<40} {s['frames_total']:4d} frames ({s['frames_after_arrival']} after arrival), "
              f"best {s['best_resolution_m_px']} m/px")
-        found = set()
-        if mission in ROVERS:
+        if site[0] == ROVERS.get(mission, {}).get("site"):   # once per rover, from its landing site
             rows, wp, late = rover_frames(mission, obs, site)
-            extra += rows; found = {r["frame_id"] for r in rows}
+            extra += rows; found |= {r["frame_id"] for r in rows}
             rover = (f"{mission.lower()}_rover", "Mars", mission, f"{mission} rover (latest published position)", "rover",
                      wp[-1][1], wp[-1][2], None, "", site[9], f"NASA/JPL MMGIS waypoints, sol {wp[-1][0]}")
             sites_out.append(summarise(rover, rows))
             _log(f"      + {len(rows)} frames containing the {mission} rover (waypoints to sol {wp[-1][0]}; "
                  f"{late} later frames skipped, position not yet published)")
-        rx = re.compile(MISSION_WORDS[mission], re.I)
+    # hardware with no published position (ballast / balance-mass impacts): frames whose rationale names it, listed
+    # under the mission's first site; run after every site so frames that contain a placed object are not repeated
+    for mission, words in MISSION_WORDS.items():
+        site = next((s for s in mars if s[2] == mission), None)
+        if not site:
+            continue
+        rx = re.compile(words, re.I)
         named = [hirise_row(site, o) | dict(site_id=f"{mission.lower()}_mission", found_by="team rationale")
                  for o in obs if o["obs"] not in covered | found and rx.search(o["why"])
                  and after(o["time"], site[9])
                  and HARDWARE_NAMED.search(o["why"]) and not NOT_THE_HARDWARE.search(o["why"])
                  and NOT_THE_ROVER.search(o["why"])]
         extra += named
-        _log(f"      + {len(named)} more {mission} frames whose rationale names the hardware")
+        _log(f"   + {len(named)} more {mission} frames whose rationale names the hardware")
 
     write_csv(HERE / "frames.csv", FRAME_FIELDS, frames_out)
     write_csv(HERE / "mars_mission_frames.csv", MISSION_FIELDS, sorted(extra, key=lambda f: (f["mission"], f["utc_start"])))
     write_csv(HERE / "sites.csv", list(sites_out[0]), sites_out)
+    import merge_catalog; merge_catalog.merge()           # catalog.csv: the single merged table
     live.metric(objects=len(sites_out), frames=len(frames_out), mars_mission_frames=len(extra))
     _log(f"Done: {len(sites_out)} objects, {len(frames_out)} object-frame rows, {len(extra)} Mars mission frames")
 

@@ -1,6 +1,10 @@
 # Xenarch artifact site catalog
 
-Published as `hardware/` of the private HF dataset `jules1235813/xenarch`.
+Published as `human-hardware_ground-truth/` of the private HF dataset `jules1235813/xenarch` with camera-labelled names:
+`catalog_moon-mars_lroc-nac_hirise.csv` (the main table, `catalog.csv` here), `derived/sites_moon-mars.csv`,
+`derived/frames_lroc-nac_hirise.csv`, `derived/rover-frames_mars_hirise.csv`, crops in
+`crops_lroc-nac_hirise/moon_lroc-nac/<site>_lroc-nac/<frame>_<site>.png` and the same under `mars_hirise/`.
+Publish with `.venv/bin/python xenarch_hf.py tables` / `xenarch_hf.py crops`, which map the local names below.
 
 Known human-made objects on the Moon and Mars, plus every orbital frame that covers them, with sun angle and
 resolution. This is ground truth for Xenarch, an unsupervised anomaly detector trained only on natural terrain:
@@ -147,8 +151,14 @@ Which frames were cut:
   left out. The team rationale is used only for the ballast / balance-mass impact zones, which have no
   published coordinates.
 
-Not included yet: Ranger, GRAIL and LADEE impact sites; Luna 9 and 13; Chandrayaan-3, SLIM, IM-1, Blue Ghost
-and Yutu-2; Mars heat shields, backshells and parachutes; Spirit, Opportunity, Viking, Pathfinder, Zhurong.
+Sources of the 56 objects added in October 2026: Moon, the LROC team's anthropogenic-objects table (PDS
+`EXTRAS/SHAPEFILE/ANTHROPOGENIC_OBJECTS`, 2026-08-14) plus Stooke 2017 and two 2026 Luna 9 papers for candidate
+positions (`object` says "candidate"); Mars, the papers and archives named in `coord_source`. Schiaparelli, Zhurong
+and Mars 3 have only the centre of a HiRISE image aimed at them; crops for the new objects are not cut yet.
+
+Not included (no published position): Luna 13; Apollo 15/17 LM ascent stages; Kaguya, Chandrayaan-1 MIP, Lunar
+Prospector; Chang'e 5/6 ascenders; Curiosity's and Phoenix's heat shields and backshells; Schiaparelli's and
+Tianwen-1's parachutes and shields; Spirit's and Opportunity's landing hardware.
 
 ## Credit
 

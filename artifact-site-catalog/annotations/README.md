@@ -1,9 +1,11 @@
 # Xenarch artifact site bounding boxes
 
-Published as `hardware/boxes.csv`, `boxes_coco.json`, `unboxed.csv` in the private HF dataset `jules1235813/xenarch`.
+Published as `human-hardware_ground-truth/boxes_lroc-nac_hirise.csv`, `boxes-coco_lroc-nac_hirise.json`, `unboxed_lroc-nac_hirise.csv`
+in the private HF dataset `jules1235813/xenarch` (`.venv/bin/python xenarch_hf.py tables`; `file_name` becomes e.g.
+`moon_lroc-nac/apollo11_lm_lroc-nac/M117338434RC.png`).
 
 Bounding boxes around human-made hardware in the 2048×2048 orbital crops of
-`hardware/images/` of the HF dataset `jules1235813/xenarch`. Ground truth for Xenarch, an unsupervised anomaly detector trained only on natural terrain.
+`human-hardware_ground-truth/crops_lroc-nac_hirise/` of the HF dataset `jules1235813/xenarch`. Ground truth for Xenarch, an unsupervised anomaly detector trained only on natural terrain.
 
 | File | What |
 |---|---|

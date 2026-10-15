@@ -19,14 +19,15 @@ a tile centred on the target plus up to three neighbours across the strip. Targe
 the "natural" memory.
 
   .venv/bin/python xenarch_lroc_nac_dataset.py [--out data/lroc-nac-set] [--per-category 12] [--suns 2]
-  .venv/bin/python xenarch_lroc_nac_dataset.py --upload jules1235813/xenarch   (-> terrain/moon, after `hf auth login`)
+  .venv/bin/python xenarch_lroc_nac_dataset.py --upload jules1235813/xenarch   (-> natural-terrain_training/moon_lroc-nac, after `hf auth login`)
 """
-import csv, io, json, math, re, struct, subprocess, sys, time, urllib.error, urllib.parse, urllib.request, zipfile
+import csv, io, json, math, re, struct, sys, time, urllib.error, urllib.parse, urllib.request, zipfile
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
 
+from xenarch_hf import split_of
 from xenarch_live import LiveRun
 
 ODE = "https://oderest.rsl.wustl.edu/live2/"
@@ -277,15 +278,16 @@ def fetch_tiles(c):
     return tiles
 
 
-FIELDS = ["file", "category", "target", "target_lat", "target_lon", "product_id", "incidence_deg", "emission_deg",
-          "phase_deg", "resolution_m", "utc_start", "line0", "sample0", "source_url"]
+# column names shared by every table of the HF dataset (xenarch_hf.py); lat / lon_east are the target's coordinates
+FIELDS = ["file_name", "split", "body", "instrument", "landform", "target", "frame_id", "lat", "lon_east", "incidence_deg",
+          "emission_deg", "phase_deg", "resolution_m_px", "utc_start", "line0", "sample0", "source_url"]
 
 
 def build(out, per_category, suns):
     out.mkdir(parents=True, exist_ok=True)
     meta_path = out / "metadata.csv"
     rows = list(csv.DictReader(meta_path.open())) if meta_path.exists() else []
-    done = {(r["product_id"], r["target"]) for r in rows}
+    done = {(r["frame_id"], r["target"]) for r in rows}
 
     live.step("Finding images")
     jobs_path = out / f"jobs_{per_category}x{suns}.json"      # the ODE search is slow: reuse it on a restart
@@ -323,9 +325,10 @@ def build(out, per_category, suns):
         for (i, j, k), t in tiles:
             f = f"{cat}/{c['product']}_{slug}_{k}.png"
             Image.fromarray(t).save(out / f, optimize=True)
-            rows.append(dict(file=f, category=cat, target=name, target_lat=f"{lat:.4f}", target_lon=f"{lon:.4f}",
-                             product_id=c["product"], incidence_deg=c["inc"], emission_deg=c["emi"],
-                             phase_deg=c["phase"], resolution_m=c["res"], utc_start=c["time"],
+            rows.append(dict(file_name=f, split=split_of(c["product"]), body="Moon", instrument="LROC NAC",
+                             landform=cat, target=name, frame_id=c["product"], lat=f"{lat:.4f}", lon_east=f"{lon:.4f}",
+                             incidence_deg=c["inc"], emission_deg=c["emi"],
+                             phase_deg=c["phase"], resolution_m_px=c["res"], utc_start=c["time"],
                              line0=c["line0"] + i, sample0=c["sample0"] + j, source_url=c["url"]))
         samples += [t / 255.0 for _, t in tiles[:1]]
         with meta_path.open("w", newline="") as fh:
@@ -335,13 +338,13 @@ def build(out, per_category, suns):
             live.samples(samples[-12:])
         time.sleep(3)
     write_card(out, rows)
-    counts = {cat: sum(r["category"] == cat for r in rows) for cat in CATEGORIES}
+    counts = {cat: sum(r["landform"] == cat for r in rows) for cat in CATEGORIES}
     live.metric(tiles=len(rows), **counts)
     _log(f"Done: {len(rows)} tiles in {out}  " + "  ".join(f"{k} {v}" for k, v in counts.items()))
 
 
 def write_card(out, rows):
-    counts = {cat: sum(r["category"] == cat for r in rows) for cat in CATEGORIES}
+    counts = {cat: sum(r["landform"] == cat for r in rows) for cat in CATEGORIES}
     inc = np.array([float(r["incidence_deg"]) for r in rows]) if rows else np.zeros(0)
     bins = "  ".join(f"{lo}-{hi}°: {int(((inc >= lo) & (inc < hi)).sum())}" for lo, hi in INCIDENCE_BINS)
     (out / "README.md").write_text(f"""---
@@ -367,8 +370,9 @@ unsupervised anomaly detector (Xenarch, PatchCore). Each target was imaged under
 
 Sun incidence (0° = sun overhead): {bins}
 
-`metadata.csv` gives, per tile: target name and coordinates, source product, incidence / emission / phase
-angles, resolution, the tile's first line and sample in the source image and the source URL.
+`metadata.csv` gives, per tile: train / validation split (fixed per source image), target name and coordinates,
+source product, incidence / emission / phase angles, resolution, the tile's first line and sample in the source
+image and the source URL.
 
 Targets come from the IAU Gazetteer of Planetary Nomenclature (USGS) plus a few hand-listed features
 (lava-tube pits, irregular mare patches, dome fields); images were found with NASA ODE. Tiles are
@@ -383,14 +387,11 @@ Credit: NASA / GSFC / Arizona State University (LROC). LRO data are public domai
 """)
 
 
-def upload(repo, out, path_in_repo="terrain/moon"):
-    """Upload the folder into `repo` (private, created if missing) under `path_in_repo` with the logged-in `hf` CLI.
-    Default repo: jules1235813/xenarch, the project's single dataset (terrain/ + artifacts/)."""
-    hf = str(Path(sys.executable).with_name("hf"))
-    subprocess.run([hf, "repos", "create", repo, "--repo-type", "dataset", "--private", "--exist-ok"], check=True)
-    subprocess.run([hf, "upload", repo, str(out), path_in_repo, "--repo-type", "dataset",
-                    "--exclude", "jobs_*.json", "--exclude", "README.md", "--exclude", ".cache/**"], check=True)
-    print(f"https://huggingface.co/datasets/{repo}/tree/main/{path_in_repo}")
+def upload(repo, out, body="moon"):
+    """Publish the folder to `repo` (private, created if missing) under natural-terrain_training/<body>_<camera>/,
+    landform folders renamed to say body and camera (layout in xenarch_hf.py). Needs `hf auth login`."""
+    import xenarch_hf
+    xenarch_hf.publish_terrain(body, out, repo or xenarch_hf.REPO)
 
 
 def _arg(name, default):

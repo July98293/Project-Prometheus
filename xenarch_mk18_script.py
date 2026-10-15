@@ -18,7 +18,9 @@ Usage:
                                   [--scene-z 6] [--reuse] [--backbone PATH]
 
     --data    one image folder, or several separated by commas (searched recursively). Each folder is split
-              on its own, by source image (tiles of one image/observation never straddle memory and validation);
+              on its own, by source image (tiles of one image/observation never straddle memory and validation):
+              the `split` column of its metadata.csv when it has one (fixed, the same on every machine), else
+              a seeded 10% of the sources;
               AUROC is reported per folder, the first folder's being the headline number.
     --backbone ResNet18 weights fine-tuned by xenarch_mk18_finetune.py (default: ImageNet)
     --reuse   rescan with the memory bank saved in data/models (skips building it)
@@ -28,6 +30,7 @@ Usage:
     edge straightness) count next to the CNN features; 0 turns them off.
 """
 
+import csv
 import json
 import re
 import sys
@@ -106,17 +109,32 @@ def natural_chips(paths, on_image=None):
                 yield normalize(c)
 
 
-SOURCE_SUFFIX = re.compile(r"(_(RED|IR|BG)\d+_\d)$|^(M\d+[LRC][CE])_.*$")
+SOURCE_SUFFIX = re.compile(r"(_(RED|IR|BG)\d+_\d)(_[a-z0-9-]+)?$|^(M\d+[LRC][CE])_.*$")
 
 
 def source_of(path):
     """Id of the image a file was cut from: tiles of one HiRISE observation (ESP_…_RED5_0) or of one
-    LROC product (M…LC_target_k) share it, so a split by source keeps neighbours on one side."""
+    LROC product (M…LC_target_k) share it, so a split by source keeps neighbours on one side.
+    HiRISE tiles may end with their sub-landform (ESP_…_RED5_0_dunes)."""
     stem = re.sub(r"_browse$", "", Path(path).stem)
     m = SOURCE_SUFFIX.search(stem)
     if not m:
         return stem
-    return m.group(3) if m.group(3) else stem[:m.start()]
+    return m.group(4) if m.group(4) else stem[:m.start()]
+
+
+def split_from_metadata(folder, imgs):
+    """(validation, memory) from the `split` column of the folder's metadata.csv (the HF dataset's fixed split,
+    chosen per source image), or None when the folder has none or it does not list every image."""
+    meta = Path(folder) / "metadata.csv"
+    if not meta.exists():
+        return None
+    split = {r["file_name"]: r.get("split") for r in csv.DictReader(meta.open())}
+    rel = [str(p.relative_to(folder)) for p in imgs]
+    if not all(split.get(r) in ("train", "validation") for r in rel):
+        return None
+    return ([p for p, r in zip(imgs, rel) if split[r] == "validation"],
+            [p for p, r in zip(imgs, rel) if split[r] == "train"])
 
 
 def split_by_source(imgs, frac, rng):
@@ -510,13 +528,15 @@ def main(live=None):
         if not imgs:
             raise SystemExit(f"Mk18: no images in '{d}'")
         rng = np.random.default_rng(SEED)
-        val_d, train_d = split_by_source(imgs, config["val_frac"], rng)
+        fixed = split_from_metadata(d, imgs)
+        val_d, train_d = fixed or split_by_source(imgs, config["val_frac"], rng)
         chips = list(natural_chips(val_d))
         rng.shuffle(chips)
         val_sets[Path(d).name] = chips[:config["val_chips"]]
         train_imgs += train_d
         n_val_imgs += len(val_d)
         logger.info(f"   {d}: {len(train_d)} memory images · {len(val_d)} validation images "
+                    f"({'split from metadata.csv' if fixed else 'split by source here'}) "
                     f"({len(val_sets[Path(d).name])} chips)")
     val_chips = val_sets[Path(folders[0]).name]
     if live:
