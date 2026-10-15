@@ -19,7 +19,7 @@ a tile centred on the target plus up to three neighbours across the strip. Targe
 the "natural" memory.
 
   .venv/bin/python xenarch_lroc_nac_dataset.py [--out data/lroc-nac-set] [--per-category 12] [--suns 2]
-  .venv/bin/python xenarch_lroc_nac_dataset.py --upload <user>/<repo>     (after `hf auth login`)
+  .venv/bin/python xenarch_lroc_nac_dataset.py --upload jules1235813/xenarch   (-> terrain/moon, after `hf auth login`)
 """
 import csv, io, json, math, re, struct, subprocess, sys, time, urllib.error, urllib.parse, urllib.request, zipfile
 from pathlib import Path
@@ -383,13 +383,14 @@ Credit: NASA / GSFC / Arizona State University (LROC). LRO data are public domai
 """)
 
 
-def upload(repo, out):
-    """Create the dataset repo (private) and upload the folder with the logged-in `hf` CLI."""
+def upload(repo, out, path_in_repo="terrain/moon"):
+    """Upload the folder into `repo` (private, created if missing) under `path_in_repo` with the logged-in `hf` CLI.
+    Default repo: jules1235813/xenarch, the project's single dataset (terrain/ + artifacts/)."""
     hf = str(Path(sys.executable).with_name("hf"))
     subprocess.run([hf, "repos", "create", repo, "--repo-type", "dataset", "--private", "--exist-ok"], check=True)
-    subprocess.run([hf, "upload-large-folder", repo, str(out), "--repo-type", "dataset",
-                    "--exclude", "jobs_*.json", "--exclude", ".cache/**"], check=True)
-    print(f"https://huggingface.co/datasets/{repo}")
+    subprocess.run([hf, "upload", repo, str(out), path_in_repo, "--repo-type", "dataset",
+                    "--exclude", "jobs_*.json", "--exclude", "README.md", "--exclude", ".cache/**"], check=True)
+    print(f"https://huggingface.co/datasets/{repo}/tree/main/{path_in_repo}")
 
 
 def _arg(name, default):

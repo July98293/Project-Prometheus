@@ -15,7 +15,7 @@ Writes PNGs and metadata.csv (Hugging Face imagefolder layout) to data/artifact-
 Needs `opj_decompress` (brew install openjpeg).
 
   .venv/bin/python artifact-site-catalog/download_images.py [--out data/artifact-site-images] [--only moon|mars] [--no-live]
-  .venv/bin/python artifact-site-catalog/download_images.py --upload <user>/<repo>   (into images/ of that dataset)
+  .venv/bin/python artifact-site-catalog/download_images.py --upload jules1235813/xenarch   (into hardware/images/ of the single dataset)
 """
 import csv, math, re, struct, subprocess, sys, tempfile, time
 from pathlib import Path
@@ -361,9 +361,9 @@ def merge_metadata(out):
 def upload(repo, out):
     merge_metadata(out)
     hf = str(Path(sys.executable).with_name("hf"))
-    subprocess.run([hf, "upload", repo, str(out), "images", "--repo-type", "dataset", "--exclude", "metadata_*.csv",
-                    "--commit-message", "Image crops centred on each catalogued object"], check=True)
-    print(f"https://huggingface.co/datasets/{repo}/tree/main/images")
+    subprocess.run([hf, "upload", repo, str(out), "hardware/images", "--repo-type", "dataset", "--exclude", "metadata_*.csv",
+                    "--exclude", "previews/**", "--commit-message", "hardware/images: crops centred on each catalogued object"], check=True)
+    print(f"https://huggingface.co/datasets/{repo}/tree/main/hardware/images")
 
 
 def _arg(name, default):

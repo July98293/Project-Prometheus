@@ -1,21 +1,9 @@
----
-license: cc0-1.0
-tags: [moon, mars, lroc, hirise, planetary-science, object-detection, technosignatures, bounding-boxes]
-pretty_name: Xenarch artifact site bounding boxes
-size_categories: [n<1K]
-task_categories: [object-detection]
-configs:
-  - config_name: boxes
-    data_files: boxes.csv
-    default: true
-  - config_name: unboxed
-    data_files: unboxed.csv
----
 # Xenarch artifact site bounding boxes
 
+Published as `hardware/boxes.csv`, `boxes_coco.json`, `unboxed.csv` in the private HF dataset `jules1235813/xenarch`.
+
 Bounding boxes around human-made hardware in the 2048×2048 orbital crops of
-[`jules1235813/xenarch-artifact-sites`](https://huggingface.co/datasets/jules1235813/xenarch-artifact-sites)
-(`images/`). Ground truth for Xenarch, an unsupervised anomaly detector trained only on natural terrain.
+`hardware/images/` of the HF dataset `jules1235813/xenarch`. Ground truth for Xenarch, an unsupervised anomaly detector trained only on natural terrain.
 
 | File | What |
 |---|---|

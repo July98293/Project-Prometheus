@@ -19,7 +19,7 @@ RED3 / RED6 — RED4 is missing from many recent observations): one HTTP range r
 within 15 km of a lander, rover or crash site, are skipped, as are observations already in xenarch-imagery.
 
   .venv/bin/python xenarch_hirise_dataset.py [--out data/hirise-set] [--per-category 16]
-  .venv/bin/python xenarch_hirise_dataset.py --upload <user>/<repo>     (after `hf auth login`)
+  .venv/bin/python xenarch_hirise_dataset.py --upload jules1235813/xenarch   (-> terrain/mars, after `hf auth login`)
 """
 import csv, math, re, sys, time, urllib.error
 from pathlib import Path
@@ -293,7 +293,7 @@ def _arg(name, default):
 if __name__ == "__main__":
     out = Path(_arg("--out", "data/hirise-set"))
     if "--upload" in sys.argv:
-        upload(_arg("--upload", ""), out); sys.exit()
+        upload(_arg("--upload", ""), out, "terrain/mars"); sys.exit()
     live = LiveRun(__file__, str(out), ["Choosing observations", "Downloading"])
     try:
         build(out, int(_arg("--per-category", 16)))

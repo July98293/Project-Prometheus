@@ -1,21 +1,6 @@
----
-license: cc0-1.0
-tags: [moon, mars, lroc, hirise, planetary-science, anomaly-detection, technosignatures, remote-sensing]
-pretty_name: Xenarch artifact site catalog
-size_categories: [1K<n<10K]
-task_categories: [image-classification, object-detection]
-configs:
-  - config_name: images
-    data_dir: images
-    default: true
-  - config_name: sites
-    data_files: sites.csv
-  - config_name: frames
-    data_files: frames.csv
-  - config_name: mars_mission_frames
-    data_files: mars_mission_frames.csv
----
 # Xenarch artifact site catalog
+
+Published as `hardware/` of the private HF dataset `jules1235813/xenarch`.
 
 Known human-made objects on the Moon and Mars, plus every orbital frame that covers them, with sun angle and
 resolution. This is ground truth for Xenarch, an unsupervised anomaly detector trained only on natural terrain:
