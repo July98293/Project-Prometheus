@@ -1,18 +1,18 @@
 {
- "generated": "2026-10-14T18:05Z",
- "n_boxes": 102,
+ "generated": "2026-10-15T13:38Z",
+ "n_boxes": 147,
  "positives": {
   "Moon": 127,
   "Mars": 118
  },
  "boxed": {
   "Moon": 63,
-  "Mars": 13
+  "Mars": 54
  },
  "confidence": {
-  "high": 48,
-  "medium": 41,
-  "low": 13
+  "high": 97,
+  "medium": 43,
+  "low": 7
  },
  "frames": [
   {
@@ -2244,9 +2244,82 @@
    ]
   },
   {
-   "file": "mars/curiosity_rover/ESP_036128_1755.png",
-   "site_id": "curiosity_rover",
-   "object": "Curiosity rover",
+   "file": "mars/curiosity_landing/ESP_028678_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 56.19,
+   "utc": "2012-09-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_028678_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 935,
+     "y_min": 1170,
+     "x_max": 1105,
+     "y_max": 1610,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware stays at the landing point: box = the dark descent-engine blast scour (~40 x 110 m) at Bradbury Landing, sol 33, with the rover tracks leading SE from it; ~150 m from the catalog pixel"
+    },
+    {
+     "object_id": "curiosity_rover",
+     "label": "Curiosity rover (latest published position)",
+     "x_min": 1257,
+     "y_min": 1619,
+     "x_max": 1279,
+     "y_max": 1642,
+     "width_px": 23,
+     "height_px": 24,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Curiosity rover (bright 3 m body + shadow) at the end of its tracks from the blast scour, sol 33"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_landing/ESP_032436_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 35.35,
+   "utc": "2013-06-27",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_032436_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 959,
+     "y_min": 1230,
+     "x_max": 1129,
+     "y_max": 1670,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "blast scour still dark (Jun 2013); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_landing/ESP_036128_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
    "body": "Mars",
    "instrument": "HiRISE RED",
    "resolution_m_px": 0.25,
@@ -2256,110 +2329,290 @@
     1024,
     1024
    ],
-   "sheet": "boxes/mars_curiosity_rover_ESP_036128_1755.jpg",
+   "sheet": "boxes/mars_curiosity_landing_ESP_036128_1755.jpg",
    "boxes": [
     {
-     "object_id": "curiosity_rover",
-     "label": "Curiosity rover (latest published position)",
-     "x_min": 1018,
-     "y_min": 1018,
-     "x_max": 1030,
-     "y_max": 1030,
-     "width_px": 13,
-     "height_px": 13,
-     "includes_shadow": "yes",
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 741,
+     "y_min": 1272,
+     "x_max": 911,
+     "y_max": 1712,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
      "confidence": "medium",
-     "note": "sol 613: single bright 4 px point exactly at the waypoint position on a dark surface; rover moved up to 23 m that sol"
+     "note": "blast scour faint (Apr 2014); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
     }
    ]
   },
   {
-   "file": "mars/curiosity_rover/ESP_053600_1750.png",
+   "file": "mars/curiosity_landing/ESP_037117_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.17,
+   "utc": "2014-06-27",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_037117_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 989,
+     "y_min": 1286,
+     "x_max": 1159,
+     "y_max": 1726,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "blast scour faint (Jun 2014); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_rover/ESP_028335_1755.png",
    "site_id": "curiosity_rover",
    "object": "Curiosity rover",
    "body": "Mars",
    "instrument": "HiRISE RED",
    "resolution_m_px": 0.25,
-   "incidence_deg": 53.36,
-   "utc": "2018-01-02",
+   "incidence_deg": 52.89,
+   "utc": "2012-08-12",
    "nominal": [
     1024,
     1024
    ],
-   "sheet": "boxes/mars_curiosity_rover_ESP_053600_1750.jpg",
+   "sheet": "boxes/mars_curiosity_rover_ESP_028335_1755.jpg",
    "boxes": [
     {
      "object_id": "curiosity_rover",
      "label": "Curiosity rover (latest published position)",
-     "x_min": 1017,
-     "y_min": 1014,
-     "x_max": 1035,
-     "y_max": 1030,
-     "width_px": 19,
-     "height_px": 17,
+     "x_min": 391,
+     "y_min": 1654,
+     "x_max": 415,
+     "y_max": 1680,
+     "width_px": 25,
+     "height_px": 27,
      "includes_shadow": "yes",
-     "confidence": "low",
-     "note": "sol 1975: bright blob at the waypoint position; uncertain"
+     "confidence": "high",
+     "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 6; located by NCC terrain match from the landing-site frame ESP_028678"
     }
    ]
   },
   {
-   "file": "mars/curiosity_rover/ESP_058071_1750.png",
+   "file": "mars/curiosity_rover/ESP_028401_1755.png",
    "site_id": "curiosity_rover",
    "object": "Curiosity rover",
    "body": "Mars",
    "instrument": "HiRISE RED",
    "resolution_m_px": 0.25,
-   "incidence_deg": 35.57,
-   "utc": "2018-12-16",
+   "incidence_deg": 54.4,
+   "utc": "2012-08-17",
    "nominal": [
     1024,
     1024
    ],
-   "sheet": "boxes/mars_curiosity_rover_ESP_058071_1750.jpg",
+   "sheet": "boxes/mars_curiosity_rover_ESP_028401_1755.jpg",
    "boxes": [
     {
      "object_id": "curiosity_rover",
      "label": "Curiosity rover (latest published position)",
-     "x_min": 1016,
-     "y_min": 1016,
-     "x_max": 1032,
-     "y_max": 1032,
-     "width_px": 17,
-     "height_px": 17,
+     "x_min": 738,
+     "y_min": 1467,
+     "x_max": 762,
+     "y_max": 1493,
+     "width_px": 25,
+     "height_px": 27,
      "includes_shadow": "yes",
-     "confidence": "low",
-     "note": "sol 2323: bright blob at the waypoint position; rocky terrain, uncertain"
+     "confidence": "high",
+     "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 11; located by NCC terrain match from the landing-site frame ESP_028678"
     }
    ]
   },
   {
-   "file": "mars/insight/ESP_058005_1845.png",
+   "file": "mars/curiosity_rover/ESP_028612_1755.png",
+   "site_id": "curiosity_rover",
+   "object": "Curiosity rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 54.31,
+   "utc": "2012-09-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_rover_ESP_028612_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_rover",
+     "label": "Curiosity rover (latest published position)",
+     "x_min": 755,
+     "y_min": 1455,
+     "x_max": 779,
+     "y_max": 1481,
+     "width_px": 25,
+     "height_px": 27,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 27; located by NCC terrain match from the landing-site frame ESP_028678"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_rover/ESP_028678_1755.png",
+   "site_id": "curiosity_rover",
+   "object": "Curiosity rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 56.19,
+   "utc": "2012-09-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_curiosity_rover_ESP_028678_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_rover",
+     "label": "Curiosity rover (latest published position)",
+     "x_min": 970,
+     "y_min": 1469,
+     "x_max": 994,
+     "y_max": 1495,
+     "width_px": 25,
+     "height_px": 27,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 33; located by NCC terrain match from the landing-site frame ESP_028678"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_058717_1845.png",
    "site_id": "insight",
    "object": "InSight lander",
    "body": "Mars",
    "instrument": "HiRISE RED",
    "resolution_m_px": 0.25,
-   "incidence_deg": 39.08,
-   "utc": "2018-12-11",
+   "incidence_deg": 33.34,
+   "utc": "2019-02-04",
    "nominal": [
     1024,
     1024
    ],
-   "sheet": "boxes/mars_insight_ESP_058005_1845.jpg",
+   "sheet": "boxes/mars_insight_ESP_058717_1845.jpg",
    "boxes": [
     {
      "object_id": "insight",
      "label": "InSight lander",
-     "x_min": 990,
-     "y_min": 950,
-     "x_max": 1045,
-     "y_max": 1000,
-     "width_px": 56,
-     "height_px": 51,
+     "x_min": 145,
+     "y_min": 1723,
+     "x_max": 189,
+     "y_max": 1767,
+     "width_px": 45,
+     "height_px": 45,
      "includes_shadow": "yes",
-     "confidence": "medium",
-     "note": "sol 15: row of bright objects 50 px north of the catalog position with a dark blast-scoured area east of them; lander plus solar panels span 6 m (24 px)"
+     "confidence": "high",
+     "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 281 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_058928_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.43,
+   "utc": "2019-02-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_ESP_058928_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 290,
+     "y_min": 1646,
+     "x_max": 334,
+     "y_max": 1690,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 241 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_059284_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.17,
+   "utc": "2019-03-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_ESP_059284_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 240,
+     "y_min": 1667,
+     "x_max": 284,
+     "y_max": 1711,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 254 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_067157_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 43.09,
+   "utc": "2020-11-23",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_ESP_067157_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 191,
+     "y_min": 1679,
+     "x_max": 235,
+     "y_max": 1723,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 266 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
     }
    ]
   },
@@ -2381,15 +2634,135 @@
     {
      "object_id": "insight",
      "label": "InSight lander",
-     "x_min": 992,
-     "y_min": 985,
-     "x_max": 1052,
-     "y_max": 1038,
-     "width_px": 61,
-     "height_px": 54,
+     "x_min": 320,
+     "y_min": 1492,
+     "x_max": 364,
+     "y_max": 1536,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 211 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_087004_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.61,
+   "utc": "2025-02-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_ESP_087004_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 316,
+     "y_min": 1690,
+     "x_max": 360,
+     "y_max": 1734,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local darkest point; 244 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_071077_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 49.01,
+   "utc": "2021-09-24",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_071077_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 858,
+     "y_min": 1754,
+     "x_max": 954,
+     "y_max": 1830,
+     "width_px": 97,
+     "height_px": 77,
      "includes_shadow": "no",
-     "confidence": "medium",
-     "note": "sol 1116: bright cluster centred 10 px NE of the catalog position; lander and dust-brightened surroundings"
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_073068_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.87,
+   "utc": "2022-02-26",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_073068_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1176,
+     "y_min": 1696,
+     "x_max": 1272,
+     "y_max": 1772,
+     "width_px": 97,
+     "height_px": 77,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_088351_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 46.45,
+   "utc": "2025-06-01",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_088351_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1006,
+     "y_min": 1171,
+     "x_max": 1054,
+     "y_max": 1209,
+     "width_px": 49,
+     "height_px": 39,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
     }
    ]
   },
@@ -2411,15 +2784,148 @@
     {
      "object_id": "perseverance_landing",
      "label": "Perseverance landing site (Octavia E. Butler Landing)",
-     "x_min": 1010,
-     "y_min": 1008,
-     "x_max": 1030,
-     "y_max": 1028,
+     "x_min": 1110,
+     "y_min": 1187,
+     "x_max": 1158,
+     "y_max": 1225,
+     "width_px": 49,
+     "height_px": 39,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_090619_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 57.24,
+   "utc": "2025-11-25",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_090619_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1079,
+     "y_min": 1333,
+     "x_max": 1127,
+     "y_max": 1371,
+     "width_px": 49,
+     "height_px": 39,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_090685_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 59.97,
+   "utc": "2025-11-30",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_090685_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1190,
+     "y_min": 1310,
+     "x_max": 1238,
+     "y_max": 1348,
+     "width_px": 49,
+     "height_px": 39,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_093546_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 49.03,
+   "utc": "2026-07-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_093546_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1086,
+     "y_min": 1381,
+     "x_max": 1134,
+     "y_max": 1419,
+     "width_px": 49,
+     "height_px": 39,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_rover/ESP_068294_1985.png",
+   "site_id": "perseverance_rover",
+   "object": "Perseverance rover",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 45.83,
+   "utc": "2021-02-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_rover_ESP_068294_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1218,
+     "y_min": 1746,
+     "x_max": 1314,
+     "y_max": 1822,
+     "width_px": 97,
+     "height_px": 77,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    },
+    {
+     "object_id": "perseverance_rover",
+     "label": "Perseverance rover (latest published position)",
+     "x_min": 1262,
+     "y_min": 1779,
+     "x_max": 1282,
+     "y_max": 1807,
      "width_px": 21,
-     "height_px": 21,
+     "height_px": 29,
      "includes_shadow": "yes",
-     "confidence": "medium",
-     "note": "sol 1569, 0.5 m/px: bright object with dark shadow SE at the catalog position of the descent-stage debris field"
+     "confidence": "high",
+     "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
     }
    ]
   },
@@ -2439,17 +2945,30 @@
    "sheet": "boxes/mars_perseverance_rover_ESP_068360_1985.jpg",
    "boxes": [
     {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1247,
+     "y_min": 1639,
+     "x_max": 1343,
+     "y_max": 1715,
+     "width_px": 97,
+     "height_px": 77,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    },
+    {
      "object_id": "perseverance_rover",
      "label": "Perseverance rover (latest published position)",
-     "x_min": 1013,
-     "y_min": 1010,
-     "x_max": 1025,
-     "y_max": 1022,
-     "width_px": 13,
-     "height_px": 13,
+     "x_min": 1293,
+     "y_min": 1673,
+     "x_max": 1313,
+     "y_max": 1701,
+     "width_px": 21,
+     "height_px": 29,
      "includes_shadow": "yes",
-     "confidence": "medium",
-     "note": "sol 7: bright blob 8 px NW of the waypoint position; rover had not yet driven far"
+     "confidence": "high",
+     "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
     }
    ]
   },
@@ -2469,17 +2988,30 @@
    "sheet": "boxes/mars_perseverance_rover_ESP_068426_1985.jpg",
    "boxes": [
     {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 1216,
+     "y_min": 1702,
+     "x_max": 1312,
+     "y_max": 1778,
+     "width_px": 97,
+     "height_px": 77,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    },
+    {
      "object_id": "perseverance_rover",
      "label": "Perseverance rover (latest published position)",
-     "x_min": 1022,
-     "y_min": 1023,
-     "x_max": 1033,
-     "y_max": 1034,
-     "width_px": 12,
-     "height_px": 12,
+     "x_min": 1262,
+     "y_min": 1735,
+     "x_max": 1282,
+     "y_max": 1763,
+     "width_px": 21,
+     "height_px": 29,
      "includes_shadow": "yes",
-     "confidence": "medium",
-     "note": "sol 12: 6 px bright object with dark shadow east, 4 px from the waypoint position"
+     "confidence": "high",
+     "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
     }
    ]
   },
@@ -2499,107 +3031,197 @@
    "sheet": "boxes/mars_perseverance_rover_ESP_073068_1985.jpg",
    "boxes": [
     {
-     "object_id": "perseverance_rover",
-     "label": "Perseverance rover (latest published position)",
-     "x_min": 1015,
-     "y_min": 1010,
-     "x_max": 1032,
-     "y_max": 1036,
-     "width_px": 18,
-     "height_px": 27,
-     "includes_shadow": "yes",
-     "confidence": "low",
-     "note": "sol 373: bright blob NW of the waypoint with a dark blob SE of it; rocky terrain makes this uncertain"
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 800,
+     "y_min": 1506,
+     "x_max": 896,
+     "y_max": 1582,
+     "width_px": 97,
+     "height_px": 77,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
     }
    ]
   },
   {
-   "file": "mars/perseverance_rover/ESP_073635_1985.png",
-   "site_id": "perseverance_rover",
-   "object": "Perseverance rover",
-   "body": "Mars",
-   "instrument": "HiRISE RED",
-   "resolution_m_px": 0.25,
-   "incidence_deg": 62.17,
-   "utc": "2022-04-11",
-   "nominal": [
-    1024,
-    1024
-   ],
-   "sheet": "boxes/mars_perseverance_rover_ESP_073635_1985.jpg",
-   "boxes": [
-    {
-     "object_id": "perseverance_rover",
-     "label": "Perseverance rover (latest published position)",
-     "x_min": 996,
-     "y_min": 1000,
-     "x_max": 1012,
-     "y_max": 1012,
-     "width_px": 17,
-     "height_px": 13,
-     "includes_shadow": "yes",
-     "confidence": "low",
-     "note": "sol 417: bright blob 20 px NW of the waypoint; uncertain"
-    }
-   ]
-  },
-  {
-   "file": "mars/phoenix/ESP_032155_2485.png",
+   "file": "mars/phoenix/ESP_011268_2485.png",
    "site_id": "phoenix",
    "object": "Phoenix lander",
    "body": "Mars",
    "instrument": "HiRISE RED",
    "resolution_m_px": 0.25,
-   "incidence_deg": 82.06,
-   "utc": "2013-06-06",
+   "incidence_deg": 76.13,
+   "utc": "2008-12-21",
    "nominal": [
     1024,
     1024
    ],
-   "sheet": "boxes/mars_phoenix_ESP_032155_2485.jpg",
+   "sheet": "boxes/mars_phoenix_ESP_011268_2485.jpg",
    "boxes": [
     {
      "object_id": "phoenix",
      "label": "Phoenix lander",
-     "x_min": 1010,
-     "y_min": 1004,
-     "x_max": 1040,
-     "y_max": 1034,
-     "width_px": 31,
-     "height_px": 31,
-     "includes_shadow": "yes",
-     "confidence": "low",
-     "note": "sol 1838, low sun: bright blob at the catalog position; uncertain"
-    }
-   ]
-  },
-  {
-   "file": "mars/phoenix/ESP_043034_2485.png",
-   "site_id": "phoenix",
-   "object": "Phoenix lander",
-   "body": "Mars",
-   "instrument": "HiRISE RED",
-   "resolution_m_px": 0.25,
-   "incidence_deg": 54.49,
-   "utc": "2015-10-01",
-   "nominal": [
-    1024,
-    1024
-   ],
-   "sheet": "boxes/mars_phoenix_ESP_043034_2485.jpg",
-   "boxes": [
-    {
-     "object_id": "phoenix",
-     "label": "Phoenix lander",
-     "x_min": 1012,
-     "y_min": 1012,
-     "x_max": 1040,
-     "y_max": 1036,
+     "x_min": 907,
+     "y_min": 381,
+     "x_max": 935,
+     "y_max": 417,
      "width_px": 29,
-     "height_px": 25,
+     "height_px": 37,
      "includes_shadow": "yes",
-     "confidence": "low",
-     "note": "sol 2685 (long after the mission, winter frost): bright specks at the catalog position; uncertain"
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 160 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/ESP_015949_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 60.83,
+   "utc": "2009-12-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_ESP_015949_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1322,
+     "y_min": 476,
+     "x_max": 1354,
+     "y_max": 508,
+     "width_px": 33,
+     "height_px": 33,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 154 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/ESP_018494_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 53.09,
+   "utc": "2010-07-07",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_ESP_018494_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1046,
+     "y_min": 478,
+     "x_max": 1078,
+     "y_max": 510,
+     "width_px": 33,
+     "height_px": 33,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 133 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/ESP_045566_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 58.05,
+   "utc": "2016-04-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_ESP_045566_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 831,
+     "y_min": 673,
+     "x_max": 847,
+     "y_max": 689,
+     "width_px": 17,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 195 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/ESP_053451_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 50.13,
+   "utc": "2017-12-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_ESP_053451_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 863,
+     "y_min": 450,
+     "x_max": 895,
+     "y_max": 482,
+     "width_px": 33,
+     "height_px": 33,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 144 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_008585_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 78.83,
+   "utc": "2008-05-26",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_008585_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1144,
+     "y_min": 1265,
+     "x_max": 1172,
+     "y_max": 1301,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 72 m from the catalog pixel (HiRISE pointing error)"
     }
    ]
   },
@@ -2621,29 +3243,1009 @@
     {
      "object_id": "phoenix",
      "label": "Phoenix lander",
-     "x_min": 1012,
-     "y_min": 1016,
-     "x_max": 1034,
-     "y_max": 1038,
-     "width_px": 23,
-     "height_px": 23,
+     "x_min": 941,
+     "y_min": 204,
+     "x_max": 969,
+     "y_max": 240,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: saturated bright deck in the centre of the fresh dark blast zone (2008-05-26), matches NASA's published HiRISE image; 203 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_008644_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 50.75,
+   "utc": "2008-05-31",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_008644_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1294,
+     "y_min": 592,
+     "x_max": 1322,
+     "y_max": 628,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 127 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_008855_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 51.18,
+   "utc": "2008-06-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_008855_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1233,
+     "y_min": 561,
+     "x_max": 1261,
+     "y_max": 597,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 126 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009066_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 51.83,
+   "utc": "2008-07-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009066_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1231,
+     "y_min": 581,
+     "x_max": 1259,
+     "y_max": 617,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 121 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009073_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 76.06,
+   "utc": "2008-07-03",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009073_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1026,
+     "y_min": 970,
+     "x_max": 1040,
+     "y_max": 988,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 24 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009086_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 77.57,
+   "utc": "2008-07-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009086_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 945,
+     "y_min": 975,
+     "x_max": 973,
+     "y_max": 1011,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 19 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009284_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 76.07,
+   "utc": "2008-07-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009284_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1048,
+     "y_min": 969,
+     "x_max": 1062,
+     "y_max": 987,
+     "width_px": 15,
+     "height_px": 19,
      "includes_shadow": "yes",
      "confidence": "medium",
-     "note": "sol 1: bright blob with dark halo at the catalog position; lander plus solar panels span 22 px at 0.25 m/px"
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 29 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009290_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 51.1,
+   "utc": "2008-07-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009290_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1167,
+     "y_min": 512,
+     "x_max": 1195,
+     "y_max": 548,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 131 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009376_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 78.75,
+   "utc": "2008-07-27",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009376_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 898,
+     "y_min": 1130,
+     "x_max": 926,
+     "y_max": 1166,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 41 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009488_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 53.86,
+   "utc": "2008-08-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009488_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1092,
+     "y_min": 774,
+     "x_max": 1106,
+     "y_max": 792,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 128 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009495_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 76.5,
+   "utc": "2008-08-05",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009495_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1114,
+     "y_min": 898,
+     "x_max": 1142,
+     "y_max": 934,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 39 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009501_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 52.33,
+   "utc": "2008-08-05",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009501_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1091,
+     "y_min": 758,
+     "x_max": 1105,
+     "y_max": 776,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 135 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009653_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 79.21,
+   "utc": "2008-08-17",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009653_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1025,
+     "y_min": 987,
+     "x_max": 1053,
+     "y_max": 1023,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 7 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_009725_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 52.53,
+   "utc": "2008-08-23",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_009725_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1043,
+     "y_min": 515,
+     "x_max": 1071,
+     "y_max": 551,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 125 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010009_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 81.97,
+   "utc": "2008-09-14",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010009_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1037,
+     "y_min": 1078,
+     "x_max": 1051,
+     "y_max": 1096,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 32 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010068_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 57.06,
+   "utc": "2008-09-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010068_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1044,
+     "y_min": 496,
+     "x_max": 1072,
+     "y_max": 532,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 129 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010279_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 59.72,
+   "utc": "2008-10-05",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010279_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1025,
+     "y_min": 745,
+     "x_max": 1039,
+     "y_max": 763,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 137 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010286_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 83.96,
+   "utc": "2008-10-06",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010286_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1085,
+     "y_min": 1038,
+     "x_max": 1099,
+     "y_max": 1056,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 35 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010365_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 85.86,
+   "utc": "2008-10-12",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010365_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1026,
+     "y_min": 1104,
+     "x_max": 1040,
+     "y_max": 1122,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 43 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010424_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 61.24,
+   "utc": "2008-10-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010424_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 992,
+     "y_min": 482,
+     "x_max": 1020,
+     "y_max": 518,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 133 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010431_2915.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 86.05,
+   "utc": "2008-10-17",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010431_2915.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 1063,
+     "y_min": 1054,
+     "x_max": 1077,
+     "y_max": 1072,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 29 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010569_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 63.03,
+   "utc": "2008-10-28",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010569_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 932,
+     "y_min": 449,
+     "x_max": 960,
+     "y_max": 485,
+     "width_px": 29,
+     "height_px": 37,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 142 m from the catalog pixel (HiRISE pointing error)"
+    }
+   ]
+  },
+  {
+   "file": "mars/phoenix/PSP_010780_2485.png",
+   "site_id": "phoenix",
+   "object": "Phoenix lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 66.59,
+   "utc": "2008-11-13",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_phoenix_PSP_010780_2485.jpg",
+   "boxes": [
+    {
+     "object_id": "phoenix",
+     "label": "Phoenix lander",
+     "x_min": 972,
+     "y_min": 739,
+     "x_max": 986,
+     "y_max": 757,
+     "width_px": 15,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 141 m from the catalog pixel (HiRISE pointing error)"
     }
    ]
   }
  ],
  "unboxed": [
   {
-   "file_name": "moon/apollo12_lm/M116466489RC.png",
-   "site_id": "apollo12_lm",
-   "reason": "unusable: near-terminator (incidence 85.7), crop is dominated by column striping; no terrain visible"
+   "file_name": "mars/curiosity_landing/ESP_029957_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_030168_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_030313_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_034572_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_035350_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_040269_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_078499_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "landing site located by terrain match (ratio 13) but the blast scour has faded by 2023; no hardware remains at the landing point"
+  },
+  {
+   "file_name": "mars/curiosity_landing/ESP_083233_1755.png",
+   "site_id": "curiosity_landing",
+   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_028269_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; landing site outside this crop (terrain match failed)"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_030168_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_030313_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_032436_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_034572_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_035350_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_036128_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_037117_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_039280_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_040770_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_042682_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_043539_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_044172_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_045293_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_046137_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_047416_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_049552_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_050897_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_052176_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_053600_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_053732_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_056409_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_058071_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_058361_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_060207_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_060840_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_061961_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_064519_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_069031_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_073567_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_076811_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_083233_1755.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_085725_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/curiosity_rover/ESP_087149_1750.png",
+   "site_id": "curiosity_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
+  },
+  {
+   "file_name": "mars/insight/ESP_057939_1845.png",
+   "site_id": "insight",
+   "reason": "lander outside this crop: in this frame the catalog pixel is ~390 m from the lander (HiRISE pointing error); found in a 4096 px region of ESP_057939 at 321 m west, 215 m south of the catalog position, i.e. left of this crop's edge"
+  },
+  {
+   "file_name": "mars/insight/ESP_058005_1845.png",
+   "site_id": "insight",
+   "reason": "lander outside this crop: in this frame the catalog pixel is ~390 m from the lander (HiRISE pointing error); found in a 4096 px region of ESP_057939 at 321 m west, 215 m south of the catalog position, i.e. left of this crop's edge"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_073635_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_083512_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
+  },
+  {
+   "file_name": "mars/perseverance_landing/ESP_084883_1985.png",
+   "site_id": "perseverance_landing",
+   "reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_068822_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_071077_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_073635_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_082945_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_085582_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_085714_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_085859_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/perseverance_rover/ESP_093190_1985.png",
+   "site_id": "perseverance_rover",
+   "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_011980_2485.png",
+   "site_id": "phoenix",
+   "reason": "1.0 m/px at incidence 88 (polar dusk): terrain match failed (ratio 1.1), lander not visible"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_014103_2485.png",
+   "site_id": "phoenix",
+   "reason": "incidence 89, seasonal CO2 frost: terrain match weak (ratio 6) and nothing at the matched point"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_014393_2485.png",
+   "site_id": "phoenix",
+   "reason": "incidence 84, frost-covered and noisy: terrain match failed (ratio 1.3)"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_016160_2485.png",
+   "site_id": "phoenix",
+   "reason": "winter frost patches: matched point (ratio 7) shows only frost-pattern dark spots, no distinct lander"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_016437_2485.png",
+   "site_id": "phoenix",
+   "reason": "winter frost patches: matched point (ratio 6) shows only bright frost, no distinct lander"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_023175_2485.png",
+   "site_id": "phoenix",
+   "reason": "incidence 84, frost: matched point (ratio 5) shows no distinct lander"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_023452_2485.png",
+   "site_id": "phoenix",
+   "reason": "incidence 80, striped / noisy frame: terrain match failed (ratio 3)"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_032155_2485.png",
+   "site_id": "phoenix",
+   "reason": "incidence 82, spring frost: terrain match failed (ratio 1.8)"
+  },
+  {
+   "file_name": "mars/phoenix/ESP_043034_2485.png",
+   "site_id": "phoenix",
+   "reason": "frost patches: matched point (ratio 7) shows bright frost blobs, no distinct lander"
   },
   {
    "file_name": "moon/apollo12_alsep/M168353795LC.png",
    "site_id": "apollo12_alsep",
    "reason": "ALSEP not identifiable in this oblique frame (emission 28, 0.42 m/px); LM box transferred instead"
+  },
+  {
+   "file_name": "moon/apollo12_lm/M116466489RC.png",
+   "site_id": "apollo12_lm",
+   "reason": "unusable: near-terminator (incidence 85.7), crop is dominated by column striping; no terrain visible"
   },
   {
    "file_name": "moon/apollo14_alsep/M168319885RC.png",
@@ -2676,9 +4278,9 @@
    "reason": "crater not identifiable: low-sun frame, no crater at or near the nominal position"
   },
   {
-   "file_name": "moon/apollo17_lrv/M168000580RC.png",
-   "site_id": "apollo17_lrv",
-   "reason": "not identifiable: crop is saturated bright blast-zone terrain at 0.42 m/px, no shadowed object stands out"
+   "file_name": "moon/apollo17_alsep/M168000580LC.png",
+   "site_id": "apollo17_alsep",
+   "reason": "ALSEP not identifiable: oblique frame (emission 45); terrain match failed"
   },
   {
    "file_name": "moon/apollo17_lm/M168000580LC.png",
@@ -2686,59 +4288,84 @@
    "reason": "LM not identifiable: oblique frame (emission 45) over the bright blast zone; terrain match failed"
   },
   {
-   "file_name": "moon/apollo17_alsep/M168000580LC.png",
-   "site_id": "apollo17_alsep",
-   "reason": "ALSEP not identifiable: oblique frame (emission 45); terrain match failed"
+   "file_name": "moon/apollo17_lrv/M168000580RC.png",
+   "site_id": "apollo17_lrv",
+   "reason": "not identifiable: crop is saturated bright blast-zone terrain at 0.42 m/px, no shadowed object stands out"
   },
   {
-   "file_name": "moon/surveyor1/M129574162RC.png",
-   "site_id": "surveyor1",
-   "reason": "nominal position on the crop edge (x=2034); lander not found; terrain match from M122495769LC failed"
+   "file_name": "moon/change3/M1456303368LC.png",
+   "site_id": "change3",
+   "reason": "0.77 m/px: not identifiable"
   },
   {
-   "file_name": "moon/surveyor1/M1096779945RC.png",
-   "site_id": "surveyor1",
-   "reason": "0.89 m/px: lander would be 3 px; not identifiable"
+   "file_name": "moon/change3/M1524212845RC.png",
+   "site_id": "change3",
+   "reason": "near-terminator: not identifiable"
   },
   {
-   "file_name": "moon/surveyor1/M1276865940RC.png",
-   "site_id": "surveyor1",
-   "reason": "1.7 m/px near-terminator: not identifiable"
+   "file_name": "moon/change3/M1532478305RC.png",
+   "site_id": "change3",
+   "reason": "many bright specks with shadows in the Zi Wei ejecta; lander not distinguishable from boulders"
   },
   {
-   "file_name": "moon/surveyor3/M177785917LC.png",
-   "site_id": "surveyor3",
-   "reason": "lander not identified; nominal near the crop edge; terrain match from the M175428601RC box failed"
+   "file_name": "moon/change4/M1305967189RC.png",
+   "site_id": "change4",
+   "reason": "0.84 m/px low sun: not identifiable"
   },
   {
-   "file_name": "moon/surveyor5/M1376299219RC.png",
-   "site_id": "surveyor5",
-   "reason": "high sun at 0.73 m/px: hundreds of bright specks (boulders, fresh craters); lander not distinguishable"
+   "file_name": "moon/change4/M1311886645LC.png",
+   "site_id": "change4",
+   "reason": "only craters among candidates"
   },
   {
-   "file_name": "moon/surveyor5/M1514615937RC.png",
-   "site_id": "surveyor5",
-   "reason": "nominal on the crop edge (x=60); lander not found"
+   "file_name": "moon/change4/M1349482902RC.png",
+   "site_id": "change4",
+   "reason": "nominal on the crop edge; not identifiable"
   },
   {
-   "file_name": "moon/surveyor5/M1218808909RC.png",
-   "site_id": "surveyor5",
-   "reason": "0.8 m/px: all candidates within 450 px are craters; lander not found"
+   "file_name": "moon/change4/M1403481082RC.png",
+   "site_id": "change4",
+   "reason": "0.99 m/px: only craters among candidates"
   },
   {
-   "file_name": "moon/surveyor5/M1276430230LC.png",
-   "site_id": "surveyor5",
-   "reason": "0.78 m/px low sun: all candidates within 450 px are craters; lander not found"
+   "file_name": "moon/change5/M1461200914RC.png",
+   "site_id": "change5",
+   "reason": "no raised object found near nominal"
   },
   {
-   "file_name": "moon/surveyor6/M1323607494RC.png",
-   "site_id": "surveyor6",
-   "reason": "1.9 m/px: not identifiable"
+   "file_name": "moon/change5/M1524423204LC.png",
+   "site_id": "change5",
+   "reason": "near-terminator: not identifiable"
   },
   {
-   "file_name": "moon/surveyor6/M1456219989RC.png",
-   "site_id": "surveyor6",
-   "reason": "0.73 m/px: terrain match from M152885739LC failed; all candidates craters"
+   "file_name": "moon/change5/M1528011618RC.png",
+   "site_id": "change5",
+   "reason": "nominal on the crop edge; only craters among candidates"
+  },
+  {
+   "file_name": "moon/change5/M1535030715RC.png",
+   "site_id": "change5",
+   "reason": "only craters among candidates"
+  },
+  {
+   "file_name": "moon/change6/M1472410644LC.png",
+   "site_id": "change6",
+   "reason": "0.95 m/px: only craters among candidates"
+  },
+  {
+   "file_name": "moon/change6/M1490040481LC.png",
+   "site_id": "change6",
+   "reason": "1.0 m/px: only craters among candidates"
+  },
+  {
+   "file_name": "moon/change6/M1494730035LC.png",
+   "site_id": "change6",
+   "reason": "1.0 m/px: not identifiable"
+  },
+  {
+   "file_name": "moon/change6/M1525154169RC.png",
+   "site_id": "change6",
+   "reason": "1.2 m/px near-terminator: not identifiable"
   },
   {
    "file_name": "moon/luna16/M1523757896LC.png",
@@ -2891,604 +4518,54 @@
    "reason": "only craters among candidates"
   },
   {
-   "file_name": "moon/change3/M1456303368LC.png",
-   "site_id": "change3",
-   "reason": "0.77 m/px: not identifiable"
+   "file_name": "moon/surveyor1/M1096779945RC.png",
+   "site_id": "surveyor1",
+   "reason": "0.89 m/px: lander would be 3 px; not identifiable"
   },
   {
-   "file_name": "moon/change3/M1524212845RC.png",
-   "site_id": "change3",
-   "reason": "near-terminator: not identifiable"
+   "file_name": "moon/surveyor1/M1276865940RC.png",
+   "site_id": "surveyor1",
+   "reason": "1.7 m/px near-terminator: not identifiable"
   },
   {
-   "file_name": "moon/change3/M1532478305RC.png",
-   "site_id": "change3",
-   "reason": "many bright specks with shadows in the Zi Wei ejecta; lander not distinguishable from boulders"
+   "file_name": "moon/surveyor1/M129574162RC.png",
+   "site_id": "surveyor1",
+   "reason": "nominal position on the crop edge (x=2034); lander not found; terrain match from M122495769LC failed"
   },
   {
-   "file_name": "moon/change4/M1305967189RC.png",
-   "site_id": "change4",
-   "reason": "0.84 m/px low sun: not identifiable"
+   "file_name": "moon/surveyor3/M177785917LC.png",
+   "site_id": "surveyor3",
+   "reason": "lander not identified; nominal near the crop edge; terrain match from the M175428601RC box failed"
   },
   {
-   "file_name": "moon/change4/M1311886645LC.png",
-   "site_id": "change4",
-   "reason": "only craters among candidates"
+   "file_name": "moon/surveyor5/M1218808909RC.png",
+   "site_id": "surveyor5",
+   "reason": "0.8 m/px: all candidates within 450 px are craters; lander not found"
   },
   {
-   "file_name": "moon/change4/M1349482902RC.png",
-   "site_id": "change4",
-   "reason": "nominal on the crop edge; not identifiable"
+   "file_name": "moon/surveyor5/M1276430230LC.png",
+   "site_id": "surveyor5",
+   "reason": "0.78 m/px low sun: all candidates within 450 px are craters; lander not found"
   },
   {
-   "file_name": "moon/change4/M1403481082RC.png",
-   "site_id": "change4",
-   "reason": "0.99 m/px: only craters among candidates"
+   "file_name": "moon/surveyor5/M1376299219RC.png",
+   "site_id": "surveyor5",
+   "reason": "high sun at 0.73 m/px: hundreds of bright specks (boulders, fresh craters); lander not distinguishable"
   },
   {
-   "file_name": "moon/change5/M1461200914RC.png",
-   "site_id": "change5",
-   "reason": "no raised object found near nominal"
+   "file_name": "moon/surveyor5/M1514615937RC.png",
+   "site_id": "surveyor5",
+   "reason": "nominal on the crop edge (x=60); lander not found"
   },
   {
-   "file_name": "moon/change5/M1524423204LC.png",
-   "site_id": "change5",
-   "reason": "near-terminator: not identifiable"
+   "file_name": "moon/surveyor6/M1323607494RC.png",
+   "site_id": "surveyor6",
+   "reason": "1.9 m/px: not identifiable"
   },
   {
-   "file_name": "moon/change5/M1528011618RC.png",
-   "site_id": "change5",
-   "reason": "nominal on the crop edge; only craters among candidates"
-  },
-  {
-   "file_name": "moon/change5/M1535030715RC.png",
-   "site_id": "change5",
-   "reason": "only craters among candidates"
-  },
-  {
-   "file_name": "moon/change6/M1472410644LC.png",
-   "site_id": "change6",
-   "reason": "0.95 m/px: only craters among candidates"
-  },
-  {
-   "file_name": "moon/change6/M1490040481LC.png",
-   "site_id": "change6",
-   "reason": "1.0 m/px: only craters among candidates"
-  },
-  {
-   "file_name": "moon/change6/M1494730035LC.png",
-   "site_id": "change6",
-   "reason": "1.0 m/px: not identifiable"
-  },
-  {
-   "file_name": "moon/change6/M1525154169RC.png",
-   "site_id": "change6",
-   "reason": "1.2 m/px near-terminator: not identifiable"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_028678_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_029957_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_030168_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_030313_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_032436_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_034572_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_035350_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_036128_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_037117_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_040269_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_078499_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_083233_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_028269_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_028335_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_028401_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_028612_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_028678_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_030168_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_030313_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_032436_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_034572_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_035350_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_037117_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_039280_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_040770_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_042682_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_043539_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_044172_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_045293_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_046137_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_047416_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_049552_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_050897_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_052176_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_053732_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_056409_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_058361_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_060207_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_060840_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_061961_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_064519_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_069031_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_073567_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_076811_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_083233_1755.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_085725_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/curiosity_rover/ESP_087149_1750.png",
-   "site_id": "curiosity_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/insight/ESP_057939_1845.png",
-   "site_id": "insight",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/insight/ESP_058717_1845.png",
-   "site_id": "insight",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/insight/ESP_058928_1845.png",
-   "site_id": "insight",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/insight/ESP_059284_1845.png",
-   "site_id": "insight",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/insight/ESP_067157_1845.png",
-   "site_id": "insight",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/insight/ESP_087004_1845.png",
-   "site_id": "insight",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_071077_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_073068_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_073635_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_083512_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_084883_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_088351_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_090619_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_090685_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_landing/ESP_093546_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "landing-site hardware not distinguishable at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_068294_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_068822_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_071077_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_082945_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_085582_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_085714_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_085859_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/perseverance_rover/ESP_093190_1985.png",
-   "site_id": "perseverance_rover",
-   "reason": "rover (3 m, 12 px) not distinguishable from rocks at the waypoint position; HiRISE map-projected crop, position uncertainty up to the day's drive"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_011268_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_011980_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_014103_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_014393_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_015949_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_016160_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_016437_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_018494_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_023175_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_023452_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_045566_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/ESP_053451_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_008585_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_008644_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_008855_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009066_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009073_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009086_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009284_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009290_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009376_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009488_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009495_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009501_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009653_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_009725_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010009_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010068_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010279_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010286_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010365_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010424_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010431_2915.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010569_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
-  },
-  {
-   "file_name": "mars/phoenix/PSP_010780_2485.png",
-   "site_id": "phoenix",
-   "reason": "lander not distinguishable from polygon terrain / rocks at the catalog position in this frame"
+   "file_name": "moon/surveyor6/M1456219989RC.png",
+   "site_id": "surveyor6",
+   "reason": "0.73 m/px: terrain match from M152885739LC failed; all candidates craters"
   }
  ]
 }

@@ -4,12 +4,16 @@
   boxtool.py hunt FILE [--radius 500] [--top 12] [--at X,Y]   candidate sheet around the nominal position
   boxtool.py grid FILE X Y [--w 80]                            pixel grid zoom for manual box placement
   boxtool.py box FILE OBJECT X Y [--fit] [--w W --h H] [--conf C] [--note N]
-                                                             write/replace one box in boxes.csv (centre at X,Y)
+                                                             write/replace one box (centre at X,Y)
   boxtool.py rect FILE OBJECT X0 Y0 X1 Y1 [--conf C] [--note N]  write/replace a box by corners
   boxtool.py drop FILE [OBJECT]                                remove box(es)
+  boxtool.py unbox FILE [REASON]                               why this positive crop has no box (no REASON: clear it)
   boxtool.py predict FILE                                      predicted pixels of the other catalogued objects,
                                                              from the first measured box (relative offsets)
-  boxtool.py review [--site S]                                 review sheets (one PNG per frame) + COCO export
+  boxtool.py review [--site S]                                 review sheets (one PNG per frame) + dashboard page data
+
+boxes_coco.json is the only annotation file: every crop is an image record (positives without a box carry
+`unboxed_reason`), every box an annotation with `includes_shadow`, `confidence`, `annotator`, `note`.
 """
 import argparse, csv, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -21,11 +25,9 @@ from scipy import ndimage
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 IMG = os.path.join(ROOT, "data", "artifact-site-images")
 HERE = os.path.dirname(os.path.abspath(__file__))
-BOXES = os.path.join(HERE, "boxes.csv")
+COCO = os.path.join(HERE, "boxes_coco.json")
 REVIEW = os.path.join(HERE, "review")
 SCRATCH = os.environ.get("BOX_SCRATCH", os.path.join(HERE, "scratch"))
-COLS = ["file_name", "site_id", "object_id", "label", "x_min", "y_min", "x_max", "y_max", "width_px", "height_px",
-        "includes_shadow", "confidence", "annotator", "note"]
 ORANGE, BLUE, MAGENTA, RED = (240, 136, 78), (57, 135, 229), (213, 81, 129), (255, 40, 40)
 CONF_COL = {"high": ORANGE, "medium": BLUE, "low": MAGENTA}
 
@@ -48,18 +50,68 @@ def nominal(m):
     return out
 
 
+def load_coco():
+    if not os.path.exists(COCO):
+        return {"images": [], "annotations": [], "categories": []}
+    return json.load(open(COCO))
+
+
 def load_boxes():
-    if not os.path.exists(BOXES):
-        return []
-    return list(csv.DictReader(open(BOXES)))
+    """COCO annotations as flat rows: file_name, site_id, object_id, label, x_min..y_max (inclusive), width_px, height_px, ..."""
+    d = load_coco()
+    ims = {i["id"]: i for i in d["images"]}
+    cats = {c["id"]: c for c in d["categories"]}
+    rows = []
+    for a in d["annotations"]:
+        im, c = ims[a["image_id"]], cats[a["category_id"]]
+        x, y, w, h = a["bbox"]
+        rows.append(dict(file_name=im["file_name"], site_id=im["site_id"], object_id=c["name"], label=c["label"],
+                         x_min=x, y_min=y, x_max=x + w - 1, y_max=y + h - 1, width_px=w, height_px=h,
+                         includes_shadow="yes" if a["includes_shadow"] else "no", confidence=a["confidence"],
+                         annotator=a.get("annotator", ""), note=a["note"]))
+    return rows
 
 
-def save_boxes(rows):
+def load_unboxed():
+    """{file_name: reason} for positive crops where the hardware could not be identified."""
+    return {i["file_name"]: i["unboxed_reason"] for i in load_coco()["images"] if i.get("unboxed_reason")}
+
+
+def save_boxes(rows, unboxed=None):
+    """Write boxes_coco.json: every crop of metadata.csv as an image, `rows` as annotations. Category ids stay stable."""
+    ms = meta()
+    old = load_coco()
+    if unboxed is None:
+        unboxed = load_unboxed()
     rows.sort(key=lambda r: (r["file_name"], r["object_id"]))
-    with open(BOXES, "w", newline="") as f:
-        w = csv.DictWriter(f, COLS)
-        w.writeheader()
-        w.writerows(rows)
+    coco = {"info": {"description": "Xenarch artifact-site bounding boxes: human-made hardware in LROC NAC and HiRISE crops",
+                     "version": "0.2", "date_created": __import__("datetime").date.today().isoformat()},
+            "licenses": [{"id": 1, "name": "CC0-1.0", "url": "https://creativecommons.org/publicdomain/zero/1.0/"}],
+            "images": [], "annotations": [], "categories": []}
+    ids = {}
+    for i, (file, m) in enumerate(ms.items(), 1):
+        ids[file] = i
+        im = {"id": i, "file_name": file, "width": 2048, "height": 2048, "license": 1,
+              "site_id": m["site_id"], "body": m["body"], "frame_id": m["frame_id"], "instrument": m["instrument"],
+              "resolution_m_px": float(m["resolution_m_px"]), "incidence_deg": float(m["incidence_deg"] or 0),
+              "utc_start": m["utc_start"], "label": m["label"], "nominal_xy": [int(m["obj_x"]), int(m["obj_y"])]}
+        if unboxed.get(file):
+            im["unboxed_reason"] = unboxed[file]
+        coco["images"].append(im)
+    cats = {c["name"]: c for c in old["categories"]}
+    used = {}
+    for k, r in enumerate(rows, 1):
+        oid = r["object_id"]
+        if oid not in cats:
+            cats[oid] = {"id": max([c["id"] for c in cats.values()] + [0]) + 1, "name": oid, "supercategory": "artifact", "label": r["label"]}
+        used[oid] = cats[oid]
+        x, y = int(r["x_min"]), int(r["y_min"])
+        w, h = int(r["x_max"]) - x + 1, int(r["y_max"]) - y + 1
+        coco["annotations"].append({"id": k, "image_id": ids[r["file_name"]], "category_id": cats[oid]["id"], "bbox": [x, y, w, h],
+                                    "area": w * h, "iscrowd": 0, "includes_shadow": r["includes_shadow"] == "yes",
+                                    "confidence": r["confidence"], "annotator": r.get("annotator", ""), "note": r["note"]})
+    coco["categories"] = sorted(used.values(), key=lambda c: c["id"])
+    json.dump(coco, open(COCO, "w"), indent=1)
 
 
 def img(file):
@@ -216,6 +268,17 @@ def cmd_drop(args):
     save_boxes(rows)
 
 
+def cmd_unbox(args):
+    if args.file not in meta():
+        sys.exit(f"{args.file} is not in metadata.csv")
+    u = load_unboxed()
+    if args.reason:
+        u[args.file] = args.reason
+    else:
+        u.pop(args.file, None)
+    save_boxes(load_boxes(), u)
+
+
 def cmd_predict(args):
     m = meta()[args.file]
     nom = nominal(m)
@@ -283,35 +346,10 @@ def cmd_review(args):
         out = os.path.join(REVIEW, file.replace("/", "_")[:-4] + ".png")
         sheet.save(out)
         index.append((file, m, rows, os.path.relpath(out, HERE)))
-    export_coco(ms, boxes)
     write_html(index)
     export_dashboard(ms, boxes, index)
     done = sum(1 for _, m, r, _ in index if r or m["label"] == "before_arrival")
     print(f"review: {done}/{len(index)} frames annotated or negative; {len(boxes)} boxes")
-
-
-def export_coco(ms, boxes):
-    cats = {}
-    coco = {"info": {"description": "Xenarch artifact-site bounding boxes: human-made hardware in LROC NAC and HiRISE crops",
-                     "version": "0.1", "date_created": "2026-10-14"},
-            "licenses": [{"id": 1, "name": "CC0-1.0", "url": "https://creativecommons.org/publicdomain/zero/1.0/"}],
-            "images": [], "annotations": [], "categories": []}
-    ids = {}
-    for i, (file, m) in enumerate(ms.items(), 1):
-        ids[file] = i
-        coco["images"].append({"id": i, "file_name": file, "width": 2048, "height": 2048, "license": 1,
-                               "site_id": m["site_id"], "body": m["body"], "frame_id": m["frame_id"], "instrument": m["instrument"],
-                               "resolution_m_px": float(m["resolution_m_px"]), "incidence_deg": float(m["incidence_deg"] or 0),
-                               "utc_start": m["utc_start"], "label": m["label"], "nominal_xy": [int(m["obj_x"]), int(m["obj_y"])]})
-    for k, r in enumerate(boxes, 1):
-        if r["object_id"] not in cats:
-            cats[r["object_id"]] = len(cats) + 1
-            coco["categories"].append({"id": cats[r["object_id"]], "name": r["object_id"], "supercategory": "artifact", "label": r["label"]})
-        x, y, w, h = int(r["x_min"]), int(r["y_min"]), int(r["width_px"]), int(r["height_px"])
-        coco["annotations"].append({"id": k, "image_id": ids[r["file_name"]], "category_id": cats[r["object_id"]], "bbox": [x, y, w, h],
-                                    "area": w * h, "iscrowd": 0, "includes_shadow": r["includes_shadow"] == "yes",
-                                    "confidence": r["confidence"], "note": r["note"]})
-    json.dump(coco, open(os.path.join(HERE, "boxes_coco.json"), "w"), indent=1)
 
 
 def export_dashboard(ms, boxes, index):
@@ -328,7 +366,9 @@ def export_dashboard(ms, boxes, index):
                        "nominal": [int(m["obj_x"]), int(m["obj_y"])], "sheet": "boxes/" + jpg,
                        "boxes": [{k: (int(r[k]) if k in ("x_min", "y_min", "x_max", "y_max", "width_px", "height_px") else r[k])
                                   for k in ("object_id", "label", "x_min", "y_min", "x_max", "y_max", "width_px", "height_px", "includes_shadow", "confidence", "note")} for r in rows]})
-    unboxed = list(csv.DictReader(open(os.path.join(HERE, "unboxed.csv")))) if os.path.exists(os.path.join(HERE, "unboxed.csv")) else []
+    for old in set(os.listdir(out)) - {f["sheet"][len("boxes/"):] for f in frames}:   # sheets of crops that lost their boxes
+        os.remove(os.path.join(out, old))
+    unboxed = [{"file_name": f, "site_id": ms[f]["site_id"], "reason": r} for f, r in sorted(load_unboxed().items())]
     pos = {b: sum(1 for m in ms.values() if m["body"] == b and m["label"] != "before_arrival") for b in ("Moon", "Mars")}
     boxed = {b: sum(1 for f in frames if f["body"] == b) for b in ("Moon", "Mars")}
     json.dump({"generated": __import__("datetime").datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ"), "n_boxes": len(boxes), "positives": pos, "boxed": boxed,
@@ -424,6 +464,7 @@ if __name__ == "__main__":
     q = sp.add_parser("rect"); q.add_argument("file"); q.add_argument("object"); [q.add_argument(k, type=int) for k in ("x0", "y0", "x1", "y1")]
     q.add_argument("--conf", default="high"); q.add_argument("--note", default=""); q.add_argument("--shadow", default="yes")
     q = sp.add_parser("drop"); q.add_argument("file"); q.add_argument("object", nargs="?")
+    q = sp.add_parser("unbox"); q.add_argument("file"); q.add_argument("reason", nargs="?")
     q = sp.add_parser("predict"); q.add_argument("file")
     q = sp.add_parser("review"); q.add_argument("--site")
     sp.add_parser("transfer")

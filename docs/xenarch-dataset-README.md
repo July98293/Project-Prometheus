@@ -15,10 +15,6 @@ configs:
     default: true
   - config_name: catalog
     data_files: human-hardware_ground-truth/catalog_moon-mars_lroc-nac_hirise.csv
-  - config_name: boxes
-    data_files: human-hardware_ground-truth/boxes_lroc-nac_hirise.csv
-  - config_name: unboxed
-    data_files: human-hardware_ground-truth/unboxed_lroc-nac_hirise.csv
   - config_name: sites
     data_files: human-hardware_ground-truth/derived/sites_moon-mars.csv
   - config_name: frames
@@ -50,9 +46,8 @@ natural-terrain_training/                      natural terrain, no hardware (tra
                                                moon_chandrayaan2-tmc2, mars_ctx, mars_hirise
 human-hardware_ground-truth/                   known human-made objects (ground truth)
   catalog_moon-mars_lroc-nac_hirise.csv        THE table: 4,633 rows, one per object × orbital frame (100 objects)
-  boxes_lroc-nac_hirise.csv                    bounding boxes around the hardware in the crops
-  boxes-coco_lroc-nac_hirise.json              the same boxes in COCO layout
-  unboxed_lroc-nac_hirise.csv                  crops where the hardware could not be identified, with the reason
+  boxes-coco_lroc-nac_hirise.json              bounding boxes around the hardware in the crops (COCO); crops where
+                                               the hardware could not be identified carry `unboxed_reason`
   crops_lroc-nac_hirise/                       257 crops of 2048×2048 centred on the first 44 objects
     metadata.csv
     moon_lroc-nac/<site>_lroc-nac/<frame>_<site>.png
@@ -148,11 +143,12 @@ object arrived). Moon crops are in raw NAC geometry, Mars crops are map-projecte
 catalog's nominal pixel, not the measured one: use the boxes file for that. Objects added to the catalog later may have
 no crop yet (empty `crop_file`).
 
-**boxes_lroc-nac_hirise.csv**: pixel box per object per crop (`file_name` relative to `crops_lroc-nac_hirise/`), inclusive
-edges, origin top-left. Boxes include the object's shadow. `confidence` is `high` (unambiguous: bright body with hard
+**boxes-coco_lroc-nac_hirise.json**: COCO file. `images` lists every crop (`file_name` relative to `crops_lroc-nac_hirise/`,
+plus frame metadata); `annotations` holds one `bbox` `[x, y, w, h]` per object per crop, pixels in the 2048² crop, origin
+top-left; `categories` has one entry per object (`name` = `site_id` of the catalog). Boxes include the object's shadow. `confidence` is `high` (unambiguous: bright body with hard
 shadow, tracks, or matches a published labeled image), `medium` (right size and shadow at the predicted position) or
 `low` (could be a rock). `note` says how the box was found. All six Apollo sites are boxed; most small Soviet and
-Chinese landers and most Mars rover frames are not (`unboxed_lroc-nac_hirise.csv` says why).
+Chinese landers and most Mars rover frames are not (their image record's `unboxed_reason` says why).
 
 **derived/** holds views of the same data, rebuilt with the catalog; edit nothing there by hand.
 `sites_moon-mars.csv` (one row per object, with the source of its coordinates), `frames_lroc-nac_hirise.csv` (every

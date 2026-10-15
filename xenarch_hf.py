@@ -11,7 +11,7 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
     legacy_mixed-cameras/<body>_<camera>/       data/xenarch-imagery/<camera>_png/   (the old xenarch-imagery set)
   human-hardware_ground-truth/                 known human-made objects (test)
     catalog_moon-mars_lroc-nac_hirise.csv       artifact-site-catalog/catalog.csv: the main table, object x frame
-    boxes_…csv, boxes-coco_…json, unboxed_…csv  artifact-site-catalog/annotations/ (edited by hand)
+    boxes-coco_…json                            artifact-site-catalog/annotations/boxes_coco.json (boxtool.py)
     crops_lroc-nac_hirise/<body>_<camera>/<site>_<camera>/<frame>_<site>.png
                                                 data/artifact-site-images/<body>/<site>/<frame>.png
     derived/                                    sites, frames, rover-frames: rebuilt by build_catalog.py
@@ -50,9 +50,7 @@ CATALOG = HERE / "artifact-site-catalog"
 # local file -> path in the repo
 TABLES = {
     CATALOG / "catalog.csv": f"{HARDWARE}/catalog_moon-mars_lroc-nac_hirise.csv",
-    CATALOG / "annotations/boxes.csv": f"{HARDWARE}/boxes_lroc-nac_hirise.csv",
     CATALOG / "annotations/boxes_coco.json": f"{HARDWARE}/boxes-coco_lroc-nac_hirise.json",
-    CATALOG / "annotations/unboxed.csv": f"{HARDWARE}/unboxed_lroc-nac_hirise.csv",
     CATALOG / "sites.csv": f"{DERIVED}/sites_moon-mars.csv",
     CATALOG / "frames.csv": f"{DERIVED}/frames_lroc-nac_hirise.csv",
     CATALOG / "mars_mission_frames.csv": f"{DERIVED}/rover-frames_mars_hirise.csv",
@@ -264,17 +262,16 @@ def publish_tables(repo=REPO):
     ops = []
     for f, path in TABLES.items():
         data = f.read_bytes()
-        if f.name in ("boxes.csv", "unboxed.csv"):
-            data = _rewrite_csv(data, "file_name", crop_rel)
-        elif f.name == "catalog.csv":
+        if f.name == "catalog.csv":
             data = _rewrite_csv(data, "crop_file", crop_rel)
         elif f.suffix == ".json":
             data = _rewrite_coco(data)
         ops.append(CommitOperationAdd(path, data))
-    # tables that moved to derived/ leave no copy behind
+    # tables that moved to derived/ leave no copy behind; the box CSVs were folded into the COCO file
     existing = set(HfApi().list_repo_files(repo, repo_type="dataset"))
-    ops += [CommitOperationDelete(f"{HARDWARE}/{Path(p).name}") for p in TABLES.values()
-            if p.startswith(DERIVED) and f"{HARDWARE}/{Path(p).name}" in existing]
+    gone = [f"{HARDWARE}/{Path(p).name}" for p in TABLES.values() if p.startswith(DERIVED)]
+    gone += [f"{HARDWARE}/boxes_lroc-nac_hirise.csv", f"{HARDWARE}/unboxed_lroc-nac_hirise.csv"]
+    ops += [CommitOperationDelete(p) for p in gone if p in existing]
     _commit(ops, f"{HARDWARE}: site catalog, boxes, derived tables", repo)
 
 

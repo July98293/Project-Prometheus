@@ -1,10 +1,10 @@
 """catalog.csv: ONE table with everything. One row per known object x orbital frame that contains it.
 
 Merges sites.csv (object, coordinates), frames.csv (every frame per object), mars_mission_frames.csv (rover
-positions per sol), the crops' metadata.csv (which frames were cut) and annotations/boxes.csv (which crops are
+positions per sol), the crops' metadata.csv (which frames were cut) and annotations/boxes_coco.json (which crops are
 boxed). Run after build_catalog.py; build_catalog.py calls it at the end.
 """
-import csv, os
+import csv, json, os
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -34,8 +34,15 @@ def merge():
             oid, xy = tok.split("@")
             crops.setdefault((oid, r["frame_id"]), (r["file_name"], *xy.split(","), r["position_note"]))
     boxes = {}
-    for r in read(HERE / "annotations" / "boxes.csv"):
-        boxes.setdefault((r["object_id"], r["file_name"]), r)
+    coco = HERE / "annotations" / "boxes_coco.json"
+    if coco.exists():
+        d = json.load(open(coco))
+        ims = {i["id"]: i["file_name"] for i in d["images"]}
+        cats = {c["id"]: c["name"] for c in d["categories"]}
+        for a in d["annotations"]:
+            x, y, w, h = a["bbox"]
+            boxes.setdefault((cats[a["category_id"]], ims[a["image_id"]]),
+                             dict(confidence=a["confidence"], x_min=x, y_min=y, x_max=x + w - 1, y_max=y + h - 1))
     out = []
     for src, rover in ((HERE / "frames.csv", False), (HERE / "mars_mission_frames.csv", True)):
         for f in read(src):

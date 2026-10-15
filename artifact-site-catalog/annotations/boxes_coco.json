@@ -1,8 +1,8 @@
 {
  "info": {
   "description": "Xenarch artifact-site bounding boxes: human-made hardware in LROC NAC and HiRISE crops",
-  "version": "0.1",
-  "date_created": "2026-10-14"
+  "version": "0.2",
+  "date_created": "2026-10-15"
  },
  "licenses": [
   {
@@ -105,7 +105,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "ALSEP not identifiable in this oblique frame (emission 28, 0.42 m/px); LM box transferred instead"
   },
   {
    "id": 6,
@@ -162,7 +163,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "unusable: near-terminator (incidence 85.7), crop is dominated by column striping; no terrain visible"
   },
   {
    "id": 9,
@@ -371,7 +373,8 @@
    "nominal_xy": [
     707,
     1024
-   ]
+   ],
+   "unboxed_reason": "ALSEP not identifiable in this oblique frame; LM boxed instead"
   },
   {
    "id": 20,
@@ -504,7 +507,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "crater not identifiable: crop is a saturated bright patch with no sharp crater at mid sun; terrain match failed"
   },
   {
    "id": 27,
@@ -656,7 +660,8 @@
    "nominal_xy": [
     466,
     1024
-   ]
+   ],
+   "unboxed_reason": "crater not identifiable: no rayed crater visible in the crop; probably mislocated frame"
   },
   {
    "id": 35,
@@ -675,7 +680,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "crater not identifiable: no rayed crater visible in the crop; probably mislocated frame"
   },
   {
    "id": 36,
@@ -751,7 +757,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "LM not identifiable: near-terminator frame (incidence 83), only craters visible near the matched position"
   },
   {
    "id": 40,
@@ -846,7 +853,8 @@
    "nominal_xy": [
     225,
     1024
-   ]
+   ],
+   "unboxed_reason": "crater not identifiable: low-sun frame, no crater at or near the nominal position"
   },
   {
    "id": 45,
@@ -941,7 +949,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "ALSEP not identifiable: oblique frame (emission 45); terrain match failed"
   },
   {
    "id": 50,
@@ -1017,7 +1026,8 @@
    "nominal_xy": [
     1032,
     1024
-   ]
+   ],
+   "unboxed_reason": "LM not identifiable: oblique frame (emission 45) over the bright blast zone; terrain match failed"
   },
   {
    "id": 54,
@@ -1055,7 +1065,8 @@
    "nominal_xy": [
     332,
     1024
-   ]
+   ],
+   "unboxed_reason": "not identifiable: crop is saturated bright blast-zone terrain at 0.42 m/px, no shadowed object stands out"
   },
   {
    "id": 56,
@@ -1188,7 +1199,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.77 m/px: not identifiable"
   },
   {
    "id": 63,
@@ -1226,7 +1238,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "near-terminator: not identifiable"
   },
   {
    "id": 65,
@@ -1245,7 +1258,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "many bright specks with shadows in the Zi Wei ejecta; lander not distinguishable from boulders"
   },
   {
    "id": 66,
@@ -1283,7 +1297,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.84 m/px low sun: not identifiable"
   },
   {
    "id": 68,
@@ -1302,7 +1317,8 @@
    "nominal_xy": [
     1720,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 69,
@@ -1321,7 +1337,8 @@
    "nominal_xy": [
     316,
     1024
-   ]
+   ],
+   "unboxed_reason": "nominal on the crop edge; not identifiable"
   },
   {
    "id": 70,
@@ -1340,7 +1357,8 @@
    "nominal_xy": [
     1037,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.99 m/px: only craters among candidates"
   },
   {
    "id": 71,
@@ -1378,7 +1396,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "no raised object found near nominal"
   },
   {
    "id": 73,
@@ -1397,7 +1416,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "near-terminator: not identifiable"
   },
   {
    "id": 74,
@@ -1416,7 +1436,8 @@
    "nominal_xy": [
     134,
     1024
-   ]
+   ],
+   "unboxed_reason": "nominal on the crop edge; only craters among candidates"
   },
   {
    "id": 75,
@@ -1435,7 +1456,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 76,
@@ -1454,7 +1476,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.95 m/px: only craters among candidates"
   },
   {
    "id": 77,
@@ -1473,7 +1496,8 @@
    "nominal_xy": [
     1369,
     1024
-   ]
+   ],
+   "unboxed_reason": "1.0 m/px: only craters among candidates"
   },
   {
    "id": 78,
@@ -1492,7 +1516,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "1.0 m/px: not identifiable"
   },
   {
    "id": 79,
@@ -1511,7 +1536,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "1.2 m/px near-terminator: not identifiable"
   },
   {
    "id": 80,
@@ -1549,7 +1575,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.9 m/px: lander would be 4 px; not identifiable"
   },
   {
    "id": 82,
@@ -1568,7 +1595,8 @@
    "nominal_xy": [
     524,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.77 m/px: not identifiable among craters"
   },
   {
    "id": 83,
@@ -1587,7 +1615,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.43 m/px mid sun: no raised object with shadow within 450 px of nominal; only craters and pixel-scale specks"
   },
   {
    "id": 84,
@@ -1606,7 +1635,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "near-terminator: not identifiable"
   },
   {
    "id": 85,
@@ -1625,7 +1655,8 @@
    "nominal_xy": [
     1477,
     1024
-   ]
+   ],
+   "unboxed_reason": "no raised object found near nominal or among the 16 strongest candidates"
   },
   {
    "id": 86,
@@ -1644,7 +1675,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "low sun: not identifiable"
   },
   {
    "id": 87,
@@ -1663,7 +1695,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "no raised object with shadow found within 450 px of nominal"
   },
   {
    "id": 88,
@@ -1682,7 +1715,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 89,
@@ -1701,7 +1735,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "near-terminator 0.73 m/px: not identifiable"
   },
   {
    "id": 90,
@@ -1720,7 +1755,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 91,
@@ -1739,7 +1775,8 @@
    "nominal_xy": [
     1184,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 92,
@@ -1758,7 +1795,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "no raised object found; terrain is a smooth slope"
   },
   {
    "id": 93,
@@ -1777,7 +1815,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "1.05 m/px near-terminator: not identifiable"
   },
   {
    "id": 94,
@@ -1796,7 +1835,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "not identifiable"
   },
   {
    "id": 95,
@@ -1815,7 +1855,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 96,
@@ -1834,7 +1875,8 @@
    "nominal_xy": [
     1128,
     1024
-   ]
+   ],
+   "unboxed_reason": "candidates are boulders of a boulder field east of nominal; the toppled lander cannot be told from them"
   },
   {
    "id": 97,
@@ -1853,7 +1895,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "near-terminator: not identifiable"
   },
   {
    "id": 98,
@@ -1872,7 +1915,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 99,
@@ -1891,7 +1935,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 100,
@@ -1910,7 +1955,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "not identifiable"
   },
   {
    "id": 101,
@@ -1929,7 +1975,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "high sun: single bright 5 px dot 380 px from nominal is as likely a boulder; not boxed"
   },
   {
    "id": 102,
@@ -1948,7 +1995,8 @@
    "nominal_xy": [
     1687,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.84 m/px: only craters among candidates"
   },
   {
    "id": 103,
@@ -1967,7 +2015,8 @@
    "nominal_xy": [
     1106,
     1024
-   ]
+   ],
+   "unboxed_reason": "near-terminator: not identifiable"
   },
   {
    "id": 104,
@@ -1986,7 +2035,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "near-terminator: not identifiable"
   },
   {
    "id": 105,
@@ -2005,7 +2055,8 @@
    "nominal_xy": [
     214,
     1024
-   ]
+   ],
+   "unboxed_reason": "nominal on the crop edge; nearest candidate is crater-like"
   },
   {
    "id": 106,
@@ -2024,7 +2075,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "low sun: only craters among candidates"
   },
   {
    "id": 107,
@@ -2062,7 +2114,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 109,
@@ -2081,7 +2134,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 110,
@@ -2100,7 +2154,8 @@
    "nominal_xy": [
     1554,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 111,
@@ -2119,7 +2174,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "only craters among candidates"
   },
   {
    "id": 112,
@@ -2138,7 +2194,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.89 m/px: lander would be 3 px; not identifiable"
   },
   {
    "id": 113,
@@ -2176,7 +2233,8 @@
    "nominal_xy": [
     1862,
     1024
-   ]
+   ],
+   "unboxed_reason": "1.7 m/px near-terminator: not identifiable"
   },
   {
    "id": 115,
@@ -2195,7 +2253,8 @@
    "nominal_xy": [
     2034,
     1024
-   ]
+   ],
+   "unboxed_reason": "nominal position on the crop edge (x=2034); lander not found; terrain match from M122495769LC failed"
   },
   {
    "id": 116,
@@ -2252,7 +2311,8 @@
    "nominal_xy": [
     1775,
     1024
-   ]
+   ],
+   "unboxed_reason": "lander not identified; nominal near the crop edge; terrain match from the M175428601RC box failed"
   },
   {
    "id": 119,
@@ -2271,7 +2331,8 @@
    "nominal_xy": [
     1586,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.8 m/px: all candidates within 450 px are craters; lander not found"
   },
   {
    "id": 120,
@@ -2290,7 +2351,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.78 m/px low sun: all candidates within 450 px are craters; lander not found"
   },
   {
    "id": 121,
@@ -2309,7 +2371,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "high sun at 0.73 m/px: hundreds of bright specks (boulders, fresh craters); lander not distinguishable"
   },
   {
    "id": 122,
@@ -2328,7 +2391,8 @@
    "nominal_xy": [
     60,
     1024
-   ]
+   ],
+   "unboxed_reason": "nominal on the crop edge (x=60); lander not found"
   },
   {
    "id": 123,
@@ -2366,7 +2430,8 @@
    "nominal_xy": [
     1181,
     1024
-   ]
+   ],
+   "unboxed_reason": "1.9 m/px: not identifiable"
   },
   {
    "id": 125,
@@ -2385,7 +2450,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "0.73 m/px: terrain match from M152885739LC failed; all candidates craters"
   },
   {
    "id": 126,
@@ -2556,7 +2622,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
   },
   {
    "id": 135,
@@ -2575,7 +2642,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
   },
   {
    "id": 136,
@@ -2594,7 +2662,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
   },
   {
    "id": 137,
@@ -2632,7 +2701,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
   },
   {
    "id": 139,
@@ -2651,7 +2721,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
   },
   {
    "id": 140,
@@ -2708,7 +2779,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
   },
   {
    "id": 143,
@@ -2727,7 +2799,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "landing site located by terrain match (ratio 13) but the blast scour has faded by 2023; no hardware remains at the landing point"
   },
   {
    "id": 144,
@@ -2746,7 +2819,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
   },
   {
    "id": 145,
@@ -2784,7 +2858,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; landing site outside this crop (terrain match failed)"
   },
   {
    "id": 147,
@@ -2879,7 +2954,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 152,
@@ -2898,7 +2974,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 153,
@@ -2917,7 +2994,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 154,
@@ -2936,7 +3014,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 155,
@@ -2955,7 +3034,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 156,
@@ -2974,7 +3054,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 157,
@@ -2993,7 +3074,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 158,
@@ -3012,7 +3094,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 159,
@@ -3031,7 +3114,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 160,
@@ -3050,7 +3134,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 161,
@@ -3069,7 +3154,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 162,
@@ -3088,7 +3174,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 163,
@@ -3107,7 +3194,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 164,
@@ -3126,7 +3214,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 165,
@@ -3145,7 +3234,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 166,
@@ -3164,7 +3254,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 167,
@@ -3183,7 +3274,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 168,
@@ -3202,7 +3294,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 169,
@@ -3221,7 +3314,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 170,
@@ -3240,7 +3334,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 171,
@@ -3259,7 +3354,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 172,
@@ -3278,7 +3374,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 173,
@@ -3297,7 +3394,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 174,
@@ -3316,7 +3414,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 175,
@@ -3335,7 +3434,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 176,
@@ -3354,7 +3454,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 177,
@@ -3373,7 +3474,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 178,
@@ -3392,7 +3494,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 179,
@@ -3411,7 +3514,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 180,
@@ -3430,7 +3534,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 181,
@@ -3449,7 +3554,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 182,
@@ -3468,7 +3574,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 183,
@@ -3487,7 +3594,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
    "id": 184,
@@ -3544,7 +3652,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "lander outside this crop: in this frame the catalog pixel is ~390 m from the lander (HiRISE pointing error); found in a 4096 px region of ESP_057939 at 321 m west, 215 m south of the catalog position, i.e. left of this crop's edge"
   },
   {
    "id": 187,
@@ -3563,7 +3672,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "lander outside this crop: in this frame the catalog pixel is ~390 m from the lander (HiRISE pointing error); found in a 4096 px region of ESP_057939 at 321 m west, 215 m south of the catalog position, i.e. left of this crop's edge"
   },
   {
    "id": 188,
@@ -3753,7 +3863,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
   },
   {
    "id": 198,
@@ -3772,7 +3883,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
   },
   {
    "id": 199,
@@ -3791,7 +3903,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
   },
   {
    "id": 200,
@@ -3981,7 +4094,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 210,
@@ -4000,7 +4114,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 211,
@@ -4038,7 +4153,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 213,
@@ -4057,7 +4173,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 214,
@@ -4076,7 +4193,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 215,
@@ -4095,7 +4213,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 216,
@@ -4114,7 +4233,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 217,
@@ -4133,7 +4253,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
    "id": 218,
@@ -4171,7 +4292,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "1.0 m/px at incidence 88 (polar dusk): terrain match failed (ratio 1.1), lander not visible"
   },
   {
    "id": 220,
@@ -4190,7 +4312,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "incidence 89, seasonal CO2 frost: terrain match weak (ratio 6) and nothing at the matched point"
   },
   {
    "id": 221,
@@ -4209,7 +4332,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "incidence 84, frost-covered and noisy: terrain match failed (ratio 1.3)"
   },
   {
    "id": 222,
@@ -4247,7 +4371,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "winter frost patches: matched point (ratio 7) shows only frost-pattern dark spots, no distinct lander"
   },
   {
    "id": 224,
@@ -4266,7 +4391,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "winter frost patches: matched point (ratio 6) shows only bright frost, no distinct lander"
   },
   {
    "id": 225,
@@ -4304,7 +4430,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "incidence 84, frost: matched point (ratio 5) shows no distinct lander"
   },
   {
    "id": 227,
@@ -4323,7 +4450,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "incidence 80, striped / noisy frame: terrain match failed (ratio 3)"
   },
   {
    "id": 228,
@@ -4342,7 +4470,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "incidence 82, spring frost: terrain match failed (ratio 1.8)"
   },
   {
    "id": 229,
@@ -4361,7 +4490,8 @@
    "nominal_xy": [
     1024,
     1024
-   ]
+   ],
+   "unboxed_reason": "frost patches: matched point (ratio 7) shows bright frost blobs, no distinct lander"
   },
   {
    "id": 230,
@@ -4899,214 +5029,992 @@
  "annotations": [
   {
    "id": 1,
-   "image_id": 156,
-   "category_id": 1,
+   "image_id": 133,
+   "category_id": 33,
    "bbox": [
-    1018,
-    1018,
-    13,
-    13
+    935,
+    1170,
+    171,
+    441
    ],
-   "area": 169,
+   "area": 75411,
    "iscrowd": 0,
-   "includes_shadow": true,
-   "confidence": "medium",
-   "note": "sol 613: single bright 4 px point exactly at the waypoint position on a dark surface; rover moved up to 23 m that sol"
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware stays at the landing point: box = the dark descent-engine blast scour (~40 x 110 m) at Bradbury Landing, sol 33, with the rover tracks leading SE from it; ~150 m from the catalog pixel"
   },
   {
    "id": 2,
-   "image_id": 169,
+   "image_id": 133,
    "category_id": 1,
    "bbox": [
-    1017,
-    1014,
-    19,
-    17
+    1257,
+    1619,
+    23,
+    24
    ],
-   "area": 323,
+   "area": 552,
    "iscrowd": 0,
    "includes_shadow": true,
-   "confidence": "low",
-   "note": "sol 1975: bright blob at the waypoint position; uncertain"
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Curiosity rover (bright 3 m body + shadow) at the end of its tracks from the blast scour, sol 33"
   },
   {
    "id": 3,
-   "image_id": 172,
+   "image_id": 137,
+   "category_id": 33,
+   "bbox": [
+    959,
+    1230,
+    171,
+    441
+   ],
+   "area": 75411,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "blast scour still dark (Jun 2013); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
+  },
+  {
+   "id": 4,
+   "image_id": 140,
+   "category_id": 33,
+   "bbox": [
+    741,
+    1272,
+    171,
+    441
+   ],
+   "area": 75411,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "blast scour faint (Apr 2014); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
+  },
+  {
+   "id": 5,
+   "image_id": 141,
+   "category_id": 33,
+   "bbox": [
+    989,
+    1286,
+    171,
+    441
+   ],
+   "area": 75411,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "blast scour faint (Jun 2014); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
+  },
+  {
+   "id": 6,
+   "image_id": 147,
    "category_id": 1,
    "bbox": [
-    1016,
-    1016,
+    391,
+    1654,
+    25,
+    27
+   ],
+   "area": 675,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 6; located by NCC terrain match from the landing-site frame ESP_028678"
+  },
+  {
+   "id": 7,
+   "image_id": 148,
+   "category_id": 1,
+   "bbox": [
+    738,
+    1467,
+    25,
+    27
+   ],
+   "area": 675,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 11; located by NCC terrain match from the landing-site frame ESP_028678"
+  },
+  {
+   "id": 8,
+   "image_id": 149,
+   "category_id": 1,
+   "bbox": [
+    755,
+    1455,
+    25,
+    27
+   ],
+   "area": 675,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 27; located by NCC terrain match from the landing-site frame ESP_028678"
+  },
+  {
+   "id": 9,
+   "image_id": 150,
+   "category_id": 1,
+   "bbox": [
+    970,
+    1469,
+    25,
+    27
+   ],
+   "area": 675,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 33; located by NCC terrain match from the landing-site frame ESP_028678"
+  },
+  {
+   "id": 10,
+   "image_id": 188,
+   "category_id": 2,
+   "bbox": [
+    145,
+    1723,
+    45,
+    45
+   ],
+   "area": 2025,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 281 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+  },
+  {
+   "id": 11,
+   "image_id": 189,
+   "category_id": 2,
+   "bbox": [
+    290,
+    1646,
+    45,
+    45
+   ],
+   "area": 2025,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 241 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+  },
+  {
+   "id": 12,
+   "image_id": 190,
+   "category_id": 2,
+   "bbox": [
+    240,
+    1667,
+    45,
+    45
+   ],
+   "area": 2025,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 254 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+  },
+  {
+   "id": 13,
+   "image_id": 191,
+   "category_id": 2,
+   "bbox": [
+    191,
+    1679,
+    45,
+    45
+   ],
+   "area": 2025,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 266 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+  },
+  {
+   "id": 14,
+   "image_id": 192,
+   "category_id": 2,
+   "bbox": [
+    320,
+    1492,
+    45,
+    45
+   ],
+   "area": 2025,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 211 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+  },
+  {
+   "id": 15,
+   "image_id": 193,
+   "category_id": 2,
+   "bbox": [
+    316,
+    1690,
+    45,
+    45
+   ],
+   "area": 2025,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local darkest point; 244 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
+  },
+  {
+   "id": 16,
+   "image_id": 195,
+   "category_id": 34,
+   "bbox": [
+    858,
+    1754,
+    97,
+    77
+   ],
+   "area": 7469,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 17,
+   "image_id": 196,
+   "category_id": 34,
+   "bbox": [
+    1176,
+    1696,
+    97,
+    77
+   ],
+   "area": 7469,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 18,
+   "image_id": 200,
+   "category_id": 34,
+   "bbox": [
+    1006,
+    1171,
+    49,
+    39
+   ],
+   "area": 1911,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 19,
+   "image_id": 201,
+   "category_id": 34,
+   "bbox": [
+    1110,
+    1187,
+    49,
+    39
+   ],
+   "area": 1911,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 20,
+   "image_id": 202,
+   "category_id": 34,
+   "bbox": [
+    1079,
+    1333,
+    49,
+    39
+   ],
+   "area": 1911,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 21,
+   "image_id": 203,
+   "category_id": 34,
+   "bbox": [
+    1190,
+    1310,
+    49,
+    39
+   ],
+   "area": 1911,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 22,
+   "image_id": 204,
+   "category_id": 34,
+   "bbox": [
+    1086,
+    1381,
+    49,
+    39
+   ],
+   "area": 1911,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 23,
+   "image_id": 206,
+   "category_id": 34,
+   "bbox": [
+    1218,
+    1746,
+    97,
+    77
+   ],
+   "area": 7469,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 24,
+   "image_id": 206,
+   "category_id": 4,
+   "bbox": [
+    1262,
+    1779,
+    21,
+    29
+   ],
+   "area": 609,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
+  },
+  {
+   "id": 25,
+   "image_id": 207,
+   "category_id": 34,
+   "bbox": [
+    1247,
+    1639,
+    97,
+    77
+   ],
+   "area": 7469,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 26,
+   "image_id": 207,
+   "category_id": 4,
+   "bbox": [
+    1293,
+    1673,
+    21,
+    29
+   ],
+   "area": 609,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
+  },
+  {
+   "id": 27,
+   "image_id": 208,
+   "category_id": 34,
+   "bbox": [
+    1216,
+    1702,
+    97,
+    77
+   ],
+   "area": 7469,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 28,
+   "image_id": 208,
+   "category_id": 4,
+   "bbox": [
+    1262,
+    1735,
+    21,
+    29
+   ],
+   "area": 609,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
+  },
+  {
+   "id": 29,
+   "image_id": 211,
+   "category_id": 34,
+   "bbox": [
+    800,
+    1506,
+    97,
+    77
+   ],
+   "area": 7469,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+  },
+  {
+   "id": 30,
+   "image_id": 218,
+   "category_id": 5,
+   "bbox": [
+    907,
+    381,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 160 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 31,
+   "image_id": 222,
+   "category_id": 5,
+   "bbox": [
+    1322,
+    476,
+    33,
+    33
+   ],
+   "area": 1089,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 154 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 32,
+   "image_id": 225,
+   "category_id": 5,
+   "bbox": [
+    1046,
+    478,
+    33,
+    33
+   ],
+   "area": 1089,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 133 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 33,
+   "image_id": 230,
+   "category_id": 5,
+   "bbox": [
+    831,
+    673,
     17,
     17
    ],
    "area": 289,
    "iscrowd": 0,
    "includes_shadow": true,
-   "confidence": "low",
-   "note": "sol 2323: bright blob at the waypoint position; rocky terrain, uncertain"
-  },
-  {
-   "id": 4,
-   "image_id": 187,
-   "category_id": 2,
-   "bbox": [
-    990,
-    950,
-    56,
-    51
-   ],
-   "area": 2856,
-   "iscrowd": 0,
-   "includes_shadow": true,
    "confidence": "medium",
-   "note": "sol 15: row of bright objects 50 px north of the catalog position with a dark blast-scoured area east of them; lander plus solar panels span 6 m (24 px)"
+   "annotator": "claude",
+   "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 195 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 5,
-   "image_id": 192,
-   "category_id": 2,
-   "bbox": [
-    992,
-    985,
-    61,
-    54
-   ],
-   "area": 3294,
-   "iscrowd": 0,
-   "includes_shadow": false,
-   "confidence": "medium",
-   "note": "sol 1116: bright cluster centred 10 px NE of the catalog position; lander and dust-brightened surroundings"
-  },
-  {
-   "id": 6,
-   "image_id": 201,
-   "category_id": 3,
-   "bbox": [
-    1010,
-    1008,
-    21,
-    21
-   ],
-   "area": 441,
-   "iscrowd": 0,
-   "includes_shadow": true,
-   "confidence": "medium",
-   "note": "sol 1569, 0.5 m/px: bright object with dark shadow SE at the catalog position of the descent-stage debris field"
-  },
-  {
-   "id": 7,
-   "image_id": 207,
-   "category_id": 4,
-   "bbox": [
-    1013,
-    1010,
-    13,
-    13
-   ],
-   "area": 169,
-   "iscrowd": 0,
-   "includes_shadow": true,
-   "confidence": "medium",
-   "note": "sol 7: bright blob 8 px NW of the waypoint position; rover had not yet driven far"
-  },
-  {
-   "id": 8,
-   "image_id": 208,
-   "category_id": 4,
-   "bbox": [
-    1022,
-    1023,
-    12,
-    12
-   ],
-   "area": 144,
-   "iscrowd": 0,
-   "includes_shadow": true,
-   "confidence": "medium",
-   "note": "sol 12: 6 px bright object with dark shadow east, 4 px from the waypoint position"
-  },
-  {
-   "id": 9,
-   "image_id": 211,
-   "category_id": 4,
-   "bbox": [
-    1015,
-    1010,
-    18,
-    27
-   ],
-   "area": 486,
-   "iscrowd": 0,
-   "includes_shadow": true,
-   "confidence": "low",
-   "note": "sol 373: bright blob NW of the waypoint with a dark blob SE of it; rocky terrain makes this uncertain"
-  },
-  {
-   "id": 10,
-   "image_id": 212,
-   "category_id": 4,
-   "bbox": [
-    996,
-    1000,
-    17,
-    13
-   ],
-   "area": 221,
-   "iscrowd": 0,
-   "includes_shadow": true,
-   "confidence": "low",
-   "note": "sol 417: bright blob 20 px NW of the waypoint; uncertain"
-  },
-  {
-   "id": 11,
-   "image_id": 228,
+   "id": 34,
+   "image_id": 231,
    "category_id": 5,
    "bbox": [
-    1010,
-    1004,
-    31,
-    31
+    863,
+    450,
+    33,
+    33
    ],
-   "area": 961,
+   "area": 1089,
    "iscrowd": 0,
    "includes_shadow": true,
-   "confidence": "low",
-   "note": "sol 1838, low sun: bright blob at the catalog position; uncertain"
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 144 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 12,
-   "image_id": 229,
+   "id": 35,
+   "image_id": 234,
    "category_id": 5,
    "bbox": [
-    1012,
-    1012,
+    1144,
+    1265,
     29,
-    25
+    37
    ],
-   "area": 725,
+   "area": 1073,
    "iscrowd": 0,
    "includes_shadow": true,
-   "confidence": "low",
-   "note": "sol 2685 (long after the mission, winter frost): bright specks at the catalog position; uncertain"
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 72 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 13,
+   "id": 36,
    "image_id": 235,
    "category_id": 5,
    "bbox": [
-    1012,
-    1016,
-    23,
-    23
+    941,
+    204,
+    29,
+    37
    ],
-   "area": 529,
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "anchor: saturated bright deck in the centre of the fresh dark blast zone (2008-05-26), matches NASA's published HiRISE image; 203 m from the catalog pixel"
+  },
+  {
+   "id": 37,
+   "image_id": 236,
+   "category_id": 5,
+   "bbox": [
+    1294,
+    592,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 127 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 38,
+   "image_id": 237,
+   "category_id": 5,
+   "bbox": [
+    1233,
+    561,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 126 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 39,
+   "image_id": 238,
+   "category_id": 5,
+   "bbox": [
+    1231,
+    581,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 121 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 40,
+   "image_id": 239,
+   "category_id": 5,
+   "bbox": [
+    1026,
+    970,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 24 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 41,
+   "image_id": 240,
+   "category_id": 5,
+   "bbox": [
+    945,
+    975,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 19 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 42,
+   "image_id": 241,
+   "category_id": 5,
+   "bbox": [
+    1048,
+    969,
+    15,
+    19
+   ],
+   "area": 285,
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
-   "note": "sol 1: bright blob with dark halo at the catalog position; lander plus solar panels span 22 px at 0.25 m/px"
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 29 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 14,
+   "id": 43,
+   "image_id": 242,
+   "category_id": 5,
+   "bbox": [
+    1167,
+    512,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 131 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 44,
+   "image_id": 243,
+   "category_id": 5,
+   "bbox": [
+    898,
+    1130,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 41 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 45,
+   "image_id": 244,
+   "category_id": 5,
+   "bbox": [
+    1092,
+    774,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 128 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 46,
+   "image_id": 245,
+   "category_id": 5,
+   "bbox": [
+    1114,
+    898,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 39 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 47,
+   "image_id": 246,
+   "category_id": 5,
+   "bbox": [
+    1091,
+    758,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 135 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 48,
+   "image_id": 247,
+   "category_id": 5,
+   "bbox": [
+    1025,
+    987,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 7 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 49,
+   "image_id": 248,
+   "category_id": 5,
+   "bbox": [
+    1043,
+    515,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 125 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 50,
+   "image_id": 249,
+   "category_id": 5,
+   "bbox": [
+    1037,
+    1078,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 32 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 51,
+   "image_id": 250,
+   "category_id": 5,
+   "bbox": [
+    1044,
+    496,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 129 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 52,
+   "image_id": 251,
+   "category_id": 5,
+   "bbox": [
+    1025,
+    745,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 137 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 53,
+   "image_id": 252,
+   "category_id": 5,
+   "bbox": [
+    1085,
+    1038,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 35 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 54,
+   "image_id": 253,
+   "category_id": 5,
+   "bbox": [
+    1026,
+    1104,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 43 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 55,
+   "image_id": 254,
+   "category_id": 5,
+   "bbox": [
+    992,
+    482,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 133 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 56,
+   "image_id": 255,
+   "category_id": 5,
+   "bbox": [
+    1063,
+    1054,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 29 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 57,
+   "image_id": 256,
+   "category_id": 5,
+   "bbox": [
+    932,
+    449,
+    29,
+    37
+   ],
+   "area": 1073,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 142 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 58,
+   "image_id": 257,
+   "category_id": 5,
+   "bbox": [
+    972,
+    739,
+    15,
+    19
+   ],
+   "area": 285,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 141 m from the catalog pixel (HiRISE pointing error)"
+  },
+  {
+   "id": 59,
    "image_id": 1,
    "category_id": 6,
    "bbox": [
@@ -5119,10 +6027,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "near-terminator frame (incidence 83.6): bright point with a 75 px shadow east at the position predicted independently by terrain matches from two other frames"
   },
   {
-   "id": 15,
+   "id": 60,
    "image_id": 2,
    "category_id": 6,
    "bbox": [
@@ -5135,10 +6044,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "located by terrain match from M177481212RC then by eye: bright body x1600-1615 with 20 px shadow east; 590 px east of nominal"
   },
   {
-   "id": 16,
+   "id": 61,
    "image_id": 3,
    "category_id": 6,
    "bbox": [
@@ -5151,10 +6061,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "verified against NASA's labeled release of this frame (science.nasa.gov Apollo 11 landing site); bright body x797-820 with black shadow x820-838 to the east; 217 px west of the nominal crop centre"
   },
   {
-   "id": 17,
+   "id": 62,
    "image_id": 3,
    "category_id": 7,
    "bbox": [
@@ -5167,10 +6078,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "small bright bar 42 px south of the LM; matches the LRRR callout in NASA's labeled release"
   },
   {
-   "id": 18,
+   "id": 63,
    "image_id": 3,
    "category_id": 8,
    "bbox": [
@@ -5183,10 +6095,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "bright dot 52 px south-southeast of the LM, below-right of the LRRR; matches the PSE callout in NASA's labeled release"
   },
   {
-   "id": 19,
+   "id": 64,
    "image_id": 4,
    "category_id": 6,
    "bbox": [
@@ -5199,10 +6112,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "located by terrain match from M175124932RC then by eye: bright body x365-382 with 20 px shadow east; crater just SE as in the labeled reference; 650 px west of nominal"
   },
   {
-   "id": 20,
+   "id": 65,
    "image_id": 5,
    "category_id": 9,
    "bbox": [
@@ -5215,10 +6129,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M168353795LC.png (same frame, offset +304,+162)"
   },
   {
-   "id": 21,
+   "id": 66,
    "image_id": 6,
    "category_id": 10,
    "bbox": [
@@ -5231,10 +6146,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
   },
   {
-   "id": 22,
+   "id": 67,
    "image_id": 6,
    "category_id": 9,
    "bbox": [
@@ -5247,10 +6163,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
   },
   {
-   "id": 23,
+   "id": 68,
    "image_id": 6,
    "category_id": 11,
    "bbox": [
@@ -5263,10 +6180,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
   },
   {
-   "id": 24,
+   "id": 69,
    "image_id": 7,
    "category_id": 9,
    "bbox": [
@@ -5279,10 +6197,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M177785917RC.png (same frame, offset +0,+162)"
   },
   {
-   "id": 25,
+   "id": 70,
    "image_id": 9,
    "category_id": 9,
    "bbox": [
@@ -5295,10 +6214,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "oblique frame (emission 28): largest bright object with a 15 px shadow west inside the bright blast zone; terrain match failed, identified by eye only"
   },
   {
-   "id": 26,
+   "id": 71,
    "image_id": 10,
    "category_id": 10,
    "bbox": [
@@ -5311,10 +6231,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "cluster of small bright points with shadows at the position predicted from the LM box plus the catalog's relative offset; tracks lead to it"
   },
   {
-   "id": 27,
+   "id": 72,
    "image_id": 10,
    "category_id": 9,
    "bbox": [
@@ -5327,10 +6248,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "by eye: bright body x895-925 with shadow east, inside the bright blast zone, astronaut tracks radiate from it; 100 px west / 170 px north of nominal"
   },
   {
-   "id": 28,
+   "id": 73,
    "image_id": 10,
    "category_id": 11,
    "bbox": [
@@ -5343,10 +6265,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright point with 15 px shadow east at the position predicted from the LM box; astronaut tracks reach it"
   },
   {
-   "id": 29,
+   "id": 74,
    "image_id": 11,
    "category_id": 9,
    "bbox": [
@@ -5359,10 +6282,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "terrain match from M175428601RC then by eye: bright body with 30 px shadow east; 800 px west of nominal"
   },
   {
-   "id": 30,
+   "id": 75,
    "image_id": 12,
    "category_id": 12,
    "bbox": [
@@ -5375,10 +6299,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "terrain match from M160139273LC then by eye: 30 m crater with shadowed floor and bright east rim at low sun"
   },
   {
-   "id": 31,
+   "id": 76,
    "image_id": 13,
    "category_id": 12,
    "bbox": [
@@ -5391,10 +6316,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "high",
+   "annotator": "claude",
    "note": "high-sun frame (incidence 4): dark-floored 30 m crater at the centre of a bright ray system, 60 px east of nominal; box covers the crater, not the rays"
   },
   {
-   "id": 32,
+   "id": 77,
    "image_id": 14,
    "category_id": 12,
    "bbox": [
@@ -5407,10 +6333,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "sharp 30 m crater with bright ejecta and faint rays, 840 px east of nominal"
   },
   {
-   "id": 33,
+   "id": 78,
    "image_id": 15,
    "category_id": 12,
    "bbox": [
@@ -5423,10 +6350,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "terrain match from M160139273LC then by eye: 30 m crater, shadowed west floor, bright east wall"
   },
   {
-   "id": 34,
+   "id": 79,
    "image_id": 16,
    "category_id": 13,
    "bbox": [
@@ -5439,10 +6367,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo14_lm/M119971387RC.png (same frame, offset +414,-94)"
   },
   {
-   "id": 35,
+   "id": 80,
    "image_id": 16,
    "category_id": 14,
    "bbox": [
@@ -5455,10 +6384,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo14_lm/M119971387RC.png (same frame, offset +414,-94)"
   },
   {
-   "id": 36,
+   "id": 81,
    "image_id": 17,
    "category_id": 13,
    "bbox": [
@@ -5471,10 +6401,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo14_lm/M131765772RC.png (same frame, offset -416,-94)"
   },
   {
-   "id": 37,
+   "id": 82,
    "image_id": 17,
    "category_id": 14,
    "bbox": [
@@ -5487,10 +6418,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo14_lm/M131765772RC.png (same frame, offset -416,-94)"
   },
   {
-   "id": 38,
+   "id": 83,
    "image_id": 18,
    "category_id": 13,
    "bbox": [
@@ -5503,10 +6435,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo14_lm/M162426054LC.png (same frame, offset -52,-94)"
   },
   {
-   "id": 39,
+   "id": 84,
    "image_id": 18,
    "category_id": 14,
    "bbox": [
@@ -5519,10 +6452,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo14_lm/M162426054LC.png (same frame, offset -52,-94)"
   },
   {
-   "id": 40,
+   "id": 85,
    "image_id": 19,
    "category_id": 14,
    "bbox": [
@@ -5535,10 +6469,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "oblique frame (emission 25): LM as a dark halo with bright centre inside the bright blast zone, tracks lead to it"
   },
   {
-   "id": 41,
+   "id": 86,
    "image_id": 20,
    "category_id": 13,
    "bbox": [
@@ -5551,10 +6486,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "bright 4 px dot where the track from the LM ends, 25 px from the position predicted by the catalog offset from the LM"
   },
   {
-   "id": 42,
+   "id": 87,
    "image_id": 20,
    "category_id": 14,
    "bbox": [
@@ -5567,10 +6503,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright LM at the hub of the astronaut tracks, inside a dark disturbed halo; box includes the halo; 480 px west of nominal"
   },
   {
-   "id": 43,
+   "id": 88,
    "image_id": 21,
    "category_id": 13,
    "bbox": [
@@ -5583,10 +6520,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "bright dots with small shadows 10 px from the position predicted by the catalog offset from the LM"
   },
   {
-   "id": 44,
+   "id": 89,
    "image_id": 21,
    "category_id": 14,
    "bbox": [
@@ -5599,10 +6537,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "low sun (incidence 82): bright body with 60 px shadow east; tracks visible"
   },
   {
-   "id": 45,
+   "id": 90,
    "image_id": 22,
    "category_id": 13,
    "bbox": [
@@ -5615,10 +6554,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "cluster of bright dots 18 px from the position predicted by the catalog offset from the LM"
   },
   {
-   "id": 46,
+   "id": 91,
    "image_id": 22,
    "category_id": 14,
    "bbox": [
@@ -5631,10 +6571,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "low sun (incidence 76): bright body with 30 px shadow east, tracks lead away from it"
   },
   {
-   "id": 47,
+   "id": 92,
    "image_id": 23,
    "category_id": 14,
    "bbox": [
@@ -5647,10 +6588,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright LM inside dark halo with a shadow streak east; tracks radiate from it; 1340 px west of nominal"
   },
   {
-   "id": 48,
+   "id": 93,
    "image_id": 24,
    "category_id": 15,
    "bbox": [
@@ -5663,10 +6605,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "35 m crater with shadowed floor at the centre of a bright ray system; 320 px west of nominal"
   },
   {
-   "id": 49,
+   "id": 94,
    "image_id": 25,
    "category_id": 15,
    "bbox": [
@@ -5679,10 +6622,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "35 m crater, shadowed west floor, bright east wall; 90 px from nominal"
   },
   {
-   "id": 50,
+   "id": 95,
    "image_id": 27,
    "category_id": 16,
    "bbox": [
@@ -5695,10 +6639,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "cluster of 6 bright dots in a dark disturbed patch at the position predicted from the LM box; box covers the cluster"
   },
   {
-   "id": 51,
+   "id": 96,
    "image_id": 27,
    "category_id": 17,
    "bbox": [
@@ -5711,10 +6656,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright body with 15 px shadow east at the end of the LRV tracks; 625 px east of nominal"
   },
   {
-   "id": 52,
+   "id": 97,
    "image_id": 27,
    "category_id": 18,
    "bbox": [
@@ -5727,10 +6673,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "dark object with bright centre at the end of a long track, 7 px from the position predicted from the LM box"
   },
   {
-   "id": 53,
+   "id": 98,
    "image_id": 28,
    "category_id": 17,
    "bbox": [
@@ -5743,10 +6690,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "low sun (incidence 82): bright body with 60 px shadow east; terrain match from M122184104RC"
   },
   {
-   "id": 54,
+   "id": 99,
    "image_id": 29,
    "category_id": 17,
    "bbox": [
@@ -5759,10 +6707,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "low sun (incidence 76): bright body with 40 px shadow east; terrain match from M122184104RC"
   },
   {
-   "id": 55,
+   "id": 100,
    "image_id": 30,
    "category_id": 16,
    "bbox": [
@@ -5775,10 +6724,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "row of bright dots 30 px west of the position predicted from the LM box; mid-sun frame"
   },
   {
-   "id": 56,
+   "id": 101,
    "image_id": 30,
    "category_id": 17,
    "bbox": [
@@ -5791,10 +6741,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright body with 30 px shadow east inside the bright blast zone; tracks radiate from it"
   },
   {
-   "id": 57,
+   "id": 102,
    "image_id": 31,
    "category_id": 17,
    "bbox": [
@@ -5807,10 +6758,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo15_lm/M131623862LC.png (same frame, offset +172,+32)"
   },
   {
-   "id": 58,
+   "id": 103,
    "image_id": 32,
    "category_id": 17,
    "bbox": [
@@ -5823,10 +6775,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo15_lm/M162284113RC.png (same frame, offset +319,+36)"
   },
   {
-   "id": 59,
+   "id": 104,
    "image_id": 33,
    "category_id": 18,
    "bbox": [
@@ -5839,10 +6792,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "oblique frame: dark LRV with bright spots at the end of its track, 850 px east of nominal LM; same offset as the LM box in the RC crop"
   },
   {
-   "id": 60,
+   "id": 105,
    "image_id": 36,
    "category_id": 19,
    "bbox": [
@@ -5855,10 +6809,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "35 m crater at the centre of a bright ray system, shadowed west floor; 220 px east of nominal"
   },
   {
-   "id": 61,
+   "id": 106,
    "image_id": 37,
    "category_id": 19,
    "bbox": [
@@ -5871,10 +6826,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "35 m crater with bright ejecta and dark rays, 840 px east of nominal"
   },
   {
-   "id": 62,
+   "id": 107,
    "image_id": 38,
    "category_id": 20,
    "bbox": [
@@ -5887,10 +6843,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo16_lm/M175179080LC.png (same frame, offset +0,-136)"
   },
   {
-   "id": 63,
+   "id": 108,
    "image_id": 38,
    "category_id": 21,
    "bbox": [
@@ -5903,10 +6860,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo16_lm/M175179080LC.png (same frame, offset +0,-136)"
   },
   {
-   "id": 64,
+   "id": 109,
    "image_id": 40,
    "category_id": 21,
    "bbox": [
@@ -5919,10 +6877,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright LM dots in dark halo, shadow east; 170 px west / 240 px south of nominal"
   },
   {
-   "id": 65,
+   "id": 110,
    "image_id": 41,
    "category_id": 20,
    "bbox": [
@@ -5935,10 +6894,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "dark disturbed patch with bright dots at its east end and a track leading to it, 300 px west of the LM; ALSEP identification not certain"
   },
   {
-   "id": 66,
+   "id": 111,
    "image_id": 41,
    "category_id": 21,
    "bbox": [
@@ -5951,10 +6911,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright LM with dark disturbed halo and shadow east; tracks lead to it; 130 px east of nominal"
   },
   {
-   "id": 67,
+   "id": 112,
    "image_id": 42,
    "category_id": 21,
    "bbox": [
@@ -5967,10 +6928,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright LM in dark halo with shadow east; same crater pair west of it as in M175179080LC"
   },
   {
-   "id": 68,
+   "id": 113,
    "image_id": 43,
    "category_id": 22,
    "bbox": [
@@ -5983,10 +6945,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "20 m crater with dark floor and bright rim 50 px from nominal; smaller than the rayed crater seen in the two high-sun frames"
   },
   {
-   "id": 69,
+   "id": 114,
    "image_id": 45,
    "category_id": 22,
    "bbox": [
@@ -5999,10 +6962,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "rayed crater with dark floor at the centre of bright rays, 60 px from nominal"
   },
   {
-   "id": 70,
+   "id": 115,
    "image_id": 46,
    "category_id": 22,
    "bbox": [
@@ -6015,10 +6979,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "rayed crater, dark floor, bright ejecta; 160 px from nominal"
   },
   {
-   "id": 71,
+   "id": 116,
    "image_id": 47,
    "category_id": 23,
    "bbox": [
@@ -6031,10 +6996,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo17_lm/M116113215RC.png (same frame, offset -431,+68)"
   },
   {
-   "id": 72,
+   "id": 117,
    "image_id": 48,
    "category_id": 24,
    "bbox": [
@@ -6047,10 +7013,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "bright point with 15 px shadow east, 60 px from nominal; nearest raised object to the catalog position"
   },
   {
-   "id": 73,
+   "id": 118,
    "image_id": 50,
    "category_id": 24,
    "bbox": [
@@ -6063,10 +7030,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset -262,+68)"
   },
   {
-   "id": 74,
+   "id": 119,
    "image_id": 51,
    "category_id": 24,
    "bbox": [
@@ -6079,10 +7047,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "low",
+   "annotator": "claude",
    "note": "second shadowed object 410 px west of the LM candidate; the catalog puts the ALSEP 300 px west; could be the ALSEP central station or a boulder"
   },
   {
-   "id": 75,
+   "id": 120,
    "image_id": 51,
    "category_id": 23,
    "bbox": [
@@ -6095,10 +7064,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "low sun (incidence ~80): bright object with 30 px shadow east, 500 px west of nominal; two other shadowed objects nearby; identification by size only"
   },
   {
-   "id": 76,
+   "id": 121,
    "image_id": 52,
    "category_id": 23,
    "bbox": [
@@ -6111,10 +7081,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright LM with 25 px shadow east, 500 px west of nominal"
   },
   {
-   "id": 77,
+   "id": 122,
    "image_id": 52,
    "category_id": 25,
    "bbox": [
@@ -6127,10 +7098,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "bright point with 20 px shadow streak east, 35 px from the position predicted from the LM box"
   },
   {
-   "id": 78,
+   "id": 123,
    "image_id": 54,
    "category_id": 24,
    "bbox": [
@@ -6143,10 +7115,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "cluster of bright dots around the position predicted from the LM box via the catalog offset"
   },
   {
-   "id": 79,
+   "id": 124,
    "image_id": 54,
    "category_id": 23,
    "bbox": [
@@ -6159,10 +7132,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "bright LM in dark halo with tracks converging on it, 780 px west of nominal"
   },
   {
-   "id": 80,
+   "id": 125,
    "image_id": 56,
    "category_id": 24,
    "bbox": [
@@ -6175,10 +7149,11 @@
    "iscrowd": 0,
    "includes_shadow": false,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset +331,-84)"
   },
   {
-   "id": 81,
+   "id": 126,
    "image_id": 56,
    "category_id": 23,
    "bbox": [
@@ -6191,10 +7166,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset +331,-84)"
   },
   {
-   "id": 82,
+   "id": 127,
    "image_id": 56,
    "category_id": 25,
    "bbox": [
@@ -6207,10 +7183,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "bright point with dark shadow blob east at the position predicted from the LM box via the catalog offset"
   },
   {
-   "id": 83,
+   "id": 128,
    "image_id": 57,
    "category_id": 26,
    "bbox": [
@@ -6223,10 +7200,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "low sun (incidence 82): 35 m crater with shadowed west floor and bright east wall, blocky floor; terrain match from both high-sun frames agrees; 150 px from nominal"
   },
   {
-   "id": 84,
+   "id": 129,
    "image_id": 58,
    "category_id": 26,
    "bbox": [
@@ -6239,10 +7217,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "rayed crater with dark pits, 540 px west of nominal"
   },
   {
-   "id": 85,
+   "id": 130,
    "image_id": 59,
    "category_id": 26,
    "bbox": [
@@ -6255,10 +7234,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "0.75 m/px frame: 45 px crater with dark floor and bright east wall at nominal; matcher inconclusive at this resolution"
   },
   {
-   "id": 86,
+   "id": 131,
    "image_id": 60,
    "category_id": 26,
    "bbox": [
@@ -6271,10 +7251,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "rayed crater at the centre of a bright ray system, 90 px from nominal"
   },
   {
-   "id": 87,
+   "id": 132,
    "image_id": 63,
    "category_id": 27,
    "bbox": [
@@ -6287,10 +7268,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "30 px bright blob (lander plus blast-brightened halo) with a dark patch on its west side, 35 px from nominal; nominal is on the crop edge"
   },
   {
-   "id": 88,
+   "id": 133,
    "image_id": 63,
    "category_id": 28,
    "bbox": [
@@ -6303,10 +7285,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "low",
+   "annotator": "claude",
    "note": "bright object with dark side 45 px south of the lander candidate; Yutu's final position is 21 m (37 px) SSW of the lander"
   },
   {
-   "id": 89,
+   "id": 134,
    "image_id": 107,
    "category_id": 29,
    "bbox": [
@@ -6319,10 +7302,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "10 px bright compact object with a dark shadow east (craters in this frame are dark-west, so a raised object); 360 px west of nominal; size fits the 2.2 m rover"
   },
   {
-   "id": 90,
+   "id": 135,
    "image_id": 113,
    "category_id": 30,
    "bbox": [
@@ -6335,10 +7319,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "low",
+   "annotator": "claude",
    "note": "high sun (incidence 23): isolated 6 px bright dot with no crater rim, 175 px from nominal; the only non-crater candidate within 450 px"
   },
   {
-   "id": 91,
+   "id": 136,
    "image_id": 116,
    "category_id": 9,
    "bbox": [
@@ -6351,10 +7336,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M168353795LC.png (same frame, offset -395,-183)"
   },
   {
-   "id": 92,
+   "id": 137,
    "image_id": 117,
    "category_id": 10,
    "bbox": [
@@ -6367,10 +7353,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 93,
+   "id": 138,
    "image_id": 117,
    "category_id": 9,
    "bbox": [
@@ -6383,10 +7370,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 94,
+   "id": 139,
    "image_id": 117,
    "category_id": 11,
    "bbox": [
@@ -6399,10 +7387,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "high",
+   "annotator": "claude",
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 95,
+   "id": 140,
    "image_id": 123,
    "category_id": 31,
    "bbox": [
@@ -6415,10 +7404,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "low sun (incidence 81): 5 px bright point with a 30 px thin shadow east, 90 px from the terrain-matched position of the M152885739LC box; thin long shadow fits a mast"
   },
   {
-   "id": 96,
+   "id": 141,
    "image_id": 126,
    "category_id": 31,
    "bbox": [
@@ -6431,10 +7421,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "mid sun (incidence 33): 6 px bright point with a 10 px shadow streak east, 95 px from nominal; strongest raised-object candidate in a 450 px radius"
   },
   {
-   "id": 97,
+   "id": 142,
    "image_id": 127,
    "category_id": 32,
    "bbox": [
@@ -6447,10 +7438,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "low",
+   "annotator": "claude",
    "note": "low sun (incidence 84): bright point with a 35 px thin shadow east in a boulder field, 130 px from nominal; thin shadow suggests a mast rather than a boulder"
   },
   {
-   "id": 98,
+   "id": 143,
    "image_id": 128,
    "category_id": 32,
    "bbox": [
@@ -6463,10 +7455,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "low",
+   "annotator": "claude",
    "note": "terrain match from M131724362LC (ratio 1.6): bright blob with shadow east; identification uncertain"
   },
   {
-   "id": 99,
+   "id": 144,
    "image_id": 129,
    "category_id": 32,
    "bbox": [
@@ -6479,10 +7472,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "terrain match from M131724362LC (vote ratio 4.2) then by eye: 8 px bright object with dark shadow east; 290 px from nominal"
   },
   {
-   "id": 100,
+   "id": 145,
    "image_id": 130,
    "category_id": 32,
    "bbox": [
@@ -6495,10 +7489,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "low",
+   "annotator": "claude",
    "note": "terrain match from M131724362LC (ratio 2.1): two bright specks with shadow east; identification uncertain"
   },
   {
-   "id": 101,
+   "id": 146,
    "image_id": 131,
    "category_id": 27,
    "bbox": [
@@ -6511,10 +7506,11 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "medium",
+   "annotator": "claude",
    "note": "transferred from crop moon/change3/M1514853442RC.png (same frame, offset +0,-31)"
   },
   {
-   "id": 102,
+   "id": 147,
    "image_id": 131,
    "category_id": 28,
    "bbox": [
@@ -6527,6 +7523,7 @@
    "iscrowd": 0,
    "includes_shadow": true,
    "confidence": "low",
+   "annotator": "claude",
    "note": "transferred from crop moon/change3/M1514853442RC.png (same frame, offset +0,-31)"
   }
  ],
@@ -6542,12 +7539,6 @@
    "name": "insight",
    "supercategory": "artifact",
    "label": "InSight lander"
-  },
-  {
-   "id": 3,
-   "name": "perseverance_landing",
-   "supercategory": "artifact",
-   "label": "Perseverance landing site (Octavia E. Butler Landing)"
   },
   {
    "id": 4,
@@ -6722,6 +7713,18 @@
    "name": "surveyor7",
    "supercategory": "artifact",
    "label": "Surveyor 7 lander"
+  },
+  {
+   "id": 33,
+   "name": "curiosity_landing",
+   "supercategory": "artifact",
+   "label": "Curiosity landing site (Bradbury Landing)"
+  },
+  {
+   "id": 34,
+   "name": "perseverance_landing",
+   "supercategory": "artifact",
+   "label": "Perseverance landing site (Octavia E. Butler Landing)"
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Xenarch artifact site bounding boxes
 
-Published as `human-hardware_ground-truth/boxes_lroc-nac_hirise.csv`, `boxes-coco_lroc-nac_hirise.json`, `unboxed_lroc-nac_hirise.csv`
+Published as `human-hardware_ground-truth/boxes-coco_lroc-nac_hirise.json`
 in the private HF dataset `jules1235813/xenarch` (`.venv/bin/python xenarch_hf.py tables`; `file_name` becomes e.g.
 `moon_lroc-nac/apollo11_lm_lroc-nac/M117338434RC.png`).
 
@@ -9,9 +9,7 @@ Bounding boxes around human-made hardware in the 2048×2048 orbital crops of
 
 | File | What |
 |---|---|
-| `boxes.csv` | one row per object per crop: pixel box, confidence, how it was found (source of truth) |
-| `boxes_coco.json` | the same boxes in COCO layout, with every crop (positive or negative) as an image record |
-| `unboxed.csv` | positive crops where the hardware could **not** be identified, with the reason |
+| `boxes_coco.json` | **the only annotation file** (COCO). `images`: every crop, positive or negative; a positive crop where the hardware could not be identified has `unboxed_reason`. `annotations`: one box per object per crop with `includes_shadow`, `confidence`, `annotator`, `note`. `categories`: one per `object_id`. Edit it through `boxtool.py` (`box`, `rect`, `drop`, `unbox`, `transfer`) |
 | `review/*.png` | one review sheet per annotated crop: tight zoom with boxes + 600 px context with the catalog nominal position as a red cross |
 | `review.html` | all review sheets and box tables on one page |
 | `boxtool.py`, `register.py` | the annotation helper (candidate hunt, pixel grid, frame-to-frame terrain matching, review/COCO export) |
@@ -30,13 +28,13 @@ and landers were boxed only where an object sits at the waypoint or catalog posi
 
 ## Box conventions
 
-- Pixel coordinates in the 2048² crop, origin top-left, `x_max`/`y_max` inclusive. COCO `bbox` is `[x, y, w, h]`.
+- Pixel coordinates in the 2048² crop, origin top-left. COCO `bbox` is `[x, y, w, h]`: the box covers pixels `x … x+w-1`.
 - The box covers the object **and its shadow** (`includes_shadow`), because for the detector the shadow is part of the anomaly.
   S-IVB impact craters: the crater, not the rays.
 - `confidence`: `high` = unambiguous (bright body + hard shadow, tracks, or matches a published labeled image);
   `medium` = right size and shadow at the predicted position but no independent confirmation;
   `low` = plausible but could be a boulder / rock.
-- `object_id` matches `sites.csv` in the catalog. `apollo11_lrrr` (Laser Ranging Retroreflector) is an extra id not in `sites.csv`.
+- The category `name` (`object_id`) matches `sites.csv` in the catalog. `apollo11_lrrr` (Laser Ranging Retroreflector) is an extra id not in `sites.csv`.
 - `note` says how the box was found and the offset from the catalog's nominal pixel.
 
 ## How the boxes were found
