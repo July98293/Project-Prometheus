@@ -8,6 +8,7 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
   natural-terrain_training/                    natural terrain only; metadata.csv `split`: train / validation
     moon_lroc-nac/moon_<landform>_lroc-nac/     data/lroc-nac-set/<landform>/
     mars_hirise/mars_<landform>_hirise/         data/hirise-set/<landform>/
+    moon_chandrayaan2-ohrc/moon_<landform>_chandrayaan2-ohrc/   data/ohrc-set/<landform>/
     legacy_mixed-cameras/<body>_<camera>/       data/xenarch-imagery/<camera>_png/   (the old xenarch-imagery set)
   human-hardware_ground-truth/                 known human-made objects (test)
     catalog_moon-mars_lroc-nac_hirise.csv       artifact-site-catalog/catalog.csv: the main table, object x frame
@@ -18,7 +19,7 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
   raw/legacy_source-files/                     what the legacy set was made from: PDS originals (.IMG, JPEG),
                                                labels (JSON / XML), the old 'squares' tiles, manifest.csv
 
-  .venv/bin/python xenarch_hf.py terrain moon|mars|legacy [local dir]   publish a terrain set and its metadata.csv
+  .venv/bin/python xenarch_hf.py terrain moon|mars|ohrc|legacy [local dir]   publish a terrain set and its metadata.csv
   .venv/bin/python xenarch_hf.py legacy-meta                    build data/xenarch-imagery/metadata.csv from raw/ labels
   .venv/bin/python xenarch_hf.py crops [local dir]              publish the hardware crops
   .venv/bin/python xenarch_hf.py tables                         publish the catalog, boxes and derived tables
@@ -42,8 +43,11 @@ CROPS = f"{HARDWARE}/crops_lroc-nac_hirise"
 DERIVED = f"{HARDWARE}/derived"
 LEGACY = f"{TERRAIN}/legacy_mixed-cameras"
 RAW = "raw/legacy_source-files"
-CAMERA = {"moon": "lroc-nac", "mars": "hirise"}
-LOCAL_TERRAIN = {"moon": HERE / "data/lroc-nac-set", "mars": HERE / "data/hirise-set", "legacy": HERE / "data/xenarch-imagery"}
+CAMERA = {"moon": "lroc-nac", "mars": "hirise"}                    # hardware crops: body -> camera
+# terrain sets: set key -> (body, camera); a body can have several cameras
+TERRAIN_SETS = {"moon": ("moon", "lroc-nac"), "mars": ("mars", "hirise"), "ohrc": ("moon", "chandrayaan2-ohrc")}
+LOCAL_TERRAIN = {"moon": HERE / "data/lroc-nac-set", "mars": HERE / "data/hirise-set", "ohrc": HERE / "data/ohrc-set",
+                 "legacy": HERE / "data/xenarch-imagery"}
 LOCAL_CROPS = HERE / "data/artifact-site-images"
 CATALOG = HERE / "artifact-site-catalog"
 
@@ -71,8 +75,9 @@ def split_of(source):
     return "validation" if int(hashlib.md5(source.encode()).hexdigest(), 16) % 100 < VAL_PERCENT else "train"
 
 
-def landform_dir(body, landform):
-    return f"{body}_{landform}_{CAMERA[body]}"
+def landform_dir(key, landform):
+    body, camera = TERRAIN_SETS[key]
+    return f"{body}_{landform}_{camera}"
 
 
 def terrain_rel(body, rel):
@@ -85,8 +90,11 @@ def terrain_rel(body, rel):
     return f"{landform_dir(body, landform)}/{name}"
 
 
-def terrain_folder(body):
-    return LEGACY if body == "legacy" else f"{TERRAIN}/{body}_{CAMERA[body]}"
+def terrain_folder(key):
+    if key == "legacy":
+        return LEGACY
+    body, camera = TERRAIN_SETS[key]
+    return f"{TERRAIN}/{body}_{camera}"
 
 
 def crop_rel(rel):

@@ -8,6 +8,8 @@ configs:
     data_dir: natural-terrain_training/moon_lroc-nac
   - config_name: terrain_mars
     data_dir: natural-terrain_training/mars_hirise
+  - config_name: terrain_moon_ohrc
+    data_dir: natural-terrain_training/moon_chandrayaan2-ohrc
   - config_name: terrain_legacy
     data_dir: natural-terrain_training/legacy_mixed-cameras
   - config_name: artifact_images
@@ -40,6 +42,11 @@ natural-terrain_training/                      natural terrain, no hardware (tra
   mars_hirise/
     metadata.csv
     mars_<landform>_hirise/*.png               384 HiRISE tiles, 1024×512, ~0.5 m/px
+  moon_chandrayaan2-ohrc/
+    metadata.csv
+    moon_cratered_highlands_chandrayaan2-ohrc/*.png
+                                               300 Chandrayaan-2 OHRC tiles, 1024×1024, 0.23-0.26 m/px: the
+                                               sharpest lunar orbital imagery (three calibrated scenes, 62-74 S)
   legacy_mixed-cameras/                        the original mixed set (formerly xenarch-imagery)
     metadata.csv
     <body>_<camera>/*.png                      984 full images: moon_clementine, moon_lroc-nac-wac,

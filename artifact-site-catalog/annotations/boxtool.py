@@ -8,6 +8,9 @@
   boxtool.py rect FILE OBJECT X0 Y0 X1 Y1 [--conf C] [--note N]  write/replace a box by corners
   boxtool.py drop FILE [OBJECT]                                remove box(es)
   boxtool.py unbox FILE [REASON]                               why this positive crop has no box (no REASON: clear it)
+  boxtool.py apply PROPOSALS.json [--dry]                      merge a reviewer's proposals: {"boxes": [{file, object_id,
+                                                             x_min, y_min, x_max, y_max, confidence, note, includes_shadow}],
+                                                             "unboxed": {file: reason}, "drop": [[file, object_id]]}
   boxtool.py predict FILE                                      predicted pixels of the other catalogued objects,
                                                              from the first measured box (relative offsets)
   boxtool.py review [--site S]                                 review sheets (one PNG per frame) + dashboard page data
@@ -279,6 +282,37 @@ def cmd_unbox(args):
     save_boxes(load_boxes(), u)
 
 
+def cmd_apply(args):
+    """Proposals replace any box of the same (file, object); an unboxed reason is only kept for crops left without a box."""
+    P = json.load(open(args.file))
+    ms, s = meta(), sites()
+    rows, u = load_boxes(), load_unboxed()
+    drop = {tuple(d) for d in P.get("drop", [])} | {(b["file"], b["object_id"]) for b in P.get("boxes", [])}
+    rows = [r for r in rows if (r["file_name"], r["object_id"]) not in drop]
+    for b in P.get("boxes", []):
+        if b["file"] not in ms:
+            sys.exit(f"{b['file']} is not in metadata.csv")
+        x0, y0, x1, y1 = (int(b[k]) for k in ("x_min", "y_min", "x_max", "y_max"))
+        if not (0 <= x0 <= x1 < 2048 and 0 <= y0 <= y1 < 2048):
+            sys.exit(f"box outside the crop: {b}")
+        rows.append(dict(file_name=b["file"], site_id=ms[b["file"]]["site_id"], object_id=b["object_id"],
+                         label=s[b["object_id"]]["object"] if b["object_id"] in s else b["object_id"],
+                         x_min=x0, y_min=y0, x_max=x1, y_max=y1, width_px=x1 - x0 + 1, height_px=y1 - y0 + 1,
+                         includes_shadow=b.get("includes_shadow", "yes"), confidence=b["confidence"],
+                         annotator=b.get("annotator", "claude"), note=b["note"]))
+        u.pop(b["file"], None)
+    boxed = {r["file_name"] for r in rows}
+    for f, reason in P.get("unboxed", {}).items():
+        if f not in ms:
+            sys.exit(f"{f} is not in metadata.csv")
+        if f not in boxed:
+            u[f] = reason
+    print(f"{len(P.get('boxes', []))} boxes, {len(P.get('unboxed', {}))} unboxed reasons, {len(P.get('drop', []))} drops"
+          + (" (dry run)" if args.dry else ""))
+    if not args.dry:
+        save_boxes(rows, u)
+
+
 def cmd_predict(args):
     m = meta()[args.file]
     nom = nominal(m)
@@ -465,6 +499,7 @@ if __name__ == "__main__":
     q.add_argument("--conf", default="high"); q.add_argument("--note", default=""); q.add_argument("--shadow", default="yes")
     q = sp.add_parser("drop"); q.add_argument("file"); q.add_argument("object", nargs="?")
     q = sp.add_parser("unbox"); q.add_argument("file"); q.add_argument("reason", nargs="?")
+    q = sp.add_parser("apply"); q.add_argument("file"); q.add_argument("--dry", action="store_true")
     q = sp.add_parser("predict"); q.add_argument("file")
     q = sp.add_parser("review"); q.add_argument("--site")
     sp.add_parser("transfer")
