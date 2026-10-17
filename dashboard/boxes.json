@@ -1,18 +1,18 @@
 {
- "generated": "2026-10-16T08:54Z",
- "n_boxes": 210,
+ "generated": "2026-10-17T14:48Z",
+ "n_boxes": 309,
  "positives": {
   "Moon": 232,
-  "Mars": 130
+  "Mars": 241
  },
  "boxed": {
   "Moon": 120,
-  "Mars": 54
+  "Mars": 153
  },
  "confidence": {
-  "high": 130,
-  "medium": 58,
-  "low": 22
+  "high": 209,
+  "medium": 77,
+  "low": 23
  },
  "frames": [
   {
@@ -4032,6 +4032,216 @@
    ]
   },
   {
+   "file": "mars/beagle2/ESP_030908_1915.png",
+   "site_id": "beagle2",
+   "object": "Beagle 2 lander (partly deployed)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 53.67,
+   "utc": "2013-02-28",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_beagle2_ESP_030908_1915.jpg",
+   "boxes": [
+    {
+     "object_id": "beagle2",
+     "label": "Beagle 2 lander (partly deployed)",
+     "x_min": 797,
+     "y_min": 1609,
+     "x_max": 806,
+     "y_max": 1615,
+     "width_px": 10,
+     "height_px": 7,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 8.9), bright point exactly at the predicted spot; 157 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/beagle2/ESP_039308_1915.png",
+   "site_id": "beagle2",
+   "object": "Beagle 2 lander (partly deployed)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.12,
+   "utc": "2014-12-15",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_beagle2_ESP_039308_1915.jpg",
+   "boxes": [
+    {
+     "object_id": "beagle2",
+     "label": "Beagle 2 lander (partly deployed)",
+     "x_min": 587,
+     "y_min": 1573,
+     "x_max": 596,
+     "y_max": 1579,
+     "width_px": 10,
+     "height_px": 7,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "anchor: Beagle 2 lander (saturated bright point of the deployed petals, ~2 m, no resolvable shadow) at the spot labelled Beagle2 in the HiRISE release https://www.uahirise.org/ESP_039308_1915 (overview GIF matched to the crop: same 10 m crater ~40 m WNW and the bright TAR ridge to the east); 175 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/beagle2/ESP_039519_1915.png",
+   "site_id": "beagle2",
+   "object": "Beagle 2 lander (partly deployed)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 56.91,
+   "utc": "2014-12-31",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_beagle2_ESP_039519_1915.jpg",
+   "boxes": [
+    {
+     "object_id": "beagle2",
+     "label": "Beagle 2 lander (partly deployed)",
+     "x_min": 680,
+     "y_min": 1456,
+     "x_max": 689,
+     "y_max": 1462,
+     "width_px": 10,
+     "height_px": 7,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 9.0), bright point exactly at the predicted spot; 138 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/beagle2/ESP_040363_1915.png",
+   "site_id": "beagle2",
+   "object": "Beagle 2 lander (partly deployed)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 48.4,
+   "utc": "2015-03-07",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_beagle2_ESP_040363_1915.jpg",
+   "boxes": [
+    {
+     "object_id": "beagle2",
+     "label": "Beagle 2 lander (partly deployed)",
+     "x_min": 933,
+     "y_min": 1507,
+     "x_max": 942,
+     "y_max": 1513,
+     "width_px": 10,
+     "height_px": 7,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 7.0), bright point exactly at the predicted spot; 123 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/beagle2/ESP_041075_1915.png",
+   "site_id": "beagle2",
+   "object": "Beagle 2 lander (partly deployed)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 39.56,
+   "utc": "2015-05-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_beagle2_ESP_041075_1915.jpg",
+   "boxes": [
+    {
+     "object_id": "beagle2",
+     "label": "Beagle 2 lander (partly deployed)",
+     "x_min": 711,
+     "y_min": 1505,
+     "x_max": 720,
+     "y_max": 1511,
+     "width_px": 10,
+     "height_px": 7,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 9.2), bright point exactly at the predicted spot; 143 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/beagle2/ESP_044332_1915.png",
+   "site_id": "beagle2",
+   "object": "Beagle 2 lander (partly deployed)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.46,
+   "utc": "2016-01-10",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_beagle2_ESP_044332_1915.jpg",
+   "boxes": [
+    {
+     "object_id": "beagle2",
+     "label": "Beagle 2 lander (partly deployed)",
+     "x_min": 794,
+     "y_min": 1333,
+     "x_max": 803,
+     "y_max": 1339,
+     "width_px": 10,
+     "height_px": 7,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 6.2), bright point exactly at the predicted spot; 96 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/beagle2/ESP_051914_1915.png",
+   "site_id": "beagle2",
+   "object": "Beagle 2 lander (partly deployed)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 41.24,
+   "utc": "2017-08-23",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_beagle2_ESP_051914_1915.jpg",
+   "boxes": [
+    {
+     "object_id": "beagle2",
+     "label": "Beagle 2 lander (partly deployed)",
+     "x_min": 780,
+     "y_min": 1291,
+     "x_max": 789,
+     "y_max": 1297,
+     "width_px": 10,
+     "height_px": 7,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 7.3), bright point exactly at the predicted spot; 90 m from the catalog pixel"
+    }
+   ]
+  },
+  {
    "file": "mars/curiosity_landing/ESP_028678_1755.png",
    "site_id": "curiosity_landing",
    "object": "Curiosity landing site (Bradbury Landing)",
@@ -4075,6 +4285,96 @@
    ]
   },
   {
+   "file": "mars/curiosity_landing/ESP_029957_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 52.52,
+   "utc": "2012-12-16",
+   "nominal": [
+    1131,
+    424
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_029957_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 937,
+     "y_min": 802,
+     "x_max": 1107,
+     "y_max": 1242,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_landing/ESP_030168_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 52.34,
+   "utc": "2013-01-02",
+   "nominal": [
+    1023,
+    416
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_030168_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 939,
+     "y_min": 804,
+     "x_max": 1109,
+     "y_max": 1244,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_landing/ESP_030313_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 50.34,
+   "utc": "2013-01-13",
+   "nominal": [
+    1096,
+    371
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_030313_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 941,
+     "y_min": 804,
+     "x_max": 1111,
+     "y_max": 1244,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
+    }
+   ]
+  },
+  {
    "file": "mars/curiosity_landing/ESP_032436_1755.png",
    "site_id": "curiosity_landing",
    "object": "Curiosity landing site (Bradbury Landing)",
@@ -4101,6 +4401,66 @@
      "includes_shadow": "no",
      "confidence": "high",
      "note": "blast scour still dark (Jun 2013); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_landing/ESP_034572_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 52.0,
+   "utc": "2013-12-11",
+   "nominal": [
+    1272,
+    436
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_034572_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 937,
+     "y_min": 802,
+     "x_max": 1107,
+     "y_max": 1242,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match (scour fainter)"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_landing/ESP_035350_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 57.17,
+   "utc": "2014-02-10",
+   "nominal": [
+    1167,
+    423
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_035350_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 937,
+     "y_min": 802,
+     "x_max": 1107,
+     "y_max": 1242,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match (scour fainter)"
     }
    ]
   },
@@ -4161,6 +4521,36 @@
      "includes_shadow": "no",
      "confidence": "medium",
      "note": "blast scour faint (Jun 2014); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
+    }
+   ]
+  },
+  {
+   "file": "mars/curiosity_landing/ESP_040269_1755.png",
+   "site_id": "curiosity_landing",
+   "object": "Curiosity landing site (Bradbury Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 39.76,
+   "utc": "2015-02-28",
+   "nominal": [
+    1135,
+    460
+   ],
+   "sheet": "boxes/mars_curiosity_landing_ESP_040269_1755.jpg",
+   "boxes": [
+    {
+     "object_id": "curiosity_landing",
+     "label": "Curiosity landing site (Bradbury Landing)",
+     "x_min": 939,
+     "y_min": 800,
+     "x_max": 1109,
+     "y_max": 1240,
+     "width_px": 171,
+     "height_px": 441,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
     }
    ]
   },
@@ -4281,6 +4671,66 @@
      "includes_shadow": "yes",
      "confidence": "high",
      "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 33; located by NCC terrain match from the landing-site frame ESP_028678"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_057939_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 39.05,
+   "utc": "2018-12-06",
+   "nominal": [
+    2309,
+    161
+   ],
+   "sheet": "boxes/mars_insight_ESP_057939_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 1005,
+     "y_min": 992,
+     "x_max": 1049,
+     "y_max": 1036,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "InSight lander (bright deck + two round dark solar arrays) in the dark blast zone; crop re-centred by terrain match, located again by hirise_match from ESP_058717 (ratio 6-7.5)"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight/ESP_058005_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 39.08,
+   "utc": "2018-12-11",
+   "nominal": [
+    2085,
+    220
+   ],
+   "sheet": "boxes/mars_insight_ESP_058005_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 1006,
+     "y_min": 996,
+     "x_max": 1050,
+     "y_max": 1040,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "InSight lander (bright deck + two round dark solar arrays) in the dark blast zone; crop re-centred by terrain match, located again by hirise_match from ESP_058717 (ratio 6-7.5)"
     }
    ]
   },
@@ -4465,6 +4915,1656 @@
    ]
   },
   {
+   "file": "mars/insight/ESP_087360_1845.png",
+   "site_id": "insight",
+   "object": "InSight lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 48.22,
+   "utc": "2025-03-16",
+   "nominal": [
+    1914,
+    420
+   ],
+   "sheet": "boxes/mars_insight_ESP_087360_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight",
+     "label": "InSight lander",
+     "x_min": 1000,
+     "y_min": 1003,
+     "x_max": 1044,
+     "y_max": 1047,
+     "width_px": 45,
+     "height_px": 45,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "InSight lander (bright deck + two round dark solar arrays) in the dark blast zone; crop re-centred by terrain match, located again by hirise_match from ESP_058717 (ratio 6-7.5)"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_backshell/ESP_058005_1845.png",
+   "site_id": "insight_backshell",
+   "object": "InSight backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 39.08,
+   "utc": "2018-12-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_backshell_ESP_058005_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_backshell",
+     "label": "InSight backshell and parachute",
+     "x_min": 0,
+     "y_min": 1856,
+     "x_max": 62,
+     "y_max": 1897,
+     "width_px": 63,
+     "height_px": 42,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute (bright, same shape as in the HiRISE release cutout of this very frame, https://static.uahirise.org/images/2018/details/cut/ESP_058005_1845-chute-backshell-full-res.jpg) + the part of the dark scar inside the crop; the backshell itself lies ~30 px W of the left edge; position from the lander-centred insight/ESP_058005 crop + the ESP_058717 offset; 327 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_backshell/ESP_058717_1845.png",
+   "site_id": "insight_backshell",
+   "object": "InSight backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.34,
+   "utc": "2019-02-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_backshell_ESP_058717_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_backshell",
+     "label": "InSight backshell and parachute",
+     "x_min": 163,
+     "y_min": 1715,
+     "x_max": 270,
+     "y_max": 1802,
+     "width_px": 108,
+     "height_px": 88,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: backshell (bright specular point) + its dark impact/drag scar + the bright parachute ~25 m SE, the same scene as the HiRISE release cutout https://static.uahirise.org/images/2018/details/cut/ESP_058005_1845-chute-backshell-full-res.jpg (www.uahirise.org/releases/insight/hardware); absent in the before_arrival ESP_036761; 273 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_backshell/ESP_059284_1845.png",
+   "site_id": "insight_backshell",
+   "object": "InSight backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.17,
+   "utc": "2019-03-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_backshell_ESP_059284_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_backshell",
+     "label": "InSight backshell and parachute",
+     "x_min": 258,
+     "y_min": 1668,
+     "x_max": 366,
+     "y_max": 1752,
+     "width_px": 109,
+     "height_px": 85,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "backshell (bright specular point) + its dark impact/drag scar + the bright parachute ~25 m SE; located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.7), parachute and backshell checked by eye; 247 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_backshell/ESP_067157_1845.png",
+   "site_id": "insight_backshell",
+   "object": "InSight backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 43.09,
+   "utc": "2020-11-23",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_backshell_ESP_067157_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_backshell",
+     "label": "InSight backshell and parachute",
+     "x_min": 208,
+     "y_min": 1690,
+     "x_max": 322,
+     "y_max": 1762,
+     "width_px": 115,
+     "height_px": 73,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "backshell (bright point) + fading dark scar + the parachute (moved by wind since 2019); located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.4), checked by eye; 258 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_backshell/ESP_072143_1845.png",
+   "site_id": "insight_backshell",
+   "object": "InSight backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 55.73,
+   "utc": "2021-12-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_backshell_ESP_072143_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_backshell",
+     "label": "InSight backshell and parachute",
+     "x_min": 338,
+     "y_min": 1502,
+     "x_max": 448,
+     "y_max": 1552,
+     "width_px": 111,
+     "height_px": 51,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "backshell (bright, with shadow) + parachute ~25 m E; located by hirise_match terrain match from the ESP_058717 anchor (ratio 3.3; same bright-rimmed crater next to it), checked by eye; 202 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_backshell/ESP_087004_1845.png",
+   "site_id": "insight_backshell",
+   "object": "InSight backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.61,
+   "utc": "2025-02-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_backshell_ESP_087004_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_backshell",
+     "label": "InSight backshell and parachute",
+     "x_min": 328,
+     "y_min": 1703,
+     "x_max": 440,
+     "y_max": 1731,
+     "width_px": 113,
+     "height_px": 29,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "backshell (bright, with shadow) + parachute ~22 m E; located by hirise_match terrain match from the ESP_058717 anchor (ratio 3.1; same bright-rimmed crater next to it), checked by eye; 236 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_058717_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.34,
+   "utc": "2019-02-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_058717_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 163,
+     "y_min": 1732,
+     "x_max": 198,
+     "y_max": 1777,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "anchor: saturated heat-shield dish (2.6 m) in its dark impact scar with bright butterfly ejecta, the same scene as the HiRISE release cutout https://static.uahirise.org/images/2018/details/cut/ESP_058005_1845-shield-full-res.jpg (www.uahirise.org/releases/insight/hardware); box = dish + dark scar; 279 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_058928_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.43,
+   "utc": "2019-02-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_058928_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 309,
+     "y_min": 1656,
+     "x_max": 344,
+     "y_max": 1701,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 8.2) and checked by eye (dish + scar visible); box = dish + dark scar; 239 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_059284_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.17,
+   "utc": "2019-03-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_059284_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 253,
+     "y_min": 1682,
+     "x_max": 288,
+     "y_max": 1727,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 7.0) and checked by eye (dish + scar visible); box = dish + dark scar; 254 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_067157_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 43.09,
+   "utc": "2020-11-23",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_067157_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 205,
+     "y_min": 1696,
+     "x_max": 240,
+     "y_max": 1741,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 5.6) and checked by eye (dish + scar visible); box = dish + dark scar; 265 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_072143_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 55.73,
+   "utc": "2021-12-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_072143_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 341,
+     "y_min": 1500,
+     "x_max": 376,
+     "y_max": 1545,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.0) and checked by eye (dish + scar visible); box = dish + dark scar; 208 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_082877_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.71,
+   "utc": "2024-04-01",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_082877_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 373,
+     "y_min": 1850,
+     "x_max": 408,
+     "y_max": 1895,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 7.5) and checked by eye (dish + scar visible); box = dish + dark scar; 265 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_083945_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 50.25,
+   "utc": "2024-06-23",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_083945_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 354,
+     "y_min": 1972,
+     "x_max": 387,
+     "y_max": 2014,
+     "width_px": 34,
+     "height_px": 43,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar with the bright ejecta streaks of the ESP_058717 anchor; found by eye after the terrain match failed (ratio 1.1) by matching the surrounding craters to ESP_058717 (frame shifted ~60 m E / 60 m S); box = dish + dark scar; 292 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_087004_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.61,
+   "utc": "2025-02-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_087004_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 329,
+     "y_min": 1700,
+     "x_max": 364,
+     "y_max": 1745,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.4) and checked by eye (dish + scar visible); box = dish + dark scar; 243 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_087360_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 48.22,
+   "utc": "2025-03-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_087360_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 123,
+     "y_min": 1614,
+     "x_max": 151,
+     "y_max": 1656,
+     "width_px": 29,
+     "height_px": 43,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar at the edge of the image data (terrain match fails, ratio 1.1, because of the no-data edge); found at the position predicted from the terrain-matched lander of insight/ESP_087360 plus the lander-to-shield offset measured in ESP_058717, same scene as the ESP_058717 anchor; box = dish + dark scar; 269 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/insight_heatshield/ESP_088494_1845.png",
+   "site_id": "insight_heatshield",
+   "object": "InSight heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 53.82,
+   "utc": "2025-06-12",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_insight_heatshield_ESP_088494_1845.jpg",
+   "boxes": [
+    {
+     "object_id": "insight_heatshield",
+     "label": "InSight heat shield",
+     "x_min": 285,
+     "y_min": 1406,
+     "x_max": 320,
+     "y_max": 1451,
+     "width_px": 36,
+     "height_px": 46,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 3.2) and checked by eye (dish + scar visible); box = dish + dark scar; 207 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/opportunity/ESP_056955_1775.png",
+   "site_id": "opportunity",
+   "object": "Opportunity rover (final position, Perseverance Valley)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 47.85,
+   "utc": "2018-09-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_opportunity_ESP_056955_1775.jpg",
+   "boxes": [
+    {
+     "object_id": "opportunity",
+     "label": "Opportunity rover (final position, Perseverance Valley)",
+     "x_min": 1044,
+     "y_min": 1453,
+     "x_max": 1054,
+     "y_max": 1462,
+     "width_px": 11,
+     "height_px": 10,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: Opportunity rover (small bright body + shadow in a dark hollow on the Perseverance Valley slope), the object centred in the white 47 m box of the HiRISE release https://www.uahirise.org/ESP_056955_1775 (cutout matched to the crop by terrain); 109 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/opportunity/ESP_057786_1775.png",
+   "site_id": "opportunity",
+   "object": "Opportunity rover (final position, Perseverance Valley)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 39.02,
+   "utc": "2018-11-24",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_opportunity_ESP_057786_1775.jpg",
+   "boxes": [
+    {
+     "object_id": "opportunity",
+     "label": "Opportunity rover (final position, Perseverance Valley)",
+     "x_min": 1110,
+     "y_min": 1670,
+     "x_max": 1120,
+     "y_max": 1678,
+     "width_px": 11,
+     "height_px": 9,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 6.6), bright point exactly at the predicted spot and absent in the 2016 frame ESP_047263; 164 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/opportunity/ESP_058208_1775.png",
+   "site_id": "opportunity",
+   "object": "Opportunity rover (final position, Perseverance Valley)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 34.09,
+   "utc": "2018-12-27",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_opportunity_ESP_058208_1775.jpg",
+   "boxes": [
+    {
+     "object_id": "opportunity",
+     "label": "Opportunity rover (final position, Perseverance Valley)",
+     "x_min": 1024,
+     "y_min": 1537,
+     "x_max": 1034,
+     "y_max": 1545,
+     "width_px": 11,
+     "height_px": 9,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 7.5), bright point exactly at the predicted spot and absent in the 2016 frame ESP_047263; 129 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/opportunity/ESP_058564_1775.png",
+   "site_id": "opportunity",
+   "object": "Opportunity rover (final position, Perseverance Valley)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 32.31,
+   "utc": "2019-01-23",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_opportunity_ESP_058564_1775.jpg",
+   "boxes": [
+    {
+     "object_id": "opportunity",
+     "label": "Opportunity rover (final position, Perseverance Valley)",
+     "x_min": 1166,
+     "y_min": 1488,
+     "x_max": 1175,
+     "y_max": 1496,
+     "width_px": 10,
+     "height_px": 9,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 6.5), bright point exactly at the predicted spot and absent in the 2016 frame ESP_047263; 123 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/opportunity/ESP_058854_1775.png",
+   "site_id": "opportunity",
+   "object": "Opportunity rover (final position, Perseverance Valley)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 29.87,
+   "utc": "2019-02-15",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_opportunity_ESP_058854_1775.jpg",
+   "boxes": [
+    {
+     "object_id": "opportunity",
+     "label": "Opportunity rover (final position, Perseverance Valley)",
+     "x_min": 755,
+     "y_min": 1339,
+     "x_max": 766,
+     "y_max": 1350,
+     "width_px": 12,
+     "height_px": 12,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 4.4; 160 px patch from ESP_058208 gives the same point), the rover is only a faint light spot at low incidence (30 deg), box covers the predicted position +-1 m; 104 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/opportunity/ESP_087985_1780.png",
+   "site_id": "opportunity",
+   "object": "Opportunity rover (final position, Perseverance Valley)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 56.0,
+   "utc": "2025-05-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_opportunity_ESP_087985_1780.jpg",
+   "boxes": [
+    {
+     "object_id": "opportunity",
+     "label": "Opportunity rover (final position, Perseverance Valley)",
+     "x_min": 1086,
+     "y_min": 1128,
+     "x_max": 1094,
+     "y_max": 1134,
+     "width_px": 9,
+     "height_px": 7,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 3.2, 0.5 m/px), bright 3 px body with its dark shadow to the south-east exactly at the predicted spot (2025); 63 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/pathfinder/ESP_022038_1995.png",
+   "site_id": "pathfinder",
+   "object": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 58.81,
+   "utc": "2011-04-09",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_pathfinder_ESP_022038_1995.jpg",
+   "boxes": [
+    {
+     "object_id": "pathfinder",
+     "label": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+     "x_min": 1002,
+     "y_min": 751,
+     "x_max": 1011,
+     "y_max": 760,
+     "width_px": 10,
+     "height_px": 10,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Mars Pathfinder lander (bright body + shadow, 0.5 m/px); release cutout terrain-matched directly (ratio 7.6) and by NCC from PSP_002391 (ratio 7.9), the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 135 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/pathfinder/ESP_093049_1995.png",
+   "site_id": "pathfinder",
+   "object": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 55.73,
+   "utc": "2026-06-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_pathfinder_ESP_093049_1995.jpg",
+   "boxes": [
+    {
+     "object_id": "pathfinder",
+     "label": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+     "x_min": 1330,
+     "y_min": 652,
+     "x_max": 1346,
+     "y_max": 670,
+     "width_px": 17,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Mars Pathfinder lander (bright deck and petal fragments + shadow); release cutout terrain-matched to this frame directly (ratio 8.1) and by NCC from PSP_002391 (ratio 8.3), the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 120 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/pathfinder/PSP_001824_1995.png",
+   "site_id": "pathfinder",
+   "object": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 50.2,
+   "utc": "2006-12-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_pathfinder_PSP_001824_1995.jpg",
+   "boxes": [
+    {
+     "object_id": "pathfinder",
+     "label": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+     "x_min": 822,
+     "y_min": 387,
+     "x_max": 839,
+     "y_max": 399,
+     "width_px": 18,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Mars Pathfinder lander (bright deck, petals and airbags + eastward shadow); located by NCC terrain match from PSP_002391 (ratio 13.8), which matches the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 165 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/pathfinder/PSP_001890_1995.png",
+   "site_id": "pathfinder",
+   "object": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 52.46,
+   "utc": "2006-12-21",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_pathfinder_PSP_001890_1995.jpg",
+   "boxes": [
+    {
+     "object_id": "pathfinder",
+     "label": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+     "x_min": 1045,
+     "y_min": 331,
+     "x_max": 1062,
+     "y_max": 343,
+     "width_px": 18,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: Mars Pathfinder lander (bright deck, petals and airbags + eastward shadow), the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7), carried into this release frame by NCC terrain match (ratio 10.2); 172 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/pathfinder/PSP_002391_1995.png",
+   "site_id": "pathfinder",
+   "object": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 54.49,
+   "utc": "2007-01-29",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_pathfinder_PSP_002391_1995.jpg",
+   "boxes": [
+    {
+     "object_id": "pathfinder",
+     "label": "Mars Pathfinder lander (Carl Sagan Memorial Station)",
+     "x_min": 805,
+     "y_min": 487,
+     "x_max": 822,
+     "y_max": 499,
+     "width_px": 18,
+     "height_px": 13,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Mars Pathfinder lander (bright deck, petals and airbags + eastward shadow) at the position of the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 143 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_071077_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 49.01,
+   "utc": "2021-09-24",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_071077_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 845,
+     "y_min": 1603,
+     "x_max": 961,
+     "y_max": 1764,
+     "width_px": 117,
+     "height_px": 162,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: bright parachute canopy on the ridge edge + backshell at the centre of its radial blast streaks ~33 m SW, same configuration as the HiRISE release cutout https://uahirise.org/releases/perseverance/parachute.jpg (uahirise.org/ESP_068294_1985); box = canopy + backshell + streaks; 168 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_073068_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.87,
+   "utc": "2022-02-26",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_073068_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 1149,
+     "y_min": 1539,
+     "x_max": 1265,
+     "y_max": 1700,
+     "width_px": 117,
+     "height_px": 162,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 12.1) and checked by eye; 156 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_073635_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.17,
+   "utc": "2022-04-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_073635_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 998,
+     "y_min": 1720,
+     "x_max": 1110,
+     "y_max": 1864,
+     "width_px": 113,
+     "height_px": 145,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute canopy on the ridge edge + backshell with its radial streaks, identical configuration to the ESP_071077 anchor; position predicted from the heat shield found in this frame plus the anchor-frame offset (hirise_match ratio 1.0 failed under the 62 deg sun), confirmed by eye; 192 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_083512_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.77,
+   "utc": "2024-05-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_083512_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 1105,
+     "y_min": 1785,
+     "x_max": 1232,
+     "y_max": 1925,
+     "width_px": 128,
+     "height_px": 141,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute canopy + backshell with its radial streaks, identical configuration to the ESP_071077 anchor; position predicted from the heat shield found in this frame plus the anchor-frame offset (hirise_match ratio 1.0 failed on this noisy low-sun image), confirmed by eye; 211 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_084883_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.3,
+   "utc": "2024-09-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_084883_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 862,
+     "y_min": 1798,
+     "x_max": 994,
+     "y_max": 1945,
+     "width_px": 133,
+     "height_px": 148,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute canopy on the ridge edge + backshell with its radial streaks, identical configuration to the ESP_071077 anchor; found by eye at the frame shift read from a nearby pit (hirise_match ratio 1.0 failed: noisy frame with column artifacts); 213 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_088562_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 48.12,
+   "utc": "2025-06-18",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_088562_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 1059,
+     "y_min": 1071,
+     "x_max": 1118,
+     "y_max": 1152,
+     "width_px": 60,
+     "height_px": 82,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.2) and checked by eye; 54 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_089208_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 47.93,
+   "utc": "2025-08-07",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_089208_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 989,
+     "y_min": 1172,
+     "x_max": 1048,
+     "y_max": 1253,
+     "width_px": 60,
+     "height_px": 82,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 8.3) and checked by eye; 94 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_backshell/ESP_093546_1985.png",
+   "site_id": "perseverance_backshell",
+   "object": "Perseverance backshell and parachute",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 49.03,
+   "utc": "2026-07-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_backshell_ESP_093546_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_backshell",
+     "label": "Perseverance backshell and parachute",
+     "x_min": 1069,
+     "y_min": 1302,
+     "x_max": 1128,
+     "y_max": 1383,
+     "width_px": 60,
+     "height_px": 82,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.5) and checked by eye; 164 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_071077_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 49.01,
+   "utc": "2021-09-24",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_071077_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 812,
+     "y_min": 1692,
+     "x_max": 842,
+     "y_max": 1732,
+     "width_px": 31,
+     "height_px": 41,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "anchor: new dark streak with bright fragments (~8 x 10 m) absent in the 2007 before image PSP_002387 (terrain match ratio 4.6), 9 m from the descent-stage position predicted from the backshell found in this frame plus the Way et al. 2022 offset; the large fresh dark V of the HiRISE release (uahirise.org/ESP_068294_1985, descent-stage-irb.jpg) has faded, so the identification rests on the change + position; 179 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_073068_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.87,
+   "utc": "2022-02-26",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_073068_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 1125,
+     "y_min": 1628,
+     "x_max": 1155,
+     "y_max": 1668,
+     "width_px": 31,
+     "height_px": 41,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "same new dark streak with bright fragments as the ESP_071077 anchor (hirise_match terrain match ratio 4.1), absent before arrival; descent-stage crash debris core; 159 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_073635_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.17,
+   "utc": "2022-04-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_073635_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 964,
+     "y_min": 1800,
+     "x_max": 994,
+     "y_max": 1838,
+     "width_px": 31,
+     "height_px": 39,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "same dark streak with two bright fragments as the ESP_071077 anchor, found at the position predicted from the heat shield of this frame plus the anchor-frame offset (hirise_match ratio 1.0 failed under the 62 deg sun); 199 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_084883_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.3,
+   "utc": "2024-09-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_084883_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 838,
+     "y_min": 1882,
+     "x_max": 868,
+     "y_max": 1922,
+     "width_px": 31,
+     "height_px": 41,
+     "includes_shadow": "no",
+     "confidence": "low",
+     "note": "position = backshell found in this frame + the backshell-to-debris offset measured in ESP_071077 (same ripple-crest gap as the anchor), but the debris is barely visible in this noisy frame with column artifacts (hirise_match ratio 1.3 failed); 224 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_088351_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 46.45,
+   "utc": "2025-06-01",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_088351_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 977,
+     "y_min": 1144,
+     "x_max": 993,
+     "y_max": 1164,
+     "width_px": 17,
+     "height_px": 21,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 4.6) and checked by eye; 68 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_088417_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 48.51,
+   "utc": "2025-06-06",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_088417_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 1076,
+     "y_min": 1153,
+     "x_max": 1092,
+     "y_max": 1173,
+     "width_px": 17,
+     "height_px": 21,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.5) and checked by eye; 76 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_088562_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 48.12,
+   "utc": "2025-06-18",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_088562_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 1051,
+     "y_min": 1114,
+     "x_max": 1067,
+     "y_max": 1134,
+     "width_px": 17,
+     "height_px": 21,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.5) and checked by eye; 53 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_090619_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 57.24,
+   "utc": "2025-11-25",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_090619_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 1053,
+     "y_min": 1298,
+     "x_max": 1069,
+     "y_max": 1318,
+     "width_px": 17,
+     "height_px": 21,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 4.2) and checked by eye; 143 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_090685_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 59.97,
+   "utc": "2025-11-30",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_090685_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 1156,
+     "y_min": 1276,
+     "x_max": 1172,
+     "y_max": 1296,
+     "width_px": 17,
+     "height_px": 21,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.1) and checked by eye; 149 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_descent_stage/ESP_093546_1985.png",
+   "site_id": "perseverance_descent_stage",
+   "object": "Perseverance descent stage (sky crane) crash site",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 49.03,
+   "utc": "2026-07-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_descent_stage_ESP_093546_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_descent_stage",
+     "label": "Perseverance descent stage (sky crane) crash site",
+     "x_min": 1056,
+     "y_min": 1348,
+     "x_max": 1072,
+     "y_max": 1368,
+     "width_px": 17,
+     "height_px": 21,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.4) and checked by eye; 168 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_068426_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 46.17,
+   "utc": "2021-03-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_068426_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 1254,
+     "y_min": 1705,
+     "x_max": 1318,
+     "y_max": 1756,
+     "width_px": 65,
+     "height_px": 52,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 10.9) and checked by eye; box = shield + dark scar; 188 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_071077_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 49.01,
+   "utc": "2021-09-24",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_071077_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 840,
+     "y_min": 1763,
+     "x_max": 892,
+     "y_max": 1810,
+     "width_px": 53,
+     "height_px": 48,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "anchor: heat shield = dark impact scar (~13 m) with bright fragments inside, the same feature and surroundings as the HiRISE release cutout https://uahirise.org/releases/perseverance/heatshield-no-contrast.jpg (uahirise.org/ESP_068294_1985); box = shield + dark scar; 195 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_073068_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.87,
+   "utc": "2022-02-26",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_073068_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 1184,
+     "y_min": 1693,
+     "x_max": 1236,
+     "y_max": 1740,
+     "width_px": 53,
+     "height_px": 48,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 11.8) and checked by eye; box = shield + dark scar; 179 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_073635_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.17,
+   "utc": "2022-04-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_073635_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 990,
+     "y_min": 1872,
+     "x_max": 1052,
+     "y_max": 1918,
+     "width_px": 63,
+     "height_px": 47,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat shield = dark impact scar with the same shape and surroundings as the ESP_071077 anchor (by eye; hirise_match ratio 1.1 failed under the 62 deg sun), absent in the before image PSP_002743; found at the frame shift read from the surrounding pits; box = shield + scar; 218 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_083512_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.77,
+   "utc": "2024-05-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_083512_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 1140,
+     "y_min": 1932,
+     "x_max": 1190,
+     "y_max": 1975,
+     "width_px": 51,
+     "height_px": 44,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "bright 4 m dish with a dark scar at the spot of the ESP_071077 anchor after reading the frame shift from the surrounding pits (hirise_match ratio 1.1 failed on this noisy, low-sun image); looks like the bright-ring heat shield of the 2025 frames; box = dish + scar; 235 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_088562_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 48.12,
+   "utc": "2025-06-18",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_088562_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 1086,
+     "y_min": 1147,
+     "x_max": 1112,
+     "y_max": 1170,
+     "width_px": 27,
+     "height_px": 24,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.9) and checked by eye; box = shield + dark scar; 77 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_088773_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 49.72,
+   "utc": "2025-07-04",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_088773_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 1135,
+     "y_min": 1137,
+     "x_max": 1161,
+     "y_max": 1160,
+     "width_px": 27,
+     "height_px": 24,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.9) and checked by eye; box = shield + dark scar; 88 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_089208_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 47.93,
+   "utc": "2025-08-07",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_089208_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 986,
+     "y_min": 1251,
+     "x_max": 1012,
+     "y_max": 1274,
+     "width_px": 27,
+     "height_px": 24,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 8.2) and checked by eye; box = shield + dark scar; 120 m from the catalog position"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_heatshield/ESP_093546_1985.png",
+   "site_id": "perseverance_heatshield",
+   "object": "Perseverance heat shield",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 49.03,
+   "utc": "2026-07-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_perseverance_heatshield_ESP_093546_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_heatshield",
+     "label": "Perseverance heat shield",
+     "x_min": 1087,
+     "y_min": 1379,
+     "x_max": 1113,
+     "y_max": 1402,
+     "width_px": 27,
+     "height_px": 24,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 6.8) and checked by eye; box = shield + dark scar; 187 m from the catalog position"
+    }
+   ]
+  },
+  {
    "file": "mars/perseverance_landing/ESP_071077_1985.png",
    "site_id": "perseverance_landing",
    "object": "Perseverance landing site (Octavia E. Butler Landing)",
@@ -4521,6 +6621,66 @@
      "includes_shadow": "no",
      "confidence": "high",
      "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_073635_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.17,
+   "utc": "2022-04-11",
+   "nominal": [
+    989,
+    148
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_073635_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 974,
+     "y_min": 990,
+     "x_max": 1070,
+     "y_max": 1066,
+     "width_px": 97,
+     "height_px": 77,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing; crop re-centred by terrain match, located by hirise_match from ESP_088417 (ratio 15-16); absent in 2007"
+    }
+   ]
+  },
+  {
+   "file": "mars/perseverance_landing/ESP_083512_1985.png",
+   "site_id": "perseverance_landing",
+   "object": "Perseverance landing site (Octavia E. Butler Landing)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 62.77,
+   "utc": "2024-05-20",
+   "nominal": [
+    864,
+    83
+   ],
+   "sheet": "boxes/mars_perseverance_landing_ESP_083512_1985.jpg",
+   "boxes": [
+    {
+     "object_id": "perseverance_landing",
+     "label": "Perseverance landing site (Octavia E. Butler Landing)",
+     "x_min": 972,
+     "y_min": 980,
+     "x_max": 1068,
+     "y_max": 1056,
+     "width_px": 97,
+     "height_px": 77,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing; crop re-centred by terrain match, located by hirise_match from ESP_088417 (ratio 15-16); absent in 2007"
     }
    ]
   },
@@ -5702,48 +7862,828 @@
      "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 141 m from the catalog pixel (HiRISE pointing error)"
     }
    ]
+  },
+  {
+   "file": "mars/spirit/ESP_014277_1650.png",
+   "site_id": "spirit",
+   "object": "Spirit rover (final position, Troy)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 33.33,
+   "utc": "2009-08-12",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_spirit_ESP_014277_1650.jpg",
+   "boxes": [
+    {
+     "object_id": "spirit",
+     "label": "Spirit rover (final position, Troy)",
+     "x_min": 1587,
+     "y_min": 1943,
+     "x_max": 1594,
+     "y_max": 1949,
+     "width_px": 8,
+     "height_px": 7,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: Spirit rover (bright 1.6 m body + short shadow) stuck at Troy ~10 m west of Home Plate, at the position of the bright dot in Spirit at Troy, located from NASA/JPL release PIA12205 (HiRISE ESP_013499_1650, https://photojournal.jpl.nasa.gov/catalog/PIA12205: bright dot just west of Home Plate at 9 o'clock); 541 m from the catalog pixel (catalog coordinate + HiRISE pointing offset)"
+    }
+   ]
+  },
+  {
+   "file": "mars/spirit/ESP_031261_1650.png",
+   "site_id": "spirit",
+   "object": "Spirit rover (final position, Troy)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 35.66,
+   "utc": "2013-03-28",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_spirit_ESP_031261_1650.jpg",
+   "boxes": [
+    {
+     "object_id": "spirit",
+     "label": "Spirit rover (final position, Troy)",
+     "x_min": 1347,
+     "y_min": 1939,
+     "x_max": 1354,
+     "y_max": 1945,
+     "width_px": 8,
+     "height_px": 7,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Spirit rover (bright body + shadow) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 8.3), bright point exactly at the predicted spot; 487 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/spirit/ESP_078023_1650.png",
+   "site_id": "spirit",
+   "object": "Spirit rover (final position, Troy)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 54.36,
+   "utc": "2023-03-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_spirit_ESP_078023_1650.jpg",
+   "boxes": [
+    {
+     "object_id": "spirit",
+     "label": "Spirit rover (final position, Troy)",
+     "x_min": 1450,
+     "y_min": 1803,
+     "x_max": 1457,
+     "y_max": 1809,
+     "width_px": 8,
+     "height_px": 7,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 6.7), feature exactly at the predicted spot; 446 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/spirit/ESP_079724_1650.png",
+   "site_id": "spirit",
+   "object": "Spirit rover (final position, Troy)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 65.36,
+   "utc": "2023-07-30",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_spirit_ESP_079724_1650.jpg",
+   "boxes": [
+    {
+     "object_id": "spirit",
+     "label": "Spirit rover (final position, Troy)",
+     "x_min": 1451,
+     "y_min": 1830,
+     "x_max": 1458,
+     "y_max": 1836,
+     "width_px": 8,
+     "height_px": 7,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 4.3), feature exactly at the predicted spot; 458 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/spirit/ESP_081557_1650.png",
+   "site_id": "spirit",
+   "object": "Spirit rover (final position, Troy)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 61.78,
+   "utc": "2023-12-20",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_spirit_ESP_081557_1650.jpg",
+   "boxes": [
+    {
+     "object_id": "spirit",
+     "label": "Spirit rover (final position, Troy)",
+     "x_min": 1518,
+     "y_min": 1863,
+     "x_max": 1525,
+     "y_max": 1869,
+     "width_px": 8,
+     "height_px": 7,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 5.7), feature exactly at the predicted spot; 489 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/spirit/ESP_088163_1650.png",
+   "site_id": "spirit",
+   "object": "Spirit rover (final position, Troy)",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 64.14,
+   "utc": "2025-05-18",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_spirit_ESP_088163_1650.jpg",
+   "boxes": [
+    {
+     "object_id": "spirit",
+     "label": "Spirit rover (final position, Troy)",
+     "x_min": 1482,
+     "y_min": 1758,
+     "x_max": 1488,
+     "y_max": 1764,
+     "width_px": 7,
+     "height_px": 7,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 5.2), feature exactly at the predicted spot; 435 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/tianwen1_lander/ESP_069665_2055.png",
+   "site_id": "tianwen1_lander",
+   "object": "Tianwen-1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 47.94,
+   "utc": "2021-06-06",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_tianwen1_lander_ESP_069665_2055.jpg",
+   "boxes": [
+    {
+     "object_id": "tianwen1_lander",
+     "label": "Tianwen-1 lander",
+     "x_min": 998,
+     "y_min": 1391,
+     "x_max": 1016,
+     "y_max": 1409,
+     "width_px": 19,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: Tianwen-1 lander (bright deck points, ~4 m) at the centre of the bright bow-tie of its dark blast zone, as in the HiRISE release https://www.uahirise.org/ESP_069665_2055 (same observation; lander, blast lobes, crater and TARs match); blast zone is clipped to black in this 8-bit crop so the box is the 4 m lander + shadow; 94 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/tianwen1_lander/ESP_069731_2055.png",
+   "site_id": "tianwen1_lander",
+   "object": "Tianwen-1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 49.5,
+   "utc": "2021-06-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_tianwen1_lander_ESP_069731_2055.jpg",
+   "boxes": [
+    {
+     "object_id": "tianwen1_lander",
+     "label": "Tianwen-1 lander",
+     "x_min": 1172,
+     "y_min": 1357,
+     "x_max": 1190,
+     "y_max": 1375,
+     "width_px": 19,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Tianwen-1 lander at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 11.4); only a few bright deck pixels visible because the blast zone is clipped to black; 94 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/tianwen1_lander/ESP_073225_2055.png",
+   "site_id": "tianwen1_lander",
+   "object": "Tianwen-1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 61.5,
+   "utc": "2022-03-11",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_tianwen1_lander_ESP_073225_2055.jpg",
+   "boxes": [
+    {
+     "object_id": "tianwen1_lander",
+     "label": "Tianwen-1 lander",
+     "x_min": 1300,
+     "y_min": 1474,
+     "x_max": 1320,
+     "y_max": 1494,
+     "width_px": 21,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 9.3); 135 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/tianwen1_lander/ESP_075559_2055.png",
+   "site_id": "tianwen1_lander",
+   "object": "Tianwen-1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.18,
+   "utc": "2022-09-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_tianwen1_lander_ESP_075559_2055.jpg",
+   "boxes": [
+    {
+     "object_id": "tianwen1_lander",
+     "label": "Tianwen-1 lander",
+     "x_min": 1190,
+     "y_min": 1394,
+     "x_max": 1210,
+     "y_max": 1414,
+     "width_px": 21,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 6.7); 105 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/tianwen1_lander/ESP_075625_2055.png",
+   "site_id": "tianwen1_lander",
+   "object": "Tianwen-1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 58.14,
+   "utc": "2022-09-14",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_tianwen1_lander_ESP_075625_2055.jpg",
+   "boxes": [
+    {
+     "object_id": "tianwen1_lander",
+     "label": "Tianwen-1 lander",
+     "x_min": 1356,
+     "y_min": 1393,
+     "x_max": 1376,
+     "y_max": 1413,
+     "width_px": 21,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 6.3); 128 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/tianwen1_lander/ESP_077511_2055.png",
+   "site_id": "tianwen1_lander",
+   "object": "Tianwen-1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 40.73,
+   "utc": "2023-02-07",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_tianwen1_lander_ESP_077511_2055.jpg",
+   "boxes": [
+    {
+     "object_id": "tianwen1_lander",
+     "label": "Tianwen-1 lander",
+     "x_min": 1052,
+     "y_min": 1458,
+     "x_max": 1072,
+     "y_max": 1476,
+     "width_px": 21,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 8.4); 111 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking1/ESP_046170_2025.png",
+   "site_id": "viking1",
+   "object": "Viking 1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 49.61,
+   "utc": "2016-06-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking1_ESP_046170_2025.jpg",
+   "boxes": [
+    {
+     "object_id": "viking1",
+     "label": "Viking 1 lander",
+     "x_min": 1320,
+     "y_min": 944,
+     "x_max": 1336,
+     "y_max": 955,
+     "width_px": 17,
+     "height_px": 12,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 1 lander (bright body + eastward shadow); located by NCC terrain match from the release-verified PSP_001521 anchor (ratio 13.9), object exactly at the predicted spot; 78 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking1/PSP_001521_2025.png",
+   "site_id": "viking1",
+   "object": "Viking 1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 47.54,
+   "utc": "2006-11-22",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking1_PSP_001521_2025.jpg",
+   "boxes": [
+    {
+     "object_id": "viking1",
+     "label": "Viking 1 lander",
+     "x_min": 993,
+     "y_min": 1027,
+     "x_max": 1009,
+     "y_max": 1037,
+     "width_px": 17,
+     "height_px": 11,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: Viking 1 lander (bright 3 m body + eastward shadow) south-east of a shallow dark-floored crater, identical to the labelled 'Lander' in the HiRISE release cutouts https://www.uahirise.org/PSP_001521_2025 (cutout terrain-matched to the crop, ratio 9.9); 6 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking1/PSP_001719_2025.png",
+   "site_id": "viking1",
+   "object": "Viking 1 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 49.96,
+   "utc": "2006-12-08",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking1_PSP_001719_2025.jpg",
+   "boxes": [
+    {
+     "object_id": "viking1",
+     "label": "Viking 1 lander",
+     "x_min": 1138,
+     "y_min": 968,
+     "x_max": 1155,
+     "y_max": 978,
+     "width_px": 18,
+     "height_px": 11,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 1 lander (bright body + eastward shadow); located by NCC terrain match from the release-verified PSP_001521 anchor (ratio 14.7), object exactly at the predicted spot; 33 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_016665_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 44.2,
+   "utc": "2010-02-15",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_016665_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1035,
+     "y_min": 869,
+     "x_max": 1052,
+     "y_max": 879,
+     "width_px": 18,
+     "height_px": 11,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "anchor: Viking 2 lander (bright body + dark eastward shadow) identical to the labelled lander of the HiRISE release https://www.uahirise.org/PSP_001501_2280 (cutout is non-map-projected: matched to this crop at ~10 deg rotation and 0.32 m/px, ratio 4.9; same rock pattern around it); 38 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_017443_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 43.05,
+   "utc": "2010-04-16",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_017443_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1101,
+     "y_min": 1149,
+     "x_max": 1117,
+     "y_max": 1159,
+     "width_px": 17,
+     "height_px": 11,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 18.3), object exactly at the predicted spot; 39 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_026014_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 41.9,
+   "utc": "2012-02-13",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_026014_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1099,
+     "y_min": 1105,
+     "x_max": 1116,
+     "y_max": 1115,
+     "width_px": 18,
+     "height_px": 11,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 19.9), object exactly at the predicted spot; 30 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_027003_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 43.49,
+   "utc": "2012-04-30",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_027003_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1204,
+     "y_min": 996,
+     "x_max": 1221,
+     "y_max": 1005,
+     "width_px": 18,
+     "height_px": 10,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 18.7), object exactly at the predicted spot; 47 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_037974_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 69.9,
+   "utc": "2014-09-02",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_037974_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1309,
+     "y_min": 1273,
+     "x_max": 1333,
+     "y_max": 1287,
+     "width_px": 25,
+     "height_px": 15,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 21.4), object exactly at the predicted spot; 98 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_040915_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 66.76,
+   "utc": "2015-04-19",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_040915_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1345,
+     "y_min": 1353,
+     "x_max": 1364,
+     "y_max": 1373,
+     "width_px": 20,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 15.5), object exactly at the predicted spot; 118 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_049420_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 69.89,
+   "utc": "2017-02-10",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_049420_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1318,
+     "y_min": 1321,
+     "x_max": 1333,
+     "y_max": 1338,
+     "width_px": 16,
+     "height_px": 18,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 14.4), object exactly at the predicted spot; 107 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_050053_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 60.58,
+   "utc": "2017-03-31",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_050053_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1323,
+     "y_min": 1193,
+     "x_max": 1340,
+     "y_max": 1213,
+     "width_px": 18,
+     "height_px": 21,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 18.5), object exactly at the predicted spot; 89 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_058374_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 67.56,
+   "utc": "2019-01-09",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_058374_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1314,
+     "y_min": 1324,
+     "x_max": 1330,
+     "y_max": 1342,
+     "width_px": 17,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 13.6), object exactly at the predicted spot; 107 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_077866_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 48.27,
+   "utc": "2023-03-07",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_077866_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1146,
+     "y_min": 1037,
+     "x_max": 1155,
+     "y_max": 1044,
+     "width_px": 10,
+     "height_px": 8,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 12.8), object exactly at the predicted spot; 64 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_085250_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 63.08,
+   "utc": "2024-10-03",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_085250_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1294,
+     "y_min": 1380,
+     "x_max": 1311,
+     "y_max": 1396,
+     "width_px": 18,
+     "height_px": 17,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 15.2), object exactly at the predicted spot; 115 m from the catalog pixel"
+    }
+   ]
+  },
+  {
+   "file": "mars/viking2/ESP_086806_2280.png",
+   "site_id": "viking2",
+   "object": "Viking 2 lander",
+   "body": "Mars",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 46.79,
+   "utc": "2025-02-01",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/mars_viking2_ESP_086806_2280.jpg",
+   "boxes": [
+    {
+     "object_id": "viking2",
+     "label": "Viking 2 lander",
+     "x_min": 1127,
+     "y_min": 1147,
+     "x_max": 1137,
+     "y_max": 1154,
+     "width_px": 11,
+     "height_px": 8,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 15.9), object exactly at the predicted spot; 83 m from the catalog pixel"
+    }
+   ]
   }
  ],
  "unboxed": [
   {
-   "file_name": "mars/curiosity_landing/ESP_029957_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_030168_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_030313_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_034572_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_035350_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
-  },
-  {
-   "file_name": "mars/curiosity_landing/ESP_040269_1755.png",
-   "site_id": "curiosity_landing",
-   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
-  },
-  {
    "file_name": "mars/curiosity_landing/ESP_078499_1755.png",
    "site_id": "curiosity_landing",
-   "reason": "landing site located by terrain match (ratio 13) but the blast scour has faded by 2023; no hardware remains at the landing point"
+   "reason": "landing site located at the crop centre by terrain match (ratio 6), but the blast scour has faded by 2023-24; no hardware remains at the landing point"
   },
   {
    "file_name": "mars/curiosity_landing/ESP_083233_1755.png",
    "site_id": "curiosity_landing",
-   "reason": "terrain match from ESP_028678 failed (ratio ~1): the landing site is most likely outside this 512 m crop (HiRISE pointing error, up to ~400 m at InSight)"
+   "reason": "landing site located at the crop centre by terrain match (ratio 6), but the blast scour has faded by 2023-24; no hardware remains at the landing point"
   },
   {
    "file_name": "mars/curiosity_rover/ESP_028269_1755.png",
@@ -5916,24 +8856,99 @@
    "reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "file_name": "mars/insight/ESP_057939_1845.png",
-   "site_id": "insight",
-   "reason": "lander outside this crop: in this frame the catalog pixel is ~390 m from the lander (HiRISE pointing error); found in a 4096 px region of ESP_057939 at 321 m west, 215 m south of the catalog position, i.e. left of this crop's edge"
+   "file_name": "mars/ingenuity/ESP_082945_1985.png",
+   "site_id": "ingenuity",
+   "reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "file_name": "mars/insight/ESP_058005_1845.png",
-   "site_id": "insight",
-   "reason": "lander outside this crop: in this frame the catalog pixel is ~390 m from the lander (HiRISE pointing error); found in a 4096 px region of ESP_057939 at 321 m west, 215 m south of the catalog position, i.e. left of this crop's edge"
+   "file_name": "mars/ingenuity/ESP_088206_1985.png",
+   "site_id": "ingenuity",
+   "reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "file_name": "mars/perseverance_landing/ESP_073635_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
+   "file_name": "mars/ingenuity/ESP_088285_1985.png",
+   "site_id": "ingenuity",
+   "reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "file_name": "mars/perseverance_landing/ESP_083512_1985.png",
-   "site_id": "perseverance_landing",
-   "reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
+   "file_name": "mars/ingenuity/ESP_092043_1985.png",
+   "site_id": "ingenuity",
+   "reason": "helicopter not identified: 0.25 m/px (rotor span ~16 px); no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area a before/after comparison with ESP_036618 (2014, terrain match on the same spot) shows no unambiguous new object or 1.2 m blade"
+  },
+  {
+   "file_name": "mars/ingenuity/ESP_092254_1985.png",
+   "site_id": "ingenuity",
+   "reason": "helicopter not identified: 0.25 m/px (rotor span ~16 px); no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area a before/after comparison with ESP_036618 (2014, terrain match on the same spot) shows no unambiguous new object or 1.2 m blade"
+  },
+  {
+   "file_name": "mars/ingenuity/ESP_093256_1985.png",
+   "site_id": "ingenuity",
+   "reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
+  },
+  {
+   "file_name": "mars/ingenuity/ESP_093335_1985.png",
+   "site_id": "ingenuity",
+   "reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
+  },
+  {
+   "file_name": "mars/insight_backshell/ESP_057939_1845.png",
+   "site_id": "insight_backshell",
+   "reason": "backshell and parachute outside this crop: from the lander (centre of the terrain-matched insight/ESP_057939 crop) plus the 269 m E / 493 m S offset measured in ESP_058717 they lie ~210 px west of the left edge; nothing bright at the edge"
+  },
+  {
+   "file_name": "mars/insight_heatshield/ESP_057939_1845.png",
+   "site_id": "insight_heatshield",
+   "reason": "heat shield outside this crop: from the lander (centre of the terrain-matched insight/ESP_057939 crop) plus the 677 m E / 352 m N offset measured in ESP_058717, it lies ~250 px (~65 m) west of the crop's left edge (frame pointing error ~400 m)"
+  },
+  {
+   "file_name": "mars/insight_heatshield/ESP_058005_1845.png",
+   "site_id": "insight_heatshield",
+   "reason": "heat shield just outside this crop: from the lander (centre of the terrain-matched insight/ESP_058005 crop) plus the offset measured in ESP_058717 it lies ~30 px west of the left edge; no dish visible at the edge (the release cutout ESP_058005_1845-shield-full-res.jpg shows it in this frame, outside our crop)"
+  },
+  {
+   "file_name": "mars/mars3/ESP_026368_1345.png",
+   "site_id": "mars3",
+   "reason": "0.5 m/px at 84 deg incidence (long shadows, partly black frame edge): the 1.8 m lander candidate (a dark spot among rocks) cannot be told from rocks, and its position is not established in this crop; candidate only"
+  },
+  {
+   "file_name": "mars/mars3/ESP_031036_1345.png",
+   "site_id": "mars3",
+   "reason": "release frame of the Mars 3 candidates (https://www.uahirise.org/ESP_031036_1345): the labelled parachute cutout does not terrain-match this crop (ratio 1.2) and the composite places the lander/retrorocket candidates roughly 1-2 km from the image centre on which the crop is cut; the only bright feature here (x~391 y~910) is a boulder with its shadow, not the round 7.5 m parachute; candidate-only object, nothing boxed"
+  },
+  {
+   "file_name": "mars/mars3/ESP_032447_1345.png",
+   "site_id": "mars3",
+   "reason": "no anchor: the Mars 3 hardware candidates from https://www.uahirise.org/ESP_031036_1345 were not found in this crop (catalog point = image centre, uncertainty ~3 km); the 1.8 m lander candidate is indistinguishable from the many rocks"
+  },
+  {
+   "file_name": "mars/mars3/ESP_032737_1345.png",
+   "site_id": "mars3",
+   "reason": "no anchor: the Mars 3 hardware candidates from https://www.uahirise.org/ESP_031036_1345 were not found in this crop (catalog point = image centre, uncertainty ~3 km); the 1.8 m lander candidate is indistinguishable from the many rocks"
+  },
+  {
+   "file_name": "mars/mars3/PSP_006154_1345.png",
+   "site_id": "mars3",
+   "reason": "discovery frame of the crowd-sourced candidates (\"southern part of the scene\" per https://www.uahirise.org/ESP_031036_1345) but this crop is cut around the ESP_031036 image centre; no candidate parachute (unique bright 7.5 m spot) or lander candidate found here; candidate only"
+  },
+  {
+   "file_name": "mars/opportunity/ESP_055636_1775.png",
+   "site_id": "opportunity",
+   "reason": "taken 2018-06-09 at the onset of the global dust storm: the crop is uniform haze with no surface detail (terrain-match ratio 1.1), the rover cannot be located"
+  },
+  {
+   "file_name": "mars/opportunity/ESP_056190_1775.png",
+   "site_id": "opportunity",
+   "reason": "dust-storm frame (2018-07-22, 0.5 m/px): heavy haze and column striping, no terrain match (ratio 1.0), a 3 px rover is not resolvable"
+  },
+  {
+   "file_name": "mars/opportunity/ESP_056256_1775.png",
+   "site_id": "opportunity",
+   "reason": "dust-storm frame (2018-07-27, 0.5 m/px): heavy haze and column striping, no terrain match (ratio 1.0), a 3 px rover is not resolvable"
+  },
+  {
+   "file_name": "mars/opportunity/ESP_056467_1775.png",
+   "site_id": "opportunity",
+   "reason": "dust-storm frame (2018-08-13, 0.5 m/px): terrain only faintly visible through haze and noise (match ratio 2.5); no rover-like point stands out at the predicted spot"
   },
   {
    "file_name": "mars/perseverance_landing/ESP_084883_1985.png",
@@ -6021,9 +9036,84 @@
    "reason": "incidence 82, spring frost: terrain match failed (ratio 1.8)"
   },
   {
-   "file_name": "mars/phoenix/ESP_043034_2485.png",
-   "site_id": "phoenix",
-   "reason": "frost patches: matched point (ratio 7) shows bright frost blobs, no distinct lander"
+   "file_name": "mars/schiaparelli/ESP_048041_1780.png",
+   "site_id": "schiaparelli",
+   "reason": "taken days after the 2016-10-19 crash: the fresh ~40 m dark scar with a black 2.4 m core and curved dark streak shown in the release https://www.uahirise.org/ESP_048041_1780 is absent from this 512 m crop (only a mottled natural dark patch that persists into 2023), and the release overview does not terrain-match the crop (ratio <= 2); the catalog point is just an image centre, so the crash site lies outside the crop"
+  },
+  {
+   "file_name": "mars/schiaparelli/ESP_048120_1780.png",
+   "site_id": "schiaparelli",
+   "reason": "taken days after the 2016-10-19 crash: the fresh ~40 m dark scar with a black 2.4 m core and curved dark streak shown in the release https://www.uahirise.org/ESP_048041_1780 is absent from this 512 m crop (only a mottled natural dark patch that persists into 2023), and the release overview does not terrain-match the crop (ratio <= 2); the catalog point is just an image centre, so the crash site lies outside the crop"
+  },
+  {
+   "file_name": "mars/schiaparelli/ESP_048331_1780.png",
+   "site_id": "schiaparelli",
+   "reason": "taken days after the 2016-10-19 crash: the fresh ~40 m dark scar with a black 2.4 m core and curved dark streak shown in the release https://www.uahirise.org/ESP_048041_1780 is absent from this 512 m crop (only a mottled natural dark patch that persists into 2023), and the release overview does not terrain-match the crop (ratio <= 2); the catalog point is just an image centre, so the crash site lies outside the crop"
+  },
+  {
+   "file_name": "mars/schiaparelli/ESP_062731_1780.png",
+   "site_id": "schiaparelli",
+   "reason": "2019 frame: no crash scar or hardware identified; the catalog point is only the image centre (uncertainty ~1 km), the 2016 frames of this site show no scar inside their crops, and the release overview does not terrain-match this crop"
+  },
+  {
+   "file_name": "mars/schiaparelli/ESP_073625_1780.png",
+   "site_id": "schiaparelli",
+   "reason": "2022 frame: no crash scar or hardware identified; the catalog point is only the image centre (uncertainty ~1 km) and the 2016 frames show no scar in the corresponding area"
+  },
+  {
+   "file_name": "mars/schiaparelli/ESP_076869_1780.png",
+   "site_id": "schiaparelli",
+   "reason": "1 km crop (0.5 m/px, 2022): the only dark patch (~35 m, at x~1387 y~1487) terrain-matches the mottled natural patch in the 2016 frame ESP_048120, which lacks the crash core and curved streak of the release image; no crash scar identified"
+  },
+  {
+   "file_name": "mars/schiaparelli/ESP_077700_1780.png",
+   "site_id": "schiaparelli",
+   "reason": "1 km crop (0.5 m/px, 2023): the only dark patch (~35 m, at x~1433 y~1381) is the natural patch also seen in 2016 (ESP_048120), not the crash scar; release overview does not terrain-match; no crash scar identified"
+  },
+  {
+   "file_name": "mars/spirit/ESP_013499_1650.png",
+   "site_id": "spirit",
+   "reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+  },
+  {
+   "file_name": "mars/spirit/ESP_013921_1650.png",
+   "site_id": "spirit",
+   "reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+  },
+  {
+   "file_name": "mars/spirit/ESP_021925_1650.png",
+   "site_id": "spirit",
+   "reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+  },
+  {
+   "file_name": "mars/spirit/ESP_022347_1650.png",
+   "site_id": "spirit",
+   "reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+  },
+  {
+   "file_name": "mars/spirit/ESP_046729_1650.png",
+   "site_id": "spirit",
+   "reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+  },
+  {
+   "file_name": "mars/spirit/ESP_083469_1650.png",
+   "site_id": "spirit",
+   "reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+  },
+  {
+   "file_name": "mars/zhurong/ESP_075559_2055.png",
+   "site_id": "zhurong",
+   "reason": "the HiRISE release https://www.uahirise.org/ESP_077511_2055 shows the hibernating rover in this same observation, but its cutout (rover, rocky knob, TARs) is not in this 512 m crop (NCC ratio <= 1.3 at all scales); the crop is centred on the image centre ~400 m from the lander while Zhurong drove ~1.9 km south of the lander, so the rover lies outside the crop"
+  },
+  {
+   "file_name": "mars/zhurong/ESP_075625_2055.png",
+   "site_id": "zhurong",
+   "reason": "release cutout of the rover's surroundings (https://www.uahirise.org/ESP_077511_2055) does not match anywhere in this crop (ratio 1.27); the catalog point is only the image centre, ~1.5 km north of the rover's final position ~1.9 km south of the lander, so the rover is outside the crop"
+  },
+  {
+   "file_name": "mars/zhurong/ESP_077511_2055.png",
+   "site_id": "zhurong",
+   "reason": "this is the release observation of https://www.uahirise.org/ESP_077511_2055, but the release panel around the rover does not match anywhere in this crop (ratio 1.15); the crop is centred on the image centre ~400 m from the lander, the rover sits ~1.9 km south of the lander, outside the crop"
   },
   {
    "file_name": "moon/apollo12_alsep/M168353795LC.png",
