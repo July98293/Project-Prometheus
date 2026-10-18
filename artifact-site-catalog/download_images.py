@@ -10,14 +10,18 @@ frames.csv / mars_mission_frames.csv (run build_catalog.py first).
         PLT markers, so only the packets of the precincts around the object are downloaded (a few MB). They
         are rebuilt into a valid codestream with empty packets everywhere else and `opj_decompress -d`
         decodes just that region. Every usable frame, plus sunlit frames from before arrival.
+        HiRISE map projections are off by 100-400 m from frame to frame (pointing), so where a crop of the site
+        already has a high-confidence box (annotations/boxes_coco.json), a ~1 m/px overview of the new frame
+        (a few MB) is terrain-matched against it and the crop is centred on the match.
 
 Writes PNGs and metadata.csv (Hugging Face imagefolder layout) to data/artifact-site-images/.
 Needs `opj_decompress` (brew install openjpeg).
 
-  .venv/bin/python artifact-site-catalog/download_images.py [--out data/artifact-site-images] [--only moon|mars] [--no-live]
+  .venv/bin/python artifact-site-catalog/download_images.py [--out data/artifact-site-images] [--only moon|mars] [--no-live] [--recut]
+        --recut: cut again the Mars crops that have no box and were not centred by a match, for sites that now have a reference
   .venv/bin/python artifact-site-catalog/download_images.py --upload jules1235813/xenarch   (into human-hardware_ground-truth/crops_lroc-nac_hirise/ of the single dataset)
 """
-import csv, math, re, struct, subprocess, sys, tempfile, time
+import csv, json, math, re, struct, subprocess, sys, tempfile, time
 from pathlib import Path
 
 from concurrent.futures import ThreadPoolExecutor
@@ -29,17 +33,20 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from xenarch_live import LiveRun
 from xenarch_lroc_nac_dataset import http, http_range
+sys.path.insert(0, str(HERE / "annotations"))
+from register import ncc_fft, prep
 
 CROP = 2048                 # the object can sit ~300 m off the catalogue pixel (NAC footprints, HiRISE pointing)
 INCIDENCE_BINS = [(0, 45), (45, 65), (65, 80), (80, 90)]
 SAME_CROP_PX = 300          # an object this close to an existing crop centre of the same frame joins that crop
 MARGIN = 16                 # extra wavelet coefficients fetched around the crop at every resolution level
 OPJ = "opj_decompress"
+REF_HALF_M, SEARCH_HALF_M, MIN_RATIO = 150, 600, 4.0   # Mars terrain match: reference patch, search window, accept
 
 FIELDS = ["file_name", "site_id", "object", "mission", "body", "label", "objects_in_crop", "obj_x", "obj_y",
           "frame_id", "instrument", "utc_start", "after_arrival", "days_since_arrival", "incidence_deg",
           "sun_elevation_deg", "emission_deg", "phase_deg", "resolution_m_px", "crop_x0", "crop_y0",
-          "position_note", "source_url"]
+          "position_note", "source_url", "match_ratio"]
 
 live = None
 
@@ -172,12 +179,13 @@ def j2k_layout(url):
                 X=X, Y=Y, nl=nl, pp=pp)
 
 
-def jp2_region(url, x0, y0, w, h):
-    """Decode the region [x0, x0+w) × [y0, y0+h) of a remote RDR, fetching only the packets it needs."""
+def jp2_region(url, x0, y0, w, h, reduce=0):
+    """Decode the region [x0, x0+w) × [y0, y0+h) of a remote RDR, fetching only the packets it needs.
+    reduce=k drops the k finest resolution levels: the result is 2^k times smaller and costs far fewer bytes."""
     L = j2k_layout(url)
     nl, pp = L["nl"], L["pp"]
     want = set()
-    for r in range(nl + 1):
+    for r in range(nl + 1 - reduce):
         s = 2 ** (nl - r)
         a0, a1 = x0 // s - MARGIN, -(-(x0 + w) // s) + MARGIN
         b0, b1 = y0 // s - MARGIN, -(-(y0 + h) // s) + MARGIN
@@ -188,7 +196,7 @@ def jp2_region(url, x0, y0, w, h):
     ranges = []                                           # byte ranges to fetch, merged across small gaps
     for k in idx:
         a, b = int(L["offs"][k]), int(L["offs"][k + 1])
-        if ranges and a - ranges[-1][1] < 1 << 20:       # each request costs ~9 s on this server: fewer, larger
+        if ranges and a - ranges[-1][1] < (1 << 20 if not reduce else 1 << 17):   # each request costs ~9 s: fewer, larger
             ranges[-1][1] = b
         else:
             ranges.append([a, b])
@@ -206,7 +214,7 @@ def jp2_region(url, x0, y0, w, h):
     with tempfile.TemporaryDirectory() as tmp:
         j, o = Path(tmp) / "r.j2k", Path(tmp) / "r.pgm"
         j.write_bytes(cs)
-        subprocess.run([OPJ, "-i", str(j), "-o", str(o), "-d", f"{x0},{y0},{x0 + w},{y0 + h}", "-quiet"], cwd=tmp,
+        subprocess.run([OPJ, "-i", str(j), "-o", str(o), "-d", f"{x0},{y0},{x0 + w},{y0 + h}", "-r", str(reduce), "-quiet"], cwd=tmp,
                        check=True, capture_output=True)
         raw = o.read_bytes()
         if not raw.startswith(b"P5"): raise ValueError(f"opj output {raw[:40]!r}")
@@ -217,19 +225,78 @@ def jp2_region(url, x0, y0, w, h):
     return a, sum(b - a for a, b in ranges)
 
 
-def hirise_crop(f, lat, lon):
+def mars_references(out):
+    """{site_id: [(png, x, y, m/px, frame_id)]}: up to three high-confidence boxes of each fixed Mars object, spread
+    over time. Rovers of mars_mission_frames.csv move between frames and get none."""
+    coco = HERE / "annotations" / "boxes_coco.json"
+    if not coco.exists():
+        return {}
+    moving = {r["site_id"] for r in load("mars_mission_frames.csv")}
+    d = json.load(coco.open())
+    ims, cats = {i["id"]: i for i in d["images"]}, {c["id"]: c["name"] for c in d["categories"]}
+    refs = {}
+    for a in d["annotations"]:
+        im = ims[a["image_id"]]
+        if im["body"] != "Mars" or a["confidence"] != "high" or cats[a["category_id"]] != im["site_id"] or im["site_id"] in moving:
+            continue
+        x, y, w, h = a["bbox"]
+        refs.setdefault(im["site_id"], []).append((im["utc_start"], out / im["file_name"], x + w / 2, y + h / 2,
+                                                   im["resolution_m_px"], im["frame_id"]))
+    pick = {}
+    for sid, rs in refs.items():
+        rs.sort()
+        pick[sid] = [rs[i][1:] for i in sorted(set(np.linspace(0, len(rs) - 1, min(3, len(rs))).round().astype(int)))]
+    return pick
+
+
+def locate_mars(url, s, l, samples, lines, res, refs):
+    """Terrain-match the reference crops into a ~1 m/px overview of SEARCH_HALF_M around (s, l).
+    Returns ((sample, line, peak ratio, reference frame) or None, bytes fetched)."""
+    k = max(0, round(math.log2(1.0 / res)))
+    R = int(SEARCH_HALF_M / res)
+    x0, y0 = max(0, int(s - R)), max(0, int(l - R))
+    ov, nbytes = jp2_region(url, x0, y0, min(2 * R, samples - x0), min(2 * R, lines - y0), reduce=k)
+    ores = res * 2 ** k
+    O = prep(ov.astype(np.float32), "grad", 1.0, 1)
+    best = None
+    for png, rx, ry, rres, rframe in refs:
+        ra = np.asarray(Image.open(png).convert("L"), np.float32)
+        h = int(REF_HALF_M / rres)
+        px0, py0 = int(max(0, rx - h)), int(max(0, ry - h))
+        px1, py1 = int(min(ra.shape[1], rx + h)), int(min(ra.shape[0], ry + h))
+        sc = rres / ores
+        P = Image.fromarray(ra[py0:py1, px0:px1]).resize((max(16, round((px1 - px0) * sc)), max(16, round((py1 - py0) * sc))), Image.LANCZOS)
+        T = prep(np.asarray(P, np.float32), "grad", 1.0, 1)
+        if T.shape[0] >= O.shape[0] or T.shape[1] >= O.shape[1]:
+            continue
+        c = ncc_fft(O, T)
+        v, u = np.unravel_index(np.argmax(c), c.shape)
+        c2 = c.copy(); c2[max(0, v - 8):v + 8, max(0, u - 8):u + 8] = -1
+        ratio = float(c[v, u] / max(c2.max(), 1e-6))
+        cand = (x0 + (u + (rx - px0) * sc) * 2 ** k, y0 + (v + (ry - py0) * sc) * 2 ** k, ratio, rframe)
+        if best is None or ratio > best[2]:
+            best = cand
+    return best, nbytes
+
+
+def hirise_crop(f, lat, lon, refs=None):
+    """Crop around the object: at the terrain match when `refs` give one (peak ratio >= MIN_RATIO), else at the
+    catalog position. Returns (img, x0, y0, catalog position in the crop, bad fraction, bytes, match or None)."""
     lbl = http(f["label_url"]).decode("latin1")
     lines = int(re.search(r"\bLINES\s*=\s*(\d+)", lbl).group(1))
     samples = int(re.search(r"\bLINE_SAMPLES\s*=\s*(\d+)", lbl).group(1))
+    res = float(re.search(r"\bMAP_SCALE\s*=\s*([\d.]+)", lbl).group(1))
     s, l = rdr_pixel(lbl, lat, lon)
     if not (0 <= s < samples and 0 <= l < lines):
         raise ValueError(f"object outside the RDR ({s:.0f}, {l:.0f})")
-    x0 = int(np.clip(round(s - CROP / 2), 0, max(0, samples - CROP)))
-    y0 = int(np.clip(round(l - CROP / 2), 0, max(0, lines - CROP)))
+    found, extra = (locate_mars(f["image_url"], s, l, samples, lines, res, refs) if refs else (None, 0))
+    cx, cy = (found[0], found[1]) if found and found[2] >= MIN_RATIO else (s, l)
+    x0 = int(np.clip(round(cx - CROP / 2), 0, max(0, samples - CROP)))
+    y0 = int(np.clip(round(cy - CROP / 2), 0, max(0, lines - CROP)))
     a, nbytes = jp2_region(f["image_url"], x0, y0, min(CROP, samples), min(CROP, lines))
     a = a.astype(np.float32)
     valid = (a > 2) & (a < 1022)                          # 0 null, 1-2 / 1022-1023 saturation codes
-    return stretch(a, valid), x0, y0, (s - x0, l - y0), 1 - valid.mean(), nbytes
+    return stretch(a, valid), x0, y0, (s - x0, l - y0), 1 - valid.mean(), nbytes + extra, found
 
 
 # ── selection ──────────────────────────────────────────────────────────────
@@ -273,13 +340,20 @@ def pick_mars(frames, mission_frames, per_site=12, before_per_site=2):
     return jobs
 
 
-def build(out, only):
+def build(out, only, recut=False):
     out.mkdir(parents=True, exist_ok=True)
     meta = out / f"metadata_{only or 'all'}.csv"           # one per process, merged by merge_metadata()
     rows = list(csv.DictReader(meta.open())) if meta.exists() else []
     done = {(r["frame_id"], r["site_id"]) for r in rows}
     sites = {s["site_id"]: s for s in load("sites.csv")}
     frames = load("frames.csv")
+    refs = mars_references(out) if only in (None, "mars") else {}
+    boxed = set()
+    if recut and (HERE / "annotations" / "boxes_coco.json").exists():
+        d = json.load((HERE / "annotations" / "boxes_coco.json").open())
+        boxed = {i["file_name"] for i in d["images"] if any(a["image_id"] == i["id"] for a in d["annotations"])}
+    by_key = {(r["frame_id"], r["site_id"]): r for r in rows}
+    _log(f"   Mars references: " + ", ".join(f"{k} ({len(v)})" for k, v in refs.items()))
     jobs = []
     if only in (None, "moon"):
         jobs += pick_moon([f for f in frames if f["body"] == "Moon"])
@@ -298,7 +372,12 @@ def build(out, only):
     for k, f in enumerate(jobs):
         live.progress(k, len(jobs), "crops")
         if (f["frame_id"], f["site_id"]) in done:
-            continue
+            old = by_key[(f["frame_id"], f["site_id"])]
+            if not (recut and f["body"] == "Mars" and f["site_id"] in refs and old["file_name"] not in boxed
+                    and not old.get("match_ratio")):
+                continue
+            rows.remove(old)                              # cut again, centred on the terrain match
+            centres[f["frame_id"]].remove(old)
         try:
             if f["body"] == "Moon":
                 gx, gy = nac_pixel(f)
@@ -310,9 +389,16 @@ def build(out, only):
             else:
                 lat = float(f.get("object_lat") or sites[f["site_id"]]["lat"])
                 lon = float(f.get("object_lon_east") or sites[f["site_id"]]["lon_east"])
-                img, x0, y0, (ox, oy), bad, nbytes = hirise_crop(f, lat, lon)
+                img, x0, y0, (ox, oy), bad, nbytes, found = hirise_crop(f, lat, lon, refs.get(f["site_id"]))
                 unc = f.get("position_uncertainty_m") or ""
                 note = "map projection" + (f", rover moved up to {unc} m that sol" if unc not in ("", "0", "0.0") else "")
+                if found and found[2] >= MIN_RATIO:
+                    dm = math.hypot(found[0] - ox - x0, found[1] - oy - y0) * float(f["resolution_m_px"])
+                    note += f"; centred on a terrain match to {found[3]} (ratio {found[2]:.1f}), {dm:.0f} m from the catalog position"
+                elif f["site_id"] in refs:
+                    note += f"; terrain match failed (best ratio {found[2] if found else 0:.1f}): centred on the catalog position"
+                else:
+                    note += "; no verified reference yet: centred on the catalog position"
         except Exception as e:
             _log(f"   failed {f['frame_id']} ({f['site_id']}): {e}"); continue
         if bad > 0.25:
@@ -335,7 +421,8 @@ def build(out, only):
                    utc_start=f["utc_start"], after_arrival=f["after_arrival"], days_since_arrival=f["days_since_arrival"],
                    incidence_deg=f["incidence_deg"], sun_elevation_deg=f["sun_elevation_deg"],
                    emission_deg=f["emission_deg"], phase_deg=f["phase_deg"], resolution_m_px=f["resolution_m_px"],
-                   crop_x0=x0, crop_y0=y0, position_note=note, source_url=f["image_url"])
+                   crop_x0=x0, crop_y0=y0, position_note=note, source_url=f["image_url"],
+                   match_ratio=f"{found[2]:.1f}" if f["body"] == "Mars" and found else "")
         rows.append(row)
         centres.setdefault(f["frame_id"], []).append(row)
         with meta.open("w", newline="") as fh:
@@ -379,7 +466,7 @@ if __name__ == "__main__":
     live = _Quiet() if "--no-live" in sys.argv else LiveRun(__file__, str(out), ["Cutting crops"])
     try:
         live.step("Cutting crops")
-        build(out, _arg("--only", None))
+        build(out, _arg("--only", None), "--recut" in sys.argv)
         merge_metadata(out)
         live.done()
     except BaseException as e:

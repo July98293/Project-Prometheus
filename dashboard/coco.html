@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xenarch COCO Boxes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="xenarch.css">
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 20px; }
+  .filters input { font: 13px var(--mono); color: var(--ink); background: var(--paper); border: 1px solid var(--line); padding: 6px 8px; border-radius: 4px; min-width: 0; width: 220px; max-width: 100%; }
+  td.hi { color: var(--accent); } td.med { color: var(--s1); } td.lo { color: var(--s3); }
+  td.left, th.left { text-align: left; white-space: normal; }
+  td.note { white-space: normal; text-align: left; min-width: 280px; color: var(--ink-2); font: 300 12px/1.5 var(--font); }
+  th.sort { cursor: pointer; }
+  .bar { display: flex; height: 8px; min-width: 90px; border-radius: 2px; overflow: hidden; background: var(--line); }
+  .bar i { display: block; height: 100%; }
+  .key { display: flex; flex-wrap: wrap; gap: 20px; font: 12px var(--mono); color: var(--ink-2); margin: 0 0 20px; }
+  .key i { display: inline-block; width: 12px; height: 8px; vertical-align: 0; margin-right: 6px; }
+  a.sheet { color: var(--accent); text-decoration: none; }
+  .dl { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="brand">Xenarch <span class="label">Mission control</span></div>
+    <div class="links">
+      <a class="label" href="index.html">Flight log</a>
+      <a class="label" href="boxes.html">Box sheets</a>
+      <a class="label" href="#objects">Objects ↓</a>
+      <a class="label" href="#list">All boxes ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Ground truth · COCO</div>
+    <h1>COCO boxes</h1>
+    <p class="lede">Every bounding box in the annotation file, read straight from boxes_coco.json: one row per box, with its confidence and how it was found.</p>
+    <div class="stats" id="stats"></div>
+    <div class="coords label"><span id="gen">—</span><a class="label dl" href="boxes_coco.json" download>Download boxes_coco.json</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="objects">
+    <div class="head"><span class="label">01</span><h2>By object</h2><span class="label" id="objCount"></span></div>
+    <div class="key"><span><i style="background:var(--accent)"></i>HIGH</span><span><i style="background:var(--s1)"></i>MEDIUM</span><span><i style="background:var(--s3)"></i>LOW</span></div>
+    <div class="scroll"><table id="objTbl"></table></div>
+  </section>
+
+  <section id="list">
+    <div class="head"><span class="label">02</span><h2>All boxes</h2><span class="label" id="count"></span></div>
+    <div class="filters">
+      <select id="body" aria-label="Body"><option value="all">Moon and Mars</option><option value="Moon">Moon</option><option value="Mars">Mars</option></select>
+      <select id="conf" aria-label="Confidence"><option value="all">All confidences</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+      <select id="obj" aria-label="Object"><option value="all">All objects</option></select>
+      <input id="q" type="search" placeholder="Search file or note" aria-label="Search">
+    </div>
+    <p class="caption">bbox is COCO [x, y, w, h] in the 2048 × 2048 crop, origin top-left. SHEET opens the review image of that crop.</p>
+    <div class="scroll"><table id="tbl"></table></div>
+  </section>
+</main>
+
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const CLS = {high: 'hi', medium: 'med', low: 'lo'};
+let R = [];
+fetch('boxes_coco.json').then(r => r.json()).then(init).catch(() => {
+  document.getElementById('stats').innerHTML = '<div class="stat"><span class="label">No boxes_coco.json</span><b>run boxtool.py review</b></div>';
+});
+function init(d) {
+  const ims = Object.fromEntries(d.images.map(i => [i.id, i]));
+  const cats = Object.fromEntries(d.categories.map(c => [c.id, c]));
+  R = d.annotations.map(a => {
+    const im = ims[a.image_id], c = cats[a.category_id];
+    return {id: a.id, body: im.body, object: c.name, label: c.label, file: im.file_name, frame: im.frame_id, utc: (im.utc_start || '').slice(0, 10),
+            res: im.resolution_m_px, bbox: a.bbox, conf: a.confidence, shadow: a.includes_shadow, note: a.note,
+            sheet: 'boxes/' + im.file_name.replace(/\//g, '_').replace(/\.png$/, '.jpg')};
+  });
+  document.getElementById('gen').textContent = 'COCO ' + (d.info.version || '') + ' · ' + (d.info.date_created || '');
+  const n = k => R.filter(r => r.conf === k).length;
+  const pos = d.images.filter(i => i.label === 'artifact'), boxed = new Set(d.annotations.map(a => a.image_id));
+  document.getElementById('stats').innerHTML = [['Boxes', R.length], ['High', n('high')], ['Medium', n('medium')], ['Low', n('low')],
+    ['Objects', new Set(R.map(r => r.object)).size], ['Crops boxed', boxed.size + ' / ' + pos.length]]
+    .map(([k, v]) => `<div class="stat"><span class="label">${k}</span><b>${v}</b></div>`).join('');
+  objects();
+  const sel = document.getElementById('obj');
+  [...new Set(R.map(r => r.object))].sort().forEach(o => { const e = document.createElement('option'); e.value = o; e.textContent = o; sel.appendChild(e); });
+  ['body', 'conf', 'obj'].forEach(id => document.getElementById(id).onchange = list);
+  document.getElementById('q').oninput = list;
+  list();
+}
+function objects() {
+  const g = {};
+  R.forEach(r => { const k = r.body + '|' + r.object; (g[k] ||= {body: r.body, object: r.object, label: r.label, high: 0, medium: 0, low: 0})[r.conf]++; });
+  const rows = Object.values(g).sort((a, b) => (a.body > b.body ? -1 : a.body < b.body ? 1 : 0) || b.high - a.high || (b.high + b.medium + b.low) - (a.high + a.medium + a.low));
+  document.getElementById('objCount').textContent = rows.length + ' objects';
+  document.getElementById('objTbl').innerHTML = '<tr><th class="left">object</th><th>body</th><th>high</th><th>medium</th><th>low</th><th>total</th><th class="left">share</th></tr>' +
+    rows.map(o => { const t = o.high + o.medium + o.low;
+      return `<tr><td class="left" title="${esc(o.label)}">${esc(o.object)}</td><td>${o.body}</td><td class="hi">${o.high}</td><td class="med">${o.medium}</td><td class="lo">${o.low}</td><td>${t}</td>` +
+        `<td class="left"><div class="bar"><i style="width:${100 * o.high / t}%;background:var(--accent)"></i><i style="width:${100 * o.medium / t}%;background:var(--s1)"></i><i style="width:${100 * o.low / t}%;background:var(--s3)"></i></div></td></tr>`; }).join('');
+}
+function list() {
+  const b = document.getElementById('body').value, c = document.getElementById('conf').value, o = document.getElementById('obj').value, q = document.getElementById('q').value.toLowerCase();
+  const rows = R.filter(r => (b === 'all' || r.body === b) && (c === 'all' || r.conf === c) && (o === 'all' || r.object === o) &&
+                             (!q || (r.file + ' ' + r.note + ' ' + r.frame).toLowerCase().includes(q)));
+  document.getElementById('count').textContent = rows.length + ' boxes';
+  document.getElementById('tbl').innerHTML = '<tr><th>id</th><th class="left">object</th><th>body</th><th class="left">crop</th><th>date</th><th>m/px</th><th>bbox [x, y, w, h]</th><th>conf</th><th>shadow</th><th></th><th class="left">note</th></tr>' +
+    rows.map(r => `<tr><td>${r.id}</td><td class="left">${esc(r.object)}</td><td>${r.body}</td><td class="left">${esc(r.file)}</td><td>${r.utc}</td><td>${r.res}</td>` +
+      `<td>[${r.bbox.join(', ')}]</td><td class="${CLS[r.conf]}">${r.conf.toUpperCase()}</td><td>${r.shadow ? 'YES' : '—'}</td>` +
+      `<td><a class="label sheet" href="${r.sheet}" target="_blank" rel="noopener">Sheet</a></td><td class="note">${esc(r.note)}</td></tr>`).join('');
+}
+</script>
+</body>
+</html>

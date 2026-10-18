@@ -21,3 +21,4 @@ dashboard/live/
 *.pt
 .DS_Store
 command (*)
+dashboard/ohrc-full

@@ -8,17 +8,18 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
   natural-terrain_training/                    natural terrain only; metadata.csv `split`: train / validation
     moon_lroc-nac/moon_<landform>_lroc-nac/     data/lroc-nac-set/<landform>/
     mars_hirise/mars_<landform>_hirise/         data/hirise-set/<landform>/
+    moon_chandrayaan2-ohrc/moon_<landform>_chandrayaan2-ohrc/   data/ohrc-set/<landform>/
     legacy_mixed-cameras/<body>_<camera>/       data/xenarch-imagery/<camera>_png/   (the old xenarch-imagery set)
   human-hardware_ground-truth/                 known human-made objects (test)
     catalog_moon-mars_lroc-nac_hirise.csv       artifact-site-catalog/catalog.csv: the main table, object x frame
-    boxes_…csv, boxes-coco_…json, unboxed_…csv  artifact-site-catalog/annotations/ (edited by hand)
+    boxes-coco_…json                            artifact-site-catalog/annotations/boxes_coco.json (boxtool.py)
     crops_lroc-nac_hirise/<body>_<camera>/<site>_<camera>/<frame>_<site>.png
                                                 data/artifact-site-images/<body>/<site>/<frame>.png
     derived/                                    sites, frames, rover-frames: rebuilt by build_catalog.py
   raw/legacy_source-files/                     what the legacy set was made from: PDS originals (.IMG, JPEG),
                                                labels (JSON / XML), the old 'squares' tiles, manifest.csv
 
-  .venv/bin/python xenarch_hf.py terrain moon|mars|legacy [local dir]   publish a terrain set and its metadata.csv
+  .venv/bin/python xenarch_hf.py terrain moon|mars|ohrc|legacy [local dir]   publish a terrain set and its metadata.csv
   .venv/bin/python xenarch_hf.py legacy-meta                    build data/xenarch-imagery/metadata.csv from raw/ labels
   .venv/bin/python xenarch_hf.py crops [local dir]              publish the hardware crops
   .venv/bin/python xenarch_hf.py tables                         publish the catalog, boxes and derived tables
@@ -42,17 +43,18 @@ CROPS = f"{HARDWARE}/crops_lroc-nac_hirise"
 DERIVED = f"{HARDWARE}/derived"
 LEGACY = f"{TERRAIN}/legacy_mixed-cameras"
 RAW = "raw/legacy_source-files"
-CAMERA = {"moon": "lroc-nac", "mars": "hirise"}
-LOCAL_TERRAIN = {"moon": HERE / "data/lroc-nac-set", "mars": HERE / "data/hirise-set", "legacy": HERE / "data/xenarch-imagery"}
+CAMERA = {"moon": "lroc-nac", "mars": "hirise"}                    # hardware crops: body -> camera
+# terrain sets: set key -> (body, camera); a body can have several cameras
+TERRAIN_SETS = {"moon": ("moon", "lroc-nac"), "mars": ("mars", "hirise"), "ohrc": ("moon", "chandrayaan2-ohrc")}
+LOCAL_TERRAIN = {"moon": HERE / "data/lroc-nac-set", "mars": HERE / "data/hirise-set", "ohrc": HERE / "data/ohrc-set",
+                 "legacy": HERE / "data/xenarch-imagery"}
 LOCAL_CROPS = HERE / "data/artifact-site-images"
 CATALOG = HERE / "artifact-site-catalog"
 
 # local file -> path in the repo
 TABLES = {
     CATALOG / "catalog.csv": f"{HARDWARE}/catalog_moon-mars_lroc-nac_hirise.csv",
-    CATALOG / "annotations/boxes.csv": f"{HARDWARE}/boxes_lroc-nac_hirise.csv",
     CATALOG / "annotations/boxes_coco.json": f"{HARDWARE}/boxes-coco_lroc-nac_hirise.json",
-    CATALOG / "annotations/unboxed.csv": f"{HARDWARE}/unboxed_lroc-nac_hirise.csv",
     CATALOG / "sites.csv": f"{DERIVED}/sites_moon-mars.csv",
     CATALOG / "frames.csv": f"{DERIVED}/frames_lroc-nac_hirise.csv",
     CATALOG / "mars_mission_frames.csv": f"{DERIVED}/rover-frames_mars_hirise.csv",
@@ -73,8 +75,9 @@ def split_of(source):
     return "validation" if int(hashlib.md5(source.encode()).hexdigest(), 16) % 100 < VAL_PERCENT else "train"
 
 
-def landform_dir(body, landform):
-    return f"{body}_{landform}_{CAMERA[body]}"
+def landform_dir(key, landform):
+    body, camera = TERRAIN_SETS[key]
+    return f"{body}_{landform}_{camera}"
 
 
 def terrain_rel(body, rel):
@@ -87,8 +90,11 @@ def terrain_rel(body, rel):
     return f"{landform_dir(body, landform)}/{name}"
 
 
-def terrain_folder(body):
-    return LEGACY if body == "legacy" else f"{TERRAIN}/{body}_{CAMERA[body]}"
+def terrain_folder(key):
+    if key == "legacy":
+        return LEGACY
+    body, camera = TERRAIN_SETS[key]
+    return f"{TERRAIN}/{body}_{camera}"
 
 
 def crop_rel(rel):
@@ -264,17 +270,16 @@ def publish_tables(repo=REPO):
     ops = []
     for f, path in TABLES.items():
         data = f.read_bytes()
-        if f.name in ("boxes.csv", "unboxed.csv"):
-            data = _rewrite_csv(data, "file_name", crop_rel)
-        elif f.name == "catalog.csv":
+        if f.name == "catalog.csv":
             data = _rewrite_csv(data, "crop_file", crop_rel)
         elif f.suffix == ".json":
             data = _rewrite_coco(data)
         ops.append(CommitOperationAdd(path, data))
-    # tables that moved to derived/ leave no copy behind
+    # tables that moved to derived/ leave no copy behind; the box CSVs were folded into the COCO file
     existing = set(HfApi().list_repo_files(repo, repo_type="dataset"))
-    ops += [CommitOperationDelete(f"{HARDWARE}/{Path(p).name}") for p in TABLES.values()
-            if p.startswith(DERIVED) and f"{HARDWARE}/{Path(p).name}" in existing]
+    gone = [f"{HARDWARE}/{Path(p).name}" for p in TABLES.values() if p.startswith(DERIVED)]
+    gone += [f"{HARDWARE}/boxes_lroc-nac_hirise.csv", f"{HARDWARE}/unboxed_lroc-nac_hirise.csv"]
+    ops += [CommitOperationDelete(p) for p in gone if p in existing]
     _commit(ops, f"{HARDWARE}: site catalog, boxes, derived tables", repo)
 
 

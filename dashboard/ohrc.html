@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xenarch OHRC Tiles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="xenarch.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .tile { border: 1px solid var(--line); background: var(--paper); padding: 6px; min-width: 0; }
+  .tile img { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 3px; cursor: zoom-in; }
+  .tile .label { display: block; margin-top: 6px; font-size: 10px; letter-spacing: .06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 20px; }
+  .viewer { position: fixed; inset: 0; background: rgba(12,22,40,.96); display: none; z-index: 50; overflow: auto; padding: 24px 16px; }
+  .viewer.on { display: block; }
+  .viewer img { display: block; max-width: 100%; margin: 0 auto; image-rendering: pixelated; border: 1px solid var(--line); }
+  .viewer .bar { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; max-width: 1024px; margin: 0 auto 12px; }
+  .viewer button { font: 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); background: none; border: 1px solid var(--line); padding: 6px 12px; cursor: pointer; }
+  td.left { text-align: left; white-space: normal; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="brand">Xenarch <span class="label">Mission control</span></div>
+    <div class="links">
+      <a class="label" href="index.html">Flight log</a>
+      <a class="label" href="coco.html">COCO list</a>
+      <a class="label" href="boxes.html">Artifact boxes</a>
+      <a class="label" href="#tiles">Tiles ↓</a>
+      <a class="label" href="#table">Table ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Natural terrain · training</div>
+    <h1>Chandrayaan-2 OHRC tiles</h1>
+    <p class="lede">1024 × 1024 tiles cut from ISRO's Orbiter High Resolution Camera at 0.23–0.26 m per pixel, the sharpest lunar orbital imagery there is. Three calibrated scenes of cratered southern highlands; no catalogued hardware lies within 140 km of any of them.</p>
+    <div class="stats" id="stats"></div>
+    <div class="coords label"><span id="gen">—</span><span>Source · data/ohrc-set/metadata.csv · HF natural-terrain_training/moon_chandrayaan2-ohrc</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <div class="head"><span class="label">01</span><h2>Scenes</h2></div>
+    <p class="caption">Each scene is a 12,000 × 93,693 px strip (3 km × 22 km). Tiles are spread evenly along the strip; tiles that are mostly saturated, black or featureless are skipped. Click a tile to see it at full resolution. The split is fixed per scene by a hash of the product id, as in every other Xenarch set.</p>
+    <div class="scroll"><table id="scenes"></table></div>
+    <div class="filters">
+      <select id="scene" aria-label="Scene"><option value="all">All scenes</option></select>
+      <select id="split" aria-label="Split"><option value="all">Train and validation</option><option value="train">Train</option><option value="validation">Validation</option></select>
+    </div>
+  </section>
+
+  <section id="tiles"><div class="head"><span class="label">02</span><h2>Tiles</h2><span class="label" id="count"></span></div><div class="grid" id="grid"></div></section>
+
+  <section id="table"><div class="head"><span class="label">03</span><h2>Telemetry</h2></div><div class="scroll"><table id="tbl"></table></div></section>
+</main>
+
+<div class="viewer" id="viewer">
+  <div class="bar"><span class="label" id="vtitle"></span><button id="close">Close</button></div>
+  <img id="vimg" alt="">
+</div>
+
+<script>
+let D = null;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+fetch('ohrc.json').then(r => r.json()).then(d => { D = d; init(); }).catch(() => {
+  document.getElementById('stats').innerHTML = '<div class="stat"><span class="label">No ohrc.json</span><b>run xenarch_ohrc_dataset.py</b></div>';
+});
+function init() {
+  document.getElementById('gen').textContent = 'Generated ' + D.generated;
+  const T = D.tiles, scenes = [...new Set(T.map(t => t.scene))];
+  const res = T.map(t => +t.res);
+  document.getElementById('stats').innerHTML = [['Tiles', T.length], ['Scenes', scenes.length],
+    ['Resolution', Math.min(...res).toFixed(2) + '–' + Math.max(...res).toFixed(2) + ' m/px'],
+    ['Train · validation', T.filter(t => t.split === 'train').length + ' · ' + T.filter(t => t.split === 'validation').length]]
+    .map(([k, v]) => `<div class="stat"><span class="label">${k}</span><b>${v}</b></div>`).join('');
+  const sel = document.getElementById('scene');
+  scenes.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; sel.appendChild(o); });
+  document.getElementById('scenes').innerHTML = '<tr><th>scene</th><th>date</th><th>tiles</th><th>split</th><th>m/px</th><th>lat</th><th>lon E</th></tr>' + scenes.map(s => {
+    const r = T.filter(t => t.scene === s), la = r.map(t => +t.lat), lo = r.map(t => +t.lon);
+    return `<tr><td class="left">${esc(s)}</td><td>${r[0].utc}</td><td>${r.length}</td><td>${r[0].split}</td><td>${r[0].res}</td><td>${Math.min(...la).toFixed(2)} … ${Math.max(...la).toFixed(2)}</td><td>${Math.min(...lo).toFixed(2)} … ${Math.max(...lo).toFixed(2)}</td></tr>`;
+  }).join('');
+  sel.onchange = render; document.getElementById('split').onchange = render; render();
+  document.getElementById('close').onclick = () => document.getElementById('viewer').classList.remove('on');
+  document.getElementById('viewer').onclick = e => { if (e.target.id === 'viewer') e.currentTarget.classList.remove('on'); };
+}
+function render() {
+  const s = document.getElementById('scene').value, sp = document.getElementById('split').value;
+  const rows = D.tiles.filter(t => (s === 'all' || t.scene === s) && (sp === 'all' || t.split === sp));
+  document.getElementById('count').textContent = rows.length + ' tiles';
+  document.getElementById('grid').innerHTML = rows.map((t, i) => `<div class="tile"><img src="${t.thumb}" loading="lazy" alt="OHRC tile ${esc(t.file)}" data-i="${i}"><span class="label">${t.scene.slice(0, 8)} · ${t.line0},${t.sample0} · ${t.split === 'validation' ? 'VAL' : 'TRAIN'}</span></div>`).join('');
+  document.querySelectorAll('#grid img').forEach(im => im.onclick = () => {
+    const t = rows[+im.dataset.i];
+    document.getElementById('vtitle').textContent = `${t.file} · ${t.res} m/px · lat ${t.lat} lon ${t.lon} · ${t.split}`;
+    document.getElementById('vimg').src = 'ohrc-full/' + t.file; document.getElementById('viewer').classList.add('on');
+  });
+  document.getElementById('tbl').innerHTML = '<tr><th>file</th><th>scene</th><th>split</th><th>lat</th><th>lon E</th><th>m/px</th><th>line0</th><th>sample0</th></tr>' +
+    rows.map(t => `<tr><td class="left">${esc(t.file)}</td><td>${t.scene}</td><td>${t.split}</td><td>${t.lat}</td><td>${t.lon}</td><td>${t.res}</td><td>${t.line0}</td><td>${t.sample0}</td></tr>`).join('');
+}
+</script>
+</body>
+</html>
