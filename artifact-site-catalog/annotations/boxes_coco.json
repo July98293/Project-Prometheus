@@ -2,7 +2,7 @@
  "info": {
   "description": "Xenarch artifact-site bounding boxes: human-made hardware in LROC NAC and HiRISE crops",
   "version": "0.2",
-  "date_created": "2026-10-17"
+  "date_created": "2026-10-18"
  },
  "licenses": [
   {
@@ -4973,6 +4973,25 @@
   },
   {
    "id": 256,
+   "file_name": "mars/beagle2/ESP_037145_1915.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "beagle2",
+   "body": "Mars",
+   "frame_id": "ESP_037145_1915",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 53.9,
+   "utc_start": "2014-06-29T21:16:05",
+   "label": "artifact",
+   "nominal_xy": [
+    1024,
+    1024
+   ]
+  },
+  {
+   "id": 257,
    "file_name": "mars/beagle2/ESP_039308_1915.png",
    "width": 2048,
    "height": 2048,
@@ -4991,7 +5010,7 @@
    ]
   },
   {
-   "id": 257,
+   "id": 258,
    "file_name": "mars/beagle2/ESP_039519_1915.png",
    "width": 2048,
    "height": 2048,
@@ -5010,7 +5029,7 @@
    ]
   },
   {
-   "id": 258,
+   "id": 259,
    "file_name": "mars/beagle2/ESP_040363_1915.png",
    "width": 2048,
    "height": 2048,
@@ -5029,7 +5048,7 @@
    ]
   },
   {
-   "id": 259,
+   "id": 260,
    "file_name": "mars/beagle2/ESP_041075_1915.png",
    "width": 2048,
    "height": 2048,
@@ -5048,7 +5067,7 @@
    ]
   },
   {
-   "id": 260,
+   "id": 261,
    "file_name": "mars/beagle2/ESP_044332_1915.png",
    "width": 2048,
    "height": 2048,
@@ -5067,7 +5086,7 @@
    ]
   },
   {
-   "id": 261,
+   "id": 262,
    "file_name": "mars/beagle2/ESP_051914_1915.png",
    "width": 2048,
    "height": 2048,
@@ -5086,7 +5105,7 @@
    ]
   },
   {
-   "id": 262,
+   "id": 263,
    "file_name": "mars/curiosity_landing/ESP_028256_9022.png",
    "width": 2048,
    "height": 2048,
@@ -5105,7 +5124,7 @@
    ]
   },
   {
-   "id": 263,
+   "id": 264,
    "file_name": "mars/curiosity_landing/ESP_028678_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5124,7 +5143,7 @@
    ]
   },
   {
-   "id": 264,
+   "id": 265,
    "file_name": "mars/curiosity_landing/ESP_029957_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5143,7 +5162,7 @@
    ]
   },
   {
-   "id": 265,
+   "id": 266,
    "file_name": "mars/curiosity_landing/ESP_030168_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5162,7 +5181,7 @@
    ]
   },
   {
-   "id": 266,
+   "id": 267,
    "file_name": "mars/curiosity_landing/ESP_030313_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5181,7 +5200,7 @@
    ]
   },
   {
-   "id": 267,
+   "id": 268,
    "file_name": "mars/curiosity_landing/ESP_032436_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5200,7 +5219,7 @@
    ]
   },
   {
-   "id": 268,
+   "id": 269,
    "file_name": "mars/curiosity_landing/ESP_034572_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5219,7 +5238,7 @@
    ]
   },
   {
-   "id": 269,
+   "id": 270,
    "file_name": "mars/curiosity_landing/ESP_035350_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5238,7 +5257,7 @@
    ]
   },
   {
-   "id": 270,
+   "id": 271,
    "file_name": "mars/curiosity_landing/ESP_036128_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5257,7 +5276,7 @@
    ]
   },
   {
-   "id": 271,
+   "id": 272,
    "file_name": "mars/curiosity_landing/ESP_037117_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5276,7 +5295,7 @@
    ]
   },
   {
-   "id": 272,
+   "id": 273,
    "file_name": "mars/curiosity_landing/ESP_040269_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5295,7 +5314,7 @@
    ]
   },
   {
-   "id": 273,
+   "id": 274,
    "file_name": "mars/curiosity_landing/ESP_078499_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5315,7 +5334,7 @@
    "unboxed_reason": "landing site located at the crop centre by terrain match (ratio 6), but the blast scour has faded by 2023-24; no hardware remains at the landing point"
   },
   {
-   "id": 274,
+   "id": 275,
    "file_name": "mars/curiosity_landing/ESP_083233_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5335,7 +5354,7 @@
    "unboxed_reason": "landing site located at the crop centre by terrain match (ratio 6), but the blast scour has faded by 2023-24; no hardware remains at the landing point"
   },
   {
-   "id": 275,
+   "id": 276,
    "file_name": "mars/curiosity_landing/PSP_003453_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5354,7 +5373,7 @@
    ]
   },
   {
-   "id": 276,
+   "id": 277,
    "file_name": "mars/curiosity_rover/ESP_028269_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5374,7 +5393,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; landing site outside this crop (terrain match failed)"
   },
   {
-   "id": 277,
+   "id": 278,
    "file_name": "mars/curiosity_rover/ESP_028335_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5393,7 +5412,7 @@
    ]
   },
   {
-   "id": 278,
+   "id": 279,
    "file_name": "mars/curiosity_rover/ESP_028401_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5412,7 +5431,7 @@
    ]
   },
   {
-   "id": 279,
+   "id": 280,
    "file_name": "mars/curiosity_rover/ESP_028612_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5431,7 +5450,7 @@
    ]
   },
   {
-   "id": 280,
+   "id": 281,
    "file_name": "mars/curiosity_rover/ESP_028678_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5450,7 +5469,7 @@
    ]
   },
   {
-   "id": 281,
+   "id": 282,
    "file_name": "mars/curiosity_rover/ESP_030168_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5470,7 +5489,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 282,
+   "id": 283,
    "file_name": "mars/curiosity_rover/ESP_030313_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5490,7 +5509,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 283,
+   "id": 284,
    "file_name": "mars/curiosity_rover/ESP_032436_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5510,7 +5529,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 284,
+   "id": 285,
    "file_name": "mars/curiosity_rover/ESP_034572_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5530,7 +5549,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 285,
+   "id": 286,
    "file_name": "mars/curiosity_rover/ESP_035350_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5550,7 +5569,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 286,
+   "id": 287,
    "file_name": "mars/curiosity_rover/ESP_036128_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5570,7 +5589,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 287,
+   "id": 288,
    "file_name": "mars/curiosity_rover/ESP_037117_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5590,7 +5609,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 288,
+   "id": 289,
    "file_name": "mars/curiosity_rover/ESP_039280_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5610,7 +5629,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 289,
+   "id": 290,
    "file_name": "mars/curiosity_rover/ESP_040770_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5630,7 +5649,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 290,
+   "id": 291,
    "file_name": "mars/curiosity_rover/ESP_042682_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5650,7 +5669,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 291,
+   "id": 292,
    "file_name": "mars/curiosity_rover/ESP_043539_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5670,7 +5689,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 292,
+   "id": 293,
    "file_name": "mars/curiosity_rover/ESP_044172_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5690,7 +5709,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 293,
+   "id": 294,
    "file_name": "mars/curiosity_rover/ESP_045293_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5710,7 +5729,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 294,
+   "id": 295,
    "file_name": "mars/curiosity_rover/ESP_046137_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5730,7 +5749,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 295,
+   "id": 296,
    "file_name": "mars/curiosity_rover/ESP_047416_1755.png",
    "width": 2048,
    "height": 2048,
@@ -5750,7 +5769,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 296,
+   "id": 297,
    "file_name": "mars/curiosity_rover/ESP_049552_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5770,7 +5789,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 297,
+   "id": 298,
    "file_name": "mars/curiosity_rover/ESP_050897_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5790,7 +5809,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 298,
+   "id": 299,
    "file_name": "mars/curiosity_rover/ESP_052176_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5810,7 +5829,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 299,
+   "id": 300,
    "file_name": "mars/curiosity_rover/ESP_053600_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5830,7 +5849,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 300,
+   "id": 301,
    "file_name": "mars/curiosity_rover/ESP_053732_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5850,7 +5869,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 301,
+   "id": 302,
    "file_name": "mars/curiosity_rover/ESP_056409_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5870,7 +5889,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 302,
+   "id": 303,
    "file_name": "mars/curiosity_rover/ESP_058071_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5890,7 +5909,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 303,
+   "id": 304,
    "file_name": "mars/curiosity_rover/ESP_058361_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5910,7 +5929,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 304,
+   "id": 305,
    "file_name": "mars/curiosity_rover/ESP_060207_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5930,7 +5949,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 305,
+   "id": 306,
    "file_name": "mars/curiosity_rover/ESP_060840_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5950,7 +5969,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 306,
+   "id": 307,
    "file_name": "mars/curiosity_rover/ESP_061961_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5970,7 +5989,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 307,
+   "id": 308,
    "file_name": "mars/curiosity_rover/ESP_064519_1750.png",
    "width": 2048,
    "height": 2048,
@@ -5990,7 +6009,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 308,
+   "id": 309,
    "file_name": "mars/curiosity_rover/ESP_069031_1750.png",
    "width": 2048,
    "height": 2048,
@@ -6010,7 +6029,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 309,
+   "id": 310,
    "file_name": "mars/curiosity_rover/ESP_073567_1750.png",
    "width": 2048,
    "height": 2048,
@@ -6030,7 +6049,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 310,
+   "id": 311,
    "file_name": "mars/curiosity_rover/ESP_076811_1750.png",
    "width": 2048,
    "height": 2048,
@@ -6050,7 +6069,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 311,
+   "id": 312,
    "file_name": "mars/curiosity_rover/ESP_083233_1755.png",
    "width": 2048,
    "height": 2048,
@@ -6070,7 +6089,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 312,
+   "id": 313,
    "file_name": "mars/curiosity_rover/ESP_085725_1750.png",
    "width": 2048,
    "height": 2048,
@@ -6090,7 +6109,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 313,
+   "id": 314,
    "file_name": "mars/curiosity_rover/ESP_087149_1750.png",
    "width": 2048,
    "height": 2048,
@@ -6110,7 +6129,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors reach 100-400 m and a 3 m rover cannot be told from rocks without a reference image"
   },
   {
-   "id": 314,
+   "id": 315,
    "file_name": "mars/ingenuity/ESP_036618_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6129,7 +6148,7 @@
    ]
   },
   {
-   "id": 315,
+   "id": 316,
    "file_name": "mars/ingenuity/ESP_068281_9024.png",
    "width": 2048,
    "height": 2048,
@@ -6148,7 +6167,7 @@
    ]
   },
   {
-   "id": 316,
+   "id": 317,
    "file_name": "mars/ingenuity/ESP_082945_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6168,7 +6187,7 @@
    "unboxed_reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "id": 317,
+   "id": 318,
    "file_name": "mars/ingenuity/ESP_088206_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6188,7 +6207,7 @@
    "unboxed_reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "id": 318,
+   "id": 319,
    "file_name": "mars/ingenuity/ESP_088285_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6208,7 +6227,7 @@
    "unboxed_reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "id": 319,
+   "id": 320,
    "file_name": "mars/ingenuity/ESP_092043_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6228,7 +6247,7 @@
    "unboxed_reason": "helicopter not identified: 0.25 m/px (rotor span ~16 px); no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area a before/after comparison with ESP_036618 (2014, terrain match on the same spot) shows no unambiguous new object or 1.2 m blade"
   },
   {
-   "id": 320,
+   "id": 321,
    "file_name": "mars/ingenuity/ESP_092254_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6248,7 +6267,7 @@
    "unboxed_reason": "helicopter not identified: 0.25 m/px (rotor span ~16 px); no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area a before/after comparison with ESP_036618 (2014, terrain match on the same spot) shows no unambiguous new object or 1.2 m blade"
   },
   {
-   "id": 321,
+   "id": 322,
    "file_name": "mars/ingenuity/ESP_093256_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6268,7 +6287,7 @@
    "unboxed_reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "id": 322,
+   "id": 323,
    "file_name": "mars/ingenuity/ESP_093335_1985.png",
    "width": 2048,
    "height": 2048,
@@ -6288,7 +6307,7 @@
    "unboxed_reason": "helicopter not identified: at 0.5 m/px the 4 m rotor span is ~8 px; no published HiRISE image of Ingenuity after flight 72 found (uahirise.org pages of these frames have no Ingenuity caption); the MMGIS waypoint is offset from the HiRISE projection (about 60 m E / 175 m S at the landing site, +-60 m per frame), and in the predicted megaripple area no new 8 px object can be told from the ripple crests and rocks"
   },
   {
-   "id": 323,
+   "id": 324,
    "file_name": "mars/insight/ESP_036761_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6307,7 +6326,7 @@
    ]
   },
   {
-   "id": 324,
+   "id": 325,
    "file_name": "mars/insight/ESP_037262_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6326,7 +6345,7 @@
    ]
   },
   {
-   "id": 325,
+   "id": 326,
    "file_name": "mars/insight/ESP_057939_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6345,7 +6364,7 @@
    ]
   },
   {
-   "id": 326,
+   "id": 327,
    "file_name": "mars/insight/ESP_058005_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6364,7 +6383,7 @@
    ]
   },
   {
-   "id": 327,
+   "id": 328,
    "file_name": "mars/insight/ESP_058717_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6383,7 +6402,7 @@
    ]
   },
   {
-   "id": 328,
+   "id": 329,
    "file_name": "mars/insight/ESP_058928_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6402,7 +6421,7 @@
    ]
   },
   {
-   "id": 329,
+   "id": 330,
    "file_name": "mars/insight/ESP_059284_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6421,7 +6440,7 @@
    ]
   },
   {
-   "id": 330,
+   "id": 331,
    "file_name": "mars/insight/ESP_067157_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6440,7 +6459,7 @@
    ]
   },
   {
-   "id": 331,
+   "id": 332,
    "file_name": "mars/insight/ESP_072143_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6459,7 +6478,7 @@
    ]
   },
   {
-   "id": 332,
+   "id": 333,
    "file_name": "mars/insight/ESP_087004_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6478,7 +6497,7 @@
    ]
   },
   {
-   "id": 333,
+   "id": 334,
    "file_name": "mars/insight/ESP_087360_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6497,7 +6516,7 @@
    ]
   },
   {
-   "id": 334,
+   "id": 335,
    "file_name": "mars/insight_backshell/ESP_036761_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6511,12 +6530,12 @@
    "utc_start": "2014-05-30T23:02:57",
    "label": "before_arrival",
    "nominal_xy": [
-    1024,
-    1024
+    1823,
+    361
    ]
   },
   {
-   "id": 335,
+   "id": 336,
    "file_name": "mars/insight_backshell/ESP_037262_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6530,12 +6549,12 @@
    "utc_start": "2014-07-09T00:02:01",
    "label": "before_arrival",
    "nominal_xy": [
-    1024,
-    1024
+    2041,
+    205
    ]
   },
   {
-   "id": 336,
+   "id": 337,
    "file_name": "mars/insight_backshell/ESP_057939_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6549,13 +6568,12 @@
    "utc_start": "2018-12-06T02:14:01",
    "label": "artifact",
    "nominal_xy": [
-    1024,
-    1024
-   ],
-   "unboxed_reason": "backshell and parachute outside this crop: from the lander (centre of the terrain-matched insight/ESP_057939 crop) plus the 269 m E / 493 m S offset measured in ESP_058717 they lie ~210 px west of the left edge; nothing bright at the edge"
+    2241,
+    117
+   ]
   },
   {
-   "id": 337,
+   "id": 338,
    "file_name": "mars/insight_backshell/ESP_058005_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6574,7 +6592,7 @@
    ]
   },
   {
-   "id": 338,
+   "id": 339,
    "file_name": "mars/insight_backshell/ESP_058717_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6593,7 +6611,26 @@
    ]
   },
   {
-   "id": 339,
+   "id": 340,
+   "file_name": "mars/insight_backshell/ESP_058928_1845.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "insight_backshell",
+   "body": "Mars",
+   "frame_id": "ESP_058928_1845",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 33.43,
+   "utc_start": "2019-02-21T03:57:06",
+   "label": "artifact",
+   "nominal_xy": [
+    1672,
+    333
+   ]
+  },
+  {
+   "id": 341,
    "file_name": "mars/insight_backshell/ESP_059284_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6612,7 +6649,7 @@
    ]
   },
   {
-   "id": 340,
+   "id": 342,
    "file_name": "mars/insight_backshell/ESP_067157_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6631,7 +6668,7 @@
    ]
   },
   {
-   "id": 341,
+   "id": 343,
    "file_name": "mars/insight_backshell/ESP_072143_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6650,7 +6687,7 @@
    ]
   },
   {
-   "id": 342,
+   "id": 344,
    "file_name": "mars/insight_backshell/ESP_087004_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6669,7 +6706,26 @@
    ]
   },
   {
-   "id": 343,
+   "id": 345,
+   "file_name": "mars/insight_heatshield/ESP_036761_1845.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "insight_heatshield",
+   "body": "Mars",
+   "frame_id": "ESP_036761_1845",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 54.31,
+   "utc_start": "2014-05-30T23:02:57",
+   "label": "before_arrival",
+   "nominal_xy": [
+    1862,
+    356
+   ]
+  },
+  {
+   "id": 346,
    "file_name": "mars/insight_heatshield/ESP_037262_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6688,7 +6744,7 @@
    ]
   },
   {
-   "id": 344,
+   "id": 347,
    "file_name": "mars/insight_heatshield/ESP_057939_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6708,7 +6764,7 @@
    "unboxed_reason": "heat shield outside this crop: from the lander (centre of the terrain-matched insight/ESP_057939 crop) plus the 677 m E / 352 m N offset measured in ESP_058717, it lies ~250 px (~65 m) west of the crop's left edge (frame pointing error ~400 m)"
   },
   {
-   "id": 345,
+   "id": 348,
    "file_name": "mars/insight_heatshield/ESP_058005_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6728,7 +6784,7 @@
    "unboxed_reason": "heat shield just outside this crop: from the lander (centre of the terrain-matched insight/ESP_058005 crop) plus the offset measured in ESP_058717 it lies ~30 px west of the left edge; no dish visible at the edge (the release cutout ESP_058005_1845-shield-full-res.jpg shows it in this frame, outside our crop)"
   },
   {
-   "id": 346,
+   "id": 349,
    "file_name": "mars/insight_heatshield/ESP_058717_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6747,7 +6803,7 @@
    ]
   },
   {
-   "id": 347,
+   "id": 350,
    "file_name": "mars/insight_heatshield/ESP_058928_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6766,7 +6822,7 @@
    ]
   },
   {
-   "id": 348,
+   "id": 351,
    "file_name": "mars/insight_heatshield/ESP_059284_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6785,7 +6841,7 @@
    ]
   },
   {
-   "id": 349,
+   "id": 352,
    "file_name": "mars/insight_heatshield/ESP_067157_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6804,7 +6860,7 @@
    ]
   },
   {
-   "id": 350,
+   "id": 353,
    "file_name": "mars/insight_heatshield/ESP_072143_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6823,7 +6879,7 @@
    ]
   },
   {
-   "id": 351,
+   "id": 354,
    "file_name": "mars/insight_heatshield/ESP_082877_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6842,7 +6898,7 @@
    ]
   },
   {
-   "id": 352,
+   "id": 355,
    "file_name": "mars/insight_heatshield/ESP_083945_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6861,7 +6917,7 @@
    ]
   },
   {
-   "id": 353,
+   "id": 356,
    "file_name": "mars/insight_heatshield/ESP_087004_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6880,7 +6936,7 @@
    ]
   },
   {
-   "id": 354,
+   "id": 357,
    "file_name": "mars/insight_heatshield/ESP_087360_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6899,7 +6955,7 @@
    ]
   },
   {
-   "id": 355,
+   "id": 358,
    "file_name": "mars/insight_heatshield/ESP_088494_1845.png",
    "width": 2048,
    "height": 2048,
@@ -6918,7 +6974,7 @@
    ]
   },
   {
-   "id": 356,
+   "id": 359,
    "file_name": "mars/mars3/ESP_026368_1345.png",
    "width": 2048,
    "height": 2048,
@@ -6938,7 +6994,7 @@
    "unboxed_reason": "0.5 m/px at 84 deg incidence (long shadows, partly black frame edge): the 1.8 m lander candidate (a dark spot among rocks) cannot be told from rocks, and its position is not established in this crop; candidate only"
   },
   {
-   "id": 357,
+   "id": 360,
    "file_name": "mars/mars3/ESP_031036_1345.png",
    "width": 2048,
    "height": 2048,
@@ -6958,7 +7014,7 @@
    "unboxed_reason": "release frame of the Mars 3 candidates (https://www.uahirise.org/ESP_031036_1345): the labelled parachute cutout does not terrain-match this crop (ratio 1.2) and the composite places the lander/retrorocket candidates roughly 1-2 km from the image centre on which the crop is cut; the only bright feature here (x~391 y~910) is a boulder with its shadow, not the round 7.5 m parachute; candidate-only object, nothing boxed"
   },
   {
-   "id": 358,
+   "id": 361,
    "file_name": "mars/mars3/ESP_032447_1345.png",
    "width": 2048,
    "height": 2048,
@@ -6978,7 +7034,7 @@
    "unboxed_reason": "no anchor: the Mars 3 hardware candidates from https://www.uahirise.org/ESP_031036_1345 were not found in this crop (catalog point = image centre, uncertainty ~3 km); the 1.8 m lander candidate is indistinguishable from the many rocks"
   },
   {
-   "id": 359,
+   "id": 362,
    "file_name": "mars/mars3/ESP_032737_1345.png",
    "width": 2048,
    "height": 2048,
@@ -6998,7 +7054,7 @@
    "unboxed_reason": "no anchor: the Mars 3 hardware candidates from https://www.uahirise.org/ESP_031036_1345 were not found in this crop (catalog point = image centre, uncertainty ~3 km); the 1.8 m lander candidate is indistinguishable from the many rocks"
   },
   {
-   "id": 360,
+   "id": 363,
    "file_name": "mars/mars3/PSP_006154_1345.png",
    "width": 2048,
    "height": 2048,
@@ -7018,7 +7074,7 @@
    "unboxed_reason": "discovery frame of the crowd-sourced candidates (\"southern part of the scene\" per https://www.uahirise.org/ESP_031036_1345) but this crop is cut around the ESP_031036 image centre; no candidate parachute (unique bright 7.5 m spot) or lander candidate found here; candidate only"
   },
   {
-   "id": 361,
+   "id": 364,
    "file_name": "mars/opportunity/ESP_047263_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7037,7 +7093,7 @@
    ]
   },
   {
-   "id": 362,
+   "id": 365,
    "file_name": "mars/opportunity/ESP_055636_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7057,7 +7113,7 @@
    "unboxed_reason": "taken 2018-06-09 at the onset of the global dust storm: the crop is uniform haze with no surface detail (terrain-match ratio 1.1), the rover cannot be located"
   },
   {
-   "id": 363,
+   "id": 366,
    "file_name": "mars/opportunity/ESP_056190_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7077,7 +7133,7 @@
    "unboxed_reason": "dust-storm frame (2018-07-22, 0.5 m/px): heavy haze and column striping, no terrain match (ratio 1.0), a 3 px rover is not resolvable"
   },
   {
-   "id": 364,
+   "id": 367,
    "file_name": "mars/opportunity/ESP_056256_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7097,7 +7153,7 @@
    "unboxed_reason": "dust-storm frame (2018-07-27, 0.5 m/px): heavy haze and column striping, no terrain match (ratio 1.0), a 3 px rover is not resolvable"
   },
   {
-   "id": 365,
+   "id": 368,
    "file_name": "mars/opportunity/ESP_056467_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7117,7 +7173,7 @@
    "unboxed_reason": "dust-storm frame (2018-08-13, 0.5 m/px): terrain only faintly visible through haze and noise (match ratio 2.5); no rover-like point stands out at the predicted spot"
   },
   {
-   "id": 366,
+   "id": 369,
    "file_name": "mars/opportunity/ESP_056955_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7136,7 +7192,7 @@
    ]
   },
   {
-   "id": 367,
+   "id": 370,
    "file_name": "mars/opportunity/ESP_057786_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7155,7 +7211,7 @@
    ]
   },
   {
-   "id": 368,
+   "id": 371,
    "file_name": "mars/opportunity/ESP_058208_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7174,7 +7230,7 @@
    ]
   },
   {
-   "id": 369,
+   "id": 372,
    "file_name": "mars/opportunity/ESP_058564_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7193,7 +7249,7 @@
    ]
   },
   {
-   "id": 370,
+   "id": 373,
    "file_name": "mars/opportunity/ESP_058854_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7212,7 +7268,7 @@
    ]
   },
   {
-   "id": 371,
+   "id": 374,
    "file_name": "mars/opportunity/ESP_087985_1780.png",
    "width": 2048,
    "height": 2048,
@@ -7231,7 +7287,7 @@
    ]
   },
   {
-   "id": 372,
+   "id": 375,
    "file_name": "mars/opportunity/PSP_010341_1775.png",
    "width": 2048,
    "height": 2048,
@@ -7250,7 +7306,7 @@
    ]
   },
   {
-   "id": 373,
+   "id": 376,
    "file_name": "mars/pathfinder/ESP_022038_1995.png",
    "width": 2048,
    "height": 2048,
@@ -7269,7 +7325,7 @@
    ]
   },
   {
-   "id": 374,
+   "id": 377,
    "file_name": "mars/pathfinder/ESP_093049_1995.png",
    "width": 2048,
    "height": 2048,
@@ -7288,7 +7344,7 @@
    ]
   },
   {
-   "id": 375,
+   "id": 378,
    "file_name": "mars/pathfinder/PSP_001824_1995.png",
    "width": 2048,
    "height": 2048,
@@ -7307,7 +7363,7 @@
    ]
   },
   {
-   "id": 376,
+   "id": 379,
    "file_name": "mars/pathfinder/PSP_001890_1995.png",
    "width": 2048,
    "height": 2048,
@@ -7326,7 +7382,7 @@
    ]
   },
   {
-   "id": 377,
+   "id": 380,
    "file_name": "mars/pathfinder/PSP_002391_1995.png",
    "width": 2048,
    "height": 2048,
@@ -7345,7 +7401,7 @@
    ]
   },
   {
-   "id": 378,
+   "id": 381,
    "file_name": "mars/perseverance_backshell/ESP_068281_9024.png",
    "width": 2048,
    "height": 2048,
@@ -7364,7 +7420,7 @@
    ]
   },
   {
-   "id": 379,
+   "id": 382,
    "file_name": "mars/perseverance_backshell/ESP_071077_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7383,7 +7439,7 @@
    ]
   },
   {
-   "id": 380,
+   "id": 383,
    "file_name": "mars/perseverance_backshell/ESP_073068_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7402,7 +7458,7 @@
    ]
   },
   {
-   "id": 381,
+   "id": 384,
    "file_name": "mars/perseverance_backshell/ESP_073635_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7421,7 +7477,7 @@
    ]
   },
   {
-   "id": 382,
+   "id": 385,
    "file_name": "mars/perseverance_backshell/ESP_083512_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7440,7 +7496,7 @@
    ]
   },
   {
-   "id": 383,
+   "id": 386,
    "file_name": "mars/perseverance_backshell/ESP_084883_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7459,7 +7515,7 @@
    ]
   },
   {
-   "id": 384,
+   "id": 387,
    "file_name": "mars/perseverance_backshell/ESP_088562_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7478,7 +7534,7 @@
    ]
   },
   {
-   "id": 385,
+   "id": 388,
    "file_name": "mars/perseverance_backshell/ESP_089208_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7497,7 +7553,26 @@
    ]
   },
   {
-   "id": 386,
+   "id": 389,
+   "file_name": "mars/perseverance_backshell/ESP_090685_1985.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "perseverance_backshell",
+   "body": "Mars",
+   "frame_id": "ESP_090685_1985",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.5,
+   "incidence_deg": 59.97,
+   "utc_start": "2025-11-30T13:00:49",
+   "label": "artifact",
+   "nominal_xy": [
+    856,
+    774
+   ]
+  },
+  {
+   "id": 390,
    "file_name": "mars/perseverance_backshell/ESP_093546_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7516,7 +7591,7 @@
    ]
   },
   {
-   "id": 387,
+   "id": 391,
    "file_name": "mars/perseverance_backshell/PSP_002387_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7530,12 +7605,12 @@
    "utc_start": "2007-01-29T10:49:16",
    "label": "before_arrival",
    "nominal_xy": [
-    1024,
-    1024
+    1131,
+    413
    ]
   },
   {
-   "id": 388,
+   "id": 392,
    "file_name": "mars/perseverance_descent_stage/ESP_068281_9024.png",
    "width": 2048,
    "height": 2048,
@@ -7554,7 +7629,7 @@
    ]
   },
   {
-   "id": 389,
+   "id": 393,
    "file_name": "mars/perseverance_descent_stage/ESP_071077_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7573,7 +7648,7 @@
    ]
   },
   {
-   "id": 390,
+   "id": 394,
    "file_name": "mars/perseverance_descent_stage/ESP_073068_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7592,7 +7667,7 @@
    ]
   },
   {
-   "id": 391,
+   "id": 395,
    "file_name": "mars/perseverance_descent_stage/ESP_073635_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7611,7 +7686,7 @@
    ]
   },
   {
-   "id": 392,
+   "id": 396,
    "file_name": "mars/perseverance_descent_stage/ESP_084883_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7630,7 +7705,7 @@
    ]
   },
   {
-   "id": 393,
+   "id": 397,
    "file_name": "mars/perseverance_descent_stage/ESP_088351_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7649,7 +7724,7 @@
    ]
   },
   {
-   "id": 394,
+   "id": 398,
    "file_name": "mars/perseverance_descent_stage/ESP_088417_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7668,7 +7743,7 @@
    ]
   },
   {
-   "id": 395,
+   "id": 399,
    "file_name": "mars/perseverance_descent_stage/ESP_088562_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7687,7 +7762,7 @@
    ]
   },
   {
-   "id": 396,
+   "id": 400,
    "file_name": "mars/perseverance_descent_stage/ESP_090619_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7706,7 +7781,7 @@
    ]
   },
   {
-   "id": 397,
+   "id": 401,
    "file_name": "mars/perseverance_descent_stage/ESP_090685_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7725,7 +7800,7 @@
    ]
   },
   {
-   "id": 398,
+   "id": 402,
    "file_name": "mars/perseverance_descent_stage/ESP_093546_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7744,7 +7819,7 @@
    ]
   },
   {
-   "id": 399,
+   "id": 403,
    "file_name": "mars/perseverance_descent_stage/PSP_002387_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7763,7 +7838,7 @@
    ]
   },
   {
-   "id": 400,
+   "id": 404,
    "file_name": "mars/perseverance_heatshield/ESP_068281_9024.png",
    "width": 2048,
    "height": 2048,
@@ -7782,7 +7857,7 @@
    ]
   },
   {
-   "id": 401,
+   "id": 405,
    "file_name": "mars/perseverance_heatshield/ESP_068426_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7801,7 +7876,26 @@
    ]
   },
   {
-   "id": 402,
+   "id": 406,
+   "file_name": "mars/perseverance_heatshield/ESP_068822_1985.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "perseverance_heatshield",
+   "body": "Mars",
+   "frame_id": "ESP_068822_1985",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 47.66,
+   "utc_start": "2021-04-01T23:31:15",
+   "label": "artifact",
+   "nominal_xy": [
+    761,
+    284
+   ]
+  },
+  {
+   "id": 407,
    "file_name": "mars/perseverance_heatshield/ESP_071077_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7820,7 +7914,7 @@
    ]
   },
   {
-   "id": 403,
+   "id": 408,
    "file_name": "mars/perseverance_heatshield/ESP_073068_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7839,7 +7933,7 @@
    ]
   },
   {
-   "id": 404,
+   "id": 409,
    "file_name": "mars/perseverance_heatshield/ESP_073635_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7858,7 +7952,7 @@
    ]
   },
   {
-   "id": 405,
+   "id": 410,
    "file_name": "mars/perseverance_heatshield/ESP_083512_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7877,7 +7971,7 @@
    ]
   },
   {
-   "id": 406,
+   "id": 411,
    "file_name": "mars/perseverance_heatshield/ESP_088562_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7896,7 +7990,7 @@
    ]
   },
   {
-   "id": 407,
+   "id": 412,
    "file_name": "mars/perseverance_heatshield/ESP_088773_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7915,7 +8009,7 @@
    ]
   },
   {
-   "id": 408,
+   "id": 413,
    "file_name": "mars/perseverance_heatshield/ESP_089208_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7934,7 +8028,7 @@
    ]
   },
   {
-   "id": 409,
+   "id": 414,
    "file_name": "mars/perseverance_heatshield/ESP_093546_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7953,7 +8047,7 @@
    ]
   },
   {
-   "id": 410,
+   "id": 415,
    "file_name": "mars/perseverance_heatshield/PSP_002743_1985.png",
    "width": 2048,
    "height": 2048,
@@ -7967,12 +8061,12 @@
    "utc_start": "2007-02-26T04:35:22",
    "label": "before_arrival",
    "nominal_xy": [
-    1024,
-    1024
+    1257,
+    297
    ]
   },
   {
-   "id": 411,
+   "id": 416,
    "file_name": "mars/perseverance_landing/ESP_068281_9024.png",
    "width": 2048,
    "height": 2048,
@@ -7991,7 +8085,7 @@
    ]
   },
   {
-   "id": 412,
+   "id": 417,
    "file_name": "mars/perseverance_landing/ESP_071077_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8010,7 +8104,7 @@
    ]
   },
   {
-   "id": 413,
+   "id": 418,
    "file_name": "mars/perseverance_landing/ESP_073068_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8029,7 +8123,7 @@
    ]
   },
   {
-   "id": 414,
+   "id": 419,
    "file_name": "mars/perseverance_landing/ESP_073635_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8048,7 +8142,7 @@
    ]
   },
   {
-   "id": 415,
+   "id": 420,
    "file_name": "mars/perseverance_landing/ESP_083512_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8067,7 +8161,7 @@
    ]
   },
   {
-   "id": 416,
+   "id": 421,
    "file_name": "mars/perseverance_landing/ESP_084883_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8087,7 +8181,7 @@
    "unboxed_reason": "no hardware stays at the landing point; terrain match from ESP_068360 failed (ratio ~1): the landing scour is probably outside this crop"
   },
   {
-   "id": 417,
+   "id": 422,
    "file_name": "mars/perseverance_landing/ESP_088351_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8106,7 +8200,7 @@
    ]
   },
   {
-   "id": 418,
+   "id": 423,
    "file_name": "mars/perseverance_landing/ESP_088417_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8125,7 +8219,7 @@
    ]
   },
   {
-   "id": 419,
+   "id": 424,
    "file_name": "mars/perseverance_landing/ESP_090619_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8144,7 +8238,7 @@
    ]
   },
   {
-   "id": 420,
+   "id": 425,
    "file_name": "mars/perseverance_landing/ESP_090685_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8163,7 +8257,7 @@
    ]
   },
   {
-   "id": 421,
+   "id": 426,
    "file_name": "mars/perseverance_landing/ESP_093546_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8182,7 +8276,7 @@
    ]
   },
   {
-   "id": 422,
+   "id": 427,
    "file_name": "mars/perseverance_landing/PSP_002387_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8201,7 +8295,7 @@
    ]
   },
   {
-   "id": 423,
+   "id": 428,
    "file_name": "mars/perseverance_rover/ESP_068294_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8220,7 +8314,7 @@
    ]
   },
   {
-   "id": 424,
+   "id": 429,
    "file_name": "mars/perseverance_rover/ESP_068360_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8239,7 +8333,7 @@
    ]
   },
   {
-   "id": 425,
+   "id": 430,
    "file_name": "mars/perseverance_rover/ESP_068426_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8258,7 +8352,7 @@
    ]
   },
   {
-   "id": 426,
+   "id": 431,
    "file_name": "mars/perseverance_rover/ESP_068822_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8278,7 +8372,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 427,
+   "id": 432,
    "file_name": "mars/perseverance_rover/ESP_071077_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8298,7 +8392,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 428,
+   "id": 433,
    "file_name": "mars/perseverance_rover/ESP_073068_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8317,7 +8411,7 @@
    ]
   },
   {
-   "id": 429,
+   "id": 434,
    "file_name": "mars/perseverance_rover/ESP_073635_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8337,7 +8431,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 430,
+   "id": 435,
    "file_name": "mars/perseverance_rover/ESP_082945_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8357,7 +8451,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 431,
+   "id": 436,
    "file_name": "mars/perseverance_rover/ESP_085582_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8377,7 +8471,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 432,
+   "id": 437,
    "file_name": "mars/perseverance_rover/ESP_085714_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8397,7 +8491,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 433,
+   "id": 438,
    "file_name": "mars/perseverance_rover/ESP_085859_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8417,7 +8511,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 434,
+   "id": 439,
    "file_name": "mars/perseverance_rover/ESP_093190_1985.png",
    "width": 2048,
    "height": 2048,
@@ -8437,7 +8531,7 @@
    "unboxed_reason": "rover not identified: the crop is centred on the waypoint, but HiRISE pointing errors here reach 100-400 m and a 3 m rover cannot be told from rocks without a reference; the earlier box at the waypoint pixel was a coincidence and was removed"
   },
   {
-   "id": 435,
+   "id": 440,
    "file_name": "mars/phoenix/ESP_011268_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8456,7 +8550,7 @@
    ]
   },
   {
-   "id": 436,
+   "id": 441,
    "file_name": "mars/phoenix/ESP_011980_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8476,7 +8570,7 @@
    "unboxed_reason": "1.0 m/px at incidence 88 (polar dusk): terrain match failed (ratio 1.1), lander not visible"
   },
   {
-   "id": 437,
+   "id": 442,
    "file_name": "mars/phoenix/ESP_014103_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8496,7 +8590,7 @@
    "unboxed_reason": "incidence 89, seasonal CO2 frost: terrain match weak (ratio 6) and nothing at the matched point"
   },
   {
-   "id": 438,
+   "id": 443,
    "file_name": "mars/phoenix/ESP_014393_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8516,7 +8610,7 @@
    "unboxed_reason": "incidence 84, frost-covered and noisy: terrain match failed (ratio 1.3)"
   },
   {
-   "id": 439,
+   "id": 444,
    "file_name": "mars/phoenix/ESP_015949_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8535,7 +8629,7 @@
    ]
   },
   {
-   "id": 440,
+   "id": 445,
    "file_name": "mars/phoenix/ESP_016160_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8555,7 +8649,7 @@
    "unboxed_reason": "winter frost patches: matched point (ratio 7) shows only frost-pattern dark spots, no distinct lander"
   },
   {
-   "id": 441,
+   "id": 446,
    "file_name": "mars/phoenix/ESP_016437_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8575,7 +8669,7 @@
    "unboxed_reason": "winter frost patches: matched point (ratio 6) shows only bright frost, no distinct lander"
   },
   {
-   "id": 442,
+   "id": 447,
    "file_name": "mars/phoenix/ESP_018494_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8594,7 +8688,7 @@
    ]
   },
   {
-   "id": 443,
+   "id": 448,
    "file_name": "mars/phoenix/ESP_023175_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8614,7 +8708,7 @@
    "unboxed_reason": "incidence 84, frost: matched point (ratio 5) shows no distinct lander"
   },
   {
-   "id": 444,
+   "id": 449,
    "file_name": "mars/phoenix/ESP_023452_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8634,7 +8728,7 @@
    "unboxed_reason": "incidence 80, striped / noisy frame: terrain match failed (ratio 3)"
   },
   {
-   "id": 445,
+   "id": 450,
    "file_name": "mars/phoenix/ESP_032155_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8654,7 +8748,27 @@
    "unboxed_reason": "incidence 82, spring frost: terrain match failed (ratio 1.8)"
   },
   {
-   "id": 446,
+   "id": 451,
+   "file_name": "mars/phoenix/ESP_043034_2485.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "phoenix",
+   "body": "Mars",
+   "frame_id": "ESP_043034_2485",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 54.49,
+   "utc_start": "2015-10-01T17:45:25",
+   "label": "artifact",
+   "nominal_xy": [
+    1147,
+    1728
+   ],
+   "unboxed_reason": "re-cut on a terrain match (ratio 4.6): the matched point shows only seasonal frost blobs, no distinct lander"
+  },
+  {
+   "id": 452,
    "file_name": "mars/phoenix/ESP_045566_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8673,7 +8787,7 @@
    ]
   },
   {
-   "id": 447,
+   "id": 453,
    "file_name": "mars/phoenix/ESP_053451_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8692,7 +8806,7 @@
    ]
   },
   {
-   "id": 448,
+   "id": 454,
    "file_name": "mars/phoenix/PSP_002328_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8711,7 +8825,26 @@
    ]
   },
   {
-   "id": 449,
+   "id": 455,
+   "file_name": "mars/phoenix/PSP_007853_2485.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "phoenix",
+   "body": "Mars",
+   "frame_id": "PSP_007853_2485",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 54.44,
+   "utc_start": "2008-03-30T09:36:54",
+   "label": "before_arrival",
+   "nominal_xy": [
+    1007,
+    1632
+   ]
+  },
+  {
+   "id": 456,
    "file_name": "mars/phoenix/PSP_008585_2915.png",
    "width": 2048,
    "height": 2048,
@@ -8730,7 +8863,7 @@
    ]
   },
   {
-   "id": 450,
+   "id": 457,
    "file_name": "mars/phoenix/PSP_008591_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8749,7 +8882,7 @@
    ]
   },
   {
-   "id": 451,
+   "id": 458,
    "file_name": "mars/phoenix/PSP_008644_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8768,7 +8901,7 @@
    ]
   },
   {
-   "id": 452,
+   "id": 459,
    "file_name": "mars/phoenix/PSP_008855_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8787,7 +8920,7 @@
    ]
   },
   {
-   "id": 453,
+   "id": 460,
    "file_name": "mars/phoenix/PSP_009066_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8806,7 +8939,7 @@
    ]
   },
   {
-   "id": 454,
+   "id": 461,
    "file_name": "mars/phoenix/PSP_009073_2915.png",
    "width": 2048,
    "height": 2048,
@@ -8825,7 +8958,7 @@
    ]
   },
   {
-   "id": 455,
+   "id": 462,
    "file_name": "mars/phoenix/PSP_009086_2915.png",
    "width": 2048,
    "height": 2048,
@@ -8844,7 +8977,7 @@
    ]
   },
   {
-   "id": 456,
+   "id": 463,
    "file_name": "mars/phoenix/PSP_009284_2915.png",
    "width": 2048,
    "height": 2048,
@@ -8863,7 +8996,7 @@
    ]
   },
   {
-   "id": 457,
+   "id": 464,
    "file_name": "mars/phoenix/PSP_009290_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8882,7 +9015,7 @@
    ]
   },
   {
-   "id": 458,
+   "id": 465,
    "file_name": "mars/phoenix/PSP_009376_2915.png",
    "width": 2048,
    "height": 2048,
@@ -8901,7 +9034,7 @@
    ]
   },
   {
-   "id": 459,
+   "id": 466,
    "file_name": "mars/phoenix/PSP_009488_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8920,7 +9053,7 @@
    ]
   },
   {
-   "id": 460,
+   "id": 467,
    "file_name": "mars/phoenix/PSP_009495_2915.png",
    "width": 2048,
    "height": 2048,
@@ -8939,7 +9072,7 @@
    ]
   },
   {
-   "id": 461,
+   "id": 468,
    "file_name": "mars/phoenix/PSP_009501_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8958,7 +9091,7 @@
    ]
   },
   {
-   "id": 462,
+   "id": 469,
    "file_name": "mars/phoenix/PSP_009653_2915.png",
    "width": 2048,
    "height": 2048,
@@ -8977,7 +9110,7 @@
    ]
   },
   {
-   "id": 463,
+   "id": 470,
    "file_name": "mars/phoenix/PSP_009725_2485.png",
    "width": 2048,
    "height": 2048,
@@ -8996,7 +9129,7 @@
    ]
   },
   {
-   "id": 464,
+   "id": 471,
    "file_name": "mars/phoenix/PSP_010009_2915.png",
    "width": 2048,
    "height": 2048,
@@ -9015,7 +9148,7 @@
    ]
   },
   {
-   "id": 465,
+   "id": 472,
    "file_name": "mars/phoenix/PSP_010068_2485.png",
    "width": 2048,
    "height": 2048,
@@ -9034,7 +9167,7 @@
    ]
   },
   {
-   "id": 466,
+   "id": 473,
    "file_name": "mars/phoenix/PSP_010279_2485.png",
    "width": 2048,
    "height": 2048,
@@ -9053,7 +9186,7 @@
    ]
   },
   {
-   "id": 467,
+   "id": 474,
    "file_name": "mars/phoenix/PSP_010286_2915.png",
    "width": 2048,
    "height": 2048,
@@ -9072,7 +9205,7 @@
    ]
   },
   {
-   "id": 468,
+   "id": 475,
    "file_name": "mars/phoenix/PSP_010365_2915.png",
    "width": 2048,
    "height": 2048,
@@ -9091,7 +9224,7 @@
    ]
   },
   {
-   "id": 469,
+   "id": 476,
    "file_name": "mars/phoenix/PSP_010424_2485.png",
    "width": 2048,
    "height": 2048,
@@ -9110,7 +9243,7 @@
    ]
   },
   {
-   "id": 470,
+   "id": 477,
    "file_name": "mars/phoenix/PSP_010431_2915.png",
    "width": 2048,
    "height": 2048,
@@ -9129,7 +9262,7 @@
    ]
   },
   {
-   "id": 471,
+   "id": 478,
    "file_name": "mars/phoenix/PSP_010569_2485.png",
    "width": 2048,
    "height": 2048,
@@ -9148,7 +9281,7 @@
    ]
   },
   {
-   "id": 472,
+   "id": 479,
    "file_name": "mars/phoenix/PSP_010780_2485.png",
    "width": 2048,
    "height": 2048,
@@ -9167,7 +9300,7 @@
    ]
   },
   {
-   "id": 473,
+   "id": 480,
    "file_name": "mars/schiaparelli/ESP_048041_1780.png",
    "width": 2048,
    "height": 2048,
@@ -9187,7 +9320,7 @@
    "unboxed_reason": "taken days after the 2016-10-19 crash: the fresh ~40 m dark scar with a black 2.4 m core and curved dark streak shown in the release https://www.uahirise.org/ESP_048041_1780 is absent from this 512 m crop (only a mottled natural dark patch that persists into 2023), and the release overview does not terrain-match the crop (ratio <= 2); the catalog point is just an image centre, so the crash site lies outside the crop"
   },
   {
-   "id": 474,
+   "id": 481,
    "file_name": "mars/schiaparelli/ESP_048120_1780.png",
    "width": 2048,
    "height": 2048,
@@ -9207,7 +9340,7 @@
    "unboxed_reason": "taken days after the 2016-10-19 crash: the fresh ~40 m dark scar with a black 2.4 m core and curved dark streak shown in the release https://www.uahirise.org/ESP_048041_1780 is absent from this 512 m crop (only a mottled natural dark patch that persists into 2023), and the release overview does not terrain-match the crop (ratio <= 2); the catalog point is just an image centre, so the crash site lies outside the crop"
   },
   {
-   "id": 475,
+   "id": 482,
    "file_name": "mars/schiaparelli/ESP_048331_1780.png",
    "width": 2048,
    "height": 2048,
@@ -9227,7 +9360,27 @@
    "unboxed_reason": "taken days after the 2016-10-19 crash: the fresh ~40 m dark scar with a black 2.4 m core and curved dark streak shown in the release https://www.uahirise.org/ESP_048041_1780 is absent from this 512 m crop (only a mottled natural dark patch that persists into 2023), and the release overview does not terrain-match the crop (ratio <= 2); the catalog point is just an image centre, so the crash site lies outside the crop"
   },
   {
-   "id": 476,
+   "id": 483,
+   "file_name": "mars/schiaparelli/ESP_059342_1780.png",
+   "width": 2048,
+   "height": 2048,
+   "license": 1,
+   "site_id": "schiaparelli",
+   "body": "Mars",
+   "frame_id": "ESP_059342_1780",
+   "instrument": "HiRISE RED",
+   "resolution_m_px": 0.25,
+   "incidence_deg": 34.38,
+   "utc_start": "2019-03-25T10:10:28",
+   "label": "artifact",
+   "nominal_xy": [
+    1024,
+    1024
+   ],
+   "unboxed_reason": "no verified Schiaparelli position: the fresh scar of the release image ESP_048041_1780 was found in none of the site's crops, so this 2019 crop is centred on the catalog point (HiRISE image centre, ~1 km uncertain); not identifiable"
+  },
+  {
+   "id": 484,
    "file_name": "mars/schiaparelli/ESP_062731_1780.png",
    "width": 2048,
    "height": 2048,
@@ -9247,7 +9400,7 @@
    "unboxed_reason": "2019 frame: no crash scar or hardware identified; the catalog point is only the image centre (uncertainty ~1 km), the 2016 frames of this site show no scar inside their crops, and the release overview does not terrain-match this crop"
   },
   {
-   "id": 477,
+   "id": 485,
    "file_name": "mars/schiaparelli/ESP_073625_1780.png",
    "width": 2048,
    "height": 2048,
@@ -9267,7 +9420,7 @@
    "unboxed_reason": "2022 frame: no crash scar or hardware identified; the catalog point is only the image centre (uncertainty ~1 km) and the 2016 frames show no scar in the corresponding area"
   },
   {
-   "id": 478,
+   "id": 486,
    "file_name": "mars/schiaparelli/ESP_076869_1780.png",
    "width": 2048,
    "height": 2048,
@@ -9287,7 +9440,7 @@
    "unboxed_reason": "1 km crop (0.5 m/px, 2022): the only dark patch (~35 m, at x~1387 y~1487) terrain-matches the mottled natural patch in the 2016 frame ESP_048120, which lacks the crash core and curved streak of the release image; no crash scar identified"
   },
   {
-   "id": 479,
+   "id": 487,
    "file_name": "mars/schiaparelli/ESP_077700_1780.png",
    "width": 2048,
    "height": 2048,
@@ -9307,7 +9460,7 @@
    "unboxed_reason": "1 km crop (0.5 m/px, 2023): the only dark patch (~35 m, at x~1433 y~1381) is the natural patch also seen in 2016 (ESP_048120), not the crash scar; release overview does not terrain-match; no crash scar identified"
   },
   {
-   "id": 480,
+   "id": 488,
    "file_name": "mars/spirit/ESP_012787_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9321,12 +9474,12 @@
    "utc_start": "2009-04-18T20:56:28",
    "label": "before_arrival",
    "nominal_xy": [
-    1024,
-    1024
+    -227,
+    -744
    ]
   },
   {
-   "id": 481,
+   "id": 489,
    "file_name": "mars/spirit/ESP_013499_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9340,13 +9493,12 @@
    "utc_start": "2009-06-13T08:27:10",
    "label": "artifact",
    "nominal_xy": [
-    1024,
-    1024
-   ],
-   "unboxed_reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+    -19,
+    -800
+   ]
   },
   {
-   "id": 482,
+   "id": 490,
    "file_name": "mars/spirit/ESP_013921_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9360,13 +9512,12 @@
    "utc_start": "2009-07-16T05:39:04",
    "label": "artifact",
    "nominal_xy": [
-    1024,
-    1024
-   ],
-   "unboxed_reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+    -239,
+    -720
+   ]
   },
   {
-   "id": 483,
+   "id": 491,
    "file_name": "mars/spirit/ESP_014277_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9385,7 +9536,7 @@
    ]
   },
   {
-   "id": 484,
+   "id": 492,
    "file_name": "mars/spirit/ESP_021925_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9399,13 +9550,12 @@
    "utc_start": "2011-03-31T21:54:47",
    "label": "artifact",
    "nominal_xy": [
-    1024,
-    1024
-   ],
-   "unboxed_reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+    457,
+    -864
+   ]
   },
   {
-   "id": 485,
+   "id": 493,
    "file_name": "mars/spirit/ESP_022347_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9419,13 +9569,12 @@
    "utc_start": "2011-05-03T19:06:16",
    "label": "artifact",
    "nominal_xy": [
-    1024,
-    1024
-   ],
-   "unboxed_reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+    217,
+    -816
+   ]
   },
   {
-   "id": 486,
+   "id": 494,
    "file_name": "mars/spirit/ESP_031261_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9444,7 +9593,7 @@
    ]
   },
   {
-   "id": 487,
+   "id": 495,
    "file_name": "mars/spirit/ESP_046729_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9458,13 +9607,12 @@
    "utc_start": "2016-07-15T14:49:25",
    "label": "artifact",
    "nominal_xy": [
-    1024,
-    1024
-   ],
-   "unboxed_reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+    213,
+    -680
+   ]
   },
   {
-   "id": 488,
+   "id": 496,
    "file_name": "mars/spirit/ESP_078023_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9483,7 +9631,7 @@
    ]
   },
   {
-   "id": 489,
+   "id": 497,
    "file_name": "mars/spirit/ESP_079724_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9502,7 +9650,7 @@
    ]
   },
   {
-   "id": 490,
+   "id": 498,
    "file_name": "mars/spirit/ESP_081557_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9521,7 +9669,7 @@
    ]
   },
   {
-   "id": 491,
+   "id": 499,
    "file_name": "mars/spirit/ESP_083469_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9535,13 +9683,12 @@
    "utc_start": "2024-05-17T05:25:42",
    "label": "artifact",
    "nominal_xy": [
-    1024,
-    1024
-   ],
-   "unboxed_reason": "Spirit lies ~10 m west of Home Plate, which is ~450 m south-east of the catalog position in every 0.5 m frame; this 512 m crop does not contain Home Plate (terrain-match ratio 1.0 from the ESP_014277 anchor), so the rover is outside the crop"
+    17,
+    -888
+   ]
   },
   {
-   "id": 492,
+   "id": 500,
    "file_name": "mars/spirit/ESP_088163_1650.png",
    "width": 2048,
    "height": 2048,
@@ -9560,7 +9707,7 @@
    ]
   },
   {
-   "id": 493,
+   "id": 501,
    "file_name": "mars/spirit/PSP_001513_1655.png",
    "width": 2048,
    "height": 2048,
@@ -9579,7 +9726,7 @@
    ]
   },
   {
-   "id": 494,
+   "id": 502,
    "file_name": "mars/tianwen1_lander/ESP_069665_2055.png",
    "width": 2048,
    "height": 2048,
@@ -9598,7 +9745,7 @@
    ]
   },
   {
-   "id": 495,
+   "id": 503,
    "file_name": "mars/tianwen1_lander/ESP_069731_2055.png",
    "width": 2048,
    "height": 2048,
@@ -9617,7 +9764,7 @@
    ]
   },
   {
-   "id": 496,
+   "id": 504,
    "file_name": "mars/tianwen1_lander/ESP_073225_2055.png",
    "width": 2048,
    "height": 2048,
@@ -9636,7 +9783,7 @@
    ]
   },
   {
-   "id": 497,
+   "id": 505,
    "file_name": "mars/tianwen1_lander/ESP_075559_2055.png",
    "width": 2048,
    "height": 2048,
@@ -9655,7 +9802,7 @@
    ]
   },
   {
-   "id": 498,
+   "id": 506,
    "file_name": "mars/tianwen1_lander/ESP_075625_2055.png",
    "width": 2048,
    "height": 2048,
@@ -9674,7 +9821,7 @@
    ]
   },
   {
-   "id": 499,
+   "id": 507,
    "file_name": "mars/tianwen1_lander/ESP_077511_2055.png",
    "width": 2048,
    "height": 2048,
@@ -9693,7 +9840,7 @@
    ]
   },
   {
-   "id": 500,
+   "id": 508,
    "file_name": "mars/viking1/ESP_046170_2025.png",
    "width": 2048,
    "height": 2048,
@@ -9712,7 +9859,7 @@
    ]
   },
   {
-   "id": 501,
+   "id": 509,
    "file_name": "mars/viking1/PSP_001521_2025.png",
    "width": 2048,
    "height": 2048,
@@ -9731,7 +9878,7 @@
    ]
   },
   {
-   "id": 502,
+   "id": 510,
    "file_name": "mars/viking1/PSP_001719_2025.png",
    "width": 2048,
    "height": 2048,
@@ -9750,7 +9897,7 @@
    ]
   },
   {
-   "id": 503,
+   "id": 511,
    "file_name": "mars/viking2/ESP_016665_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9769,7 +9916,7 @@
    ]
   },
   {
-   "id": 504,
+   "id": 512,
    "file_name": "mars/viking2/ESP_017443_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9788,7 +9935,7 @@
    ]
   },
   {
-   "id": 505,
+   "id": 513,
    "file_name": "mars/viking2/ESP_026014_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9807,7 +9954,7 @@
    ]
   },
   {
-   "id": 506,
+   "id": 514,
    "file_name": "mars/viking2/ESP_027003_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9826,7 +9973,7 @@
    ]
   },
   {
-   "id": 507,
+   "id": 515,
    "file_name": "mars/viking2/ESP_037974_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9845,7 +9992,7 @@
    ]
   },
   {
-   "id": 508,
+   "id": 516,
    "file_name": "mars/viking2/ESP_040915_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9864,7 +10011,7 @@
    ]
   },
   {
-   "id": 509,
+   "id": 517,
    "file_name": "mars/viking2/ESP_049420_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9883,7 +10030,7 @@
    ]
   },
   {
-   "id": 510,
+   "id": 518,
    "file_name": "mars/viking2/ESP_050053_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9902,7 +10049,7 @@
    ]
   },
   {
-   "id": 511,
+   "id": 519,
    "file_name": "mars/viking2/ESP_058374_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9921,7 +10068,7 @@
    ]
   },
   {
-   "id": 512,
+   "id": 520,
    "file_name": "mars/viking2/ESP_077866_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9940,7 +10087,7 @@
    ]
   },
   {
-   "id": 513,
+   "id": 521,
    "file_name": "mars/viking2/ESP_085250_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9959,7 +10106,7 @@
    ]
   },
   {
-   "id": 514,
+   "id": 522,
    "file_name": "mars/viking2/ESP_086806_2280.png",
    "width": 2048,
    "height": 2048,
@@ -9978,7 +10125,7 @@
    ]
   },
   {
-   "id": 515,
+   "id": 523,
    "file_name": "mars/zhurong/ESP_069665_2055.png",
    "width": 2048,
    "height": 2048,
@@ -9997,7 +10144,7 @@
    ]
   },
   {
-   "id": 516,
+   "id": 524,
    "file_name": "mars/zhurong/ESP_073225_2055.png",
    "width": 2048,
    "height": 2048,
@@ -10016,7 +10163,7 @@
    ]
   },
   {
-   "id": 517,
+   "id": 525,
    "file_name": "mars/zhurong/ESP_075559_2055.png",
    "width": 2048,
    "height": 2048,
@@ -10036,7 +10183,7 @@
    "unboxed_reason": "the HiRISE release https://www.uahirise.org/ESP_077511_2055 shows the hibernating rover in this same observation, but its cutout (rover, rocky knob, TARs) is not in this 512 m crop (NCC ratio <= 1.3 at all scales); the crop is centred on the image centre ~400 m from the lander while Zhurong drove ~1.9 km south of the lander, so the rover lies outside the crop"
   },
   {
-   "id": 518,
+   "id": 526,
    "file_name": "mars/zhurong/ESP_075625_2055.png",
    "width": 2048,
    "height": 2048,
@@ -10056,7 +10203,7 @@
    "unboxed_reason": "release cutout of the rover's surroundings (https://www.uahirise.org/ESP_077511_2055) does not match anywhere in this crop (ratio 1.27); the catalog point is only the image centre, ~1.5 km north of the rover's final position ~1.9 km south of the lander, so the rover is outside the crop"
   },
   {
-   "id": 519,
+   "id": 527,
    "file_name": "mars/zhurong/ESP_077511_2055.png",
    "width": 2048,
    "height": 2048,
@@ -10099,6 +10246,23 @@
    "image_id": 256,
    "category_id": 64,
    "bbox": [
+    781,
+    1449,
+    10,
+    7
+   ],
+   "area": 70,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_039308_1915 moved to the hirise_match point and checked by eye (Beagle 2 lander (partly deployed))"
+  },
+  {
+   "id": 3,
+   "image_id": 257,
+   "category_id": 64,
+   "bbox": [
     587,
     1573,
     10,
@@ -10112,8 +10276,8 @@
    "note": "anchor: Beagle 2 lander (saturated bright point of the deployed petals, ~2 m, no resolvable shadow) at the spot labelled Beagle2 in the HiRISE release https://www.uahirise.org/ESP_039308_1915 (overview GIF matched to the crop: same 10 m crater ~40 m WNW and the bright TAR ridge to the east); 175 m from the catalog pixel"
   },
   {
-   "id": 3,
-   "image_id": 257,
+   "id": 4,
+   "image_id": 258,
    "category_id": 64,
    "bbox": [
     680,
@@ -10129,8 +10293,8 @@
    "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 9.0), bright point exactly at the predicted spot; 138 m from the catalog pixel"
   },
   {
-   "id": 4,
-   "image_id": 258,
+   "id": 5,
+   "image_id": 259,
    "category_id": 64,
    "bbox": [
     933,
@@ -10146,8 +10310,8 @@
    "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 7.0), bright point exactly at the predicted spot; 123 m from the catalog pixel"
   },
   {
-   "id": 5,
-   "image_id": 259,
+   "id": 6,
+   "image_id": 260,
    "category_id": 64,
    "bbox": [
     711,
@@ -10163,8 +10327,8 @@
    "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 9.2), bright point exactly at the predicted spot; 143 m from the catalog pixel"
   },
   {
-   "id": 6,
-   "image_id": 260,
+   "id": 7,
+   "image_id": 261,
    "category_id": 64,
    "bbox": [
     794,
@@ -10180,8 +10344,8 @@
    "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 6.2), bright point exactly at the predicted spot; 96 m from the catalog pixel"
   },
   {
-   "id": 7,
-   "image_id": 261,
+   "id": 8,
+   "image_id": 262,
    "category_id": 64,
    "bbox": [
     780,
@@ -10197,8 +10361,8 @@
    "note": "Beagle 2 lander (saturated bright point of the deployed petals, ~2 m); located by NCC terrain match from the release-verified ESP_039308 anchor (ratio 7.3), bright point exactly at the predicted spot; 90 m from the catalog pixel"
   },
   {
-   "id": 8,
-   "image_id": 263,
+   "id": 9,
+   "image_id": 264,
    "category_id": 33,
    "bbox": [
     935,
@@ -10214,8 +10378,8 @@
    "note": "no hardware stays at the landing point: box = the dark descent-engine blast scour (~40 x 110 m) at Bradbury Landing, sol 33, with the rover tracks leading SE from it; ~150 m from the catalog pixel"
   },
   {
-   "id": 9,
-   "image_id": 263,
+   "id": 10,
+   "image_id": 264,
    "category_id": 1,
    "bbox": [
     1257,
@@ -10231,8 +10395,8 @@
    "note": "Curiosity rover (bright 3 m body + shadow) at the end of its tracks from the blast scour, sol 33"
   },
   {
-   "id": 10,
-   "image_id": 264,
+   "id": 11,
+   "image_id": 265,
    "category_id": 33,
    "bbox": [
     937,
@@ -10248,28 +10412,11 @@
    "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
   },
   {
-   "id": 11,
-   "image_id": 265,
-   "category_id": 33,
-   "bbox": [
-    939,
-    804,
-    171,
-    441
-   ],
-   "area": 75411,
-   "iscrowd": 0,
-   "includes_shadow": false,
-   "confidence": "high",
-   "annotator": "claude",
-   "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
-  },
-  {
    "id": 12,
    "image_id": 266,
    "category_id": 33,
    "bbox": [
-    941,
+    939,
     804,
     171,
     441
@@ -10286,6 +10433,23 @@
    "image_id": 267,
    "category_id": 33,
    "bbox": [
+    941,
+    804,
+    171,
+    441
+   ],
+   "area": 75411,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
+  },
+  {
+   "id": 14,
+   "image_id": 268,
+   "category_id": 33,
+   "bbox": [
     959,
     1230,
     171,
@@ -10297,23 +10461,6 @@
    "confidence": "high",
    "annotator": "claude",
    "note": "blast scour still dark (Jun 2013); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
-  },
-  {
-   "id": 14,
-   "image_id": 268,
-   "category_id": 33,
-   "bbox": [
-    937,
-    802,
-    171,
-    441
-   ],
-   "area": 75411,
-   "iscrowd": 0,
-   "includes_shadow": false,
-   "confidence": "medium",
-   "annotator": "claude",
-   "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match (scour fainter)"
   },
   {
    "id": 15,
@@ -10337,6 +10484,23 @@
    "image_id": 270,
    "category_id": 33,
    "bbox": [
+    937,
+    802,
+    171,
+    441
+   ],
+   "area": 75411,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match (scour fainter)"
+  },
+  {
+   "id": 17,
+   "image_id": 271,
+   "category_id": 33,
+   "bbox": [
     741,
     1272,
     171,
@@ -10350,8 +10514,8 @@
    "note": "blast scour faint (Apr 2014); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
   },
   {
-   "id": 17,
-   "image_id": 271,
+   "id": 18,
+   "image_id": 272,
    "category_id": 33,
    "bbox": [
     989,
@@ -10367,8 +10531,8 @@
    "note": "blast scour faint (Jun 2014); box = the ESP_028678 blast-scour box moved by an NCC terrain match from that frame (no hardware remains at the landing point)"
   },
   {
-   "id": 18,
-   "image_id": 272,
+   "id": 19,
+   "image_id": 273,
    "category_id": 33,
    "bbox": [
     939,
@@ -10384,8 +10548,8 @@
    "note": "no hardware: dark descent-engine blast scour at Bradbury Landing; crop re-centred by terrain match, scour box moved from ESP_028678 by hirise_match"
   },
   {
-   "id": 19,
-   "image_id": 277,
+   "id": 20,
+   "image_id": 278,
    "category_id": 1,
    "bbox": [
     391,
@@ -10401,8 +10565,8 @@
    "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 6; located by NCC terrain match from the landing-site frame ESP_028678"
   },
   {
-   "id": 20,
-   "image_id": 278,
+   "id": 21,
+   "image_id": 279,
    "category_id": 1,
    "bbox": [
     738,
@@ -10418,8 +10582,8 @@
    "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 11; located by NCC terrain match from the landing-site frame ESP_028678"
   },
   {
-   "id": 21,
-   "image_id": 279,
+   "id": 22,
+   "image_id": 280,
    "category_id": 1,
    "bbox": [
     755,
@@ -10435,8 +10599,8 @@
    "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 27; located by NCC terrain match from the landing-site frame ESP_028678"
   },
   {
-   "id": 22,
-   "image_id": 280,
+   "id": 23,
+   "image_id": 281,
    "category_id": 1,
    "bbox": [
     970,
@@ -10452,8 +10616,8 @@
    "note": "Curiosity rover (bright 3 m body + shadow) in or next to the Bradbury Landing blast scour, sol 33; located by NCC terrain match from the landing-site frame ESP_028678"
   },
   {
-   "id": 23,
-   "image_id": 325,
+   "id": 24,
+   "image_id": 326,
    "category_id": 2,
    "bbox": [
     1005,
@@ -10469,8 +10633,8 @@
    "note": "InSight lander (bright deck + two round dark solar arrays) in the dark blast zone; crop re-centred by terrain match, located again by hirise_match from ESP_058717 (ratio 6-7.5)"
   },
   {
-   "id": 24,
-   "image_id": 326,
+   "id": 25,
+   "image_id": 327,
    "category_id": 2,
    "bbox": [
     1006,
@@ -10486,8 +10650,8 @@
    "note": "InSight lander (bright deck + two round dark solar arrays) in the dark blast zone; crop re-centred by terrain match, located again by hirise_match from ESP_058717 (ratio 6-7.5)"
   },
   {
-   "id": 25,
-   "image_id": 327,
+   "id": 26,
+   "image_id": 328,
    "category_id": 2,
    "bbox": [
     145,
@@ -10503,8 +10667,8 @@
    "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 281 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
   },
   {
-   "id": 26,
-   "image_id": 328,
+   "id": 27,
+   "image_id": 329,
    "category_id": 2,
    "bbox": [
     290,
@@ -10520,8 +10684,8 @@
    "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 241 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
   },
   {
-   "id": 27,
-   "image_id": 329,
+   "id": 28,
+   "image_id": 330,
    "category_id": 2,
    "bbox": [
     240,
@@ -10537,8 +10701,8 @@
    "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 254 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
   },
   {
-   "id": 28,
-   "image_id": 330,
+   "id": 29,
+   "image_id": 331,
    "category_id": 2,
    "bbox": [
     191,
@@ -10554,8 +10718,8 @@
    "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 266 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
   },
   {
-   "id": 29,
-   "image_id": 331,
+   "id": 30,
+   "image_id": 332,
    "category_id": 2,
    "bbox": [
     320,
@@ -10571,8 +10735,8 @@
    "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local brightest point; 211 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
   },
   {
-   "id": 30,
-   "image_id": 332,
+   "id": 31,
+   "image_id": 333,
    "category_id": 2,
    "bbox": [
     316,
@@ -10588,8 +10752,8 @@
    "note": "lander deck (bright point) and its two round dark solar arrays inside the dark blast zone; position predicted from ESP_057939 (lander found in a 1 km region and checked against the HiRISE release cutout) through an NCC terrain-match shift, then the local darkest point; 244 m from the catalog pixel (HiRISE pointing error); not present in the 2014 frame ESP_036761"
   },
   {
-   "id": 31,
-   "image_id": 333,
+   "id": 32,
+   "image_id": 334,
    "category_id": 2,
    "bbox": [
     1000,
@@ -10605,8 +10769,25 @@
    "note": "InSight lander (bright deck + two round dark solar arrays) in the dark blast zone; crop re-centred by terrain match, located again by hirise_match from ESP_058717 (ratio 6-7.5)"
   },
   {
-   "id": 32,
+   "id": 33,
    "image_id": 337,
+   "category_id": 59,
+   "bbox": [
+    945,
+    960,
+    108,
+    88
+   ],
+   "area": 9504,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_058717_1845 moved to the hirise_match point and checked by eye (InSight backshell and parachute)"
+  },
+  {
+   "id": 34,
+   "image_id": 338,
    "category_id": 59,
    "bbox": [
     0,
@@ -10622,8 +10803,8 @@
    "note": "parachute (bright, same shape as in the HiRISE release cutout of this very frame, https://static.uahirise.org/images/2018/details/cut/ESP_058005_1845-chute-backshell-full-res.jpg) + the part of the dark scar inside the crop; the backshell itself lies ~30 px W of the left edge; position from the lander-centred insight/ESP_058005 crop + the ESP_058717 offset; 327 m from the catalog position"
   },
   {
-   "id": 33,
-   "image_id": 338,
+   "id": 35,
+   "image_id": 339,
    "category_id": 59,
    "bbox": [
     163,
@@ -10639,8 +10820,25 @@
    "note": "anchor: backshell (bright specular point) + its dark impact/drag scar + the bright parachute ~25 m SE, the same scene as the HiRISE release cutout https://static.uahirise.org/images/2018/details/cut/ESP_058005_1845-chute-backshell-full-res.jpg (www.uahirise.org/releases/insight/hardware); absent in the before_arrival ESP_036761; 273 m from the catalog position"
   },
   {
-   "id": 34,
-   "image_id": 339,
+   "id": 36,
+   "image_id": 340,
+   "category_id": 59,
+   "bbox": [
+    947,
+    956,
+    108,
+    88
+   ],
+   "area": 9504,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_058717_1845 moved to the hirise_match point and checked by eye (InSight backshell and parachute)"
+  },
+  {
+   "id": 37,
+   "image_id": 341,
    "category_id": 59,
    "bbox": [
     258,
@@ -10656,8 +10854,8 @@
    "note": "backshell (bright specular point) + its dark impact/drag scar + the bright parachute ~25 m SE; located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.7), parachute and backshell checked by eye; 247 m from the catalog position"
   },
   {
-   "id": 35,
-   "image_id": 340,
+   "id": 38,
+   "image_id": 342,
    "category_id": 59,
    "bbox": [
     208,
@@ -10673,8 +10871,8 @@
    "note": "backshell (bright point) + fading dark scar + the parachute (moved by wind since 2019); located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.4), checked by eye; 258 m from the catalog position"
   },
   {
-   "id": 36,
-   "image_id": 341,
+   "id": 39,
+   "image_id": 343,
    "category_id": 59,
    "bbox": [
     338,
@@ -10690,8 +10888,8 @@
    "note": "backshell (bright, with shadow) + parachute ~25 m E; located by hirise_match terrain match from the ESP_058717 anchor (ratio 3.3; same bright-rimmed crater next to it), checked by eye; 202 m from the catalog position"
   },
   {
-   "id": 37,
-   "image_id": 342,
+   "id": 40,
+   "image_id": 344,
    "category_id": 59,
    "bbox": [
     328,
@@ -10707,8 +10905,8 @@
    "note": "backshell (bright, with shadow) + parachute ~22 m E; located by hirise_match terrain match from the ESP_058717 anchor (ratio 3.1; same bright-rimmed crater next to it), checked by eye; 236 m from the catalog position"
   },
   {
-   "id": 38,
-   "image_id": 346,
+   "id": 41,
+   "image_id": 349,
    "category_id": 60,
    "bbox": [
     163,
@@ -10724,8 +10922,8 @@
    "note": "anchor: saturated heat-shield dish (2.6 m) in its dark impact scar with bright butterfly ejecta, the same scene as the HiRISE release cutout https://static.uahirise.org/images/2018/details/cut/ESP_058005_1845-shield-full-res.jpg (www.uahirise.org/releases/insight/hardware); box = dish + dark scar; 279 m from the catalog position"
   },
   {
-   "id": 39,
-   "image_id": 347,
+   "id": 42,
+   "image_id": 350,
    "category_id": 60,
    "bbox": [
     309,
@@ -10741,8 +10939,8 @@
    "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 8.2) and checked by eye (dish + scar visible); box = dish + dark scar; 239 m from the catalog position"
   },
   {
-   "id": 40,
-   "image_id": 348,
+   "id": 43,
+   "image_id": 351,
    "category_id": 60,
    "bbox": [
     253,
@@ -10758,8 +10956,8 @@
    "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 7.0) and checked by eye (dish + scar visible); box = dish + dark scar; 254 m from the catalog position"
   },
   {
-   "id": 41,
-   "image_id": 349,
+   "id": 44,
+   "image_id": 352,
    "category_id": 60,
    "bbox": [
     205,
@@ -10775,8 +10973,8 @@
    "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 5.6) and checked by eye (dish + scar visible); box = dish + dark scar; 265 m from the catalog position"
   },
   {
-   "id": 42,
-   "image_id": 350,
+   "id": 45,
+   "image_id": 353,
    "category_id": 60,
    "bbox": [
     341,
@@ -10792,8 +10990,8 @@
    "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.0) and checked by eye (dish + scar visible); box = dish + dark scar; 208 m from the catalog position"
   },
   {
-   "id": 43,
-   "image_id": 351,
+   "id": 46,
+   "image_id": 354,
    "category_id": 60,
    "bbox": [
     373,
@@ -10809,8 +11007,8 @@
    "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 7.5) and checked by eye (dish + scar visible); box = dish + dark scar; 265 m from the catalog position"
   },
   {
-   "id": 44,
-   "image_id": 352,
+   "id": 47,
+   "image_id": 355,
    "category_id": 60,
    "bbox": [
     354,
@@ -10826,8 +11024,8 @@
    "note": "heat-shield dish in its dark impact scar with the bright ejecta streaks of the ESP_058717 anchor; found by eye after the terrain match failed (ratio 1.1) by matching the surrounding craters to ESP_058717 (frame shifted ~60 m E / 60 m S); box = dish + dark scar; 292 m from the catalog position"
   },
   {
-   "id": 45,
-   "image_id": 353,
+   "id": 48,
+   "image_id": 356,
    "category_id": 60,
    "bbox": [
     329,
@@ -10843,8 +11041,8 @@
    "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 4.4) and checked by eye (dish + scar visible); box = dish + dark scar; 243 m from the catalog position"
   },
   {
-   "id": 46,
-   "image_id": 354,
+   "id": 49,
+   "image_id": 357,
    "category_id": 60,
    "bbox": [
     123,
@@ -10860,8 +11058,8 @@
    "note": "heat-shield dish in its dark impact scar at the edge of the image data (terrain match fails, ratio 1.1, because of the no-data edge); found at the position predicted from the terrain-matched lander of insight/ESP_087360 plus the lander-to-shield offset measured in ESP_058717, same scene as the ESP_058717 anchor; box = dish + dark scar; 269 m from the catalog position"
   },
   {
-   "id": 47,
-   "image_id": 355,
+   "id": 50,
+   "image_id": 358,
    "category_id": 60,
    "bbox": [
     285,
@@ -10877,8 +11075,8 @@
    "note": "heat-shield dish in its dark impact scar; located by hirise_match terrain match from the ESP_058717 anchor (ratio 3.2) and checked by eye (dish + scar visible); box = dish + dark scar; 207 m from the catalog position"
   },
   {
-   "id": 48,
-   "image_id": 366,
+   "id": 51,
+   "image_id": 369,
    "category_id": 65,
    "bbox": [
     1044,
@@ -10894,8 +11092,8 @@
    "note": "anchor: Opportunity rover (small bright body + shadow in a dark hollow on the Perseverance Valley slope), the object centred in the white 47 m box of the HiRISE release https://www.uahirise.org/ESP_056955_1775 (cutout matched to the crop by terrain); 109 m from the catalog pixel"
   },
   {
-   "id": 49,
-   "image_id": 367,
+   "id": 52,
+   "image_id": 370,
    "category_id": 65,
    "bbox": [
     1110,
@@ -10911,8 +11109,8 @@
    "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 6.6), bright point exactly at the predicted spot and absent in the 2016 frame ESP_047263; 164 m from the catalog pixel"
   },
   {
-   "id": 50,
-   "image_id": 368,
+   "id": 53,
+   "image_id": 371,
    "category_id": 65,
    "bbox": [
     1024,
@@ -10928,8 +11126,8 @@
    "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 7.5), bright point exactly at the predicted spot and absent in the 2016 frame ESP_047263; 129 m from the catalog pixel"
   },
   {
-   "id": 51,
-   "image_id": 369,
+   "id": 54,
+   "image_id": 372,
    "category_id": 65,
    "bbox": [
     1166,
@@ -10945,8 +11143,8 @@
    "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 6.5), bright point exactly at the predicted spot and absent in the 2016 frame ESP_047263; 123 m from the catalog pixel"
   },
   {
-   "id": 52,
-   "image_id": 370,
+   "id": 55,
+   "image_id": 373,
    "category_id": 65,
    "bbox": [
     755,
@@ -10962,8 +11160,8 @@
    "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 4.4; 160 px patch from ESP_058208 gives the same point), the rover is only a faint light spot at low incidence (30 deg), box covers the predicted position +-1 m; 104 m from the catalog pixel"
   },
   {
-   "id": 53,
-   "image_id": 371,
+   "id": 56,
+   "image_id": 374,
    "category_id": 65,
    "bbox": [
     1086,
@@ -10979,8 +11177,8 @@
    "note": "Opportunity rover (bright 1.6 m body in a dark hollow, unmoved since sol 5111) located by NCC terrain match from the ESP_056955 release-matched anchor (ratio 3.2, 0.5 m/px), bright 3 px body with its dark shadow to the south-east exactly at the predicted spot (2025); 63 m from the catalog pixel"
   },
   {
-   "id": 54,
-   "image_id": 373,
+   "id": 57,
+   "image_id": 376,
    "category_id": 66,
    "bbox": [
     1002,
@@ -10996,8 +11194,8 @@
    "note": "Mars Pathfinder lander (bright body + shadow, 0.5 m/px); release cutout terrain-matched directly (ratio 7.6) and by NCC from PSP_002391 (ratio 7.9), the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 135 m from the catalog pixel"
   },
   {
-   "id": 55,
-   "image_id": 374,
+   "id": 58,
+   "image_id": 377,
    "category_id": 66,
    "bbox": [
     1330,
@@ -11013,8 +11211,8 @@
    "note": "Mars Pathfinder lander (bright deck and petal fragments + shadow); release cutout terrain-matched to this frame directly (ratio 8.1) and by NCC from PSP_002391 (ratio 8.3), the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 120 m from the catalog pixel"
   },
   {
-   "id": 56,
-   "image_id": 375,
+   "id": 59,
+   "image_id": 378,
    "category_id": 66,
    "bbox": [
     822,
@@ -11030,8 +11228,8 @@
    "note": "Mars Pathfinder lander (bright deck, petals and airbags + eastward shadow); located by NCC terrain match from PSP_002391 (ratio 13.8), which matches the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 165 m from the catalog pixel"
   },
   {
-   "id": 57,
-   "image_id": 376,
+   "id": 60,
+   "image_id": 379,
    "category_id": 66,
    "bbox": [
     1045,
@@ -11047,8 +11245,8 @@
    "note": "anchor: Mars Pathfinder lander (bright deck, petals and airbags + eastward shadow), the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7), carried into this release frame by NCC terrain match (ratio 10.2); 172 m from the catalog pixel"
   },
   {
-   "id": 58,
-   "image_id": 377,
+   "id": 61,
+   "image_id": 380,
    "category_id": 66,
    "bbox": [
     805,
@@ -11064,8 +11262,8 @@
    "note": "Mars Pathfinder lander (bright deck, petals and airbags + eastward shadow) at the position of the lander labelled 'MPF' in the HiRISE release https://www.uahirise.org/PSP_001890_1995 (cutout MPF_parts_2.jpg terrain-matched to PSP_002391 with ratio 8.7); 143 m from the catalog pixel"
   },
   {
-   "id": 59,
-   "image_id": 379,
+   "id": 62,
+   "image_id": 382,
    "category_id": 61,
    "bbox": [
     845,
@@ -11081,8 +11279,8 @@
    "note": "anchor: bright parachute canopy on the ridge edge + backshell at the centre of its radial blast streaks ~33 m SW, same configuration as the HiRISE release cutout https://uahirise.org/releases/perseverance/parachute.jpg (uahirise.org/ESP_068294_1985); box = canopy + backshell + streaks; 168 m from the catalog position"
   },
   {
-   "id": 60,
-   "image_id": 380,
+   "id": 63,
+   "image_id": 383,
    "category_id": 61,
    "bbox": [
     1149,
@@ -11098,8 +11296,8 @@
    "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 12.1) and checked by eye; 156 m from the catalog position"
   },
   {
-   "id": 61,
-   "image_id": 381,
+   "id": 64,
+   "image_id": 384,
    "category_id": 61,
    "bbox": [
     998,
@@ -11115,8 +11313,8 @@
    "note": "parachute canopy on the ridge edge + backshell with its radial streaks, identical configuration to the ESP_071077 anchor; position predicted from the heat shield found in this frame plus the anchor-frame offset (hirise_match ratio 1.0 failed under the 62 deg sun), confirmed by eye; 192 m from the catalog position"
   },
   {
-   "id": 62,
-   "image_id": 382,
+   "id": 65,
+   "image_id": 385,
    "category_id": 61,
    "bbox": [
     1105,
@@ -11132,8 +11330,8 @@
    "note": "parachute canopy + backshell with its radial streaks, identical configuration to the ESP_071077 anchor; position predicted from the heat shield found in this frame plus the anchor-frame offset (hirise_match ratio 1.0 failed on this noisy low-sun image), confirmed by eye; 211 m from the catalog position"
   },
   {
-   "id": 63,
-   "image_id": 383,
+   "id": 66,
+   "image_id": 386,
    "category_id": 61,
    "bbox": [
     862,
@@ -11149,8 +11347,8 @@
    "note": "parachute canopy on the ridge edge + backshell with its radial streaks, identical configuration to the ESP_071077 anchor; found by eye at the frame shift read from a nearby pit (hirise_match ratio 1.0 failed: noisy frame with column artifacts); 213 m from the catalog position"
   },
   {
-   "id": 64,
-   "image_id": 384,
+   "id": 67,
+   "image_id": 387,
    "category_id": 61,
    "bbox": [
     1059,
@@ -11166,8 +11364,8 @@
    "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.2) and checked by eye; 54 m from the catalog position"
   },
   {
-   "id": 65,
-   "image_id": 385,
+   "id": 68,
+   "image_id": 388,
    "category_id": 61,
    "bbox": [
     989,
@@ -11183,8 +11381,25 @@
    "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 8.3) and checked by eye; 94 m from the catalog position"
   },
   {
-   "id": 66,
-   "image_id": 386,
+   "id": 69,
+   "image_id": 389,
+   "category_id": 61,
+   "bbox": [
+    994,
+    982,
+    59,
+    81
+   ],
+   "area": 4779,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_071077_1985 moved to the hirise_match point and checked by eye (Perseverance backshell and parachute)"
+  },
+  {
+   "id": 70,
+   "image_id": 390,
    "category_id": 61,
    "bbox": [
     1069,
@@ -11200,8 +11415,8 @@
    "note": "parachute canopy + backshell with its blast streaks; located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.5) and checked by eye; 164 m from the catalog position"
   },
   {
-   "id": 67,
-   "image_id": 389,
+   "id": 71,
+   "image_id": 393,
    "category_id": 62,
    "bbox": [
     812,
@@ -11217,8 +11432,8 @@
    "note": "anchor: new dark streak with bright fragments (~8 x 10 m) absent in the 2007 before image PSP_002387 (terrain match ratio 4.6), 9 m from the descent-stage position predicted from the backshell found in this frame plus the Way et al. 2022 offset; the large fresh dark V of the HiRISE release (uahirise.org/ESP_068294_1985, descent-stage-irb.jpg) has faded, so the identification rests on the change + position; 179 m from the catalog position"
   },
   {
-   "id": 68,
-   "image_id": 390,
+   "id": 72,
+   "image_id": 394,
    "category_id": 62,
    "bbox": [
     1125,
@@ -11234,8 +11449,8 @@
    "note": "same new dark streak with bright fragments as the ESP_071077 anchor (hirise_match terrain match ratio 4.1), absent before arrival; descent-stage crash debris core; 159 m from the catalog position"
   },
   {
-   "id": 69,
-   "image_id": 391,
+   "id": 73,
+   "image_id": 395,
    "category_id": 62,
    "bbox": [
     964,
@@ -11251,8 +11466,8 @@
    "note": "same dark streak with two bright fragments as the ESP_071077 anchor, found at the position predicted from the heat shield of this frame plus the anchor-frame offset (hirise_match ratio 1.0 failed under the 62 deg sun); 199 m from the catalog position"
   },
   {
-   "id": 70,
-   "image_id": 392,
+   "id": 74,
+   "image_id": 396,
    "category_id": 62,
    "bbox": [
     838,
@@ -11268,8 +11483,8 @@
    "note": "position = backshell found in this frame + the backshell-to-debris offset measured in ESP_071077 (same ripple-crest gap as the anchor), but the debris is barely visible in this noisy frame with column artifacts (hirise_match ratio 1.3 failed); 224 m from the catalog position"
   },
   {
-   "id": 71,
-   "image_id": 393,
+   "id": 75,
+   "image_id": 397,
    "category_id": 62,
    "bbox": [
     977,
@@ -11285,8 +11500,8 @@
    "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 4.6) and checked by eye; 68 m from the catalog position"
   },
   {
-   "id": 72,
-   "image_id": 394,
+   "id": 76,
+   "image_id": 398,
    "category_id": 62,
    "bbox": [
     1076,
@@ -11302,8 +11517,8 @@
    "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.5) and checked by eye; 76 m from the catalog position"
   },
   {
-   "id": 73,
-   "image_id": 395,
+   "id": 77,
+   "image_id": 399,
    "category_id": 62,
    "bbox": [
     1051,
@@ -11319,8 +11534,8 @@
    "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.5) and checked by eye; 53 m from the catalog position"
   },
   {
-   "id": 74,
-   "image_id": 396,
+   "id": 78,
+   "image_id": 400,
    "category_id": 62,
    "bbox": [
     1053,
@@ -11336,8 +11551,8 @@
    "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 4.2) and checked by eye; 143 m from the catalog position"
   },
   {
-   "id": 75,
-   "image_id": 397,
+   "id": 79,
+   "image_id": 401,
    "category_id": 62,
    "bbox": [
     1156,
@@ -11353,8 +11568,8 @@
    "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.1) and checked by eye; 149 m from the catalog position"
   },
   {
-   "id": 76,
-   "image_id": 398,
+   "id": 80,
+   "image_id": 402,
    "category_id": 62,
    "bbox": [
     1056,
@@ -11370,8 +11585,8 @@
    "note": "descent-stage crash debris core (small dark mark with bright fragments, 0.5 m/px); located by hirise_match terrain match from the ESP_071077 anchor (ratio 3.4) and checked by eye; 168 m from the catalog position"
   },
   {
-   "id": 77,
-   "image_id": 401,
+   "id": 81,
+   "image_id": 405,
    "category_id": 63,
    "bbox": [
     1254,
@@ -11387,8 +11602,25 @@
    "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 10.9) and checked by eye; box = shield + dark scar; 188 m from the catalog position"
   },
   {
-   "id": 78,
-   "image_id": 402,
+   "id": 82,
+   "image_id": 406,
+   "category_id": 63,
+   "bbox": [
+    1002,
+    1001,
+    53,
+    48
+   ],
+   "area": 2544,
+   "iscrowd": 0,
+   "includes_shadow": false,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_071077_1985 moved to the hirise_match point and checked by eye (Perseverance heat shield)"
+  },
+  {
+   "id": 83,
+   "image_id": 407,
    "category_id": 63,
    "bbox": [
     840,
@@ -11404,8 +11636,8 @@
    "note": "anchor: heat shield = dark impact scar (~13 m) with bright fragments inside, the same feature and surroundings as the HiRISE release cutout https://uahirise.org/releases/perseverance/heatshield-no-contrast.jpg (uahirise.org/ESP_068294_1985); box = shield + dark scar; 195 m from the catalog position"
   },
   {
-   "id": 79,
-   "image_id": 403,
+   "id": 84,
+   "image_id": 408,
    "category_id": 63,
    "bbox": [
     1184,
@@ -11421,8 +11653,8 @@
    "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 11.8) and checked by eye; box = shield + dark scar; 179 m from the catalog position"
   },
   {
-   "id": 80,
-   "image_id": 404,
+   "id": 85,
+   "image_id": 409,
    "category_id": 63,
    "bbox": [
     990,
@@ -11438,8 +11670,8 @@
    "note": "heat shield = dark impact scar with the same shape and surroundings as the ESP_071077 anchor (by eye; hirise_match ratio 1.1 failed under the 62 deg sun), absent in the before image PSP_002743; found at the frame shift read from the surrounding pits; box = shield + scar; 218 m from the catalog position"
   },
   {
-   "id": 81,
-   "image_id": 405,
+   "id": 86,
+   "image_id": 410,
    "category_id": 63,
    "bbox": [
     1140,
@@ -11455,8 +11687,8 @@
    "note": "bright 4 m dish with a dark scar at the spot of the ESP_071077 anchor after reading the frame shift from the surrounding pits (hirise_match ratio 1.1 failed on this noisy, low-sun image); looks like the bright-ring heat shield of the 2025 frames; box = dish + scar; 235 m from the catalog position"
   },
   {
-   "id": 82,
-   "image_id": 406,
+   "id": 87,
+   "image_id": 411,
    "category_id": 63,
    "bbox": [
     1086,
@@ -11472,8 +11704,8 @@
    "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.9) and checked by eye; box = shield + dark scar; 77 m from the catalog position"
   },
   {
-   "id": 83,
-   "image_id": 407,
+   "id": 88,
+   "image_id": 412,
    "category_id": 63,
    "bbox": [
     1135,
@@ -11489,8 +11721,8 @@
    "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 7.9) and checked by eye; box = shield + dark scar; 88 m from the catalog position"
   },
   {
-   "id": 84,
-   "image_id": 408,
+   "id": 89,
+   "image_id": 413,
    "category_id": 63,
    "bbox": [
     986,
@@ -11506,8 +11738,8 @@
    "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 8.2) and checked by eye; box = shield + dark scar; 120 m from the catalog position"
   },
   {
-   "id": 85,
-   "image_id": 409,
+   "id": 90,
+   "image_id": 414,
    "category_id": 63,
    "bbox": [
     1087,
@@ -11523,8 +11755,8 @@
    "note": "heat shield (dark impact scar with bright fragments); located by hirise_match terrain match from the ESP_071077 anchor (ratio 6.8) and checked by eye; box = shield + dark scar; 187 m from the catalog position"
   },
   {
-   "id": 86,
-   "image_id": 412,
+   "id": 91,
+   "image_id": 417,
    "category_id": 34,
    "bbox": [
     858,
@@ -11540,8 +11772,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 87,
-   "image_id": 413,
+   "id": 92,
+   "image_id": 418,
    "category_id": 34,
    "bbox": [
     1176,
@@ -11557,8 +11789,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 88,
-   "image_id": 414,
+   "id": 93,
+   "image_id": 419,
    "category_id": 34,
    "bbox": [
     974,
@@ -11574,8 +11806,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing; crop re-centred by terrain match, located by hirise_match from ESP_088417 (ratio 15-16); absent in 2007"
   },
   {
-   "id": 89,
-   "image_id": 415,
+   "id": 94,
+   "image_id": 420,
    "category_id": 34,
    "bbox": [
     972,
@@ -11591,8 +11823,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing; crop re-centred by terrain match, located by hirise_match from ESP_088417 (ratio 15-16); absent in 2007"
   },
   {
-   "id": 90,
-   "image_id": 417,
+   "id": 95,
+   "image_id": 422,
    "category_id": 34,
    "bbox": [
     1006,
@@ -11608,8 +11840,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 91,
-   "image_id": 418,
+   "id": 96,
+   "image_id": 423,
    "category_id": 34,
    "bbox": [
     1110,
@@ -11625,8 +11857,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 92,
-   "image_id": 419,
+   "id": 97,
+   "image_id": 424,
    "category_id": 34,
    "bbox": [
     1079,
@@ -11642,8 +11874,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 93,
-   "image_id": 420,
+   "id": 98,
+   "image_id": 425,
    "category_id": 34,
    "bbox": [
     1190,
@@ -11659,8 +11891,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 94,
-   "image_id": 421,
+   "id": 99,
+   "image_id": 426,
    "category_id": 34,
    "bbox": [
     1086,
@@ -11676,8 +11908,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 95,
-   "image_id": 423,
+   "id": 100,
+   "image_id": 428,
    "category_id": 34,
    "bbox": [
     1218,
@@ -11693,8 +11925,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 96,
-   "image_id": 423,
+   "id": 101,
+   "image_id": 428,
    "category_id": 4,
    "bbox": [
     1262,
@@ -11710,8 +11942,8 @@
    "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
   },
   {
-   "id": 97,
-   "image_id": 424,
+   "id": 102,
+   "image_id": 429,
    "category_id": 34,
    "bbox": [
     1247,
@@ -11727,8 +11959,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 98,
-   "image_id": 424,
+   "id": 103,
+   "image_id": 429,
    "category_id": 4,
    "bbox": [
     1293,
@@ -11744,8 +11976,8 @@
    "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
   },
   {
-   "id": 99,
-   "image_id": 425,
+   "id": 104,
+   "image_id": 430,
    "category_id": 34,
    "bbox": [
     1216,
@@ -11761,8 +11993,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 100,
-   "image_id": 425,
+   "id": 105,
+   "image_id": 430,
    "category_id": 4,
    "bbox": [
     1262,
@@ -11778,8 +12010,8 @@
    "note": "Perseverance rover (bright 3 m body + shadow) between the two landing-scour patches, before its first drive (sol 14); located by NCC terrain match from ESP_068360"
   },
   {
-   "id": 101,
-   "image_id": 428,
+   "id": 106,
+   "image_id": 433,
    "category_id": 34,
    "bbox": [
     800,
@@ -11795,8 +12027,8 @@
    "note": "no hardware: the two bright patches blown clean by the sky-crane engines at Octavia E. Butler Landing (~20 m apart); located by NCC terrain match from ESP_068360 (sol 7, rover between the patches); absent in the 2007 frame PSP_002387"
   },
   {
-   "id": 102,
-   "image_id": 435,
+   "id": 107,
+   "image_id": 440,
    "category_id": 5,
    "bbox": [
     907,
@@ -11812,8 +12044,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 160 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 103,
-   "image_id": 439,
+   "id": 108,
+   "image_id": 444,
    "category_id": 5,
    "bbox": [
     1322,
@@ -11829,8 +12061,8 @@
    "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 154 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 104,
-   "image_id": 442,
+   "id": 109,
+   "image_id": 447,
    "category_id": 5,
    "bbox": [
     1046,
@@ -11846,8 +12078,8 @@
    "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 133 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 105,
-   "image_id": 446,
+   "id": 110,
+   "image_id": 452,
    "category_id": 5,
    "bbox": [
     831,
@@ -11863,8 +12095,8 @@
    "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 195 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 106,
-   "image_id": 447,
+   "id": 111,
+   "image_id": 453,
    "category_id": 5,
    "bbox": [
     863,
@@ -11880,8 +12112,8 @@
    "note": "dark lander shape (solar arrays collapsed after the 2009-10 winter; deck no longer bright); located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local darkest point; 144 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 107,
-   "image_id": 449,
+   "id": 112,
+   "image_id": 456,
    "category_id": 5,
    "bbox": [
     1144,
@@ -11897,8 +12129,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 72 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 108,
-   "image_id": 450,
+   "id": 113,
+   "image_id": 457,
    "category_id": 5,
    "bbox": [
     941,
@@ -11914,8 +12146,8 @@
    "note": "anchor: saturated bright deck in the centre of the fresh dark blast zone (2008-05-26), matches NASA's published HiRISE image; 203 m from the catalog pixel"
   },
   {
-   "id": 109,
-   "image_id": 451,
+   "id": 114,
+   "image_id": 458,
    "category_id": 5,
    "bbox": [
     1294,
@@ -11931,8 +12163,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 127 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 110,
-   "image_id": 452,
+   "id": 115,
+   "image_id": 459,
    "category_id": 5,
    "bbox": [
     1233,
@@ -11948,8 +12180,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 126 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 111,
-   "image_id": 453,
+   "id": 116,
+   "image_id": 460,
    "category_id": 5,
    "bbox": [
     1231,
@@ -11965,8 +12197,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 121 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 112,
-   "image_id": 454,
+   "id": 117,
+   "image_id": 461,
    "category_id": 5,
    "bbox": [
     1026,
@@ -11982,8 +12214,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 24 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 113,
-   "image_id": 455,
+   "id": 118,
+   "image_id": 462,
    "category_id": 5,
    "bbox": [
     945,
@@ -11999,8 +12231,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 19 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 114,
-   "image_id": 456,
+   "id": 119,
+   "image_id": 463,
    "category_id": 5,
    "bbox": [
     1048,
@@ -12016,8 +12248,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 29 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 115,
-   "image_id": 457,
+   "id": 120,
+   "image_id": 464,
    "category_id": 5,
    "bbox": [
     1167,
@@ -12033,8 +12265,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 131 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 116,
-   "image_id": 458,
+   "id": 121,
+   "image_id": 465,
    "category_id": 5,
    "bbox": [
     898,
@@ -12050,8 +12282,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 41 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 117,
-   "image_id": 459,
+   "id": 122,
+   "image_id": 466,
    "category_id": 5,
    "bbox": [
     1092,
@@ -12067,8 +12299,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 128 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 118,
-   "image_id": 460,
+   "id": 123,
+   "image_id": 467,
    "category_id": 5,
    "bbox": [
     1114,
@@ -12084,8 +12316,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 39 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 119,
-   "image_id": 461,
+   "id": 124,
+   "image_id": 468,
    "category_id": 5,
    "bbox": [
     1091,
@@ -12101,8 +12333,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 135 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 120,
-   "image_id": 462,
+   "id": 125,
+   "image_id": 469,
    "category_id": 5,
    "bbox": [
     1025,
@@ -12118,8 +12350,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 7 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 121,
-   "image_id": 463,
+   "id": 126,
+   "image_id": 470,
    "category_id": 5,
    "bbox": [
     1043,
@@ -12135,8 +12367,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 125 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 122,
-   "image_id": 464,
+   "id": 127,
+   "image_id": 471,
    "category_id": 5,
    "bbox": [
     1037,
@@ -12152,8 +12384,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 32 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 123,
-   "image_id": 465,
+   "id": 128,
+   "image_id": 472,
    "category_id": 5,
    "bbox": [
     1044,
@@ -12169,8 +12401,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 129 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 124,
-   "image_id": 466,
+   "id": 129,
+   "image_id": 473,
    "category_id": 5,
    "bbox": [
     1025,
@@ -12186,8 +12418,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 137 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 125,
-   "image_id": 467,
+   "id": 130,
+   "image_id": 474,
    "category_id": 5,
    "bbox": [
     1085,
@@ -12203,8 +12435,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 35 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 126,
-   "image_id": 468,
+   "id": 131,
+   "image_id": 475,
    "category_id": 5,
    "bbox": [
     1026,
@@ -12220,8 +12452,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 43 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 127,
-   "image_id": 469,
+   "id": 132,
+   "image_id": 476,
    "category_id": 5,
    "bbox": [
     992,
@@ -12237,8 +12469,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 133 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 128,
-   "image_id": 470,
+   "id": 133,
+   "image_id": 477,
    "category_id": 5,
    "bbox": [
     1063,
@@ -12254,8 +12486,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 29 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 129,
-   "image_id": 471,
+   "id": 134,
+   "image_id": 478,
    "category_id": 5,
    "bbox": [
     932,
@@ -12271,8 +12503,8 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 142 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 130,
-   "image_id": 472,
+   "id": 135,
+   "image_id": 479,
    "category_id": 5,
    "bbox": [
     972,
@@ -12288,8 +12520,42 @@
    "note": "bright lander deck with its shadow; located by NCC terrain match (north-up, scale from resolution) from the PSP_008591_2485 anchor, then the local brightest point; 141 m from the catalog pixel (HiRISE pointing error)"
   },
   {
-   "id": 131,
-   "image_id": 483,
+   "id": 136,
+   "image_id": 489,
+   "category_id": 67,
+   "bbox": [
+    1016,
+    1016,
+    15,
+    13
+   ],
+   "area": 195,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_014277_1650 moved to the hirise_match point and checked by eye (Spirit rover (final position, Troy))"
+  },
+  {
+   "id": 137,
+   "image_id": 490,
+   "category_id": 67,
+   "bbox": [
+    1018,
+    1016,
+    15,
+    13
+   ],
+   "area": 195,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_014277_1650 moved to the hirise_match point and checked by eye (Spirit rover (final position, Troy))"
+  },
+  {
+   "id": 138,
+   "image_id": 491,
    "category_id": 67,
    "bbox": [
     1587,
@@ -12305,8 +12571,42 @@
    "note": "anchor: Spirit rover (bright 1.6 m body + short shadow) stuck at Troy ~10 m west of Home Plate, at the position of the bright dot in Spirit at Troy, located from NASA/JPL release PIA12205 (HiRISE ESP_013499_1650, https://photojournal.jpl.nasa.gov/catalog/PIA12205: bright dot just west of Home Plate at 9 o'clock); 541 m from the catalog pixel (catalog coordinate + HiRISE pointing offset)"
   },
   {
-   "id": 132,
-   "image_id": 486,
+   "id": 139,
+   "image_id": 492,
+   "category_id": 67,
+   "bbox": [
+    1016,
+    1012,
+    15,
+    13
+   ],
+   "area": 195,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_014277_1650 moved to the hirise_match point and checked by eye (Spirit rover (final position, Troy))"
+  },
+  {
+   "id": 140,
+   "image_id": 493,
+   "category_id": 67,
+   "bbox": [
+    1018,
+    1014,
+    15,
+    13
+   ],
+   "area": 195,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_014277_1650 moved to the hirise_match point and checked by eye (Spirit rover (final position, Troy))"
+  },
+  {
+   "id": 141,
+   "image_id": 494,
    "category_id": 67,
    "bbox": [
     1347,
@@ -12322,8 +12622,25 @@
    "note": "Spirit rover (bright body + shadow) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 8.3), bright point exactly at the predicted spot; 487 m from the catalog pixel"
   },
   {
-   "id": 133,
-   "image_id": 488,
+   "id": 142,
+   "image_id": 495,
+   "category_id": 67,
+   "bbox": [
+    1020,
+    1014,
+    15,
+    13
+   ],
+   "area": 195,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_014277_1650 moved to the hirise_match point and checked by eye (Spirit rover (final position, Troy))"
+  },
+  {
+   "id": 143,
+   "image_id": 496,
    "category_id": 67,
    "bbox": [
     1450,
@@ -12339,8 +12656,8 @@
    "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 6.7), feature exactly at the predicted spot; 446 m from the catalog pixel"
   },
   {
-   "id": 134,
-   "image_id": 489,
+   "id": 144,
+   "image_id": 497,
    "category_id": 67,
    "bbox": [
     1451,
@@ -12356,8 +12673,8 @@
    "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 4.3), feature exactly at the predicted spot; 458 m from the catalog pixel"
   },
   {
-   "id": 135,
-   "image_id": 490,
+   "id": 145,
+   "image_id": 498,
    "category_id": 67,
    "bbox": [
     1518,
@@ -12373,8 +12690,25 @@
    "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 5.7), feature exactly at the predicted spot; 489 m from the catalog pixel"
   },
   {
-   "id": 136,
-   "image_id": 492,
+   "id": 146,
+   "image_id": 499,
+   "category_id": 67,
+   "bbox": [
+    1014,
+    1016,
+    15,
+    13
+   ],
+   "area": 195,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "crop re-centred by terrain match; anchor box from ESP_014277_1650 moved to the hirise_match point and checked by eye (Spirit rover (final position, Troy))"
+  },
+  {
+   "id": 147,
+   "image_id": 500,
    "category_id": 67,
    "bbox": [
     1482,
@@ -12390,8 +12724,8 @@
    "note": "Spirit rover (dust-covered, seen as a small bright rim with its dark shadow at high incidence) at Troy west of Home Plate; located by NCC terrain match from the ESP_014277 anchor (ratio 5.2), feature exactly at the predicted spot; 435 m from the catalog pixel"
   },
   {
-   "id": 137,
-   "image_id": 494,
+   "id": 148,
+   "image_id": 502,
    "category_id": 68,
    "bbox": [
     998,
@@ -12407,8 +12741,8 @@
    "note": "anchor: Tianwen-1 lander (bright deck points, ~4 m) at the centre of the bright bow-tie of its dark blast zone, as in the HiRISE release https://www.uahirise.org/ESP_069665_2055 (same observation; lander, blast lobes, crater and TARs match); blast zone is clipped to black in this 8-bit crop so the box is the 4 m lander + shadow; 94 m from the catalog pixel"
   },
   {
-   "id": 138,
-   "image_id": 495,
+   "id": 149,
+   "image_id": 503,
    "category_id": 68,
    "bbox": [
     1172,
@@ -12424,8 +12758,8 @@
    "note": "Tianwen-1 lander at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 11.4); only a few bright deck pixels visible because the blast zone is clipped to black; 94 m from the catalog pixel"
   },
   {
-   "id": 139,
-   "image_id": 496,
+   "id": 150,
+   "image_id": 504,
    "category_id": 68,
    "bbox": [
     1300,
@@ -12441,8 +12775,8 @@
    "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 9.3); 135 m from the catalog pixel"
   },
   {
-   "id": 140,
-   "image_id": 497,
+   "id": 151,
+   "image_id": 505,
    "category_id": 68,
    "bbox": [
     1190,
@@ -12458,8 +12792,8 @@
    "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 6.7); 105 m from the catalog pixel"
   },
   {
-   "id": 141,
-   "image_id": 498,
+   "id": 152,
+   "image_id": 506,
    "category_id": 68,
    "bbox": [
     1356,
@@ -12475,8 +12809,8 @@
    "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 6.3); 128 m from the catalog pixel"
   },
   {
-   "id": 142,
-   "image_id": 499,
+   "id": 153,
+   "image_id": 507,
    "category_id": 68,
    "bbox": [
     1052,
@@ -12492,8 +12826,8 @@
    "note": "Tianwen-1 lander (bright sunlit rim on its south-west side + dark body and shadow, ~5 m) at the centre of the blast-zone bow-tie; located by NCC terrain match from the ESP_069665 release anchor (ratio 8.4); 111 m from the catalog pixel"
   },
   {
-   "id": 143,
-   "image_id": 500,
+   "id": 154,
+   "image_id": 508,
    "category_id": 69,
    "bbox": [
     1320,
@@ -12509,8 +12843,8 @@
    "note": "Viking 1 lander (bright body + eastward shadow); located by NCC terrain match from the release-verified PSP_001521 anchor (ratio 13.9), object exactly at the predicted spot; 78 m from the catalog pixel"
   },
   {
-   "id": 144,
-   "image_id": 501,
+   "id": 155,
+   "image_id": 509,
    "category_id": 69,
    "bbox": [
     993,
@@ -12526,8 +12860,8 @@
    "note": "anchor: Viking 1 lander (bright 3 m body + eastward shadow) south-east of a shallow dark-floored crater, identical to the labelled 'Lander' in the HiRISE release cutouts https://www.uahirise.org/PSP_001521_2025 (cutout terrain-matched to the crop, ratio 9.9); 6 m from the catalog pixel"
   },
   {
-   "id": 145,
-   "image_id": 502,
+   "id": 156,
+   "image_id": 510,
    "category_id": 69,
    "bbox": [
     1138,
@@ -12543,8 +12877,8 @@
    "note": "Viking 1 lander (bright body + eastward shadow); located by NCC terrain match from the release-verified PSP_001521 anchor (ratio 14.7), object exactly at the predicted spot; 33 m from the catalog pixel"
   },
   {
-   "id": 146,
-   "image_id": 503,
+   "id": 157,
+   "image_id": 511,
    "category_id": 70,
    "bbox": [
     1035,
@@ -12560,8 +12894,8 @@
    "note": "anchor: Viking 2 lander (bright body + dark eastward shadow) identical to the labelled lander of the HiRISE release https://www.uahirise.org/PSP_001501_2280 (cutout is non-map-projected: matched to this crop at ~10 deg rotation and 0.32 m/px, ratio 4.9; same rock pattern around it); 38 m from the catalog pixel"
   },
   {
-   "id": 147,
-   "image_id": 504,
+   "id": 158,
+   "image_id": 512,
    "category_id": 70,
    "bbox": [
     1101,
@@ -12577,8 +12911,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 18.3), object exactly at the predicted spot; 39 m from the catalog pixel"
   },
   {
-   "id": 148,
-   "image_id": 505,
+   "id": 159,
+   "image_id": 513,
    "category_id": 70,
    "bbox": [
     1099,
@@ -12594,8 +12928,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 19.9), object exactly at the predicted spot; 30 m from the catalog pixel"
   },
   {
-   "id": 149,
-   "image_id": 506,
+   "id": 160,
+   "image_id": 514,
    "category_id": 70,
    "bbox": [
     1204,
@@ -12611,8 +12945,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 18.7), object exactly at the predicted spot; 47 m from the catalog pixel"
   },
   {
-   "id": 150,
-   "image_id": 507,
+   "id": 161,
+   "image_id": 515,
    "category_id": 70,
    "bbox": [
     1309,
@@ -12628,8 +12962,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 21.4), object exactly at the predicted spot; 98 m from the catalog pixel"
   },
   {
-   "id": 151,
-   "image_id": 508,
+   "id": 162,
+   "image_id": 516,
    "category_id": 70,
    "bbox": [
     1345,
@@ -12645,8 +12979,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 15.5), object exactly at the predicted spot; 118 m from the catalog pixel"
   },
   {
-   "id": 152,
-   "image_id": 509,
+   "id": 163,
+   "image_id": 517,
    "category_id": 70,
    "bbox": [
     1318,
@@ -12662,8 +12996,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 14.4), object exactly at the predicted spot; 107 m from the catalog pixel"
   },
   {
-   "id": 153,
-   "image_id": 510,
+   "id": 164,
+   "image_id": 518,
    "category_id": 70,
    "bbox": [
     1323,
@@ -12679,8 +13013,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 18.5), object exactly at the predicted spot; 89 m from the catalog pixel"
   },
   {
-   "id": 154,
-   "image_id": 511,
+   "id": 165,
+   "image_id": 519,
    "category_id": 70,
    "bbox": [
     1314,
@@ -12696,8 +13030,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 13.6), object exactly at the predicted spot; 107 m from the catalog pixel"
   },
   {
-   "id": 155,
-   "image_id": 512,
+   "id": 166,
+   "image_id": 520,
    "category_id": 70,
    "bbox": [
     1146,
@@ -12713,8 +13047,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 12.8), object exactly at the predicted spot; 64 m from the catalog pixel"
   },
   {
-   "id": 156,
-   "image_id": 513,
+   "id": 167,
+   "image_id": 521,
    "category_id": 70,
    "bbox": [
     1294,
@@ -12730,8 +13064,8 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 15.2), object exactly at the predicted spot; 115 m from the catalog pixel"
   },
   {
-   "id": 157,
-   "image_id": 514,
+   "id": 168,
+   "image_id": 522,
    "category_id": 70,
    "bbox": [
     1127,
@@ -12747,7 +13081,7 @@
    "note": "Viking 2 lander (bright body + dark eastward shadow, longer at high incidence); located by NCC terrain match from the release-verified ESP_016665 anchor (ratio 15.9), object exactly at the predicted spot; 83 m from the catalog pixel"
   },
   {
-   "id": 158,
+   "id": 169,
    "image_id": 1,
    "category_id": 6,
    "bbox": [
@@ -12764,7 +13098,7 @@
    "note": "near-terminator frame (incidence 83.6): bright point with a 75 px shadow east at the position predicted independently by terrain matches from two other frames"
   },
   {
-   "id": 159,
+   "id": 170,
    "image_id": 2,
    "category_id": 6,
    "bbox": [
@@ -12781,7 +13115,7 @@
    "note": "located by terrain match from M177481212RC then by eye: bright body x1600-1615 with 20 px shadow east; 590 px east of nominal"
   },
   {
-   "id": 160,
+   "id": 171,
    "image_id": 3,
    "category_id": 6,
    "bbox": [
@@ -12798,7 +13132,7 @@
    "note": "verified against NASA's labeled release of this frame (science.nasa.gov Apollo 11 landing site); bright body x797-820 with black shadow x820-838 to the east; 217 px west of the nominal crop centre"
   },
   {
-   "id": 161,
+   "id": 172,
    "image_id": 3,
    "category_id": 7,
    "bbox": [
@@ -12815,7 +13149,7 @@
    "note": "small bright bar 42 px south of the LM; matches the LRRR callout in NASA's labeled release"
   },
   {
-   "id": 162,
+   "id": 173,
    "image_id": 3,
    "category_id": 8,
    "bbox": [
@@ -12832,7 +13166,7 @@
    "note": "bright dot 52 px south-southeast of the LM, below-right of the LRRR; matches the PSE callout in NASA's labeled release"
   },
   {
-   "id": 163,
+   "id": 174,
    "image_id": 4,
    "category_id": 6,
    "bbox": [
@@ -12849,7 +13183,7 @@
    "note": "located by terrain match from M175124932RC then by eye: bright body x365-382 with 20 px shadow east; crater just SE as in the labeled reference; 650 px west of nominal"
   },
   {
-   "id": 164,
+   "id": 175,
    "image_id": 5,
    "category_id": 9,
    "bbox": [
@@ -12866,7 +13200,7 @@
    "note": "transferred from crop moon/apollo12_lm/M168353795LC.png (same frame, offset +304,+162)"
   },
   {
-   "id": 165,
+   "id": 176,
    "image_id": 6,
    "category_id": 10,
    "bbox": [
@@ -12883,7 +13217,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
   },
   {
-   "id": 166,
+   "id": 177,
    "image_id": 6,
    "category_id": 9,
    "bbox": [
@@ -12900,7 +13234,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
   },
   {
-   "id": 167,
+   "id": 178,
    "image_id": 6,
    "category_id": 11,
    "bbox": [
@@ -12917,7 +13251,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset -379,+162)"
   },
   {
-   "id": 168,
+   "id": 179,
    "image_id": 7,
    "category_id": 10,
    "bbox": [
@@ -12934,7 +13268,7 @@
    "note": "ALSEP cluster (bright block, dark shadow streak, bright point) with the same layout and 12 m extent as the high-confidence ALSEP box in M175428601RC, 25 px from the position predicted from the LM box; the PSE is inside it but cannot be separated"
   },
   {
-   "id": 169,
+   "id": 180,
    "image_id": 7,
    "category_id": 9,
    "bbox": [
@@ -12951,7 +13285,7 @@
    "note": "transferred from crop moon/apollo12_lm/M177785917RC.png (same frame, offset +0,+162)"
   },
   {
-   "id": 170,
+   "id": 181,
    "image_id": 9,
    "category_id": 9,
    "bbox": [
@@ -12968,7 +13302,7 @@
    "note": "oblique frame (emission 28): largest bright object with a 15 px shadow west inside the bright blast zone; terrain match failed, identified by eye only"
   },
   {
-   "id": 171,
+   "id": 182,
    "image_id": 10,
    "category_id": 10,
    "bbox": [
@@ -12985,7 +13319,7 @@
    "note": "cluster of small bright points with shadows at the position predicted from the LM box plus the catalog's relative offset; tracks lead to it"
   },
   {
-   "id": 172,
+   "id": 183,
    "image_id": 10,
    "category_id": 9,
    "bbox": [
@@ -13002,7 +13336,7 @@
    "note": "by eye: bright body x895-925 with shadow east, inside the bright blast zone, astronaut tracks radiate from it; 100 px west / 170 px north of nominal"
   },
   {
-   "id": 173,
+   "id": 184,
    "image_id": 10,
    "category_id": 11,
    "bbox": [
@@ -13019,7 +13353,7 @@
    "note": "bright point with 15 px shadow east at the position predicted from the LM box; astronaut tracks reach it"
   },
   {
-   "id": 174,
+   "id": 185,
    "image_id": 11,
    "category_id": 9,
    "bbox": [
@@ -13036,7 +13370,7 @@
    "note": "terrain match from M175428601RC then by eye: bright body with 30 px shadow east; 800 px west of nominal"
   },
   {
-   "id": 175,
+   "id": 186,
    "image_id": 12,
    "category_id": 35,
    "bbox": [
@@ -13053,7 +13387,7 @@
    "note": "28 m long, 2 m wide dark linear gouge with dark marks, oriented along track, in the image Stooke & Marcus (2019) used; size and shape match their description (25 m x 2-3 m); 100 m from nominal"
   },
   {
-   "id": 176,
+   "id": 187,
    "image_id": 13,
    "category_id": 35,
    "bbox": [
@@ -13070,7 +13404,7 @@
    "note": "low sun, 0.71 m/px, image rotated 180 deg: dark diagonal band at the gouge position transferred by eye from M129431676LC (crater pair and adjacent crater as anchors); the gouge itself is not resolved"
   },
   {
-   "id": 177,
+   "id": 188,
    "image_id": 15,
    "category_id": 10,
    "bbox": [
@@ -13087,7 +13421,7 @@
    "note": "ALSEP cluster (bright block, dark shadow streak, bright point) with the same layout and 12 m extent as the high-confidence ALSEP box in M175428601RC, 25 px from the position predicted from the LM box; the PSE is inside it but cannot be separated"
   },
   {
-   "id": 178,
+   "id": 189,
    "image_id": 16,
    "category_id": 12,
    "bbox": [
@@ -13104,7 +13438,7 @@
    "note": "terrain match from M160139273LC then by eye: 30 m crater with shadowed floor and bright east rim at low sun"
   },
   {
-   "id": 179,
+   "id": 190,
    "image_id": 17,
    "category_id": 12,
    "bbox": [
@@ -13121,7 +13455,7 @@
    "note": "high-sun frame (incidence 4): dark-floored 30 m crater at the centre of a bright ray system, 60 px east of nominal; box covers the crater, not the rays"
   },
   {
-   "id": 180,
+   "id": 191,
    "image_id": 18,
    "category_id": 12,
    "bbox": [
@@ -13138,7 +13472,7 @@
    "note": "sharp 30 m crater with bright ejecta and faint rays, 840 px east of nominal"
   },
   {
-   "id": 181,
+   "id": 192,
    "image_id": 19,
    "category_id": 12,
    "bbox": [
@@ -13155,7 +13489,7 @@
    "note": "terrain match from M160139273LC then by eye: 30 m crater, shadowed west floor, bright east wall"
   },
   {
-   "id": 182,
+   "id": 193,
    "image_id": 20,
    "category_id": 13,
    "bbox": [
@@ -13172,7 +13506,7 @@
    "note": "transferred from crop moon/apollo14_lm/M119971387RC.png (same frame, offset +414,-94)"
   },
   {
-   "id": 183,
+   "id": 194,
    "image_id": 20,
    "category_id": 14,
    "bbox": [
@@ -13189,7 +13523,7 @@
    "note": "transferred from crop moon/apollo14_lm/M119971387RC.png (same frame, offset +414,-94)"
   },
   {
-   "id": 184,
+   "id": 195,
    "image_id": 21,
    "category_id": 13,
    "bbox": [
@@ -13206,7 +13540,7 @@
    "note": "transferred from crop moon/apollo14_lm/M131765772RC.png (same frame, offset -416,-94)"
   },
   {
-   "id": 185,
+   "id": 196,
    "image_id": 21,
    "category_id": 14,
    "bbox": [
@@ -13223,7 +13557,7 @@
    "note": "transferred from crop moon/apollo14_lm/M131765772RC.png (same frame, offset -416,-94)"
   },
   {
-   "id": 186,
+   "id": 197,
    "image_id": 22,
    "category_id": 13,
    "bbox": [
@@ -13240,7 +13574,7 @@
    "note": "transferred from crop moon/apollo14_lm/M162426054LC.png (same frame, offset -52,-94)"
   },
   {
-   "id": 187,
+   "id": 198,
    "image_id": 22,
    "category_id": 14,
    "bbox": [
@@ -13257,7 +13591,7 @@
    "note": "transferred from crop moon/apollo14_lm/M162426054LC.png (same frame, offset -52,-94)"
   },
   {
-   "id": 188,
+   "id": 199,
    "image_id": 23,
    "category_id": 14,
    "bbox": [
@@ -13274,7 +13608,7 @@
    "note": "oblique frame (emission 25): LM as a dark halo with bright centre inside the bright blast zone, tracks lead to it"
   },
   {
-   "id": 189,
+   "id": 200,
    "image_id": 24,
    "category_id": 13,
    "bbox": [
@@ -13291,7 +13625,7 @@
    "note": "bright 4 px dot where the track from the LM ends, 25 px from the position predicted by the catalog offset from the LM"
   },
   {
-   "id": 190,
+   "id": 201,
    "image_id": 24,
    "category_id": 14,
    "bbox": [
@@ -13308,7 +13642,7 @@
    "note": "bright LM at the hub of the astronaut tracks, inside a dark disturbed halo; box includes the halo; 480 px west of nominal"
   },
   {
-   "id": 191,
+   "id": 202,
    "image_id": 25,
    "category_id": 13,
    "bbox": [
@@ -13325,7 +13659,7 @@
    "note": "bright dots with small shadows 10 px from the position predicted by the catalog offset from the LM"
   },
   {
-   "id": 192,
+   "id": 203,
    "image_id": 25,
    "category_id": 14,
    "bbox": [
@@ -13342,7 +13676,7 @@
    "note": "low sun (incidence 82): bright body with 60 px shadow east; tracks visible"
   },
   {
-   "id": 193,
+   "id": 204,
    "image_id": 26,
    "category_id": 13,
    "bbox": [
@@ -13359,7 +13693,7 @@
    "note": "cluster of bright dots 18 px from the position predicted by the catalog offset from the LM"
   },
   {
-   "id": 194,
+   "id": 205,
    "image_id": 26,
    "category_id": 14,
    "bbox": [
@@ -13376,7 +13710,7 @@
    "note": "low sun (incidence 76): bright body with 30 px shadow east, tracks lead away from it"
   },
   {
-   "id": 195,
+   "id": 206,
    "image_id": 27,
    "category_id": 14,
    "bbox": [
@@ -13393,7 +13727,7 @@
    "note": "bright LM inside dark halo with a shadow streak east; tracks radiate from it; 1340 px west of nominal"
   },
   {
-   "id": 196,
+   "id": 207,
    "image_id": 28,
    "category_id": 42,
    "bbox": [
@@ -13410,7 +13744,7 @@
    "note": "Apollo 14 LM ascent-stage impact scar: dark gouge with bright ejecta fan to the SE, this crop is the mirror image of the labeled panel D of Stooke 2017 fig. 4 (planetary.s3.amazonaws.com/web/assets/pictures/20170203_fig-4.jpg, arrows at the dark scar); 42 m W of the nominal pixel."
   },
   {
-   "id": 197,
+   "id": 208,
    "image_id": 29,
    "category_id": 42,
    "bbox": [
@@ -13427,7 +13761,7 @@
    "note": "Apollo 14 LM impact scar (dark gouge, faint dark rays, 10 m crater pair to the SW) located by matching the crater pattern of Stooke 2017 fig. 4C (north-up, same as this crop) and the mirrored M111721735LC detail; 72 m from the nominal pixel."
   },
   {
-   "id": 198,
+   "id": 209,
    "image_id": 30,
    "category_id": 42,
    "bbox": [
@@ -13444,7 +13778,7 @@
    "note": "Apollo 14 LM impact scar at 84 deg incidence: dark patch with dark rays at the position predicted from M1188488347RC (NCC as-is peak (592,924), surrounding craters match by eye) but the gouge itself is not resolved in this grazing light; 91 m from the nominal pixel."
   },
   {
-   "id": 199,
+   "id": 210,
    "image_id": 31,
    "category_id": 42,
    "bbox": [
@@ -13461,7 +13795,7 @@
    "note": "Apollo 14 LM impact scar (dark gouge with dark ray S), this crop is M1188488347RC flipped vertically (NCC flipy peak x=1048, crater pattern confirmed by eye incl. the 10 m crater pair now NW of the scar); 39 m from the nominal pixel."
   },
   {
-   "id": 200,
+   "id": 211,
    "image_id": 32,
    "category_id": 36,
    "bbox": [
@@ -13478,7 +13812,7 @@
    "note": "2 px bright point with a 2 px shadow at the position predicted from the ALSEP box plus the catalog offset (3 px off); other raised specks 15 px away, so could be a rock; 250 m from nominal"
   },
   {
-   "id": 201,
+   "id": 212,
    "image_id": 34,
    "category_id": 36,
    "bbox": [
@@ -13495,7 +13829,7 @@
    "note": "2 px bright point with a 2 px shadow at the position predicted from the ALSEP box plus the catalog offset (3 px off); other raised specks 15 px away, so could be a rock; 250 m from nominal"
   },
   {
-   "id": 202,
+   "id": 213,
    "image_id": 36,
    "category_id": 15,
    "bbox": [
@@ -13512,7 +13846,7 @@
    "note": "35 m crater with shadowed floor at the centre of a bright ray system; 320 px west of nominal"
   },
   {
-   "id": 203,
+   "id": 214,
    "image_id": 37,
    "category_id": 15,
    "bbox": [
@@ -13529,7 +13863,7 @@
    "note": "35 m crater, shadowed west floor, bright east wall; 90 px from nominal"
   },
   {
-   "id": 204,
+   "id": 215,
    "image_id": 39,
    "category_id": 16,
    "bbox": [
@@ -13546,7 +13880,7 @@
    "note": "cluster of 6 bright dots in a dark disturbed patch at the position predicted from the LM box; box covers the cluster"
   },
   {
-   "id": 205,
+   "id": 216,
    "image_id": 39,
    "category_id": 17,
    "bbox": [
@@ -13563,7 +13897,7 @@
    "note": "bright body with 15 px shadow east at the end of the LRV tracks; 625 px east of nominal"
   },
   {
-   "id": 206,
+   "id": 217,
    "image_id": 39,
    "category_id": 37,
    "bbox": [
@@ -13580,7 +13914,7 @@
    "note": "same object as the apollo15_lrrr/M122184104RC box (same frame, offset -302,+52): bright body at the end of the footpath from the ALSEP"
   },
   {
-   "id": 207,
+   "id": 218,
    "image_id": 39,
    "category_id": 18,
    "bbox": [
@@ -13597,7 +13931,7 @@
    "note": "dark object with bright centre at the end of a long track, 7 px from the position predicted from the LM box"
   },
   {
-   "id": 208,
+   "id": 219,
    "image_id": 40,
    "category_id": 17,
    "bbox": [
@@ -13614,7 +13948,7 @@
    "note": "low sun (incidence 82): bright body with 60 px shadow east; terrain match from M122184104RC"
   },
   {
-   "id": 209,
+   "id": 220,
    "image_id": 41,
    "category_id": 17,
    "bbox": [
@@ -13631,7 +13965,7 @@
    "note": "low sun (incidence 76): bright LM body with its ~30 px shadow east; terrain match from M122184104RC (box corrected: the earlier one missed the bright body)"
   },
   {
-   "id": 210,
+   "id": 221,
    "image_id": 42,
    "category_id": 16,
    "bbox": [
@@ -13648,7 +13982,7 @@
    "note": "row of bright dots 30 px west of the position predicted from the LM box; mid-sun frame"
   },
   {
-   "id": 211,
+   "id": 222,
    "image_id": 42,
    "category_id": 17,
    "bbox": [
@@ -13665,7 +13999,7 @@
    "note": "bright body with 30 px shadow east inside the bright blast zone; tracks radiate from it"
   },
   {
-   "id": 212,
+   "id": 223,
    "image_id": 43,
    "category_id": 37,
    "bbox": [
@@ -13682,7 +14016,7 @@
    "note": "4x2 px bright body in a disturbed patch at the end of the footpath from the ALSEP, 5 px from the position predicted from the ALSEP box plus the catalog offset; 320 m from nominal"
   },
   {
-   "id": 213,
+   "id": 224,
    "image_id": 46,
    "category_id": 17,
    "bbox": [
@@ -13699,7 +14033,7 @@
    "note": "transferred from crop moon/apollo15_lm/M131623862LC.png (same frame, offset +172,+32)"
   },
   {
-   "id": 214,
+   "id": 225,
    "image_id": 47,
    "category_id": 17,
    "bbox": [
@@ -13716,7 +14050,7 @@
    "note": "low sun (incidence 76): bright LM body with its ~30 px shadow east; terrain match from M122184104RC (box corrected: the earlier one missed the bright body)"
   },
   {
-   "id": 215,
+   "id": 226,
    "image_id": 48,
    "category_id": 18,
    "bbox": [
@@ -13733,7 +14067,7 @@
    "note": "oblique frame: dark LRV with bright spots at the end of its track, 850 px east of nominal LM; same offset as the LM box in the RC crop"
   },
   {
-   "id": 216,
+   "id": 227,
    "image_id": 51,
    "category_id": 19,
    "bbox": [
@@ -13750,7 +14084,7 @@
    "note": "35 m crater at the centre of a bright ray system, shadowed west floor; 220 px east of nominal"
   },
   {
-   "id": 217,
+   "id": 228,
    "image_id": 52,
    "category_id": 19,
    "bbox": [
@@ -13767,7 +14101,7 @@
    "note": "35 m crater with bright ejecta and dark rays, 840 px east of nominal"
   },
   {
-   "id": 218,
+   "id": 229,
    "image_id": 53,
    "category_id": 20,
    "bbox": [
@@ -13784,7 +14118,7 @@
    "note": "ALSEP central-station cluster: bright 9x3 px body with hard shadow where the footpaths converge, 25 px (10 m) from the position predicted from the LM box plus the catalog offset; the PSE itself cannot be separated at 0.4 m/px"
   },
   {
-   "id": 219,
+   "id": 230,
    "image_id": 53,
    "category_id": 21,
    "bbox": [
@@ -13801,7 +14135,7 @@
    "note": "transferred from crop moon/apollo16_lm/M175179080LC.png (same frame, offset +0,-136)"
   },
   {
-   "id": 220,
+   "id": 231,
    "image_id": 53,
    "category_id": 38,
    "bbox": [
@@ -13818,7 +14152,7 @@
    "note": "parked LRV: dark disturbed patch with bright dots and a track leading to it, 17 px from the position predicted from the LM box plus the catalog offset (was labelled apollo16_alsep; the ALSEP is on the other side of the LM)"
   },
   {
-   "id": 221,
+   "id": 232,
    "image_id": 55,
    "category_id": 21,
    "bbox": [
@@ -13835,7 +14169,7 @@
    "note": "bright LM dots in dark halo, shadow east; 170 px west / 240 px south of nominal"
   },
   {
-   "id": 222,
+   "id": 233,
    "image_id": 56,
    "category_id": 20,
    "bbox": [
@@ -13852,7 +14186,7 @@
    "note": "ALSEP central-station cluster: bright 9x3 px body with hard shadow where the footpaths converge, 25 px (10 m) from the position predicted from the LM box plus the catalog offset; the PSE itself cannot be separated at 0.4 m/px"
   },
   {
-   "id": 223,
+   "id": 234,
    "image_id": 56,
    "category_id": 21,
    "bbox": [
@@ -13869,7 +14203,7 @@
    "note": "bright LM with dark disturbed halo and shadow east; tracks lead to it; 130 px east of nominal"
   },
   {
-   "id": 224,
+   "id": 235,
    "image_id": 56,
    "category_id": 38,
    "bbox": [
@@ -13886,7 +14220,7 @@
    "note": "parked LRV: dark disturbed patch with bright dots and a track leading to it, 17 px from the position predicted from the LM box plus the catalog offset (was labelled apollo16_alsep; the ALSEP is on the other side of the LM)"
   },
   {
-   "id": 225,
+   "id": 236,
    "image_id": 57,
    "category_id": 21,
    "bbox": [
@@ -13903,7 +14237,7 @@
    "note": "bright LM in dark halo with shadow east; same crater pair west of it as in M175179080LC"
   },
   {
-   "id": 226,
+   "id": 237,
    "image_id": 58,
    "category_id": 20,
    "bbox": [
@@ -13920,7 +14254,7 @@
    "note": "ALSEP central-station cluster: bright 9x3 px body with hard shadow where the footpaths converge, 25 px (10 m) from the position predicted from the LM box plus the catalog offset; the PSE itself cannot be separated at 0.4 m/px"
   },
   {
-   "id": 227,
+   "id": 238,
    "image_id": 59,
    "category_id": 22,
    "bbox": [
@@ -13937,7 +14271,7 @@
    "note": "20 m crater with dark floor and bright rim 50 px from nominal; smaller than the rayed crater seen in the two high-sun frames"
   },
   {
-   "id": 228,
+   "id": 239,
    "image_id": 61,
    "category_id": 22,
    "bbox": [
@@ -13954,7 +14288,7 @@
    "note": "rayed crater with dark floor at the centre of bright rays, 60 px from nominal"
   },
   {
-   "id": 229,
+   "id": 240,
    "image_id": 62,
    "category_id": 22,
    "bbox": [
@@ -13971,7 +14305,7 @@
    "note": "rayed crater, dark floor, bright ejecta; 160 px from nominal"
   },
   {
-   "id": 230,
+   "id": 241,
    "image_id": 63,
    "category_id": 23,
    "bbox": [
@@ -13988,7 +14322,7 @@
    "note": "transferred from crop moon/apollo17_lm/M116113215RC.png (same frame, offset -431,+68)"
   },
   {
-   "id": 231,
+   "id": 242,
    "image_id": 64,
    "category_id": 24,
    "bbox": [
@@ -14005,7 +14339,7 @@
    "note": "bright point with 15 px shadow east, 60 px from nominal; nearest raised object to the catalog position"
   },
   {
-   "id": 232,
+   "id": 243,
    "image_id": 66,
    "category_id": 24,
    "bbox": [
@@ -14022,7 +14356,7 @@
    "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset -262,+68)"
   },
   {
-   "id": 233,
+   "id": 244,
    "image_id": 67,
    "category_id": 24,
    "bbox": [
@@ -14039,7 +14373,7 @@
    "note": "second shadowed object 410 px west of the LM candidate; the catalog puts the ALSEP 300 px west; could be the ALSEP central station or a boulder"
   },
   {
-   "id": 234,
+   "id": 245,
    "image_id": 67,
    "category_id": 23,
    "bbox": [
@@ -14056,7 +14390,7 @@
    "note": "low sun (incidence ~80): bright object with 30 px shadow east, 500 px west of nominal; two other shadowed objects nearby; identification by size only"
   },
   {
-   "id": 235,
+   "id": 246,
    "image_id": 68,
    "category_id": 23,
    "bbox": [
@@ -14073,7 +14407,7 @@
    "note": "bright LM with 25 px shadow east, 500 px west of nominal"
   },
   {
-   "id": 236,
+   "id": 247,
    "image_id": 68,
    "category_id": 25,
    "bbox": [
@@ -14090,7 +14424,7 @@
    "note": "bright point with 20 px shadow streak east, 35 px from the position predicted from the LM box"
   },
   {
-   "id": 237,
+   "id": 248,
    "image_id": 70,
    "category_id": 24,
    "bbox": [
@@ -14107,7 +14441,7 @@
    "note": "cluster of bright dots around the position predicted from the LM box via the catalog offset"
   },
   {
-   "id": 238,
+   "id": 249,
    "image_id": 70,
    "category_id": 23,
    "bbox": [
@@ -14124,7 +14458,7 @@
    "note": "bright LM in dark halo with tracks converging on it, 780 px west of nominal"
   },
   {
-   "id": 239,
+   "id": 250,
    "image_id": 72,
    "category_id": 24,
    "bbox": [
@@ -14141,7 +14475,7 @@
    "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset +331,-84)"
   },
   {
-   "id": 240,
+   "id": 251,
    "image_id": 72,
    "category_id": 23,
    "bbox": [
@@ -14158,7 +14492,7 @@
    "note": "transferred from crop moon/apollo17_lm/M172717297RC.png (same frame, offset +331,-84)"
   },
   {
-   "id": 241,
+   "id": 252,
    "image_id": 72,
    "category_id": 25,
    "bbox": [
@@ -14175,7 +14509,7 @@
    "note": "bright point with dark shadow blob east at the position predicted from the LM box via the catalog offset"
   },
   {
-   "id": 242,
+   "id": 253,
    "image_id": 72,
    "category_id": 39,
    "bbox": [
@@ -14192,7 +14526,7 @@
    "note": "bright object at the centre of a cross of straight footpaths (the SEP antenna layout, arms ~40 m), 25 px (12 m) from the position predicted from the LM box with the catalog offsets"
   },
   {
-   "id": 243,
+   "id": 254,
    "image_id": 74,
    "category_id": 26,
    "bbox": [
@@ -14209,7 +14543,7 @@
    "note": "low sun (incidence 82): 35 m crater with shadowed west floor and bright east wall, blocky floor; terrain match from both high-sun frames agrees; 150 px from nominal"
   },
   {
-   "id": 244,
+   "id": 255,
    "image_id": 75,
    "category_id": 26,
    "bbox": [
@@ -14226,7 +14560,7 @@
    "note": "rayed crater with dark pits, 540 px west of nominal"
   },
   {
-   "id": 245,
+   "id": 256,
    "image_id": 76,
    "category_id": 26,
    "bbox": [
@@ -14243,7 +14577,7 @@
    "note": "0.75 m/px frame: 45 px crater with dark floor and bright east wall at nominal; matcher inconclusive at this resolution"
   },
   {
-   "id": 246,
+   "id": 257,
    "image_id": 77,
    "category_id": 26,
    "bbox": [
@@ -14260,7 +14594,7 @@
    "note": "rayed crater at the centre of a bright ray system, 90 px from nominal"
   },
   {
-   "id": 247,
+   "id": 258,
    "image_id": 79,
    "category_id": 52,
    "bbox": [
@@ -14277,7 +14611,7 @@
    "note": "Beresheet impact: 15 px dark smudge on a small crater rim with bright ejecta, same frame as the LROC release (https://lroc.im-ldi.com/images/1101, box centre 550,550 of the 0.45 m/px image; intensity NCC match ratio 2.5); 240 px (210 m) west of the nominal pixel."
   },
   {
-   "id": 248,
+   "id": 259,
    "image_id": 80,
    "category_id": 52,
    "bbox": [
@@ -14294,7 +14628,7 @@
    "note": "Beresheet impact: 10 px dark smudge 60 px from the right edge, at the point that gradient NCC maps onto the smudge of the labeled frame M1310536929RC (flipx, peak ratio 4.6); 520 px (480 m) east of the nominal pixel."
   },
   {
-   "id": 249,
+   "id": 260,
    "image_id": 83,
    "category_id": 53,
    "bbox": [
@@ -14311,7 +14645,7 @@
    "note": "Blue Ghost: bright triangle with dark shadow matching the LROC release of this frame (https://lroc.im-ldi.com/images/1407, 80 cm image, crop is mirrored); 220 m east of the nominal pixel."
   },
   {
-   "id": 250,
+   "id": 261,
    "image_id": 85,
    "category_id": 53,
    "bbox": [
@@ -14328,7 +14662,7 @@
    "note": "Blue Ghost: saturated 8 px body with 12 px eastward shadow at the position transferred from M1495619099RC by crater point matching (vote ratio 4.3); 540 m west of the nominal pixel."
   },
   {
-   "id": 251,
+   "id": 262,
    "image_id": 86,
    "category_id": 53,
    "bbox": [
@@ -14345,7 +14679,7 @@
    "note": "Blue Ghost at 28 deg sun: saturated core of the bright engine-blast zone with a 5 px dark notch (the short shadow) at the point where rotation NCC maps the lander of the release-matched frame M1495619099RC (flipy, -15 deg, gradient peak ratio 4.1, intensity 2.5); 330 px (225 m) south-west of the nominal pixel."
   },
   {
-   "id": 252,
+   "id": 263,
    "image_id": 93,
    "category_id": 54,
    "bbox": [
@@ -14362,7 +14696,7 @@
    "note": "Vikram: saturated bright body inside a diffuse bright blast halo with a 15 px dark shadow running to the north-east, the same morphology as the LROC release M1447750764LR (https://lroc.im-ldi.com/images/1314); rotation NCC of that release puts the lander here (rot90, 10 deg, peak ratio 1.5), 110 px (75 m) south-east of the nominal pixel."
   },
   {
-   "id": 253,
+   "id": 264,
    "image_id": 95,
    "category_id": 43,
    "bbox": [
@@ -14379,7 +14713,7 @@
    "note": "Chang'e 1 impact pit at the apex of a faint ejecta fan; located from M126588566LC by eye (this frame is the mirror image: the 70 m bright crater is 400 px N, the 25 m crater with a dark floor 110 px SW) and NCC flipx peak at (1244-1252, 912); 188 m SE of the nominal pixel."
   },
   {
-   "id": 254,
+   "id": 265,
    "image_id": 96,
    "category_id": 43,
    "bbox": [
@@ -14396,7 +14730,7 @@
    "note": "Chang'e 1 impact: dark pits at the apex of the fan-shaped ejecta spray (fan opens to the S in this crop; the frame is south-up relative to Stooke 2017 fig. 7D, planetary.s3.amazonaws.com/web/assets/pictures/20170203_fig-7.jpg, where the fan opens to the N); 48 m from the nominal pixel."
   },
   {
-   "id": 255,
+   "id": 266,
    "image_id": 100,
    "category_id": 27,
    "bbox": [
@@ -14413,7 +14747,7 @@
    "note": "30 px bright blob (lander plus blast-brightened halo) with a dark patch on its west side, 35 px from nominal; nominal is on the crop edge"
   },
   {
-   "id": 256,
+   "id": 267,
    "image_id": 100,
    "category_id": 28,
    "bbox": [
@@ -14430,7 +14764,7 @@
    "note": "bright object with dark side 45 px south of the lander candidate; Yutu's final position is 21 m (37 px) SSW of the lander"
   },
   {
-   "id": 257,
+   "id": 268,
    "image_id": 114,
    "category_id": 46,
    "bbox": [
@@ -14447,7 +14781,7 @@
    "note": "Double crater at 82 deg incidence, interior mostly shadow with only the east crater's lit east wall visible; position from terrain registration to M1469915143LC (three independent patches agree within 8 px, ratio ~4); 290 m from the nominal pixel."
   },
   {
-   "id": 258,
+   "id": 269,
    "image_id": 115,
    "category_id": 46,
    "bbox": [
@@ -14464,7 +14798,7 @@
    "note": "Same double crater, clearly resolved as two overlapping pits; located by terrain registration from M1528452693LC (NCC 0.72, peak ratio 5.5); 325 m from the nominal pixel."
   },
   {
-   "id": 259,
+   "id": 270,
    "image_id": 116,
    "category_id": 46,
    "bbox": [
@@ -14481,7 +14815,7 @@
    "note": "Fresh double crater with a bright west rim and dark radial rays at 30 deg incidence; terrain-matched by eye (mirrored E-W) to LROC's M1407760984R context image (lroc.im-ldi.com/images/1261), same dark-ray signature as in M1528452693LC; 150 m from the nominal pixel."
   },
   {
-   "id": 260,
+   "id": 271,
    "image_id": 117,
    "category_id": 46,
    "bbox": [
@@ -14498,7 +14832,7 @@
    "note": "E-W double crater (west ~16 m, east ~18 m) at the centre of a dark-ray halo; terrain-matched by eye (flipped N-S) to LROC's 1100 m context image of M1407760984R (lroc.im-ldi.com/images/1261); 190 m from the nominal pixel."
   },
   {
-   "id": 261,
+   "id": 272,
    "image_id": 131,
    "category_id": 55,
    "bbox": [
@@ -14515,7 +14849,7 @@
    "note": "Hakuto-R M1 impact: 1 px bright speck with dark regolith to its lower-left (the release's arrow A, bright upper-left / dark lower-right, mirrored since this crop is x-flipped), 5 px from where rotation NCC of the LROC cover image (https://lroc.im-ldi.com/images/1302, flipx, -10 deg, ratio 2.6) puts arrow A; 10 m east of the nominal pixel. (1-2 px specks in hummocky terrain: candidate only)"
   },
   {
-   "id": 262,
+   "id": 273,
    "image_id": 132,
    "category_id": 55,
    "bbox": [
@@ -14532,7 +14866,7 @@
    "note": "Hakuto-R M1 impact: two saturated pixels with a dark patch to their lower-left at the point where rotation NCC of the LROC cover image (flipx, -10 deg, ncc 0.82, ratio 2.8) puts arrow A; 85 m west of the nominal pixel; incidence 85 deg so the hummocky terrain is contrasty too. (1-2 px specks in hummocky terrain: candidate only)"
   },
   {
-   "id": 263,
+   "id": 274,
    "image_id": 133,
    "category_id": 55,
    "bbox": [
@@ -14549,7 +14883,7 @@
    "note": "Hakuto-R M1 impact: 10 px dark patch with brighter regolith to its lower-right (arrow A rotated 180 deg, as this crop is), 8 px from where rotation NCC of the LROC cover image (rot180, 10 deg, ratio 2.6) puts arrow A; 250 m west of the nominal pixel. (1-2 px specks in hummocky terrain: candidate only)"
   },
   {
-   "id": 264,
+   "id": 275,
    "image_id": 135,
    "category_id": 56,
    "bbox": [
@@ -14566,7 +14900,7 @@
    "note": "Resilience impact: same dark smudge with bright speck at the position transferred from M1517068228RC by crater point matching (vote ratio 7.0, same orientation and scale); 170 px (95 m) north-east of the nominal pixel."
   },
   {
-   "id": 265,
+   "id": 276,
    "image_id": 136,
    "category_id": 56,
    "bbox": [
@@ -14583,7 +14917,7 @@
    "note": "Resilience impact: 20 px dark smudge with a bright speck, the dark smudge + bright halo of the LROC release (https://lroc.im-ldi.com/images/1456), neighbouring craters agree with the release at 0.945 m/px; 110 px (60 m) east of the nominal pixel."
   },
   {
-   "id": 266,
+   "id": 277,
    "image_id": 151,
    "category_id": 47,
    "bbox": [
@@ -14600,7 +14934,7 @@
    "note": "4x5 m fresh crater: affine fit of 6 craters between LROC's labelled after image M1324916226L (lroc.im-ldi.com/images/1132; residual <2 px) and this crop predicts (636,1083), where a small crater with bright wall and shadow sits; 92 m from the nominal pixel."
   },
   {
-   "id": 267,
+   "id": 278,
    "image_id": 152,
    "category_id": 47,
    "bbox": [
@@ -14617,7 +14951,7 @@
    "note": "Same 4x5 m crater as a bright high-albedo spot with a central pit at 24 deg incidence; located by registration from M1457504014LC (locate_points vote ratio 3.5, NCC 0.77) to within 4 px; 50 m from the nominal pixel."
   },
   {
-   "id": 268,
+   "id": 279,
    "image_id": 177,
    "category_id": 57,
    "bbox": [
@@ -14634,7 +14968,7 @@
    "note": "Luna 25 crater: 13 px fresh crater with saturated bright ejecta and a dark halo with faint dark rays, the only such feature near where rotation NCC of the LROC release M1447547309R (https://lroc.im-ldi.com/images/1311, as-is, 5 deg, peak ratio 1.45) puts the arrow; 130 px (100 m) north-west of the nominal pixel."
   },
   {
-   "id": 269,
+   "id": 280,
    "image_id": 183,
    "category_id": 44,
    "bbox": [
@@ -14651,7 +14985,7 @@
    "note": "Candidate only: the same bright-plus-dark-spots object 'a' of Pinault et al. 2026 Fig. 1, located from M132071202LC by terrain match (this crop is flipped vertically: NCC flipy peak (824,1112) ratio 2.2, locate_points (816,1110) ratio 1.9, crater pattern checked by eye); 250 m from the nominal pixel. Unconfirmed, could be a rock."
   },
   {
-   "id": 270,
+   "id": 281,
    "image_id": 184,
    "category_id": 44,
    "bbox": [
@@ -14668,7 +15002,7 @@
    "note": "Candidate only: object 'a' (bright spot with two dark spots E of it, the 43.8% 'Landing_Module' detection) of Pinault, Yano & Crawford 2026 Fig. 1, which is this very frame (nature.com/articles/s44453-025-00020-x, fig: media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs44453-025-00020-x/MediaObjects/44453_2025_20_Fig1_HTML.png); the figure is rotated 180 deg relative to the crop and NCC-registered to it (peak ratio 2.3, crater pattern verified by eye); 200 m NE of the nominal pixel. Unconfirmed, could be a rock."
   },
   {
-   "id": 271,
+   "id": 282,
    "image_id": 190,
    "category_id": 29,
    "bbox": [
@@ -14685,7 +15019,7 @@
    "note": "10 px bright compact object with a dark shadow east (craters in this frame are dark-west, so a raised object); 360 px west of nominal; size fits the 2.2 m rover"
   },
   {
-   "id": 272,
+   "id": 283,
    "image_id": 196,
    "category_id": 48,
    "bbox": [
@@ -14702,7 +15036,7 @@
    "note": "Fresh 14 m crater with a brilliant ray system 180 m from the nominal pixel, the only candidate of Ranger size in the crop; rim poorly defined in the saturated ejecta; no labelled LROC image of the Ranger 6 crater matched (featured-site view lroc.im-ldi.com/featured_sites/ranger-6 too coarse); 180 m from the nominal pixel."
   },
   {
-   "id": 273,
+   "id": 284,
    "image_id": 199,
    "category_id": 49,
    "bbox": [
@@ -14719,7 +15053,7 @@
    "note": "Same rayed crater (17 px) with west-wall shadow; located by terrain registration from M153014430LC (flipped E-W, NCC peak ratio 2.1) and confirmed by the ray pattern and neighbouring craters; 74 m from the nominal pixel."
   },
   {
-   "id": 274,
+   "id": 285,
    "image_id": 200,
    "category_id": 49,
    "bbox": [
@@ -14736,7 +15070,7 @@
    "note": "Ranger 7 crater (13 m, 30 px) at 84 deg incidence, dark bowl with bright east rim; this is the frame of LROC's labelled low-sun image M132963565R (lroc.im-ldi.com/images/52) and terrain registration from the labelled M153014430LC lands here (NCC peak ratio 8.2); 124 m from the nominal pixel."
   },
   {
-   "id": 275,
+   "id": 286,
    "image_id": 201,
    "category_id": 49,
    "bbox": [
@@ -14753,7 +15087,7 @@
    "note": "Bowl crater (16 px) with dark west wall and bright east rim at the position predicted by two independent point-set registrations from M153014430LC and M132963565RC (agree within 3 px, vote ratio 2.0); rays not visible at this sun angle; 72 m from the nominal pixel."
   },
   {
-   "id": 276,
+   "id": 287,
    "image_id": 202,
    "category_id": 49,
    "bbox": [
@@ -14770,7 +15104,7 @@
    "note": "Ranger 7 crater (14 m) with a brilliant ray system; this is the frame of LROC's labelled image M153014430L (lroc.im-ldi.com/images/52), same bright rayed crater with the dark-haloed crater to its SW; 28 m from the nominal pixel."
   },
   {
-   "id": 277,
+   "id": 288,
    "image_id": 204,
    "category_id": 50,
    "bbox": [
@@ -14787,7 +15121,7 @@
    "note": "Fresh 13 m crater with a bright ray system, the only rayed crater of Ranger size within 400 m of the nominal pixel; no published labelled LROC image of the Ranger 8 crater was found (the featured-site view lroc.im-ldi.com/featured_sites/ranger-8 could not be matched), so identity rests on size and freshness only; 107 m from the nominal pixel."
   },
   {
-   "id": 278,
+   "id": 289,
    "image_id": 205,
    "category_id": 50,
    "bbox": [
@@ -14804,7 +15138,7 @@
    "note": "Same crater located by registration from M137387301RC (flipped N-S, NCC peak ratio 2.9, point-vote ratio 3.0); identity as Ranger 8 unconfirmed; 111 m from the nominal pixel."
   },
   {
-   "id": 279,
+   "id": 290,
    "image_id": 206,
    "category_id": 50,
    "bbox": [
@@ -14821,7 +15155,7 @@
    "note": "Same rayed crater (dark west bowl, bright east wall) located by terrain registration from M137387301RC (NCC 0.33, peak ratio 5.5); identity as Ranger 8 unconfirmed; 205 m from the nominal pixel."
   },
   {
-   "id": 280,
+   "id": 291,
    "image_id": 207,
    "category_id": 51,
    "bbox": [
@@ -14838,7 +15172,7 @@
    "note": "Same crater (16 px); located by terrain registration from the LROC-anchored M117507817LC (flipped N-S, NCC 0.34, peak ratio 5.2) and confirmed by the neighbouring crater pattern; 65 m from the nominal pixel."
   },
   {
-   "id": 281,
+   "id": 292,
    "image_id": 208,
    "category_id": 51,
    "bbox": [
@@ -14855,7 +15189,7 @@
    "note": "Ranger 9 crater (14 m, 16 px): LROC's Ranger 9 featured-site image M117507817L (lroc.im-ldi.com/featured_sites/ranger-9), which is centred on the crater, matches this crop at NCC 0.90 with its centre on this bowl crater with a bright east rim; 192 m from the nominal pixel."
   },
   {
-   "id": 282,
+   "id": 293,
    "image_id": 209,
    "category_id": 51,
    "bbox": [
@@ -14872,7 +15206,7 @@
    "note": "Same rayed crater (28 px, dark west wall, bright east rim) 160 px from the crop edge; crater configuration identical to M157607994RC; 428 m from the nominal pixel."
   },
   {
-   "id": 283,
+   "id": 294,
    "image_id": 210,
    "category_id": 51,
    "bbox": [
@@ -14889,7 +15223,7 @@
    "note": "Same crater (30 px) at the centre of a bright ray system at 26 deg incidence; the surrounding crater pattern (two bright craters NW, crater pair S) matches the LROC-anchored M117507817LC after an E-W flip; 126 m from the nominal pixel."
   },
   {
-   "id": 284,
+   "id": 295,
    "image_id": 212,
    "category_id": 58,
    "bbox": [
@@ -14906,7 +15240,7 @@
    "note": "SLIM: 3 px bright body with 2 px shadow, same frame as the LROC release (https://lroc.im-ldi.com/images/1358, arrow at 553,548 of the 0.8 m/px image) and terrain matches it; 80 m east, 60 m south of the nominal pixel."
   },
   {
-   "id": 285,
+   "id": 296,
    "image_id": 213,
    "category_id": 58,
    "bbox": [
@@ -14923,7 +15257,7 @@
    "note": "SLIM: saturated 4 px body with a 12 px eastward shadow at the position predicted from M1460739214LC by gradient NCC (flipx, peak ratio 4.3), isolated on smooth ground; 110 m east, 70 m south of the nominal pixel."
   },
   {
-   "id": 286,
+   "id": 297,
    "image_id": 214,
    "category_id": 58,
    "bbox": [
@@ -14940,7 +15274,7 @@
    "note": "SLIM: saturated 4 px body with a 3 px shadow to the east (sun from the west in this frame), 15 px from the point predicted from M1467772940RC by NCC (as-is, peak ratio only 1.5); 230 px (200 m) east of the nominal pixel."
   },
   {
-   "id": 287,
+   "id": 298,
    "image_id": 216,
    "category_id": 45,
    "bbox": [
@@ -14957,7 +15291,7 @@
    "note": "SMART-1 gouge seen at 87 deg incidence as a 30 px N-S dark/bright linear scar, matching the right panels of Stooke 2017 fig. 9 (M1139222997L, M1160419708L look the same) and the same position relative to the bright 20 m crater to the NW; 49 m from the nominal pixel."
   },
   {
-   "id": 288,
+   "id": 299,
    "image_id": 217,
    "category_id": 45,
    "bbox": [
@@ -14974,7 +15308,7 @@
    "note": "SMART-1 gouge, the same N-S scar crossing a small pre-existing crater as in Stooke 2017 fig. 9 (M140210394L panel), located here by eye from the crater pattern (bright 20 m crater 300 px NW, pair of craters NE); 165 m E of the nominal pixel, 80 px from the right crop edge."
   },
   {
-   "id": 289,
+   "id": 300,
    "image_id": 218,
    "category_id": 45,
    "bbox": [
@@ -14991,7 +15325,7 @@
    "note": "SMART-1 gouge (dark linear scar with bright E flank, crossing a small crater) 95 px SE of the same 20 m bright crater that sits NW of the scar in Stooke 2017 fig. 9 (planetary.org/articles/0207-finding-spacecraft-impacts-on-the-moon); 16 m from the nominal pixel."
   },
   {
-   "id": 290,
+   "id": 301,
    "image_id": 219,
    "category_id": 45,
    "bbox": [
@@ -15008,7 +15342,7 @@
    "note": "SMART-1 impact gouge (4x20 m linear scar with bright N end and faint ejecta fan to the S): this exact frame is the labeled left panel of Stooke 2017 fig. 9 (planetary.s3.amazonaws.com/web/assets/pictures/20170203_fig-9.jpg); 65 m NW of the nominal pixel."
   },
   {
-   "id": 291,
+   "id": 302,
    "image_id": 221,
    "category_id": 30,
    "bbox": [
@@ -15025,7 +15359,7 @@
    "note": "high sun (incidence 23): isolated 6 px bright dot with no crater rim, 175 px from nominal; the only non-crater candidate within 450 px"
   },
   {
-   "id": 292,
+   "id": 303,
    "image_id": 224,
    "category_id": 9,
    "bbox": [
@@ -15042,7 +15376,7 @@
    "note": "transferred from crop moon/apollo12_lm/M168353795LC.png (same frame, offset -395,-183)"
   },
   {
-   "id": 293,
+   "id": 304,
    "image_id": 225,
    "category_id": 10,
    "bbox": [
@@ -15059,7 +15393,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 294,
+   "id": 305,
    "image_id": 225,
    "category_id": 9,
    "bbox": [
@@ -15076,7 +15410,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 295,
+   "id": 306,
    "image_id": 225,
    "category_id": 11,
    "bbox": [
@@ -15093,7 +15427,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 296,
+   "id": 307,
    "image_id": 228,
    "category_id": 40,
    "bbox": [
@@ -15110,7 +15444,7 @@
    "note": "very dark elongated spot with a diffuse dark halo and no bright rim (unlike the craters beside it), 15 px from the position predicted from the high-confidence Apollo 12 LM box plus the catalog offset; matches Stooke (LPSC 2016) 'very dark spot'; 75 m from nominal"
   },
   {
-   "id": 297,
+   "id": 308,
    "image_id": 229,
    "category_id": 40,
    "bbox": [
@@ -15127,7 +15461,7 @@
    "note": "low sun (incidence 73): small dark spot left of a small crater, located by eye-matching the crater pattern around the M175428601RC retrorocket box (track and blocky crater as anchors); 90 m from nominal"
   },
   {
-   "id": 298,
+   "id": 309,
    "image_id": 237,
    "category_id": 31,
    "bbox": [
@@ -15144,7 +15478,7 @@
    "note": "low sun (incidence 81): 5 px bright point with a 30 px thin shadow east, 90 px from the terrain-matched position of the M152885739LC box; thin long shadow fits a mast"
   },
   {
-   "id": 299,
+   "id": 310,
    "image_id": 239,
    "category_id": 41,
    "bbox": [
@@ -15161,7 +15495,7 @@
    "note": "same object as the surveyor6_retrorocket/M1456219989RC box (same frame, offset +412,-449)"
   },
   {
-   "id": 300,
+   "id": 311,
    "image_id": 240,
    "category_id": 31,
    "bbox": [
@@ -15178,7 +15512,7 @@
    "note": "mid sun (incidence 33): 6 px bright point with a 10 px shadow streak east, 95 px from nominal; strongest raised-object candidate in a 450 px radius"
   },
   {
-   "id": 301,
+   "id": 312,
    "image_id": 240,
    "category_id": 41,
    "bbox": [
@@ -15195,7 +15529,7 @@
    "note": "same object as the surveyor6_retrorocket/M152885739LC box (same frame, offset +743,+663): dark-rayed small crater"
   },
   {
-   "id": 302,
+   "id": 313,
    "image_id": 243,
    "category_id": 41,
    "bbox": [
@@ -15212,7 +15546,7 @@
    "note": "small crater (dark floor, bright east rim) at the position transferred by eye from the M152885739LC box using two nearby craters 70 m apart (scale matches); 45 m from nominal"
   },
   {
-   "id": 303,
+   "id": 314,
    "image_id": 244,
    "category_id": 41,
    "bbox": [
@@ -15229,7 +15563,7 @@
    "note": "very dark 3 m crater with radiating dark rays, as described by Stooke (LPSC 2016), 10 px from the position predicted from the Surveyor 6 box plus the catalog offset; 50 m from nominal"
   },
   {
-   "id": 304,
+   "id": 315,
    "image_id": 245,
    "category_id": 32,
    "bbox": [
@@ -15246,7 +15580,7 @@
    "note": "low sun (incidence 84): bright point with a 35 px thin shadow east in a boulder field, 130 px from nominal; thin shadow suggests a mast rather than a boulder"
   },
   {
-   "id": 305,
+   "id": 316,
    "image_id": 246,
    "category_id": 32,
    "bbox": [
@@ -15263,7 +15597,7 @@
    "note": "terrain match from M131724362LC (ratio 1.6): bright blob with shadow east; identification uncertain"
   },
   {
-   "id": 306,
+   "id": 317,
    "image_id": 247,
    "category_id": 32,
    "bbox": [
@@ -15280,7 +15614,7 @@
    "note": "terrain match from M131724362LC (vote ratio 4.2) then by eye: 8 px bright object with dark shadow east; 290 px from nominal"
   },
   {
-   "id": 307,
+   "id": 318,
    "image_id": 248,
    "category_id": 32,
    "bbox": [
@@ -15297,7 +15631,7 @@
    "note": "terrain match from M131724362LC (ratio 2.1): two bright specks with shadow east; identification uncertain"
   },
   {
-   "id": 308,
+   "id": 319,
    "image_id": 249,
    "category_id": 27,
    "bbox": [
@@ -15314,7 +15648,7 @@
    "note": "transferred from crop moon/change3/M1514853442RC.png (same frame, offset +0,-31)"
   },
   {
-   "id": 309,
+   "id": 320,
    "image_id": 249,
    "category_id": 28,
    "bbox": [
