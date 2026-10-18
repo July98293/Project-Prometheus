@@ -14,17 +14,29 @@ Bounding boxes around human-made hardware in the 2048×2048 orbital crops of
 | `review.html` | all review sheets and box tables on one page |
 | `boxtool.py`, `register.py` | the annotation helper (candidate hunt, pixel grid, frame-to-frame terrain matching, review/COCO export) |
 
-## Status (2026-10-14)
+## Status (2026-10-18)
 
 | | crops | boxed | not identified | negative (before arrival) |
 |---|---|---|---|---|
-| Moon (LROC NAC) | 131 | 63 | 64 | 4 |
-| Mars (HiRISE) | 126 | 13 | 105 | 8 |
+| Moon (LROC NAC) | 254 | 120 | 112 | 22 |
+| Mars (HiRISE) | 273 | 164 | 83 | 26 |
 
-102 boxes: 48 high, 41 medium, 13 low confidence. All Apollo crops are boxed except five
-near-terminator or oblique frames. Surveyor, Luna, Lunokhod and Chang'e landers (2–4 m, 3–8 px) are
-boxed only where a shadow or a terrain match made the identification defensible. Mars rovers (12 px)
-and landers were boxed only where an object sits at the waypoint or catalog position with a shadow.
+320 boxes over 57 objects: 219 high, 78 medium, 23 low confidence (Moon 81 / 49 / 22, Mars 138 / 29 / 1).
+Every positive crop is boxed or has a frame-specific `unboxed_reason`. Mars boxes rest on HiRISE release
+images (uahirise.org) or a before/after change, then on terrain matching between frames
+(`hirise_match.py`); the earlier Mars boxes placed at the catalog position were wrong and are gone.
+Moon boxes for the objects added on 2026-10-15 rest on LROC featured/labelled images, catalog offsets
+from an anchored object in the same frame, or before/after pairs. Known gaps: Schiaparelli, Mars 3,
+Zhurong, Ingenuity, GRAIL, LADEE, LCROSS and most rover frames are not identifiable in these crops.
+`mars/spirit/ESP_012787_1650.png` is labelled `before_arrival` but already shows Spirit (it entered Troy
+in late April 2009): do not use it as a negative.
+
+## Mars crops are centred by terrain match
+
+HiRISE map projections are off by 100–400 m from frame to frame, so a crop centred on the catalog
+coordinate can miss the object (InSight was 390 m off). `download_images.py` therefore matches a ~1 m/px
+overview of each new frame against the high-confidence boxes of the site and centres the crop on the
+match (`match_ratio`, `position_note`); `--recut` redoes unboxed crops once a site has a reference.
 
 ## Box conventions
 
