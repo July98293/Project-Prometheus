@@ -389,6 +389,7 @@ def cmd_review(args):
 def export_dashboard(ms, boxes, index):
     """dashboard/boxes.json + dashboard/boxes/*.jpg for the Mission Control page (dashboard/boxes.html)."""
     dash = os.path.join(ROOT, "dashboard"); out = os.path.join(dash, "boxes"); os.makedirs(out, exist_ok=True)
+    __import__("shutil").copyfile(COCO, os.path.join(dash, "boxes_coco.json"))   # for dashboard/coco.html
     frames = []
     for file, m, rows, png in index:
         if not rows:
