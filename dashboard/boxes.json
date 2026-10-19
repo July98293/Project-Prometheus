@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18T13:42Z",
+ "generated": "2026-10-19T23:10Z",
  "n_boxes": 320,
  "positives": {
   "Moon": 232,
@@ -9463,7 +9463,7 @@
   {
    "file_name": "moon/apollo15_lrrr/M162284113RC.png",
    "site_id": "apollo15_lrrr",
-   "reason": "incidence 76: at the position predicted from the LM box and from the crater pair next to the ALSEP nothing raised or bright stands out; LRRR not distinguishable (note: the transferred LM box here misses the bright body at x 57-68)"
+   "reason": "incidence 76: at the position predicted from the LM box and from the crater pair next to the ALSEP nothing raised or bright stands out; LRRR not distinguishable"
   },
   {
    "file_name": "moon/apollo15_sivb/M1367135045LC.png",

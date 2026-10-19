@@ -404,6 +404,21 @@ def export_dashboard(ms, boxes, index):
     for old in set(os.listdir(out)) - {f["sheet"][len("boxes/"):] for f in frames}:   # sheets of crops that lost their boxes
         os.remove(os.path.join(out, old))
     unboxed = [{"file_name": f, "site_id": ms[f]["site_id"], "reason": r} for f, r in sorted(load_unboxed().items())]
+    # whole-crop thumbnails of the positives with no box, red cross = catalog position (dashboard/coco.html "to check")
+    tdir = os.path.join(dash, "unboxed"); os.makedirs(tdir, exist_ok=True)
+    keep = set()
+    for u in unboxed:
+        name = u["file_name"].replace("/", "_")[:-4] + ".jpg"; keep.add(name)
+        dst = os.path.join(tdir, name)
+        if os.path.exists(dst) and os.path.getmtime(dst) > os.path.getmtime(os.path.join(IMG, u["file_name"])):
+            continue
+        m = ms[u["file_name"]]; T = 640; s = T / 2048
+        t = img(u["file_name"]).convert("RGB").resize((T, T), Image.LANCZOS); d = ImageDraw.Draw(t)
+        x, y = int(m["obj_x"]) * s, int(m["obj_y"]) * s
+        d.line((x - 12, y, x + 12, y), fill=RED, width=2); d.line((x, y - 12, x, y + 12), fill=RED, width=2)
+        t.save(dst, quality=80)
+    for old in set(os.listdir(tdir)) - keep:
+        os.remove(os.path.join(tdir, old))
     pos = {b: sum(1 for m in ms.values() if m["body"] == b and m["label"] != "before_arrival") for b in ("Moon", "Mars")}
     boxed = {b: sum(1 for f in frames if f["body"] == b) for b in ("Moon", "Mars")}
     json.dump({"generated": __import__("datetime").datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ"), "n_boxes": len(boxes), "positives": pos, "boxed": boxed,

@@ -21,6 +21,15 @@
   .key i { display: inline-block; width: 12px; height: 8px; vertical-align: 0; margin-right: 6px; }
   a.sheet { color: var(--accent); text-decoration: none; }
   .dl { color: var(--accent); }
+  :root { --check: #ff5c5c; }
+  tr.check td:first-child { box-shadow: inset 3px 0 0 var(--check); }
+  td.chk { color: var(--check); font-weight: 500; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .card { border: 1px solid var(--check); background: var(--paper); padding: 8px; min-width: 0; }
+  .card img { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 3px; }
+  .card .label { display: block; margin-top: 8px; color: var(--check); overflow-wrap: anywhere; }
+  .card .why { font: 300 12px/1.5 var(--font); color: var(--ink-2); margin: 6px 0 0; }
+  .card a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -32,6 +41,7 @@
       <a class="label" href="boxes.html">Box sheets</a>
       <a class="label" href="#objects">Objects ↓</a>
       <a class="label" href="#list">All boxes ↓</a>
+      <a class="label" href="#check" style="color:var(--check)">To check ↓</a>
     </div>
   </div>
 </nav>
@@ -57,12 +67,21 @@
     <div class="head"><span class="label">02</span><h2>All boxes</h2><span class="label" id="count"></span></div>
     <div class="filters">
       <select id="body" aria-label="Body"><option value="all">Moon and Mars</option><option value="Moon">Moon</option><option value="Mars">Mars</option></select>
-      <select id="conf" aria-label="Confidence"><option value="all">All confidences</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+      <select id="conf" aria-label="Confidence"><option value="all">All confidences</option><option value="check">To check: medium + low</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
       <select id="obj" aria-label="Object"><option value="all">All objects</option></select>
       <input id="q" type="search" placeholder="Search file or note" aria-label="Search">
     </div>
-    <p class="caption">bbox is COCO [x, y, w, h] in the 2048 × 2048 crop, origin top-left. SHEET opens the review image of that crop.</p>
+    <p class="caption">bbox is COCO [x, y, w, h] in the 2048 × 2048 crop, origin top-left. SHEET opens the review image of that crop. Rows marked <span style="color:var(--check)">CHECK</span> in red are the medium and low boxes: the ones worth a second look.</p>
     <div class="scroll"><table id="tbl"></table></div>
+  </section>
+  <section id="check">
+    <div class="head"><span class="label" style="color:var(--check)">03</span><h2>Not identified · to check</h2><span class="label" id="chkCount" style="color:var(--check)"></span></div>
+    <p class="caption">Positive crops where the object could not be identified, with the reason recorded in the COCO file (<code>unboxed_reason</code>). Each image is the whole 2048 × 2048 crop; the red cross is the catalog position, which on HiRISE can be 100–400 m off and on LROC NAC up to ~1300 px off. OPEN shows the crop at full resolution. PARTLY BOXED means another object in the same crop has a box.</p>
+    <div class="filters">
+      <select id="cbody" aria-label="Body"><option value="all">Moon and Mars</option><option value="Moon">Moon</option><option value="Mars">Mars</option></select>
+      <select id="csite" aria-label="Site"><option value="all">All sites</option></select>
+    </div>
+    <div class="grid" id="cgrid"></div>
   </section>
 </main>
 
@@ -70,6 +89,7 @@
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const CLS = {high: 'hi', medium: 'med', low: 'lo'};
 let R = [];
+let U = [];
 fetch('boxes_coco.json').then(r => r.json()).then(init).catch(() => {
   document.getElementById('stats').innerHTML = '<div class="stat"><span class="label">No boxes_coco.json</span><b>run boxtool.py review</b></div>';
 });
@@ -86,7 +106,7 @@ function init(d) {
   const n = k => R.filter(r => r.conf === k).length;
   const pos = d.images.filter(i => i.label === 'artifact'), boxed = new Set(d.annotations.map(a => a.image_id));
   document.getElementById('stats').innerHTML = [['Boxes', R.length], ['High', n('high')], ['Medium', n('medium')], ['Low', n('low')],
-    ['Objects', new Set(R.map(r => r.object)).size], ['Crops boxed', boxed.size + ' / ' + pos.length]]
+    ['Objects', new Set(R.map(r => r.object)).size], ['Crops boxed', boxed.size + ' / ' + pos.length], ['To check', (n('medium') + n('low')) + ' boxes · ' + d.images.filter(i => i.unboxed_reason).length + ' crops']]
     .map(([k, v]) => `<div class="stat"><span class="label">${k}</span><b>${v}</b></div>`).join('');
   objects();
   const sel = document.getElementById('obj');
@@ -94,6 +114,22 @@ function init(d) {
   ['body', 'conf', 'obj'].forEach(id => document.getElementById(id).onchange = list);
   document.getElementById('q').oninput = list;
   list();
+  const boxedIds = new Set(d.annotations.map(a => a.image_id));
+  U = d.images.filter(i => i.unboxed_reason).map(i => ({file: i.file_name, body: i.body, site: i.site_id, frame: i.frame_id, utc: (i.utc_start || '').slice(0, 10),
+        res: i.resolution_m_px, reason: i.unboxed_reason, partly: boxedIds.has(i.id), thumb: 'unboxed/' + i.file_name.replace(/\//g, '_').replace(/\.png$/, '.jpg')}));
+  const cs = document.getElementById('csite');
+  [...new Set(U.map(u => u.site))].sort().forEach(o => { const e = document.createElement('option'); e.value = o; e.textContent = o; cs.appendChild(e); });
+  ['cbody', 'csite'].forEach(id => document.getElementById(id).onchange = cards);
+  cards();
+}
+function cards() {
+  const b = document.getElementById('cbody').value, s = document.getElementById('csite').value;
+  const rows = U.filter(u => (b === 'all' || u.body === b) && (s === 'all' || u.site === s));
+  document.getElementById('chkCount').textContent = rows.length + ' crops';
+  document.getElementById('cgrid').innerHTML = rows.map(u => `<div class="card"><img src="${u.thumb}" loading="lazy" alt="crop ${esc(u.file)}">` +
+    `<span class="label">${esc(u.site)} · ${esc(u.frame)}${u.partly ? ' · PARTLY BOXED' : ''}</span>` +
+    `<span class="label" style="color:var(--muted)">${u.body} · ${u.utc} · ${u.res} m/px · <a href="crops-full/${esc(u.file)}" target="_blank" rel="noopener">Open</a></span>` +
+    `<p class="why">${esc(u.reason)}</p></div>`).join('');
 }
 function objects() {
   const g = {};
@@ -107,12 +143,12 @@ function objects() {
 }
 function list() {
   const b = document.getElementById('body').value, c = document.getElementById('conf').value, o = document.getElementById('obj').value, q = document.getElementById('q').value.toLowerCase();
-  const rows = R.filter(r => (b === 'all' || r.body === b) && (c === 'all' || r.conf === c) && (o === 'all' || r.object === o) &&
+  const rows = R.filter(r => (b === 'all' || r.body === b) && (c === 'all' || r.conf === c || (c === 'check' && r.conf !== 'high')) && (o === 'all' || r.object === o) &&
                              (!q || (r.file + ' ' + r.note + ' ' + r.frame).toLowerCase().includes(q)));
   document.getElementById('count').textContent = rows.length + ' boxes';
   document.getElementById('tbl').innerHTML = '<tr><th>id</th><th class="left">object</th><th>body</th><th class="left">crop</th><th>date</th><th>m/px</th><th>bbox [x, y, w, h]</th><th>conf</th><th>shadow</th><th></th><th class="left">note</th></tr>' +
-    rows.map(r => `<tr><td>${r.id}</td><td class="left">${esc(r.object)}</td><td>${r.body}</td><td class="left">${esc(r.file)}</td><td>${r.utc}</td><td>${r.res}</td>` +
-      `<td>[${r.bbox.join(', ')}]</td><td class="${CLS[r.conf]}">${r.conf.toUpperCase()}</td><td>${r.shadow ? 'YES' : '—'}</td>` +
+    rows.map(r => `<tr${r.conf === 'high' ? '' : ' class="check"'}><td>${r.id}</td><td class="left">${esc(r.object)}</td><td>${r.body}</td><td class="left">${esc(r.file)}</td><td>${r.utc}</td><td>${r.res}</td>` +
+      `<td>[${r.bbox.join(', ')}]</td><td class="${r.conf === 'high' ? CLS[r.conf] : 'chk'}">${r.conf === 'high' ? 'HIGH' : r.conf.toUpperCase() + ' · CHECK'}</td><td>${r.shadow ? 'YES' : '—'}</td>` +
       `<td><a class="label sheet" href="${r.sheet}" target="_blank" rel="noopener">Sheet</a></td><td class="note">${esc(r.note)}</td></tr>`).join('');
 }
 </script>

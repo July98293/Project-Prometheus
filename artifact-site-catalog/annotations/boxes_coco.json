@@ -2,7 +2,7 @@
  "info": {
   "description": "Xenarch artifact-site bounding boxes: human-made hardware in LROC NAC and HiRISE crops",
   "version": "0.2",
-  "date_created": "2026-10-18"
+  "date_created": "2026-10-20"
  },
  "licenses": [
   {
@@ -874,7 +874,7 @@
     1128,
     1024
    ],
-   "unboxed_reason": "incidence 76: at the position predicted from the LM box and from the crater pair next to the ALSEP nothing raised or bright stands out; LRRR not distinguishable (note: the transferred LM box here misses the bright body at x 57-68)"
+   "unboxed_reason": "incidence 76: at the position predicted from the LM box and from the crater pair next to the ALSEP nothing raised or bright stands out; LRRR not distinguishable"
   },
   {
    "id": 46,
