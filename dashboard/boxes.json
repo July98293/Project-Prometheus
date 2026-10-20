@@ -1,17 +1,17 @@
 {
- "generated": "2026-10-19T23:10Z",
- "n_boxes": 320,
+ "generated": "2026-10-20T10:39Z",
+ "n_boxes": 324,
  "positives": {
   "Moon": 232,
   "Mars": 247
  },
  "boxed": {
-  "Moon": 120,
+  "Moon": 124,
   "Mars": 164
  },
  "confidence": {
-  "high": 219,
-  "medium": 78,
+  "high": 222,
+  "medium": 79,
   "low": 23
  },
  "frames": [
@@ -2377,6 +2377,96 @@
    ]
   },
   {
+   "file": "moon/chandrayaan2_vikram/M1332771378LC.png",
+   "site_id": "chandrayaan2_vikram",
+   "object": "Chandrayaan-2 Vikram lander crash site",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.642,
+   "incidence_deg": 77.77,
+   "utc": "2020-01-04",
+   "nominal": [
+    1180,
+    1024
+   ],
+   "sheet": "boxes/moon_chandrayaan2_vikram_M1332771378LC.jpg",
+   "boxes": [
+    {
+     "object_id": "chandrayaan2_vikram",
+     "label": "Chandrayaan-2 Vikram lander crash site",
+     "x_min": 1136,
+     "y_min": 1168,
+     "x_max": 1155,
+     "y_max": 1186,
+     "width_px": 20,
+     "height_px": 19,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Vikram impact crater: ~12 m crater with dark floor and bright north-east rim at the impact point of the LROC after/before ratio M1328074531L/M139756477LR (https://lroc.im-ldi.com/images/1131). Chain: dark-blob (crater shadow) Hough match of that ratio into a 4096-line strip of M1328074531LC (votes 136, ratio 8.0: sample 1386, line 18360, 38 px from that frame's nominal), then of that strip to this crop (flipx, vote ratio 3.5); the route via M1335121818LC agrees within 6 px. 157 px (101 m) from the nominal pixel."
+    }
+   ]
+  },
+  {
+   "file": "moon/chandrayaan2_vikram/M1335121818LC.png",
+   "site_id": "chandrayaan2_vikram",
+   "object": "Chandrayaan-2 Vikram lander crash site",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.629,
+   "incidence_deg": 85.72,
+   "utc": "2020-01-31",
+   "nominal": [
+    1024,
+    1024
+   ],
+   "sheet": "boxes/moon_chandrayaan2_vikram_M1335121818LC.jpg",
+   "boxes": [
+    {
+     "object_id": "chandrayaan2_vikram",
+     "label": "Chandrayaan-2 Vikram lander crash site",
+     "x_min": 916,
+     "y_min": 898,
+     "x_max": 943,
+     "y_max": 926,
+     "width_px": 28,
+     "height_px": 29,
+     "includes_shadow": "yes",
+     "confidence": "medium",
+     "note": "Vikram impact crater at incidence 85.7: floor fully shadowed, bright east rim. Position transferred from M1328074531LC (dark-blob Hough match, vote ratio 2.9) and independently from the boxed M1332771378LC (ratio 2.2); the two predictions agree within 6 px and the crater sits 10 px north of both, as in M1332771378LC. Medium because neither match alone passes ratio 3. 147 px (92 m) from the nominal pixel."
+    }
+   ]
+  },
+  {
+   "file": "moon/chandrayaan3_pragyan/M1468784668RC.png",
+   "site_id": "chandrayaan3_pragyan",
+   "object": "Pragyan rover (final position, ~8 m from Vikram)",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.858,
+   "incidence_deg": 83.16,
+   "utc": "2024-04-26",
+   "nominal": [
+    117,
+    1024
+   ],
+   "sheet": "boxes/moon_chandrayaan3_pragyan_M1468784668RC.jpg",
+   "boxes": [
+    {
+     "object_id": "chandrayaan3_vikram",
+     "label": "Chandrayaan-3 Vikram lander",
+     "x_min": 63,
+     "y_min": 1082,
+     "x_max": 99,
+     "y_max": 1091,
+     "width_px": 37,
+     "height_px": 10,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Vikram: saturated bright body with a 28 px hard shadow inside the bright blast halo, at the crop's left edge. Located by point-set terrain match to the boxed M1450039289RC (flipx, rx 1.05 ry 0.6, vote ratio 2.8); the same body and shadow sit at the matched position (4947,1212) of the simultaneous M1468784668LC. Shadow length fits: 2.2 m height from the 15 px shadow in M1450039289RC predicts ~22 px at sun 6.8 deg and this cross-track scale. 72 px (62 m) from the nominal pixel (117,1024)."
+    }
+   ]
+  },
+  {
    "file": "moon/chandrayaan3_vikram/M1450039289RC.png",
    "site_id": "chandrayaan3_vikram",
    "object": "Chandrayaan-3 Vikram lander",
@@ -2403,6 +2493,36 @@
      "includes_shadow": "yes",
      "confidence": "high",
      "note": "Vikram: saturated bright body inside a diffuse bright blast halo with a 15 px dark shadow running to the north-east, the same morphology as the LROC release M1447750764LR (https://lroc.im-ldi.com/images/1314); rotation NCC of that release puts the lander here (rot90, 10 deg, peak ratio 1.5), 110 px (75 m) south-east of the nominal pixel."
+    }
+   ]
+  },
+  {
+   "file": "moon/chandrayaan3_vikram/M1468784668RC.png",
+   "site_id": "chandrayaan3_vikram",
+   "object": "Chandrayaan-3 Vikram lander",
+   "body": "Moon",
+   "instrument": "LROC NAC",
+   "resolution_m_px": 0.858,
+   "incidence_deg": 83.16,
+   "utc": "2024-04-26",
+   "nominal": [
+    117,
+    1024
+   ],
+   "sheet": "boxes/moon_chandrayaan3_vikram_M1468784668RC.jpg",
+   "boxes": [
+    {
+     "object_id": "chandrayaan3_vikram",
+     "label": "Chandrayaan-3 Vikram lander",
+     "x_min": 63,
+     "y_min": 1082,
+     "x_max": 99,
+     "y_max": 1091,
+     "width_px": 37,
+     "height_px": 10,
+     "includes_shadow": "yes",
+     "confidence": "high",
+     "note": "Vikram: saturated bright body with a 28 px hard shadow inside the bright blast halo, at the crop's left edge. Located by point-set terrain match to the boxed M1450039289RC (flipx, rx 1.05 ry 0.6, vote ratio 2.8); the same body and shadow sit at the matched position (4947,1212) of the simultaneous M1468784668LC. Shadow length fits: 2.2 m height from the 15 px shadow in M1450039289RC predicts ~22 px at sun 6.8 deg and this cross-track scale. 72 px (62 m) from the nominal pixel (117,1024)."
     }
    ]
   },
@@ -9516,24 +9636,9 @@
    "reason": "Could not be registered to the anchored frames M1495619099RC / M1512007984RC or to the 4160 m LROC release (all peak ratios < 1.5, incidence 55 deg vs 76-80 deg); the dark rille and bright flank in this crop suggest it lies east of the lander, and no bright body with an eastward shadow stands out near the nominal pixel."
   },
   {
-   "file_name": "moon/chandrayaan2_vikram/M1332771378LC.png",
-   "site_id": "chandrayaan2_vikram",
-   "reason": "The Vikram impact point is a subtle change seen by LROC only in a before/after ratio (https://lroc.im-ldi.com/images/1131, 4 m/px mosaic); the before crop M1195313832LC could not be registered to this frame (rotation NCC and point matching, ratios < 1.3), so no ratio image could be made."
-  },
-  {
-   "file_name": "moon/chandrayaan2_vikram/M1335121818LC.png",
-   "site_id": "chandrayaan2_vikram",
-   "reason": "85.7 deg incidence with large shadows; same as M1332771378LC, the before crop would not register to it and the impact point has no unique signature without a ratio image."
-  },
-  {
    "file_name": "moon/chandrayaan3_pragyan/M1468784668RC.png",
    "site_id": "chandrayaan3_pragyan",
-   "reason": "Pragyan is ~1 m (1 px at 0.86 m/px) and Vikram itself was not identified in this 83 deg frame; no published LROC image resolves the rover."
-  },
-  {
-   "file_name": "moon/chandrayaan3_vikram/M1468784668RC.png",
-   "site_id": "chandrayaan3_vikram",
-   "reason": "83 deg incidence; neither the LROC release M1447750764LR nor the boxed frame M1450039289RC could be registered to this crop (rotation NCC peak ratios < 1.5), and the bright-halo-plus-shadow signature was not found near the nominal pixel at the crop edge (x=117)."
+   "reason": "Pragyan is ~1 m (1 px at 0.86 m/px) and no published LROC image resolves the rover; Vikram is boxed instead (63-99, 1082-1091)."
   },
   {
    "file_name": "moon/change1/M1495696610RC.png",
