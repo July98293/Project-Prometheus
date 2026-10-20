@@ -80,6 +80,7 @@
     <div class="filters">
       <select id="cbody" aria-label="Body"><option value="all">Moon and Mars</option><option value="Moon">Moon</option><option value="Mars">Mars</option></select>
       <select id="csite" aria-label="Site"><option value="all">All sites</option></select>
+      <input id="cq" type="search" placeholder="Search site, frame or reason" aria-label="Search crops to check">
     </div>
     <div class="grid" id="cgrid"></div>
   </section>
@@ -120,12 +121,16 @@ function init(d) {
   const cs = document.getElementById('csite');
   [...new Set(U.map(u => u.site))].sort().forEach(o => { const e = document.createElement('option'); e.value = o; e.textContent = o; cs.appendChild(e); });
   ['cbody', 'csite'].forEach(id => document.getElementById(id).onchange = cards);
+  document.getElementById('cq').oninput = cards;
+  const find = new URLSearchParams(location.search).get('find');      // e.g. coco.html?find=chandrayaan
+  if (find) { document.getElementById('q').value = find; document.getElementById('cq').value = find; list(); }
   cards();
 }
 function cards() {
-  const b = document.getElementById('cbody').value, s = document.getElementById('csite').value;
-  const rows = U.filter(u => (b === 'all' || u.body === b) && (s === 'all' || u.site === s));
-  document.getElementById('chkCount').textContent = rows.length + ' crops';
+  const b = document.getElementById('cbody').value, s = document.getElementById('csite').value, q = document.getElementById('cq').value.toLowerCase();
+  const rows = U.filter(u => (b === 'all' || u.body === b) && (s === 'all' || u.site === s) &&
+                             (!q || (u.site + ' ' + u.file + ' ' + u.frame + ' ' + u.reason).toLowerCase().includes(q)));
+  document.getElementById('chkCount').textContent = rows.length + (rows.length === 1 ? ' crop' : ' crops');
   document.getElementById('cgrid').innerHTML = rows.map(u => `<div class="card"><img src="${u.thumb}" loading="lazy" alt="crop ${esc(u.file)}">` +
     `<span class="label">${esc(u.site)} · ${esc(u.frame)}${u.partly ? ' · PARTLY BOXED' : ''}</span>` +
     `<span class="label" style="color:var(--muted)">${u.body} · ${u.utc} · ${u.res} m/px · <a href="crops-full/${esc(u.file)}" target="_blank" rel="noopener">Open</a></span>` +
@@ -144,8 +149,8 @@ function objects() {
 function list() {
   const b = document.getElementById('body').value, c = document.getElementById('conf').value, o = document.getElementById('obj').value, q = document.getElementById('q').value.toLowerCase();
   const rows = R.filter(r => (b === 'all' || r.body === b) && (c === 'all' || r.conf === c || (c === 'check' && r.conf !== 'high')) && (o === 'all' || r.object === o) &&
-                             (!q || (r.file + ' ' + r.note + ' ' + r.frame).toLowerCase().includes(q)));
-  document.getElementById('count').textContent = rows.length + ' boxes';
+                             (!q || (r.object + ' ' + r.file + ' ' + r.note + ' ' + r.frame).toLowerCase().includes(q)));
+  document.getElementById('count').textContent = rows.length + (rows.length === 1 ? ' box' : ' boxes');
   document.getElementById('tbl').innerHTML = '<tr><th>id</th><th class="left">object</th><th>body</th><th class="left">crop</th><th>date</th><th>m/px</th><th>bbox [x, y, w, h]</th><th>conf</th><th>shadow</th><th></th><th class="left">note</th></tr>' +
     rows.map(r => `<tr${r.conf === 'high' ? '' : ' class="check"'}><td>${r.id}</td><td class="left">${esc(r.object)}</td><td>${r.body}</td><td class="left">${esc(r.file)}</td><td>${r.utc}</td><td>${r.res}</td>` +
       `<td>[${r.bbox.join(', ')}]</td><td class="${r.conf === 'high' ? CLS[r.conf] : 'chk'}">${r.conf === 'high' ? 'HIGH' : r.conf.toUpperCase() + ' · CHECK'}</td><td>${r.shadow ? 'YES' : '—'}</td>` +
