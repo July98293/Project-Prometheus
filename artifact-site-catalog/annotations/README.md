@@ -14,14 +14,14 @@ Bounding boxes around human-made hardware in the 2048×2048 orbital crops of
 | `review.html` | all review sheets and box tables on one page |
 | `boxtool.py`, `register.py` | the annotation helper (candidate hunt, pixel grid, frame-to-frame terrain matching, review/COCO export) |
 
-## Status (2026-10-18)
+## Status (2026-10-20)
 
 | | crops | boxed | not identified | negative (before arrival) |
 |---|---|---|---|---|
-| Moon (LROC NAC) | 254 | 120 | 112 | 22 |
+| Moon (LROC NAC) | 254 | 124 | 108 | 22 |
 | Mars (HiRISE) | 273 | 164 | 83 | 26 |
 
-320 boxes over 57 objects: 219 high, 78 medium, 23 low confidence (Moon 81 / 49 / 22, Mars 138 / 29 / 1).
+324 boxes over 58 objects: 222 high, 79 medium, 23 low confidence (Moon 84 / 50 / 22, Mars 138 / 29 / 1).
 Every positive crop is boxed or has a frame-specific `unboxed_reason`. Mars boxes rest on HiRISE release
 images (uahirise.org) or a before/after change, then on terrain matching between frames
 (`hirise_match.py`); the earlier Mars boxes placed at the catalog position were wrong and are gone.

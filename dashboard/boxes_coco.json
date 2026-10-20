@@ -1701,8 +1701,7 @@
    "nominal_xy": [
     1180,
     1024
-   ],
-   "unboxed_reason": "The Vikram impact point is a subtle change seen by LROC only in a before/after ratio (https://lroc.im-ldi.com/images/1131, 4 m/px mosaic); the before crop M1195313832LC could not be registered to this frame (rotation NCC and point matching, ratios < 1.3), so no ratio image could be made."
+   ]
   },
   {
    "id": 89,
@@ -1721,8 +1720,7 @@
    "nominal_xy": [
     1024,
     1024
-   ],
-   "unboxed_reason": "85.7 deg incidence with large shadows; same as M1332771378LC, the before crop would not register to it and the impact point has no unique signature without a ratio image."
+   ]
   },
   {
    "id": 90,
@@ -1761,7 +1759,7 @@
     117,
     1024
    ],
-   "unboxed_reason": "Pragyan is ~1 m (1 px at 0.86 m/px) and Vikram itself was not identified in this 83 deg frame; no published LROC image resolves the rover."
+   "unboxed_reason": "Pragyan is ~1 m (1 px at 0.86 m/px) and no published LROC image resolves the rover; Vikram is boxed instead (63-99, 1082-1091)."
   },
   {
    "id": 92,
@@ -1818,8 +1816,7 @@
    "nominal_xy": [
     117,
     1024
-   ],
-   "unboxed_reason": "83 deg incidence; neither the LROC release M1447750764LR nor the boxed frame M1450039289RC could be registered to this crop (rotation NCC peak ratios < 1.5), and the bright-halo-plus-shadow signature was not found near the nominal pixel at the crop edge (x=117)."
+   ]
   },
   {
    "id": 95,
@@ -14680,6 +14677,57 @@
   },
   {
    "id": 263,
+   "image_id": 88,
+   "category_id": 71,
+   "bbox": [
+    1136,
+    1168,
+    20,
+    19
+   ],
+   "area": 380,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Vikram impact crater: ~12 m crater with dark floor and bright north-east rim at the impact point of the LROC after/before ratio M1328074531L/M139756477LR (https://lroc.im-ldi.com/images/1131). Chain: dark-blob (crater shadow) Hough match of that ratio into a 4096-line strip of M1328074531LC (votes 136, ratio 8.0: sample 1386, line 18360, 38 px from that frame's nominal), then of that strip to this crop (flipx, vote ratio 3.5); the route via M1335121818LC agrees within 6 px. 157 px (101 m) from the nominal pixel."
+  },
+  {
+   "id": 264,
+   "image_id": 89,
+   "category_id": 71,
+   "bbox": [
+    916,
+    898,
+    28,
+    29
+   ],
+   "area": 812,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "medium",
+   "annotator": "claude",
+   "note": "Vikram impact crater at incidence 85.7: floor fully shadowed, bright east rim. Position transferred from M1328074531LC (dark-blob Hough match, vote ratio 2.9) and independently from the boxed M1332771378LC (ratio 2.2); the two predictions agree within 6 px and the crater sits 10 px north of both, as in M1332771378LC. Medium because neither match alone passes ratio 3. 147 px (92 m) from the nominal pixel."
+  },
+  {
+   "id": 265,
+   "image_id": 91,
+   "category_id": 54,
+   "bbox": [
+    63,
+    1082,
+    37,
+    10
+   ],
+   "area": 370,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Vikram: saturated bright body with a 28 px hard shadow inside the bright blast halo, at the crop's left edge. Located by point-set terrain match to the boxed M1450039289RC (flipx, rx 1.05 ry 0.6, vote ratio 2.8); the same body and shadow sit at the matched position (4947,1212) of the simultaneous M1468784668LC. Shadow length fits: 2.2 m height from the 15 px shadow in M1450039289RC predicts ~22 px at sun 6.8 deg and this cross-track scale. 72 px (62 m) from the nominal pixel (117,1024)."
+  },
+  {
+   "id": 266,
    "image_id": 93,
    "category_id": 54,
    "bbox": [
@@ -14696,7 +14744,24 @@
    "note": "Vikram: saturated bright body inside a diffuse bright blast halo with a 15 px dark shadow running to the north-east, the same morphology as the LROC release M1447750764LR (https://lroc.im-ldi.com/images/1314); rotation NCC of that release puts the lander here (rot90, 10 deg, peak ratio 1.5), 110 px (75 m) south-east of the nominal pixel."
   },
   {
-   "id": 264,
+   "id": 267,
+   "image_id": 94,
+   "category_id": 54,
+   "bbox": [
+    63,
+    1082,
+    37,
+    10
+   ],
+   "area": 370,
+   "iscrowd": 0,
+   "includes_shadow": true,
+   "confidence": "high",
+   "annotator": "claude",
+   "note": "Vikram: saturated bright body with a 28 px hard shadow inside the bright blast halo, at the crop's left edge. Located by point-set terrain match to the boxed M1450039289RC (flipx, rx 1.05 ry 0.6, vote ratio 2.8); the same body and shadow sit at the matched position (4947,1212) of the simultaneous M1468784668LC. Shadow length fits: 2.2 m height from the 15 px shadow in M1450039289RC predicts ~22 px at sun 6.8 deg and this cross-track scale. 72 px (62 m) from the nominal pixel (117,1024)."
+  },
+  {
+   "id": 268,
    "image_id": 95,
    "category_id": 43,
    "bbox": [
@@ -14713,7 +14778,7 @@
    "note": "Chang'e 1 impact pit at the apex of a faint ejecta fan; located from M126588566LC by eye (this frame is the mirror image: the 70 m bright crater is 400 px N, the 25 m crater with a dark floor 110 px SW) and NCC flipx peak at (1244-1252, 912); 188 m SE of the nominal pixel."
   },
   {
-   "id": 265,
+   "id": 269,
    "image_id": 96,
    "category_id": 43,
    "bbox": [
@@ -14730,7 +14795,7 @@
    "note": "Chang'e 1 impact: dark pits at the apex of the fan-shaped ejecta spray (fan opens to the S in this crop; the frame is south-up relative to Stooke 2017 fig. 7D, planetary.s3.amazonaws.com/web/assets/pictures/20170203_fig-7.jpg, where the fan opens to the N); 48 m from the nominal pixel."
   },
   {
-   "id": 266,
+   "id": 270,
    "image_id": 100,
    "category_id": 27,
    "bbox": [
@@ -14747,7 +14812,7 @@
    "note": "30 px bright blob (lander plus blast-brightened halo) with a dark patch on its west side, 35 px from nominal; nominal is on the crop edge"
   },
   {
-   "id": 267,
+   "id": 271,
    "image_id": 100,
    "category_id": 28,
    "bbox": [
@@ -14764,7 +14829,7 @@
    "note": "bright object with dark side 45 px south of the lander candidate; Yutu's final position is 21 m (37 px) SSW of the lander"
   },
   {
-   "id": 268,
+   "id": 272,
    "image_id": 114,
    "category_id": 46,
    "bbox": [
@@ -14781,7 +14846,7 @@
    "note": "Double crater at 82 deg incidence, interior mostly shadow with only the east crater's lit east wall visible; position from terrain registration to M1469915143LC (three independent patches agree within 8 px, ratio ~4); 290 m from the nominal pixel."
   },
   {
-   "id": 269,
+   "id": 273,
    "image_id": 115,
    "category_id": 46,
    "bbox": [
@@ -14798,7 +14863,7 @@
    "note": "Same double crater, clearly resolved as two overlapping pits; located by terrain registration from M1528452693LC (NCC 0.72, peak ratio 5.5); 325 m from the nominal pixel."
   },
   {
-   "id": 270,
+   "id": 274,
    "image_id": 116,
    "category_id": 46,
    "bbox": [
@@ -14815,7 +14880,7 @@
    "note": "Fresh double crater with a bright west rim and dark radial rays at 30 deg incidence; terrain-matched by eye (mirrored E-W) to LROC's M1407760984R context image (lroc.im-ldi.com/images/1261), same dark-ray signature as in M1528452693LC; 150 m from the nominal pixel."
   },
   {
-   "id": 271,
+   "id": 275,
    "image_id": 117,
    "category_id": 46,
    "bbox": [
@@ -14832,7 +14897,7 @@
    "note": "E-W double crater (west ~16 m, east ~18 m) at the centre of a dark-ray halo; terrain-matched by eye (flipped N-S) to LROC's 1100 m context image of M1407760984R (lroc.im-ldi.com/images/1261); 190 m from the nominal pixel."
   },
   {
-   "id": 272,
+   "id": 276,
    "image_id": 131,
    "category_id": 55,
    "bbox": [
@@ -14849,7 +14914,7 @@
    "note": "Hakuto-R M1 impact: 1 px bright speck with dark regolith to its lower-left (the release's arrow A, bright upper-left / dark lower-right, mirrored since this crop is x-flipped), 5 px from where rotation NCC of the LROC cover image (https://lroc.im-ldi.com/images/1302, flipx, -10 deg, ratio 2.6) puts arrow A; 10 m east of the nominal pixel. (1-2 px specks in hummocky terrain: candidate only)"
   },
   {
-   "id": 273,
+   "id": 277,
    "image_id": 132,
    "category_id": 55,
    "bbox": [
@@ -14866,7 +14931,7 @@
    "note": "Hakuto-R M1 impact: two saturated pixels with a dark patch to their lower-left at the point where rotation NCC of the LROC cover image (flipx, -10 deg, ncc 0.82, ratio 2.8) puts arrow A; 85 m west of the nominal pixel; incidence 85 deg so the hummocky terrain is contrasty too. (1-2 px specks in hummocky terrain: candidate only)"
   },
   {
-   "id": 274,
+   "id": 278,
    "image_id": 133,
    "category_id": 55,
    "bbox": [
@@ -14883,7 +14948,7 @@
    "note": "Hakuto-R M1 impact: 10 px dark patch with brighter regolith to its lower-right (arrow A rotated 180 deg, as this crop is), 8 px from where rotation NCC of the LROC cover image (rot180, 10 deg, ratio 2.6) puts arrow A; 250 m west of the nominal pixel. (1-2 px specks in hummocky terrain: candidate only)"
   },
   {
-   "id": 275,
+   "id": 279,
    "image_id": 135,
    "category_id": 56,
    "bbox": [
@@ -14900,7 +14965,7 @@
    "note": "Resilience impact: same dark smudge with bright speck at the position transferred from M1517068228RC by crater point matching (vote ratio 7.0, same orientation and scale); 170 px (95 m) north-east of the nominal pixel."
   },
   {
-   "id": 276,
+   "id": 280,
    "image_id": 136,
    "category_id": 56,
    "bbox": [
@@ -14917,7 +14982,7 @@
    "note": "Resilience impact: 20 px dark smudge with a bright speck, the dark smudge + bright halo of the LROC release (https://lroc.im-ldi.com/images/1456), neighbouring craters agree with the release at 0.945 m/px; 110 px (60 m) east of the nominal pixel."
   },
   {
-   "id": 277,
+   "id": 281,
    "image_id": 151,
    "category_id": 47,
    "bbox": [
@@ -14934,7 +14999,7 @@
    "note": "4x5 m fresh crater: affine fit of 6 craters between LROC's labelled after image M1324916226L (lroc.im-ldi.com/images/1132; residual <2 px) and this crop predicts (636,1083), where a small crater with bright wall and shadow sits; 92 m from the nominal pixel."
   },
   {
-   "id": 278,
+   "id": 282,
    "image_id": 152,
    "category_id": 47,
    "bbox": [
@@ -14951,7 +15016,7 @@
    "note": "Same 4x5 m crater as a bright high-albedo spot with a central pit at 24 deg incidence; located by registration from M1457504014LC (locate_points vote ratio 3.5, NCC 0.77) to within 4 px; 50 m from the nominal pixel."
   },
   {
-   "id": 279,
+   "id": 283,
    "image_id": 177,
    "category_id": 57,
    "bbox": [
@@ -14968,7 +15033,7 @@
    "note": "Luna 25 crater: 13 px fresh crater with saturated bright ejecta and a dark halo with faint dark rays, the only such feature near where rotation NCC of the LROC release M1447547309R (https://lroc.im-ldi.com/images/1311, as-is, 5 deg, peak ratio 1.45) puts the arrow; 130 px (100 m) north-west of the nominal pixel."
   },
   {
-   "id": 280,
+   "id": 284,
    "image_id": 183,
    "category_id": 44,
    "bbox": [
@@ -14985,7 +15050,7 @@
    "note": "Candidate only: the same bright-plus-dark-spots object 'a' of Pinault et al. 2026 Fig. 1, located from M132071202LC by terrain match (this crop is flipped vertically: NCC flipy peak (824,1112) ratio 2.2, locate_points (816,1110) ratio 1.9, crater pattern checked by eye); 250 m from the nominal pixel. Unconfirmed, could be a rock."
   },
   {
-   "id": 281,
+   "id": 285,
    "image_id": 184,
    "category_id": 44,
    "bbox": [
@@ -15002,7 +15067,7 @@
    "note": "Candidate only: object 'a' (bright spot with two dark spots E of it, the 43.8% 'Landing_Module' detection) of Pinault, Yano & Crawford 2026 Fig. 1, which is this very frame (nature.com/articles/s44453-025-00020-x, fig: media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs44453-025-00020-x/MediaObjects/44453_2025_20_Fig1_HTML.png); the figure is rotated 180 deg relative to the crop and NCC-registered to it (peak ratio 2.3, crater pattern verified by eye); 200 m NE of the nominal pixel. Unconfirmed, could be a rock."
   },
   {
-   "id": 282,
+   "id": 286,
    "image_id": 190,
    "category_id": 29,
    "bbox": [
@@ -15019,7 +15084,7 @@
    "note": "10 px bright compact object with a dark shadow east (craters in this frame are dark-west, so a raised object); 360 px west of nominal; size fits the 2.2 m rover"
   },
   {
-   "id": 283,
+   "id": 287,
    "image_id": 196,
    "category_id": 48,
    "bbox": [
@@ -15036,7 +15101,7 @@
    "note": "Fresh 14 m crater with a brilliant ray system 180 m from the nominal pixel, the only candidate of Ranger size in the crop; rim poorly defined in the saturated ejecta; no labelled LROC image of the Ranger 6 crater matched (featured-site view lroc.im-ldi.com/featured_sites/ranger-6 too coarse); 180 m from the nominal pixel."
   },
   {
-   "id": 284,
+   "id": 288,
    "image_id": 199,
    "category_id": 49,
    "bbox": [
@@ -15053,7 +15118,7 @@
    "note": "Same rayed crater (17 px) with west-wall shadow; located by terrain registration from M153014430LC (flipped E-W, NCC peak ratio 2.1) and confirmed by the ray pattern and neighbouring craters; 74 m from the nominal pixel."
   },
   {
-   "id": 285,
+   "id": 289,
    "image_id": 200,
    "category_id": 49,
    "bbox": [
@@ -15070,7 +15135,7 @@
    "note": "Ranger 7 crater (13 m, 30 px) at 84 deg incidence, dark bowl with bright east rim; this is the frame of LROC's labelled low-sun image M132963565R (lroc.im-ldi.com/images/52) and terrain registration from the labelled M153014430LC lands here (NCC peak ratio 8.2); 124 m from the nominal pixel."
   },
   {
-   "id": 286,
+   "id": 290,
    "image_id": 201,
    "category_id": 49,
    "bbox": [
@@ -15087,7 +15152,7 @@
    "note": "Bowl crater (16 px) with dark west wall and bright east rim at the position predicted by two independent point-set registrations from M153014430LC and M132963565RC (agree within 3 px, vote ratio 2.0); rays not visible at this sun angle; 72 m from the nominal pixel."
   },
   {
-   "id": 287,
+   "id": 291,
    "image_id": 202,
    "category_id": 49,
    "bbox": [
@@ -15104,7 +15169,7 @@
    "note": "Ranger 7 crater (14 m) with a brilliant ray system; this is the frame of LROC's labelled image M153014430L (lroc.im-ldi.com/images/52), same bright rayed crater with the dark-haloed crater to its SW; 28 m from the nominal pixel."
   },
   {
-   "id": 288,
+   "id": 292,
    "image_id": 204,
    "category_id": 50,
    "bbox": [
@@ -15121,7 +15186,7 @@
    "note": "Fresh 13 m crater with a bright ray system, the only rayed crater of Ranger size within 400 m of the nominal pixel; no published labelled LROC image of the Ranger 8 crater was found (the featured-site view lroc.im-ldi.com/featured_sites/ranger-8 could not be matched), so identity rests on size and freshness only; 107 m from the nominal pixel."
   },
   {
-   "id": 289,
+   "id": 293,
    "image_id": 205,
    "category_id": 50,
    "bbox": [
@@ -15138,7 +15203,7 @@
    "note": "Same crater located by registration from M137387301RC (flipped N-S, NCC peak ratio 2.9, point-vote ratio 3.0); identity as Ranger 8 unconfirmed; 111 m from the nominal pixel."
   },
   {
-   "id": 290,
+   "id": 294,
    "image_id": 206,
    "category_id": 50,
    "bbox": [
@@ -15155,7 +15220,7 @@
    "note": "Same rayed crater (dark west bowl, bright east wall) located by terrain registration from M137387301RC (NCC 0.33, peak ratio 5.5); identity as Ranger 8 unconfirmed; 205 m from the nominal pixel."
   },
   {
-   "id": 291,
+   "id": 295,
    "image_id": 207,
    "category_id": 51,
    "bbox": [
@@ -15172,7 +15237,7 @@
    "note": "Same crater (16 px); located by terrain registration from the LROC-anchored M117507817LC (flipped N-S, NCC 0.34, peak ratio 5.2) and confirmed by the neighbouring crater pattern; 65 m from the nominal pixel."
   },
   {
-   "id": 292,
+   "id": 296,
    "image_id": 208,
    "category_id": 51,
    "bbox": [
@@ -15189,7 +15254,7 @@
    "note": "Ranger 9 crater (14 m, 16 px): LROC's Ranger 9 featured-site image M117507817L (lroc.im-ldi.com/featured_sites/ranger-9), which is centred on the crater, matches this crop at NCC 0.90 with its centre on this bowl crater with a bright east rim; 192 m from the nominal pixel."
   },
   {
-   "id": 293,
+   "id": 297,
    "image_id": 209,
    "category_id": 51,
    "bbox": [
@@ -15206,7 +15271,7 @@
    "note": "Same rayed crater (28 px, dark west wall, bright east rim) 160 px from the crop edge; crater configuration identical to M157607994RC; 428 m from the nominal pixel."
   },
   {
-   "id": 294,
+   "id": 298,
    "image_id": 210,
    "category_id": 51,
    "bbox": [
@@ -15223,7 +15288,7 @@
    "note": "Same crater (30 px) at the centre of a bright ray system at 26 deg incidence; the surrounding crater pattern (two bright craters NW, crater pair S) matches the LROC-anchored M117507817LC after an E-W flip; 126 m from the nominal pixel."
   },
   {
-   "id": 295,
+   "id": 299,
    "image_id": 212,
    "category_id": 58,
    "bbox": [
@@ -15240,7 +15305,7 @@
    "note": "SLIM: 3 px bright body with 2 px shadow, same frame as the LROC release (https://lroc.im-ldi.com/images/1358, arrow at 553,548 of the 0.8 m/px image) and terrain matches it; 80 m east, 60 m south of the nominal pixel."
   },
   {
-   "id": 296,
+   "id": 300,
    "image_id": 213,
    "category_id": 58,
    "bbox": [
@@ -15257,7 +15322,7 @@
    "note": "SLIM: saturated 4 px body with a 12 px eastward shadow at the position predicted from M1460739214LC by gradient NCC (flipx, peak ratio 4.3), isolated on smooth ground; 110 m east, 70 m south of the nominal pixel."
   },
   {
-   "id": 297,
+   "id": 301,
    "image_id": 214,
    "category_id": 58,
    "bbox": [
@@ -15274,7 +15339,7 @@
    "note": "SLIM: saturated 4 px body with a 3 px shadow to the east (sun from the west in this frame), 15 px from the point predicted from M1467772940RC by NCC (as-is, peak ratio only 1.5); 230 px (200 m) east of the nominal pixel."
   },
   {
-   "id": 298,
+   "id": 302,
    "image_id": 216,
    "category_id": 45,
    "bbox": [
@@ -15291,7 +15356,7 @@
    "note": "SMART-1 gouge seen at 87 deg incidence as a 30 px N-S dark/bright linear scar, matching the right panels of Stooke 2017 fig. 9 (M1139222997L, M1160419708L look the same) and the same position relative to the bright 20 m crater to the NW; 49 m from the nominal pixel."
   },
   {
-   "id": 299,
+   "id": 303,
    "image_id": 217,
    "category_id": 45,
    "bbox": [
@@ -15308,7 +15373,7 @@
    "note": "SMART-1 gouge, the same N-S scar crossing a small pre-existing crater as in Stooke 2017 fig. 9 (M140210394L panel), located here by eye from the crater pattern (bright 20 m crater 300 px NW, pair of craters NE); 165 m E of the nominal pixel, 80 px from the right crop edge."
   },
   {
-   "id": 300,
+   "id": 304,
    "image_id": 218,
    "category_id": 45,
    "bbox": [
@@ -15325,7 +15390,7 @@
    "note": "SMART-1 gouge (dark linear scar with bright E flank, crossing a small crater) 95 px SE of the same 20 m bright crater that sits NW of the scar in Stooke 2017 fig. 9 (planetary.org/articles/0207-finding-spacecraft-impacts-on-the-moon); 16 m from the nominal pixel."
   },
   {
-   "id": 301,
+   "id": 305,
    "image_id": 219,
    "category_id": 45,
    "bbox": [
@@ -15342,7 +15407,7 @@
    "note": "SMART-1 impact gouge (4x20 m linear scar with bright N end and faint ejecta fan to the S): this exact frame is the labeled left panel of Stooke 2017 fig. 9 (planetary.s3.amazonaws.com/web/assets/pictures/20170203_fig-9.jpg); 65 m NW of the nominal pixel."
   },
   {
-   "id": 302,
+   "id": 306,
    "image_id": 221,
    "category_id": 30,
    "bbox": [
@@ -15359,7 +15424,7 @@
    "note": "high sun (incidence 23): isolated 6 px bright dot with no crater rim, 175 px from nominal; the only non-crater candidate within 450 px"
   },
   {
-   "id": 303,
+   "id": 307,
    "image_id": 224,
    "category_id": 9,
    "bbox": [
@@ -15376,7 +15441,7 @@
    "note": "transferred from crop moon/apollo12_lm/M168353795LC.png (same frame, offset -395,-183)"
   },
   {
-   "id": 304,
+   "id": 308,
    "image_id": 225,
    "category_id": 10,
    "bbox": [
@@ -15393,7 +15458,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 305,
+   "id": 309,
    "image_id": 225,
    "category_id": 9,
    "bbox": [
@@ -15410,7 +15475,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 306,
+   "id": 310,
    "image_id": 225,
    "category_id": 11,
    "bbox": [
@@ -15427,7 +15492,7 @@
    "note": "transferred from crop moon/apollo12_lm/M175428601RC.png (same frame, offset +494,-183)"
   },
   {
-   "id": 307,
+   "id": 311,
    "image_id": 228,
    "category_id": 40,
    "bbox": [
@@ -15444,7 +15509,7 @@
    "note": "very dark elongated spot with a diffuse dark halo and no bright rim (unlike the craters beside it), 15 px from the position predicted from the high-confidence Apollo 12 LM box plus the catalog offset; matches Stooke (LPSC 2016) 'very dark spot'; 75 m from nominal"
   },
   {
-   "id": 308,
+   "id": 312,
    "image_id": 229,
    "category_id": 40,
    "bbox": [
@@ -15461,7 +15526,7 @@
    "note": "low sun (incidence 73): small dark spot left of a small crater, located by eye-matching the crater pattern around the M175428601RC retrorocket box (track and blocky crater as anchors); 90 m from nominal"
   },
   {
-   "id": 309,
+   "id": 313,
    "image_id": 237,
    "category_id": 31,
    "bbox": [
@@ -15478,7 +15543,7 @@
    "note": "low sun (incidence 81): 5 px bright point with a 30 px thin shadow east, 90 px from the terrain-matched position of the M152885739LC box; thin long shadow fits a mast"
   },
   {
-   "id": 310,
+   "id": 314,
    "image_id": 239,
    "category_id": 41,
    "bbox": [
@@ -15495,7 +15560,7 @@
    "note": "same object as the surveyor6_retrorocket/M1456219989RC box (same frame, offset +412,-449)"
   },
   {
-   "id": 311,
+   "id": 315,
    "image_id": 240,
    "category_id": 31,
    "bbox": [
@@ -15512,7 +15577,7 @@
    "note": "mid sun (incidence 33): 6 px bright point with a 10 px shadow streak east, 95 px from nominal; strongest raised-object candidate in a 450 px radius"
   },
   {
-   "id": 312,
+   "id": 316,
    "image_id": 240,
    "category_id": 41,
    "bbox": [
@@ -15529,7 +15594,7 @@
    "note": "same object as the surveyor6_retrorocket/M152885739LC box (same frame, offset +743,+663): dark-rayed small crater"
   },
   {
-   "id": 313,
+   "id": 317,
    "image_id": 243,
    "category_id": 41,
    "bbox": [
@@ -15546,7 +15611,7 @@
    "note": "small crater (dark floor, bright east rim) at the position transferred by eye from the M152885739LC box using two nearby craters 70 m apart (scale matches); 45 m from nominal"
   },
   {
-   "id": 314,
+   "id": 318,
    "image_id": 244,
    "category_id": 41,
    "bbox": [
@@ -15563,7 +15628,7 @@
    "note": "very dark 3 m crater with radiating dark rays, as described by Stooke (LPSC 2016), 10 px from the position predicted from the Surveyor 6 box plus the catalog offset; 50 m from nominal"
   },
   {
-   "id": 315,
+   "id": 319,
    "image_id": 245,
    "category_id": 32,
    "bbox": [
@@ -15580,7 +15645,7 @@
    "note": "low sun (incidence 84): bright point with a 35 px thin shadow east in a boulder field, 130 px from nominal; thin shadow suggests a mast rather than a boulder"
   },
   {
-   "id": 316,
+   "id": 320,
    "image_id": 246,
    "category_id": 32,
    "bbox": [
@@ -15597,7 +15662,7 @@
    "note": "terrain match from M131724362LC (ratio 1.6): bright blob with shadow east; identification uncertain"
   },
   {
-   "id": 317,
+   "id": 321,
    "image_id": 247,
    "category_id": 32,
    "bbox": [
@@ -15614,7 +15679,7 @@
    "note": "terrain match from M131724362LC (vote ratio 4.2) then by eye: 8 px bright object with dark shadow east; 290 px from nominal"
   },
   {
-   "id": 318,
+   "id": 322,
    "image_id": 248,
    "category_id": 32,
    "bbox": [
@@ -15631,7 +15696,7 @@
    "note": "terrain match from M131724362LC (ratio 2.1): two bright specks with shadow east; identification uncertain"
   },
   {
-   "id": 319,
+   "id": 323,
    "image_id": 249,
    "category_id": 27,
    "bbox": [
@@ -15648,7 +15713,7 @@
    "note": "transferred from crop moon/change3/M1514853442RC.png (same frame, offset +0,-31)"
   },
   {
-   "id": 320,
+   "id": 324,
    "image_id": 249,
    "category_id": 28,
    "bbox": [
@@ -16079,6 +16144,12 @@
    "name": "viking2",
    "supercategory": "artifact",
    "label": "Viking 2 lander"
+  },
+  {
+   "id": 71,
+   "name": "chandrayaan2_vikram",
+   "supercategory": "artifact",
+   "label": "Chandrayaan-2 Vikram lander crash site"
   }
  ]
 }
