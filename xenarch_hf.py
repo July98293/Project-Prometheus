@@ -16,6 +16,11 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
     crops_lroc-nac_hirise/<body>_<camera>/<site>_<camera>/<frame>_<site>.png
                                                 data/artifact-site-images/<body>/<site>/<frame>.png
     derived/                                    sites, frames, rover-frames: rebuilt by build_catalog.py
+  human-traces_labels/                         every labelled human trace as a 256x256 chip, one folder per class
+    labels_moon-mars_lroc-nac_hirise.csv        data/artifact-site-labels/metadata.csv: the label table (build_labels.py)
+    chips_lroc-nac_hirise/<body>_<camera>/<body>_<class>_<camera>/<object>_<frame>.png
+                                                data/artifact-site-labels/<body>/<class>/<object>_<frame>.png
+    contact-sheets_lroc-nac_hirise/<class>_lroc-nac_hirise.jpg   one preview sheet per class + overview
   raw/legacy_source-files/                     what the legacy set was made from: PDS originals (.IMG, JPEG),
                                                labels (JSON / XML), the old 'squares' tiles, manifest.csv
 
@@ -23,6 +28,7 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
   .venv/bin/python xenarch_hf.py legacy-meta                    build data/xenarch-imagery/metadata.csv from raw/ labels
   .venv/bin/python xenarch_hf.py crops [local dir]              publish the hardware crops
   .venv/bin/python xenarch_hf.py tables                         publish the catalog, boxes and derived tables
+  .venv/bin/python xenarch_hf.py labels [local dir]             publish the human-trace label chips, table, contact sheets
   .venv/bin/python xenarch_hf.py readme                         publish docs/xenarch-dataset-README.md
   .venv/bin/python xenarch_hf.py migrate [--dry]                move files still under older names (server side)
 
@@ -41,6 +47,9 @@ TERRAIN = "natural-terrain_training"
 HARDWARE = "human-hardware_ground-truth"
 CROPS = f"{HARDWARE}/crops_lroc-nac_hirise"
 DERIVED = f"{HARDWARE}/derived"
+LABELS = "human-traces_labels"
+CHIPS = f"{LABELS}/chips_lroc-nac_hirise"
+SHEETS = f"{LABELS}/contact-sheets_lroc-nac_hirise"
 LEGACY = f"{TERRAIN}/legacy_mixed-cameras"
 RAW = "raw/legacy_source-files"
 CAMERA = {"moon": "lroc-nac", "mars": "hirise"}                    # hardware crops: body -> camera
@@ -49,6 +58,7 @@ TERRAIN_SETS = {"moon": ("moon", "lroc-nac"), "mars": ("mars", "hirise"), "ohrc"
 LOCAL_TERRAIN = {"moon": HERE / "data/lroc-nac-set", "mars": HERE / "data/hirise-set", "ohrc": HERE / "data/ohrc-set",
                  "legacy": HERE / "data/xenarch-imagery"}
 LOCAL_CROPS = HERE / "data/artifact-site-images"
+LOCAL_LABELS = HERE / "data/artifact-site-labels"
 CATALOG = HERE / "artifact-site-catalog"
 
 # local file -> path in the repo
@@ -105,6 +115,14 @@ def crop_rel(rel):
     body, site, name = rel.split("/", 2)
     stem, ext = name.rsplit(".", 1)
     return f"{body}_{CAMERA[body]}/{site}_{CAMERA[body]}/{stem}_{site}.{ext}"
+
+
+def chip_rel(rel):
+    """'moon/lander/apollo11_lm_M1.png' -> 'moon_lroc-nac/moon_lander_lroc-nac/apollo11_lm_M1.png' (relative to CHIPS)."""
+    if rel.split("/", 1)[0] not in CAMERA:
+        return rel  # already renamed
+    body, label, name = rel.split("/", 2)
+    return f"{body}_{CAMERA[body]}/{body}_{label}_{CAMERA[body]}/{name}"
 
 
 def _rewrite_csv(data, column=None, fn=None, drop=()):
@@ -283,6 +301,25 @@ def publish_tables(repo=REPO):
     _commit(ops, f"{HARDWARE}: site catalog, boxes, derived tables", repo)
 
 
+def publish_labels(local=None, repo=REPO):
+    """Chips under CHIPS (with their metadata.csv for the HF viewer), the label table at the top of LABELS, the
+    contact sheets; files under LABELS that are no longer built are deleted."""
+    local = Path(local or LOCAL_LABELS)
+    ops = [CommitOperationAdd(f"{CHIPS}/{chip_rel(str(f.relative_to(local)))}", str(f))
+           for f in sorted(local.glob("*/*/*.png")) if f.parts[-3] in CAMERA]
+    meta = _rewrite_csv((local / "metadata.csv").read_bytes(), "file_name", chip_rel)
+    meta = _rewrite_csv(meta, "crop_file", lambda p: f"{CROPS}/{crop_rel(p)}")
+    ops.append(CommitOperationAdd(f"{CHIPS}/metadata.csv", meta))
+    ops.append(CommitOperationAdd(f"{LABELS}/labels_moon-mars_lroc-nac_hirise.csv",
+                                  _rewrite_csv(meta, "file_name", lambda p: f"{CHIPS.split('/', 1)[1]}/{p}")))
+    ops += [CommitOperationAdd(f"{SHEETS}/{f.stem}_lroc-nac_hirise.jpg", str(f)) for f in sorted((local / "contact-sheets").glob("*.jpg"))]
+    built = {o.path_in_repo for o in ops}
+    existing = set(HfApi().list_repo_files(repo, repo_type="dataset"))
+    ops += [CommitOperationDelete(p) for p in sorted(existing) if p.startswith(f"{LABELS}/") and p not in built]
+    _commit(ops, f"{LABELS}: human-trace chips by class, label table, contact sheets", repo)
+    print(f"https://huggingface.co/datasets/{repo}/tree/main/{LABELS}")
+
+
 def publish_readme(repo=REPO):
     _commit([CommitOperationAdd("README.md", str(HERE / "docs/xenarch-dataset-README.md"))], "README", repo)
 
@@ -297,6 +334,8 @@ if __name__ == "__main__":
         publish_crops(rest[0] if rest else None)
     elif cmd == "tables":
         publish_tables()
+    elif cmd == "labels":
+        publish_labels(rest[0] if rest else None)
     elif cmd == "readme":
         publish_readme()
     elif cmd == "migrate":

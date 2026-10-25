@@ -1,7 +1,7 @@
 ---
 license: cc0-1.0
 pretty_name: Xenarch
-tags: [moon, mars, lroc, hirise, planetary-science, anomaly-detection, technosignatures, object-detection]
+tags: [moon, mars, lroc, hirise, planetary-science, anomaly-detection, technosignatures, object-detection, image-classification]
 size_categories: [1K<n<10K]
 configs:
   - config_name: terrain_moon
@@ -15,6 +15,10 @@ configs:
   - config_name: artifact_images
     data_dir: human-hardware_ground-truth/crops_lroc-nac_hirise
     default: true
+  - config_name: trace_labels
+    data_dir: human-traces_labels/chips_lroc-nac_hirise
+  - config_name: labels
+    data_files: human-traces_labels/labels_moon-mars_lroc-nac_hirise.csv
   - config_name: catalog
     data_files: human-hardware_ground-truth/catalog_moon-mars_lroc-nac_hirise.csv
   - config_name: sites
@@ -30,6 +34,9 @@ Data for Xenarch, an unsupervised anomaly detector for planetary imagery. The mo
 terrain (`natural-terrain_training/`); the places where it *should* raise a flag are the known human-made hardware on the
 Moon and Mars: landers, rovers, experiment packages, crash and rocket-stage impact craters (`human-hardware_ground-truth/`).
 Keep the two apart: `natural-terrain_training/` is training data, `human-hardware_ground-truth/` is the test.
+`human-traces_labels/` turns that ground truth into a labelled classification set: every trace humans left (landers,
+rovers, rover tracks, astronaut footpaths, experiments, impact craters, landing hardware, blast zones) as a chip with
+its class, plus natural-terrain chips of the same sites before arrival.
 
 Every folder and file name says what it holds and which camera took it (`lroc-nac` = LRO Narrow Angle
 Camera, Moon; `hirise` = MRO HiRISE, Mars), so a folder copied out of the dataset still explains itself.
@@ -55,7 +62,7 @@ human-hardware_ground-truth/                   known human-made objects (ground 
   catalog_moon-mars_lroc-nac_hirise.csv        THE table: 4,633 rows, one per object × orbital frame (100 objects)
   boxes-coco_lroc-nac_hirise.json              bounding boxes around the hardware in the crops (COCO); crops where
                                                the hardware could not be identified carry `unboxed_reason`
-  crops_lroc-nac_hirise/                       257 crops of 2048×2048 centred on the first 44 objects
+  crops_lroc-nac_hirise/                       527 crops of 2048×2048 around 95 objects
     metadata.csv
     moon_lroc-nac/<site>_lroc-nac/<frame>_<site>.png
     mars_hirise/<site>_hirise/<frame>_<site>.png
@@ -63,6 +70,13 @@ human-hardware_ground-truth/                   known human-made objects (ground 
     sites_moon-mars.csv                        100 objects: coordinates and their source, arrival, best frame
     frames_lroc-nac_hirise.csv                 every orbital frame covering each object
     rover-frames_mars_hirise.csv               HiRISE frames that caught Curiosity / Perseverance where they were that sol
+human-traces_labels/                         every labelled human trace as a 256×256 chip, by class
+  labels_moon-mars_lroc-nac_hirise.csv         THE label table: one row per chip, `label` = class
+  chips_lroc-nac_hirise/
+    metadata.csv
+    moon_lroc-nac/moon_<class>_lroc-nac/<object>_<frame>.png
+    mars_hirise/mars_<class>_hirise/<object>_<frame>.png
+  contact-sheets_lroc-nac_hirise/              one preview sheet per class (box outlined) + overview
 raw/legacy_source-files/                       what the legacy set was made from (not needed for training)
   <body>_<camera>_originals/                   Clementine JPEGs, HiRISE .IMG EDRs as downloaded
   <body>_<camera>_pds-labels/                  one PDS label (JSON / XML) per image, summarised in the legacy metadata.csv
@@ -70,8 +84,8 @@ raw/legacy_source-files/                       what the legacy set was made from
   manifest.csv                                 download log of the first pipeline
 ```
 
-All images are 8-bit grayscale PNG at native resolution (no resampling), each stretched from its
-0.5–99.5 percentile. Scripts that build every file live in the Project Prometheus repository
+All images are 8-bit grayscale PNG at native resolution (no resampling; only label chips of boxes larger than ~190 px are
+resized, `chip_scale` > 1), each stretched from its 0.5–99.5 percentile. Scripts that build every file live in the Project Prometheus repository
 (`xenarch_lroc_nac_dataset.py`, `xenarch_hirise_dataset.py`, `artifact-site-catalog/`; `xenarch_hf.py` publishes
 them under these names).
 
@@ -152,7 +166,8 @@ no crop yet (empty `crop_file`).
 
 **boxes-coco_lroc-nac_hirise.json**: COCO file. `images` lists every crop (`file_name` relative to `crops_lroc-nac_hirise/`,
 plus frame metadata); `annotations` holds one `bbox` `[x, y, w, h]` per object per crop, pixels in the 2048² crop, origin
-top-left; `categories` has one entry per object (`name` = `site_id` of the catalog). Boxes include the object's shadow. `confidence` is `high` (unambiguous: bright body with hard
+top-left; `categories` has one entry per object (`name` = `site_id` of the catalog). Tracks are categories of their own
+(`<mission>_footpaths`, `<rover>_tracks`, not in the catalog) with one box per visible segment. Boxes include the object's shadow. `confidence` is `high` (unambiguous: bright body with hard
 shadow, tracks, or matches a published labeled image), `medium` (right size and shadow at the predicted position) or
 `low` (could be a rock). `note` says how the box was found. All six Apollo sites are boxed; most small Soviet and
 Chinese landers and most Mars rover frames are not (their image record's `unboxed_reason` says why).
@@ -162,6 +177,33 @@ Chinese landers and most Mars rover frames are not (their image record's `unboxe
 frame per object; `obj_sample_frac` / `obj_line_frac` give the object's position in a raw NAC frame **only
 approximately**, off by up to ~1,300 px), `rover-frames_mars_hirise.csv` (`object_lat`, `object_lon_east`: where the
 rover was on that sol, from NASA/JPL waypoints).
+
+## human-traces_labels/
+
+One 256×256 chip per labelled trace, cut from the 2048² crops around each box of the COCO file (boxes larger than
+~190 px are cut wider and resized, see `chip_scale`). The same object seen at the same spot through two crops of one
+frame gives one chip. Classes (`label`, = the folder name's middle part):
+
+| Class | What |
+|---|---|
+| `lander` | crewed and robotic landers, Moon and Mars |
+| `rover` | rovers and the Apollo LRVs |
+| `rover-tracks` | wheel tracks (Apollo 15/16/17 LRV, Curiosity) |
+| `astronaut-footpaths` | trails of footprints (Apollo 12/14/16/17). Single footprints (~0.3 m) are below the resolution of every camera here |
+| `surface-experiment` | ALSEP, seismometers, laser retroreflectors, Apollo 17 SEP |
+| `impact-crater` | crash, rocket-stage, ascent-stage and retrorocket impact craters |
+| `landing-hardware` | heat shields, backshells with parachutes, the Perseverance descent stage |
+| `landing-blast-zone` | ground scoured by descent engines (Curiosity, Perseverance) |
+| `natural-terrain` | negatives: the same sites in frames taken before arrival (centre + four quadrants of each crop) |
+
+Columns besides the common ones: `object_id` (catalog `site_id`, or the track category), `object`, `object_type`
+(catalog type), `mission`, `location_id` (objects within 10 km share one), `crop_file` (the source crop, path in this
+dataset), `chip_x0`, `chip_y0`, `chip_side_px` (where the chip sits in the crop, crop pixels), `chip_scale` (crop px per
+chip px), `box_x_min` … `box_y_max` (the labelled box in chip pixels; empty for natural terrain), `box_confidence`,
+`includes_shadow`, `note` (how the box was found), `source_url`. `resolution_m_px` is the chip's own pixel scale.
+`split` is fixed per location, so no terrain is in both halves: the hash split of the other tables, plus one validation
+location for every class seen in two or more locations. Tracks are few (one to three segments per site where they are
+unmistakable); treat `medium` boxes as likely, not certain.
 
 ## Credit
 

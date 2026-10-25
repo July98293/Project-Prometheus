@@ -6,6 +6,7 @@
 #   ./train.sh data/xenarch-imagery --latent-channels 8   Mk15 with a sharper spatial latent
 #   ./train.sh --view              only open the dashboard
 #   ./train.sh --boxes             only open the artifact bounding-box review page
+#   ./train.sh --labels            only open the human-trace label page (chips by class)
 set -euo pipefail
 cd "$(dirname "$0")"
 PORT="${PORT:-8050}"
@@ -30,9 +31,9 @@ else
   sleep 1
 fi
 echo "Dashboard: http://localhost:$PORT"
-PAGE=""; [ "$DATA" = "--boxes" ] && PAGE="boxes.html"
+PAGE=""; [ "$DATA" = "--boxes" ] && PAGE="boxes.html"; [ "$DATA" = "--labels" ] && PAGE="labels.html"
 open "http://localhost:$PORT/$PAGE" 2>/dev/null || true
-[ "$DATA" = "--view" ] || [ "$DATA" = "--boxes" ] && exit 0
+[ "$DATA" = "--view" ] || [ "$DATA" = "--boxes" ] || [ "$DATA" = "--labels" ] && exit 0
 
 if [ ! -d "$DATA" ]; then
   echo "No image folder '$DATA'. Download the dataset with:"

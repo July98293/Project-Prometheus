@@ -71,6 +71,9 @@ table{border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:
 <img src='review/moon_apollo12_lm_M175428601RC.png' loading='lazy'>
 <table><tr><th>object</th><th>x_min</th><th>y_min</th><th>x_max</th><th>y_max</th><th>w</th><th>h</th><th>shadow</th><th>conf</th><th>note</th></tr>
 <tr><td class='flag'>apollo12_alsep</td><td>1263</td><td>694</td><td>1300</td><td>708</td><td>38</td><td>15</td><td>yes</td><td>high</td><td>cluster of small bright points with shadows at the position predicted from the LM box plus the catalog's relative offset; tracks lead to it</td></tr>
+<tr><td class='flag'>apollo12_footpaths</td><td>620</td><td>1190</td><td>830</td><td>1215</td><td>211</td><td>26</td><td>no</td><td>high</td><td>astronaut footpath: dark trail of the EVA-2 loop south of the LM, running east-west toward the Surveyor 3 crater, segment between the LM and Surveyor 3</td></tr>
+<tr><td class='flag'>apollo12_footpaths</td><td>1060</td><td>780</td><td>1200</td><td>845</td><td>141</td><td>66</td><td>no</td><td>high</td><td>astronaut footpaths: two parallel dark 2-3 px trails running from the LM box north-east to the ALSEP box (EVA-1 ALSEP deployment), segment between the two</td></tr>
+<tr><td class='flag'>apollo12_footpaths</td><td>560</td><td>828</td><td>760</td><td>850</td><td>201</td><td>23</td><td>no</td><td>high</td><td>astronaut footpath: straight dark 2-3 px trail running west from the LM, continuous for ~500 px (200 m), segment 300 px west of the LM</td></tr>
 <tr><td class='flag'>apollo12_lm</td><td>893</td><td>853</td><td>942</td><td>870</td><td>50</td><td>18</td><td>yes</td><td>high</td><td>by eye: bright body x895-925 with shadow east, inside the bright blast zone, astronaut tracks radiate from it; 100 px west / 170 px north of nominal</td></tr>
 <tr><td class='flag'>surveyor3</td><td>412</td><td>1043</td><td>452</td><td>1060</td><td>41</td><td>18</td><td>yes</td><td>high</td><td>bright point with 15 px shadow east at the position predicted from the LM box; astronaut tracks reach it</td></tr>
 </table>
@@ -162,6 +165,8 @@ table{border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:
 <img src='review/moon_apollo14_lm_M119971387RC.png' loading='lazy'>
 <table><tr><th>object</th><th>x_min</th><th>y_min</th><th>x_max</th><th>y_max</th><th>w</th><th>h</th><th>shadow</th><th>conf</th><th>note</th></tr>
 <tr><td class='flag'>apollo14_alsep</td><td>147</td><td>1103</td><td>160</td><td>1114</td><td>14</td><td>12</td><td>no</td><td>medium</td><td>bright 4 px dot where the track from the LM ends, 25 px from the position predicted by the catalog offset from the LM</td></tr>
+<tr><td class='flag'>apollo14_footpaths</td><td>215</td><td>1055</td><td>425</td><td>1095</td><td>211</td><td>41</td><td>no</td><td>high</td><td>astronaut footpaths (and MET handcart tracks): two parallel dark trails from the LM box west to the ALSEP box, mid segment</td></tr>
+<tr><td class='flag'>apollo14_footpaths</td><td>640</td><td>1035</td><td>800</td><td>1130</td><td>161</td><td>96</td><td>no</td><td>high</td><td>astronaut footpath: dark diagonal trail leaving the LM to the south-east, continuous for ~300 px</td></tr>
 <tr><td class='flag'>apollo14_lm</td><td>528</td><td>994</td><td>560</td><td>1024</td><td>33</td><td>31</td><td>yes</td><td>high</td><td>bright LM at the hub of the astronaut tracks, inside a dark disturbed halo; box includes the halo; 480 px west of nominal</td></tr>
 </table>
 </div>
@@ -254,6 +259,8 @@ table{border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:
 <tr><td class='flag'>apollo15_lm</td><td>1636</td><td>1102</td><td>1675</td><td>1124</td><td>40</td><td>23</td><td>yes</td><td>high</td><td>bright body with 15 px shadow east at the end of the LRV tracks; 625 px east of nominal</td></tr>
 <tr><td class='flag'>apollo15_lrrr</td><td>1362</td><td>1171</td><td>1371</td><td>1177</td><td>10</td><td>7</td><td>yes</td><td>high</td><td>same object as the apollo15_lrrr/M122184104RC box (same frame, offset -302,+52): bright body at the end of the footpath from the ALSEP</td></tr>
 <tr><td class='flag'>apollo15_lrv</td><td>1950</td><td>1068</td><td>1972</td><td>1082</td><td>23</td><td>15</td><td>yes</td><td>medium</td><td>dark object with bright centre at the end of a long track, 7 px from the position predicted from the LM box</td></tr>
+<tr><td class='flag'>apollo15_lrv_tracks</td><td>1576</td><td>955</td><td>1600</td><td>1095</td><td>25</td><td>141</td><td>no</td><td>high</td><td>LRV tracks: pair of parallel dark lines ~4 px (2 m, the LRV wheel track) apart running north from the LM area for 300 px</td></tr>
+<tr><td class='flag'>apollo15_lrv_tracks</td><td>1760</td><td>1077</td><td>1940</td><td>1127</td><td>181</td><td>51</td><td>no</td><td>high</td><td>LRV track: the rover's last drive from the LM east to its parking spot (apollo15_lrv box at the end of the line)</td></tr>
 </table>
 </div>
 <div class='card'>
@@ -349,8 +356,10 @@ table{border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:
 <img src='review/moon_apollo16_lm_M175179080LC.png' loading='lazy'>
 <table><tr><th>object</th><th>x_min</th><th>y_min</th><th>x_max</th><th>y_max</th><th>w</th><th>h</th><th>shadow</th><th>conf</th><th>note</th></tr>
 <tr><td class='flag'>apollo16_alsep</td><td>1455</td><td>1151</td><td>1478</td><td>1161</td><td>24</td><td>11</td><td>yes</td><td>medium</td><td>ALSEP central-station cluster: bright 9x3 px body with hard shadow where the footpaths converge, 25 px (10 m) from the position predicted from the LM box plus the catalog offset; the PSE itself cannot be separated at 0.4 m/px</td></tr>
+<tr><td class='flag'>apollo16_footpaths</td><td>1215</td><td>1040</td><td>1400</td><td>1075</td><td>186</td><td>36</td><td>no</td><td>medium</td><td>dark trails running from the LM east toward the ALSEP box (EVA-1 deployment on foot); several parallel lines, LRV tracks possibly mixed in</td></tr>
 <tr><td class='flag'>apollo16_lm</td><td>1148</td><td>1008</td><td>1195</td><td>1042</td><td>48</td><td>35</td><td>yes</td><td>high</td><td>bright LM with dark disturbed halo and shadow east; tracks lead to it; 130 px east of nominal</td></tr>
 <tr><td class='flag'>apollo16_lrv</td><td>826</td><td>980</td><td>892</td><td>1008</td><td>67</td><td>29</td><td>yes</td><td>medium</td><td>parked LRV: dark disturbed patch with bright dots and a track leading to it, 17 px from the position predicted from the LM box plus the catalog offset (was labelled apollo16_alsep; the ALSEP is on the other side of the LM)</td></tr>
+<tr><td class='flag'>apollo16_lrv_tracks</td><td>895</td><td>990</td><td>1075</td><td>1010</td><td>181</td><td>21</td><td>no</td><td>high</td><td>LRV track: thin double dark line from the parked LRV box east to the LM, segment between the two</td></tr>
 </table>
 </div>
 <div class='card'>
@@ -432,7 +441,10 @@ table{border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:
 <img src='review/moon_apollo17_lm_M172717297RC.png' loading='lazy'>
 <table><tr><th>object</th><th>x_min</th><th>y_min</th><th>x_max</th><th>y_max</th><th>w</th><th>h</th><th>shadow</th><th>conf</th><th>note</th></tr>
 <tr><td class='flag'>apollo17_alsep</td><td>690</td><td>1165</td><td>760</td><td>1195</td><td>71</td><td>31</td><td>no</td><td>medium</td><td>cluster of bright dots around the position predicted from the LM box via the catalog offset</td></tr>
+<tr><td class='flag'>apollo17_footpaths</td><td>470</td><td>1150</td><td>655</td><td>1200</td><td>186</td><td>51</td><td>no</td><td>medium</td><td>single winding dark 2 px trail continuing east toward the ALSEP box, narrower than the LRV line pairs</td></tr>
 <tr><td class='flag'>apollo17_lm</td><td>228</td><td>1236</td><td>270</td><td>1262</td><td>43</td><td>27</td><td>yes</td><td>high</td><td>bright LM in dark halo with tracks converging on it, 780 px west of nominal</td></tr>
+<tr><td class='flag'>apollo17_lrv_tracks</td><td>55</td><td>1215</td><td>235</td><td>1250</td><td>181</td><td>36</td><td>no</td><td>medium</td><td>bundle of parallel dark lines (pairs ~4 px = 2 m apart, the LRV wheel track) converging on the LM from the west; footpaths possibly mixed in</td></tr>
+<tr><td class='flag'>apollo17_lrv_tracks</td><td>285</td><td>1210</td><td>480</td><td>1270</td><td>196</td><td>61</td><td>no</td><td>medium</td><td>parallel dark line pairs leaving the LM to the east toward the ALSEP; LRV tracks, footpaths possibly mixed in</td></tr>
 </table>
 </div>
 <h2>Apollo 17 Lunar Roving Vehicle <span class='lab'>apollo17_lrv</span></h2>
@@ -1305,6 +1317,8 @@ table{border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:
 <table><tr><th>object</th><th>x_min</th><th>y_min</th><th>x_max</th><th>y_max</th><th>w</th><th>h</th><th>shadow</th><th>conf</th><th>note</th></tr>
 <tr><td class='flag'>curiosity_landing</td><td>935</td><td>1170</td><td>1105</td><td>1610</td><td>171</td><td>441</td><td>no</td><td>high</td><td>no hardware stays at the landing point: box = the dark descent-engine blast scour (~40 x 110 m) at Bradbury Landing, sol 33, with the rover tracks leading SE from it; ~150 m from the catalog pixel</td></tr>
 <tr><td class='flag'>curiosity_rover</td><td>1257</td><td>1619</td><td>1279</td><td>1642</td><td>23</td><td>24</td><td>yes</td><td>high</td><td>Curiosity rover (bright 3 m body + shadow) at the end of its tracks from the blast scour, sol 33</td></tr>
+<tr><td class='flag'>curiosity_rover_tracks</td><td>1105</td><td>1395</td><td>1185</td><td>1510</td><td>81</td><td>116</td><td>no</td><td>high</td><td>Curiosity's wheel tracks, sol 33: pair of dark parallel lines ~11 px (2.8 m, the rover's wheel track) apart leaving the blast scour to the south-east</td></tr>
+<tr><td class='flag'>curiosity_rover_tracks</td><td>1170</td><td>1500</td><td>1255</td><td>1615</td><td>86</td><td>116</td><td>no</td><td>high</td><td>Curiosity's wheel tracks, sol 33: the same line pair continuing to the curiosity_rover box at its end</td></tr>
 </table>
 </div>
 <div class='card'>

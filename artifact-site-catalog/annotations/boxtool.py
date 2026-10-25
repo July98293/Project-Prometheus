@@ -3,9 +3,11 @@
 
   boxtool.py hunt FILE [--radius 500] [--top 12] [--at X,Y]   candidate sheet around the nominal position
   boxtool.py grid FILE X Y [--w 80]                            pixel grid zoom for manual box placement
-  boxtool.py box FILE OBJECT X Y [--fit] [--w W --h H] [--conf C] [--note N]
+  boxtool.py box FILE OBJECT X Y [--fit] [--w W --h H] [--conf C] [--note N] [--add]
                                                              write/replace one box (centre at X,Y)
-  boxtool.py rect FILE OBJECT X0 Y0 X1 Y1 [--conf C] [--note N]  write/replace a box by corners
+  boxtool.py rect FILE OBJECT X0 Y0 X1 Y1 [--conf C] [--note N] [--add]  write/replace a box by corners
+                                                             --add: keep the object's other boxes in the crop
+                                                             (tracks / footpaths: one box per visible segment)
   boxtool.py drop FILE [OBJECT]                                remove box(es)
   boxtool.py unbox FILE [REASON]                               why this positive crop has no box (no REASON: clear it)
   boxtool.py apply PROPOSALS.json [--dry]                      merge a reviewer's proposals: {"boxes": [{file, object_id,
@@ -239,12 +241,14 @@ def fit_box(a, x, y, w=30):
     return (x0 + xs.min() - 1, y0 + ys.min() - 1, x0 + xs.max() + 1, y0 + ys.max() + 1)
 
 
-def put(file, oid, box, conf, note, shadow):
+def put(file, oid, box, conf, note, shadow, add=False):
+    """Write one box. add=True keeps the object's other boxes in this crop (tracks / footpaths: one box per segment)."""
     m = meta()[file]
     s = sites()
     label = s[oid]["object"] if oid in s else oid
-    rows = [r for r in load_boxes() if not (r["file_name"] == file and r["object_id"] == oid)]
     x0, y0, x1, y1 = [int(v) for v in box]
+    same = lambda r: r["file_name"] == file and r["object_id"] == oid
+    rows = [r for r in load_boxes() if not (same(r) and (not add or [int(r[k]) for k in ("x_min", "y_min", "x_max", "y_max")] == [x0, y0, x1, y1]))]
     rows.append(dict(file_name=file, site_id=m["site_id"], object_id=oid, label=label, x_min=x0, y_min=y0, x_max=x1, y_max=y1,
                      width_px=x1 - x0 + 1, height_px=y1 - y0 + 1, includes_shadow=shadow, confidence=conf, annotator="claude", note=note))
     save_boxes(rows)
@@ -259,11 +263,11 @@ def cmd_box(args):
             sys.exit("no blob found; give --w/--h")
     else:
         b = (args.x - args.w // 2, args.y - args.h // 2, args.x + args.w // 2, args.y + args.h // 2)
-    put(args.file, args.object, b, args.conf, args.note, args.shadow)
+    put(args.file, args.object, b, args.conf, args.note, args.shadow, args.add)
 
 
 def cmd_rect(args):
-    put(args.file, args.object, (args.x0, args.y0, args.x1, args.y1), args.conf, args.note, args.shadow)
+    put(args.file, args.object, (args.x0, args.y0, args.x1, args.y1), args.conf, args.note, args.shadow, args.add)
 
 
 def cmd_drop(args):
@@ -510,9 +514,9 @@ if __name__ == "__main__":
     q = sp.add_parser("grid"); q.add_argument("file"); q.add_argument("x", type=int); q.add_argument("y", type=int); q.add_argument("--w", type=int, default=80)
     q = sp.add_parser("box"); q.add_argument("file"); q.add_argument("object"); q.add_argument("x", type=int); q.add_argument("y", type=int)
     q.add_argument("--fit", action="store_true"); q.add_argument("--w", type=int, default=20); q.add_argument("--h", type=int, default=20)
-    q.add_argument("--conf", default="high"); q.add_argument("--note", default=""); q.add_argument("--shadow", default="yes")
+    q.add_argument("--conf", default="high"); q.add_argument("--note", default=""); q.add_argument("--shadow", default="yes"); q.add_argument("--add", action="store_true")
     q = sp.add_parser("rect"); q.add_argument("file"); q.add_argument("object"); [q.add_argument(k, type=int) for k in ("x0", "y0", "x1", "y1")]
-    q.add_argument("--conf", default="high"); q.add_argument("--note", default=""); q.add_argument("--shadow", default="yes")
+    q.add_argument("--conf", default="high"); q.add_argument("--note", default=""); q.add_argument("--shadow", default="yes"); q.add_argument("--add", action="store_true")
     q = sp.add_parser("drop"); q.add_argument("file"); q.add_argument("object", nargs="?")
     q = sp.add_parser("unbox"); q.add_argument("file"); q.add_argument("reason", nargs="?")
     q = sp.add_parser("apply"); q.add_argument("file"); q.add_argument("--dry", action="store_true")
