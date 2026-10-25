@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xenarch Trace Labels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="xenarch.css">
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 20px; }
+  .filters input { font: 13px var(--mono); color: var(--ink); background: var(--paper); border: 1px solid var(--line); padding: 6px 8px; border-radius: 4px; min-width: 0; width: 220px; max-width: 100%; }
+  .legend i { height: 8px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .card { border: 1px solid var(--line); background: var(--paper); padding: 6px; min-width: 0; }
+  .card img { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 3px; }
+  .card .label { display: block; margin-top: 6px; overflow-wrap: anywhere; }
+  .card .cls { color: var(--accent); }
+  .card .sub { color: var(--muted); }
+  .card a { color: var(--accent); text-decoration: none; }
+  td.left, th.left { text-align: left; white-space: normal; }
+  td.cls { color: var(--accent); }
+  td.val { color: var(--s2); }
+  .more { margin-top: 14px; }
+  button.more { font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); background: var(--paper);
+                border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; cursor: pointer; }
+  a.dl { color: var(--accent); }
+  .hbars { display: grid; grid-template-columns: minmax(0, 170px) minmax(0, 1fr) 44px; gap: 8px 12px; align-items: center; }
+  .hbars .name { font: 500 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); overflow-wrap: anywhere; }
+  .hbars .trk { display: flex; height: 18px; background: rgba(160, 185, 230, .05); cursor: pointer; }
+  .hbars .trk i { display: block; height: 100%; }
+  .hbars .num { font: 500 12px var(--mono); color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+  @media (max-width: 480px) { .hbars { grid-template-columns: minmax(0, 110px) minmax(0, 1fr) 36px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="brand">Xenarch <span class="label">Mission control</span></div>
+    <div class="links">
+      <a class="label" href="index.html">Flight log</a>
+      <a class="label" href="coco.html">COCO boxes</a>
+      <a class="label" href="#classes">Classes ↓</a>
+      <a class="label" href="#chips">Chips ↓</a>
+      <a class="label" href="#table">Table ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Ground truth · Labels</div>
+    <h1>Trace labels</h1>
+    <p class="lede">Every human trace found on the Moon and Mars as a 256 × 256 chip with its class: landers, rovers, rover tracks, astronaut footpaths, experiments, impact craters, landing hardware, blast zones, and natural terrain from before arrival.</p>
+    <div class="stats" id="stats"></div>
+    <div class="coords label"><span id="gen">—</span><a class="label dl" href="labels-full/metadata.csv" download>Download the label CSV</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="classes">
+    <div class="head"><span class="label">01</span><h2>By class</h2><span class="label" id="clsCount"></span></div>
+    <div class="chart">
+      <div class="legend"><span><i style="background:var(--s1)"></i>Train</span><span><i style="background:var(--s2)"></i>Validation</span></div>
+      <div class="hbars" id="bars" role="img" aria-label="Chips per class, train and validation"></div>
+      <div class="tip" id="tip"></div>
+    </div>
+    <p class="caption">Split by landing area: objects within 10 km of each other are always on the same side, so no terrain is in both train and validation. Every class seen in two or more areas has one validation area.</p>
+    <div class="scroll"><table id="clsTbl"></table></div>
+  </section>
+
+  <section id="chips">
+    <div class="head"><span class="label">02</span><h2>Chips</h2><span class="label" id="chipCount"></span></div>
+    <div class="filters">
+      <select id="fcls" aria-label="Class"><option value="all">All classes</option></select>
+      <select id="fbody" aria-label="Body"><option value="all">Moon and Mars</option><option value="Moon">Moon</option><option value="Mars">Mars</option></select>
+      <select id="fsplit" aria-label="Split"><option value="all">Train and validation</option><option value="train">Train</option><option value="validation">Validation</option></select>
+      <input id="q" type="search" placeholder="Search object, frame or note" aria-label="Search">
+    </div>
+    <p class="caption">Orange outline = the labelled box inside the chip. OPEN shows the chip at full size (256 px).</p>
+    <div class="grid" id="grid"></div>
+    <button class="more" id="more" hidden>Show more</button>
+  </section>
+
+  <section id="table">
+    <div class="head"><span class="label">03</span><h2>Label table</h2><span class="label" id="tblCount"></span></div>
+    <p class="caption">The same rows as the CSV, filtered like the chips above. Box = x_min, y_min, x_max, y_max in the 256 px chip; m/px is the chip's pixel scale.</p>
+    <div class="scroll"><table id="tbl"></table></div>
+  </section>
+</main>
+
+<footer><div class="wrap label">Built by artifact-site-catalog/build_labels.py from boxes_coco.json · published to human-traces_labels/ of the HF dataset</div></footer>
+
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const PAGE = 120;
+let R = [], C = [], shown = PAGE;
+fetch('labels.json').then(r => r.json()).then(init).catch(() => {
+  document.getElementById('stats').innerHTML = '<div class="stat"><span class="label">No labels.json</span><b>run build_labels.py</b></div>';
+});
+function init(d) {
+  R = d.rows; C = d.classes;
+  document.getElementById('gen').textContent = 'Generated ' + d.generated;
+  const n = f => R.filter(f).length;
+  document.getElementById('stats').innerHTML = [['Chips', R.length], ['Classes', C.length], ['Train', n(r => r.split === 'train')],
+    ['Validation', n(r => r.split === 'validation')], ['Moon', n(r => r.body === 'Moon')], ['Mars', n(r => r.body === 'Mars')],
+    ['Hardware + traces', n(r => r.label !== 'natural-terrain')]]
+    .map(([k, v]) => `<div class="stat"><span class="label">${k}</span><b>${v}</b></div>`).join('');
+  classes();
+  const sel = document.getElementById('fcls');
+  C.forEach(c => { const e = document.createElement('option'); e.value = c; e.textContent = c; sel.appendChild(e); });
+  const want = new URLSearchParams(location.search).get('class');
+  if (want && C.includes(want)) sel.value = want;
+  ['fcls', 'fbody', 'fsplit'].forEach(id => document.getElementById(id).onchange = () => { shown = PAGE; render(); });
+  document.getElementById('q').oninput = () => { shown = PAGE; render(); };
+  document.getElementById('more').onclick = () => { shown += PAGE; render(); };
+  render();
+}
+function classes() {
+  const rows = C.map(c => {
+    const g = R.filter(r => r.label === c);
+    return {c, train: g.filter(r => r.split === 'train').length, val: g.filter(r => r.split === 'validation').length,
+            moon: g.filter(r => r.body === 'Moon').length, mars: g.filter(r => r.body === 'Mars').length,
+            objects: new Set(g.map(r => r.object_id)).size, areas: new Set(g.map(r => r.location_id)).size};
+  });
+  document.getElementById('clsCount').textContent = C.length + ' classes';
+  // horizontal stacked bars on one scale (chips); exact values in the table below
+  const max = Math.max(...rows.map(r => r.train + r.val));
+  document.getElementById('bars').innerHTML = rows.map((r, i) =>
+    `<span class="name">${r.c}</span><div class="trk" data-i="${i}"><i style="width:${100 * r.train / max}%;background:var(--s1)"></i>` +
+    `<i style="width:${100 * r.val / max}%;background:var(--s2)"></i></div><span class="num">${r.train + r.val}</span>`).join('');
+  const tip = document.getElementById('tip'), box = document.querySelector('#classes .chart');
+  box.querySelectorAll('.trk[data-i]').forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const r = rows[+el.dataset.i], b = box.getBoundingClientRect();
+      tip.innerHTML = `<b>${r.c.toUpperCase()}</b><br>Train ${r.train} · Validation ${r.val}<br>Moon ${r.moon} · Mars ${r.mars}<br>${r.objects} objects · ${r.areas} areas`;
+      tip.style.display = 'block';
+      tip.style.left = Math.min(e.clientX - b.left + 12, b.width - tip.offsetWidth) + 'px'; tip.style.top = (e.clientY - b.top + 12) + 'px';
+    });
+    el.addEventListener('mouseleave', () => tip.style.display = 'none');
+    el.addEventListener('click', () => { document.getElementById('fcls').value = rows[+el.dataset.i].c; shown = PAGE; render(); location.hash = 'chips'; });
+  });
+  document.getElementById('clsTbl').innerHTML = '<tr><th>Class</th><th>Train</th><th>Validation</th><th>Total</th><th>Moon</th><th>Mars</th><th>Objects</th><th>Areas</th><th>Sheet</th></tr>' +
+    rows.map(r => `<tr><td class="cls">${r.c}</td><td>${r.train}</td><td class="val">${r.val}</td><td>${r.train + r.val}</td><td>${r.moon}</td><td>${r.mars}</td><td>${r.objects}</td><td>${r.areas}</td>` +
+      `<td><a class="dl" href="labels-full/contact-sheets/${r.c}.jpg" target="_blank" rel="noopener">Open</a></td></tr>`).join('') +
+    `<tr><td>Total</td><td>${R.filter(r => r.split === 'train').length}</td><td class="val">${R.filter(r => r.split === 'validation').length}</td><td>${R.length}</td>` +
+    `<td>${R.filter(r => r.body === 'Moon').length}</td><td>${R.filter(r => r.body === 'Mars').length}</td><td>${new Set(R.map(r => r.object_id)).size}</td><td>${new Set(R.map(r => r.location_id)).size}</td><td></td></tr>`;
+}
+function filtered() {
+  const c = document.getElementById('fcls').value, b = document.getElementById('fbody').value, sp = document.getElementById('fsplit').value;
+  const q = document.getElementById('q').value.toLowerCase();
+  return R.filter(r => (c === 'all' || r.label === c) && (b === 'all' || r.body === b) && (sp === 'all' || r.split === sp) &&
+                       (!q || (r.object_id + ' ' + r.object + ' ' + r.frame_id + ' ' + r.note).toLowerCase().includes(q)));
+}
+function render() {
+  const rows = filtered(), part = rows.slice(0, shown);
+  document.getElementById('chipCount').textContent = rows.length + (rows.length === 1 ? ' chip' : ' chips');
+  document.getElementById('grid').innerHTML = part.map(r => `<div class="card"><img src="${r.thumb}" loading="lazy" alt="${esc(r.label)}: ${esc(r.object)}">` +
+    `<span class="label cls">${esc(r.label)}</span><span class="label">${esc(r.object_id)}</span>` +
+    `<span class="label sub">${esc(r.frame_id)} · ${r.split === 'validation' ? 'VAL' : 'TRAIN'}${r.box_confidence ? ' · ' + esc(r.box_confidence).toUpperCase() : ''} · <a href="labels-full/${esc(r.file_name)}" target="_blank" rel="noopener">Open</a></span></div>`).join('');
+  const more = document.getElementById('more'); more.hidden = rows.length <= shown; more.textContent = `Show more (${rows.length - shown} left)`;
+  document.getElementById('tblCount').textContent = rows.length + ' rows';
+  document.getElementById('tbl').innerHTML = '<tr><th>File</th><th>Split</th><th class="left">Label</th><th>Body</th><th class="left">Object</th><th>Frame</th><th>Conf.</th><th>m/px</th><th>Box</th></tr>' +
+    part.map(r => `<tr><td>${esc(r.file_name)}</td><td>${r.split}</td><td class="left cls">${esc(r.label)}</td><td>${r.body}</td><td class="left">${esc(r.object)}</td>` +
+      `<td>${esc(r.frame_id)}</td><td>${esc(r.box_confidence) || '—'}</td><td>${r.resolution_m_px}</td>` +
+      `<td>${r.box_x_min === '' ? '—' : [r.box_x_min, r.box_y_min, r.box_x_max, r.box_y_max].join(', ')}</td></tr>`).join('');
+}
+</script>
+</body>
+</html>

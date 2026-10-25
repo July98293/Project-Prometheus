@@ -14,14 +14,15 @@ Bounding boxes around human-made hardware in the 2048×2048 orbital crops of
 | `review.html` | all review sheets and box tables on one page |
 | `boxtool.py`, `register.py` | the annotation helper (candidate hunt, pixel grid, frame-to-frame terrain matching, review/COCO export) |
 
-## Status (2026-10-20)
+## Status (2026-10-24)
 
 | | crops | boxed | not identified | negative (before arrival) |
 |---|---|---|---|---|
 | Moon (LROC NAC) | 254 | 124 | 108 | 22 |
 | Mars (HiRISE) | 273 | 164 | 83 | 26 |
 
-324 boxes over 58 objects: 222 high, 79 medium, 23 low confidence (Moon 84 / 50 / 22, Mars 138 / 29 / 1).
+338 boxes: 324 over 58 objects plus 14 track segments over 8 track categories; 232 high, 83 medium, 23 low confidence
+(Moon 92 / 54 / 22, Mars 140 / 29 / 1).
 Every positive crop is boxed or has a frame-specific `unboxed_reason`. Mars boxes rest on HiRISE release
 images (uahirise.org) or a before/after change, then on terrain matching between frames
 (`hirise_match.py`); the earlier Mars boxes placed at the catalog position were wrong and are gone.
@@ -47,6 +48,12 @@ match (`match_ratio`, `position_note`); `--recut` redoes unboxed crops once a si
   `medium` = right size and shadow at the predicted position but no independent confirmation;
   `low` = plausible but could be a boulder / rock.
 - The category `name` (`object_id`) matches `sites.csv` in the catalog. `apollo11_lrrr` (Laser Ranging Retroreflector) is an extra id not in `sites.csv`.
+- Tracks are categories of their own, not in `sites.csv`: `<mission>_footpaths` (astronaut trails) and `<rover>_tracks`
+  (`apollo15_lrv_tracks`, `curiosity_rover_tracks`, …). One box per clearly visible segment (`boxtool.py rect … --add`
+  keeps the other segments), `includes_shadow` false; `medium` where LRV tracks and footpaths may be mixed.
+  Found on Apollo 12, 14, 15, 16, 17 and Curiosity (sol 33); not identifiable without a reference on Lunokhod 1/2,
+  Yutu-2, Perseverance, Spirit, Opportunity.
+- `../build_labels.py` turns every box into a 256² classification chip (`human-traces_labels/` on HF).
 - `note` says how the box was found and the offset from the catalog's nominal pixel.
 
 ## How the boxes were found

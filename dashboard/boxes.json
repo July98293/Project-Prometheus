@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-20T10:39Z",
- "n_boxes": 324,
+ "generated": "2026-10-24T18:51Z",
+ "n_boxes": 338,
  "positives": {
   "Moon": 232,
   "Mars": 247
@@ -10,8 +10,8 @@
   "Mars": 164
  },
  "confidence": {
-  "high": 222,
-  "medium": 79,
+  "high": 232,
+  "medium": 83,
   "low": 23
  },
  "frames": [
@@ -347,6 +347,45 @@
      "includes_shadow": "yes",
      "confidence": "high",
      "note": "cluster of small bright points with shadows at the position predicted from the LM box plus the catalog's relative offset; tracks lead to it"
+    },
+    {
+     "object_id": "apollo12_footpaths",
+     "label": "apollo12_footpaths",
+     "x_min": 620,
+     "y_min": 1190,
+     "x_max": 830,
+     "y_max": 1215,
+     "width_px": 211,
+     "height_px": 26,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "astronaut footpath: dark trail of the EVA-2 loop south of the LM, running east-west toward the Surveyor 3 crater, segment between the LM and Surveyor 3"
+    },
+    {
+     "object_id": "apollo12_footpaths",
+     "label": "apollo12_footpaths",
+     "x_min": 1060,
+     "y_min": 780,
+     "x_max": 1200,
+     "y_max": 845,
+     "width_px": 141,
+     "height_px": 66,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "astronaut footpaths: two parallel dark 2-3 px trails running from the LM box north-east to the ALSEP box (EVA-1 ALSEP deployment), segment between the two"
+    },
+    {
+     "object_id": "apollo12_footpaths",
+     "label": "apollo12_footpaths",
+     "x_min": 560,
+     "y_min": 828,
+     "x_max": 760,
+     "y_max": 850,
+     "width_px": 201,
+     "height_px": 23,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "astronaut footpath: straight dark 2-3 px trail running west from the LM, continuous for ~500 px (200 m), segment 300 px west of the LM"
     },
     {
      "object_id": "apollo12_lm",
@@ -804,6 +843,32 @@
      "note": "bright 4 px dot where the track from the LM ends, 25 px from the position predicted by the catalog offset from the LM"
     },
     {
+     "object_id": "apollo14_footpaths",
+     "label": "apollo14_footpaths",
+     "x_min": 215,
+     "y_min": 1055,
+     "x_max": 425,
+     "y_max": 1095,
+     "width_px": 211,
+     "height_px": 41,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "astronaut footpaths (and MET handcart tracks): two parallel dark trails from the LM box west to the ALSEP box, mid segment"
+    },
+    {
+     "object_id": "apollo14_footpaths",
+     "label": "apollo14_footpaths",
+     "x_min": 640,
+     "y_min": 1035,
+     "x_max": 800,
+     "y_max": 1130,
+     "width_px": 161,
+     "height_px": 96,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "astronaut footpath: dark diagonal trail leaving the LM to the south-east, continuous for ~300 px"
+    },
+    {
      "object_id": "apollo14_lm",
      "label": "Apollo 14 LM descent stage",
      "x_min": 528,
@@ -1240,6 +1305,32 @@
      "includes_shadow": "yes",
      "confidence": "medium",
      "note": "dark object with bright centre at the end of a long track, 7 px from the position predicted from the LM box"
+    },
+    {
+     "object_id": "apollo15_lrv_tracks",
+     "label": "apollo15_lrv_tracks",
+     "x_min": 1576,
+     "y_min": 955,
+     "x_max": 1600,
+     "y_max": 1095,
+     "width_px": 25,
+     "height_px": 141,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "LRV tracks: pair of parallel dark lines ~4 px (2 m, the LRV wheel track) apart running north from the LM area for 300 px"
+    },
+    {
+     "object_id": "apollo15_lrv_tracks",
+     "label": "apollo15_lrv_tracks",
+     "x_min": 1760,
+     "y_min": 1077,
+     "x_max": 1940,
+     "y_max": 1127,
+     "width_px": 181,
+     "height_px": 51,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "LRV track: the rover's last drive from the LM east to its parking spot (apollo15_lrv box at the end of the line)"
     }
    ]
   },
@@ -1641,6 +1732,19 @@
      "note": "ALSEP central-station cluster: bright 9x3 px body with hard shadow where the footpaths converge, 25 px (10 m) from the position predicted from the LM box plus the catalog offset; the PSE itself cannot be separated at 0.4 m/px"
     },
     {
+     "object_id": "apollo16_footpaths",
+     "label": "apollo16_footpaths",
+     "x_min": 1215,
+     "y_min": 1040,
+     "x_max": 1400,
+     "y_max": 1075,
+     "width_px": 186,
+     "height_px": 36,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "dark trails running from the LM east toward the ALSEP box (EVA-1 deployment on foot); several parallel lines, LRV tracks possibly mixed in"
+    },
+    {
      "object_id": "apollo16_lm",
      "label": "Apollo 16 LM descent stage",
      "x_min": 1148,
@@ -1665,6 +1769,19 @@
      "includes_shadow": "yes",
      "confidence": "medium",
      "note": "parked LRV: dark disturbed patch with bright dots and a track leading to it, 17 px from the position predicted from the LM box plus the catalog offset (was labelled apollo16_alsep; the ALSEP is on the other side of the LM)"
+    },
+    {
+     "object_id": "apollo16_lrv_tracks",
+     "label": "apollo16_lrv_tracks",
+     "x_min": 895,
+     "y_min": 990,
+     "x_max": 1075,
+     "y_max": 1010,
+     "width_px": 181,
+     "height_px": 21,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "LRV track: thin double dark line from the parked LRV box east to the LM, segment between the two"
     }
    ]
   },
@@ -2023,6 +2140,19 @@
      "note": "cluster of bright dots around the position predicted from the LM box via the catalog offset"
     },
     {
+     "object_id": "apollo17_footpaths",
+     "label": "apollo17_footpaths",
+     "x_min": 470,
+     "y_min": 1150,
+     "x_max": 655,
+     "y_max": 1200,
+     "width_px": 186,
+     "height_px": 51,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "single winding dark 2 px trail continuing east toward the ALSEP box, narrower than the LRV line pairs"
+    },
+    {
      "object_id": "apollo17_lm",
      "label": "Apollo 17 LM descent stage",
      "x_min": 228,
@@ -2034,6 +2164,32 @@
      "includes_shadow": "yes",
      "confidence": "high",
      "note": "bright LM in dark halo with tracks converging on it, 780 px west of nominal"
+    },
+    {
+     "object_id": "apollo17_lrv_tracks",
+     "label": "apollo17_lrv_tracks",
+     "x_min": 55,
+     "y_min": 1215,
+     "x_max": 235,
+     "y_max": 1250,
+     "width_px": 181,
+     "height_px": 36,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "bundle of parallel dark lines (pairs ~4 px = 2 m apart, the LRV wheel track) converging on the LM from the west; footpaths possibly mixed in"
+    },
+    {
+     "object_id": "apollo17_lrv_tracks",
+     "label": "apollo17_lrv_tracks",
+     "x_min": 285,
+     "y_min": 1210,
+     "x_max": 480,
+     "y_max": 1270,
+     "width_px": 196,
+     "height_px": 61,
+     "includes_shadow": "no",
+     "confidence": "medium",
+     "note": "parallel dark line pairs leaving the LM to the east toward the ALSEP; LRV tracks, footpaths possibly mixed in"
     }
    ]
   },
@@ -4431,6 +4587,32 @@
      "includes_shadow": "yes",
      "confidence": "high",
      "note": "Curiosity rover (bright 3 m body + shadow) at the end of its tracks from the blast scour, sol 33"
+    },
+    {
+     "object_id": "curiosity_rover_tracks",
+     "label": "curiosity_rover_tracks",
+     "x_min": 1105,
+     "y_min": 1395,
+     "x_max": 1185,
+     "y_max": 1510,
+     "width_px": 81,
+     "height_px": 116,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Curiosity's wheel tracks, sol 33: pair of dark parallel lines ~11 px (2.8 m, the rover's wheel track) apart leaving the blast scour to the south-east"
+    },
+    {
+     "object_id": "curiosity_rover_tracks",
+     "label": "curiosity_rover_tracks",
+     "x_min": 1170,
+     "y_min": 1500,
+     "x_max": 1255,
+     "y_max": 1615,
+     "width_px": 86,
+     "height_px": 116,
+     "includes_shadow": "no",
+     "confidence": "high",
+     "note": "Curiosity's wheel tracks, sol 33: the same line pair continuing to the curiosity_rover box at its end"
     }
    ]
   },
