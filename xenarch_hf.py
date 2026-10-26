@@ -21,7 +21,13 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
     chips_lroc-nac_hirise/<body>_<camera>/<body>_<class>_<camera>/<object>_<frame>.png
                                                 data/artifact-site-labels/<body>/<class>/<object>_<frame>.png
     contact-sheets_lroc-nac_hirise/<class>_lroc-nac_hirise.jpg   one preview sheet per class + overview
-  raw/legacy_source-files/                     what the legacy set was made from: PDS originals (.IMG, JPEG),
+    synthetic-injections_lroc-nac_hirise/        natural terrain with one pasted / rendered hardware object (xenarch_inject.py)
+    injections_moon-mars_lroc-nac_hirise.csv    data/synthetic-injections/metadata.csv: one row per injected image
+    boxes-coco_synthetic_lroc-nac_hirise.json   data/synthetic-injections/boxes_coco.json
+    injected_lroc-nac_hirise/<body>_<camera>/<body>_<kind>_<camera>/<id>.png   (+ metadata.csv)
+    clean_lroc-nac_hirise/…, masks_lroc-nac_hirise/…   the untouched twin and the pixel mask, same <id>
+    contact-sheets_lroc-nac_hirise/<body>_<kind>_lroc-nac_hirise.jpg
+raw/legacy_source-files/                     what the legacy set was made from: PDS originals (.IMG, JPEG),
                                                labels (JSON / XML), the old 'squares' tiles, manifest.csv
 
   .venv/bin/python xenarch_hf.py terrain moon|mars|ohrc|legacy [local dir]   publish a terrain set and its metadata.csv
@@ -29,13 +35,14 @@ them to the HF names and rewrites the path columns of the CSV / COCO files on th
   .venv/bin/python xenarch_hf.py crops [local dir]              publish the hardware crops
   .venv/bin/python xenarch_hf.py tables                         publish the catalog, boxes and derived tables
   .venv/bin/python xenarch_hf.py labels [local dir]             publish the human-trace label chips, table, contact sheets
+  .venv/bin/python xenarch_hf.py injections [local dir]         publish the synthetic injections (images, twins, masks, tables)
   .venv/bin/python xenarch_hf.py readme                         publish docs/xenarch-dataset-README.md
   .venv/bin/python xenarch_hf.py migrate [--dry]                move files still under older names (server side)
 
 Column names are the same in every table: file_name, split, body, instrument, landform, frame_id, lat, lon_east,
 incidence_deg, emission_deg, phase_deg, resolution_m_px, utc_start, solar_longitude_ls.
 """
-import csv, hashlib, io, json, re, sys
+import csv, hashlib, io, json, re, sys, time
 from pathlib import Path
 
 from huggingface_hub import (CommitOperationAdd, CommitOperationCopy, CommitOperationDelete, HfApi, hf_hub_download,
@@ -50,6 +57,7 @@ DERIVED = f"{HARDWARE}/derived"
 LABELS = "human-traces_labels"
 CHIPS = f"{LABELS}/chips_lroc-nac_hirise"
 SHEETS = f"{LABELS}/contact-sheets_lroc-nac_hirise"
+INJECT = "synthetic-injections_lroc-nac_hirise"
 LEGACY = f"{TERRAIN}/legacy_mixed-cameras"
 RAW = "raw/legacy_source-files"
 CAMERA = {"moon": "lroc-nac", "mars": "hirise"}                    # hardware crops: body -> camera
@@ -59,6 +67,7 @@ LOCAL_TERRAIN = {"moon": HERE / "data/lroc-nac-set", "mars": HERE / "data/hirise
                  "legacy": HERE / "data/xenarch-imagery"}
 LOCAL_CROPS = HERE / "data/artifact-site-images"
 LOCAL_LABELS = HERE / "data/artifact-site-labels"
+LOCAL_INJECT = HERE / "data/synthetic-injections"
 CATALOG = HERE / "artifact-site-catalog"
 
 # local file -> path in the repo
@@ -125,6 +134,14 @@ def chip_rel(rel):
     return f"{body}_{CAMERA[body]}/{body}_{label}_{CAMERA[body]}/{name}"
 
 
+def inject_rel(rel):
+    """'injected/moon/rendered/x.png' -> 'injected_lroc-nac_hirise/moon_lroc-nac/moon_rendered_lroc-nac/x.png' (relative to INJECT)."""
+    part, body, kind, name = rel.split("/", 3)
+    if body not in CAMERA:
+        return rel  # already renamed
+    return f"{part}_lroc-nac_hirise/{body}_{CAMERA[body]}/{body}_{kind}_{CAMERA[body]}/{name}"
+
+
 def _rewrite_csv(data, column=None, fn=None, drop=()):
     rows = list(csv.DictReader(io.StringIO(data.decode())))
     if not rows or (column and column not in rows[0]):
@@ -177,13 +194,23 @@ def new_path(old, mars=None):
     return old, None
 
 
-def _commit(ops, message, repo, batch=800):
+def _commit(ops, message, repo, batch=800, tries=4):
+    """Commit `ops` in batches; a batch that fails (network, or the upload token expiring during a long transfer)
+    is retried whole: a failed commit changes nothing."""
     api = HfApi()
     for i in range(0, len(ops), batch):
         part = ops[i:i + batch]
-        api.create_commit(repo, part, commit_message=message if len(ops) <= batch else f"{message} ({i // batch + 1})",
-                          repo_type="dataset")
-        print(f"  committed {i + len(part)}/{len(ops)} operations")
+        for k in range(tries):
+            try:
+                api.create_commit(repo, part, commit_message=message if len(ops) <= batch else f"{message} ({i // batch + 1})",
+                                  repo_type="dataset")
+                break
+            except Exception as e:
+                if k == tries - 1:
+                    raise
+                print(f"  batch {i // batch + 1} failed ({type(e).__name__}: {str(e)[:120]}), retry {k + 1}", flush=True)
+                time.sleep(15 * (k + 1))
+        print(f"  committed {i + len(part)}/{len(ops)} operations", flush=True)
 
 
 def migrate(repo=REPO, dry=False):
@@ -320,6 +347,38 @@ def publish_labels(local=None, repo=REPO):
     print(f"https://huggingface.co/datasets/{repo}/tree/main/{LABELS}")
 
 
+def publish_injections(local=None, repo=REPO):
+    """Injected images, clean twins and masks; the table at the top of INJECT (paths relative to it, the background
+    tile as its path in this dataset), metadata.csv for the HF viewer, the COCO file, contact sheets; files under
+    INJECT that are no longer built are deleted."""
+    local = Path(local or LOCAL_INJECT)
+    ops = [CommitOperationAdd(f"{INJECT}/{inject_rel(str(f.relative_to(local)))}", str(f))
+           for part in ("injected", "clean", "masks") for f in sorted((local / part).glob("*/*/*.png"))]
+    rows = list(csv.DictReader(io.StringIO((local / "metadata.csv").read_text())))
+    key = {"Moon": "moon", "Mars": "mars"}
+    for r in rows:
+        for c in ("file_name", "clean_file", "mask_file"):
+            r[c] = inject_rel(r[c])
+        r["background_file"] = f"{terrain_folder(key[r['body']])}/{terrain_rel(key[r['body']], r['background_file'])}"
+    def table(rows, strip=""):
+        buf = io.StringIO(); w = csv.DictWriter(buf, list(rows[0]), lineterminator="\n"); w.writeheader()
+        w.writerows({**r, "file_name": r["file_name"][len(strip):]} for r in rows)
+        return buf.getvalue().encode()
+    ops.append(CommitOperationAdd(f"{INJECT}/injections_moon-mars_lroc-nac_hirise.csv", table(rows)))
+    ops.append(CommitOperationAdd(f"{INJECT}/injected_lroc-nac_hirise/metadata.csv", table(rows, "injected_lroc-nac_hirise/")))
+    coco = json.loads((local / "boxes_coco.json").read_text())
+    for im in coco["images"]:
+        im["file_name"] = inject_rel(im["file_name"])
+    ops.append(CommitOperationAdd(f"{INJECT}/boxes-coco_synthetic_lroc-nac_hirise.json", json.dumps(coco, indent=1).encode()))
+    ops += [CommitOperationAdd(f"{INJECT}/contact-sheets_lroc-nac_hirise/{f.stem}_lroc-nac_hirise.jpg", str(f))
+            for f in sorted((local / "contact-sheets").glob("*.jpg"))]
+    built = {o.path_in_repo for o in ops}
+    existing = set(HfApi().list_repo_files(repo, repo_type="dataset"))
+    ops += [CommitOperationDelete(p) for p in sorted(existing) if p.startswith(f"{INJECT}/") and p not in built]
+    _commit(ops, f"{INJECT}: synthetic hardware injections into natural terrain", repo, batch=250)   # ~80 MB per commit
+    print(f"https://huggingface.co/datasets/{repo}/tree/main/{INJECT}")
+
+
 def publish_readme(repo=REPO):
     _commit([CommitOperationAdd("README.md", str(HERE / "docs/xenarch-dataset-README.md"))], "README", repo)
 
@@ -336,6 +395,8 @@ if __name__ == "__main__":
         publish_tables()
     elif cmd == "labels":
         publish_labels(rest[0] if rest else None)
+    elif cmd == "injections":
+        publish_injections(rest[0] if rest else None)
     elif cmd == "readme":
         publish_readme()
     elif cmd == "migrate":
