@@ -19,6 +19,10 @@ configs:
     data_dir: human-traces_labels/chips_lroc-nac_hirise
   - config_name: labels
     data_files: human-traces_labels/labels_moon-mars_lroc-nac_hirise.csv
+  - config_name: synthetic_injections
+    data_dir: synthetic-injections_lroc-nac_hirise/injected_lroc-nac_hirise
+  - config_name: injections
+    data_files: synthetic-injections_lroc-nac_hirise/injections_moon-mars_lroc-nac_hirise.csv
   - config_name: catalog
     data_files: human-hardware_ground-truth/catalog_moon-mars_lroc-nac_hirise.csv
   - config_name: sites
@@ -36,7 +40,9 @@ Moon and Mars: landers, rovers, experiment packages, crash and rocket-stage impa
 Keep the two apart: `natural-terrain_training/` is training data, `human-hardware_ground-truth/` is the test.
 `human-traces_labels/` turns that ground truth into a labelled classification set: every trace humans left (landers,
 rovers, rover tracks, astronaut footpaths, experiments, impact craters, landing hardware, blast zones) as a chip with
-its class, plus natural-terrain chips of the same sites before arrival.
+its class, plus natural-terrain chips of the same sites before arrival. `synthetic-injections_lroc-nac_hirise/` is
+synthetic test data: natural terrain with one rendered or pasted hardware object, to measure how often a detector
+finds an object of a given size, sun angle and terrain (never use it as real ground truth or for training Xenarch).
 
 Every folder and file name says what it holds and which camera took it (`lroc-nac` = LRO Narrow Angle
 Camera, Moon; `hirise` = MRO HiRISE, Mars), so a folder copied out of the dataset still explains itself.
@@ -77,6 +83,16 @@ human-traces_labels/                         every labelled human trace as a 256
     moon_lroc-nac/moon_<class>_lroc-nac/<object>_<frame>.png
     mars_hirise/mars_<class>_hirise/<object>_<frame>.png
   contact-sheets_lroc-nac_hirise/              one preview sheet per class (box outlined) + overview
+synthetic-injections_lroc-nac_hirise/        SYNTHETIC test data: natural terrain + one injected hardware object
+  injections_moon-mars_lroc-nac_hirise.csv     THE table: one row per injected image (what was injected, where, how)
+  boxes-coco_synthetic_lroc-nac_hirise.json    COCO boxes (object + its cast shadow)
+  injected_lroc-nac_hirise/                    1,840 images of 512×512 with the object
+    metadata.csv
+    moon_lroc-nac/moon_<kind>_lroc-nac/<id>.png     kind: rendered, real-sprite, null-control
+    mars_hirise/mars_<kind>_hirise/<id>.png
+  clean_lroc-nac_hirise/                       the same crops without the object (same sub-paths and ids)
+  masks_lroc-nac_hirise/                       pixel masks: 1 object, 2 its cast shadow, 3 context (halo, tracks, ejecta)
+  contact-sheets_lroc-nac_hirise/              clean | injected pairs per body and kind, and an overview
 raw/legacy_source-files/                       what the legacy set was made from (not needed for training)
   <body>_<camera>_originals/                   Clementine JPEGs, HiRISE .IMG EDRs as downloaded
   <body>_<camera>_pds-labels/                  one PDS label (JSON / XML) per image, summarised in the legacy metadata.csv
@@ -204,6 +220,41 @@ chip px), `box_x_min` … `box_y_max` (the labelled box in chip pixels; empty fo
 `split` is fixed per location, so no terrain is in both halves: the hash split of the other tables, plus one validation
 location for every class seen in two or more locations. Tracks are few (one to three segments per site where they are
 unmistakable); treat `medium` boxes as likely, not certain.
+
+## synthetic-injections_lroc-nac_hirise/
+
+Injection-recovery test set, built by `xenarch_inject.py`. Every image is a 512×512 crop of a natural-terrain tile
+(`background_file`, a path in this dataset) with one object added; `clean_file` is the same crop untouched and
+`mask_file` marks the object (1), its cast shadow (2) and its context (3). Three kinds:
+
+| `kind` | What | Images |
+|---|---|---|
+| `rendered` | past and new hardware built from simple 3D shapes at real dimensions, lit by the tile's own sun (Lambert shading, cast shadows, saturation of bright foil) | 1,025 |
+| `real-sprite` | real hardware cut out of the LROC / HiRISE crops (high-confidence boxes), rotated so its shadow follows the tile's sun, rescaled to the tile's m/px, only into tiles whose sun incidence is within 15° of the source frame's | 526 |
+| `null-control` | a patch of natural terrain from another tile pasted through the same pipeline, sized like the objects: a detector that flags these sees paste artifacts, not objects | 289 |
+
+Rendered designs (`hardware_id`, `era`): Moon past: Apollo LM descent stage, Surveyor, Luna 16-24, Lunokhod, Apollo
+LRV, Chang'e 3/4 lander, Yutu, a spacecraft impact crater; Moon new: Nova-C, Blue Ghost, Blue Moon MK1, Starship HLS,
+a surface habitat, the Lunar Terrain Vehicle, a vertical solar array, a fission power unit; Mars past: Viking,
+Pathfinder, Phoenix / InSight, Spirit / Opportunity, Curiosity / Perseverance, a heat shield, a backshell with its
+parachute; Mars new: Starship, a habitat dome, the Sample Retrieval Lander, a pressurised rover.
+
+What varies, all in the table: object scale (`scale_factor` 0.85–1.2), resolution (`resolution_m_px`: the tile's
+own, and on the Moon a coarser camera, `camera_downscale` 1.5 or 2), sun (`incidence_deg`, `sun_azimuth_image_deg`
+of the tile), brightness (`albedo_factor`, `contrast_factor`), camera (`psf_sigma_px`, the tile's `noise_sigma` added
+to the object, `gain`, `gamma` on both twins), terrain (`landform`, any spot of the tile), context (`context`:
+`blast-zone` around landers, `tracks` behind rovers, `footpaths` around crewed landers and habitats; impact
+craters always bring bright ejecta). `object_px` is the object's size in pixels (median ~9 px: most objects are small,
+as real hardware is); `shadowed_fraction` is the share of the crop in shadow.
+
+`split` is the background tile's: **evaluate detectors trained on `natural-terrain_training/` on `validation`
+only** (backgrounds never seen in training; validation tiles carry extra injections for that reason).
+
+Limits: the sun azimuth in the image is not in the archive labels; it is estimated from the tile's own shading
+(`sun_azimuth_confidence`, low = weak shading at high sun, where shadows are short anyway). Rendered objects are
+height fields seen from straight above (no overhangs, simple shapes, Lambert surfaces); real sprites carry the
+lighting of their source frame (matched within 15° of incidence). Synthetic data: use it to measure sensitivity,
+never as ground truth.
 
 ## Credit
 
