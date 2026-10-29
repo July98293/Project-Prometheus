@@ -7,6 +7,7 @@
 #   ./train.sh --view              only open the dashboard
 #   ./train.sh --boxes             only open the artifact bounding-box review page
 #   ./train.sh --labels            only open the human-trace label page (chips by class)
+#   ./train.sh --injections        only open the synthetic injection gallery
 set -euo pipefail
 cd "$(dirname "$0")"
 PORT="${PORT:-8050}"
@@ -31,9 +32,9 @@ else
   sleep 1
 fi
 echo "Dashboard: http://localhost:$PORT"
-PAGE=""; [ "$DATA" = "--boxes" ] && PAGE="boxes.html"; [ "$DATA" = "--labels" ] && PAGE="labels.html"
+PAGE=""; [ "$DATA" = "--boxes" ] && PAGE="boxes.html"; [ "$DATA" = "--labels" ] && PAGE="labels.html"; [ "$DATA" = "--injections" ] && PAGE="injections.html"
 open "http://localhost:$PORT/$PAGE" 2>/dev/null || true
-[ "$DATA" = "--view" ] || [ "$DATA" = "--boxes" ] || [ "$DATA" = "--labels" ] && exit 0
+[ "$DATA" = "--view" ] || [ "$DATA" = "--boxes" ] || [ "$DATA" = "--labels" ] || [ "$DATA" = "--injections" ] && exit 0
 
 if [ ! -d "$DATA" ]; then
   echo "No image folder '$DATA'. Download the dataset with:"

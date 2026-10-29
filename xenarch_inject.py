@@ -31,6 +31,7 @@ Writes data/synthetic-injections/{injected,clean,masks}/<body>/<kind>/<id>.png, 
 boxes_coco.json and contact-sheets/. Mask values: 1 object, 2 its cast shadow, 3 context (halo, tracks, ejecta).
 
   .venv/bin/python xenarch_inject.py [--per-tile 1] [--sprite-frac 0.6] [--null-frac 0.25] [--val-extra 2] [--limit N] [--seed 7]
+  .venv/bin/python xenarch_inject.py --dashboard      only rebuild dashboard/injections.json + thumbnails (page: ./train.sh --injections)
 
 Evaluate on `split` = validation (backgrounds never in Mk18's memory bank); the train-split images serve other models
 and visual checks.
@@ -620,6 +621,7 @@ def run(per_tile=1, sprite_frac=0.6, null_frac=0.25, limit=None, seed=7, val_ext
         w = csv.DictWriter(fh, FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
     json.dump(coco, (OUT / "boxes_coco.json").open("w"), indent=1)
     sheets(rows)
+    dashboard(rows)
     n = Counter((r["body"], r["kind"]) for r in rows)
     print(f"{len(rows)} injected images in {OUT}: " + ", ".join(f"{b} {k} {v}" for (b, k), v in sorted(n.items())))
 
@@ -671,11 +673,55 @@ def sheets(rows, t=200, cols=4, per=16):
     im.save(d / "overview.jpg", quality=88)
 
 
+def dashboard(rows=None, z=56):
+    """dashboard/injections.json (every row) + thumbnails in data/synthetic-injections/thumbs/: the zoom around
+    the object (injected and clean, 2x) and both whole images at half size (before / after on the page). The page reads them through the
+    dashboard/injections-full link (data/ is not in git)."""
+    rows = rows or list(csv.DictReader((OUT / "metadata.csv").open()))
+    th = OUT / "thumbs"; th.mkdir(exist_ok=True)
+    keep, out = set(), []
+    for r in rows:
+        stem = Path(r["file_name"]).stem
+        cx, cy = int(float(r["x_center"])), int(float(r["y_center"]))
+        x0, y0 = min(max(0, cx - z), SIZE - 2 * z), min(max(0, cy - z), SIZE - 2 * z)
+        for tag, f in (("inj", r["file_name"]), ("clean", r["clean_file"])):
+            im = Image.open(OUT / f)
+            im.crop((x0, y0, x0 + 2 * z, y0 + 2 * z)).resize((4 * z, 4 * z), Image.NEAREST).save(th / f"{stem}_{tag}.jpg", quality=86)
+            keep.add(f"{stem}_{tag}.jpg")
+        for tag, f in (("full", r["file_name"]), ("cleanfull", r["clean_file"])):
+            Image.open(OUT / f).resize((SIZE // 2, SIZE // 2), Image.LANCZOS).save(th / f"{stem}_{tag}.jpg", quality=84)
+            keep.add(f"{stem}_{tag}.jpg")
+        b = [int(r[k]) for k in ("box_x_min", "box_y_min", "box_x_max", "box_y_max")]
+        out.append({"id": stem, "kind": r["kind"], "body": r["body"], "era": r["era"], "cls": r["object_class"],
+                    "hw": r["hardware_id"], "name": r["hardware_name"], "split": r["split"], "res": float(r["resolution_m_px"]),
+                    "inc": float(r["incidence_deg"]), "az": float(r["sun_azimuth_image_deg"]), "conf": float(r["sun_azimuth_confidence"]),
+                    "ctx": r["context"], "px": int(r["object_px"]), "shadow": int(r["shadow_px"]), "landform": r["landform"],
+                    "shadowed": float(r["shadowed_fraction"]),
+                    "scale": r["scale_factor"], "albedo": r["albedo_factor"], "contrast": r["contrast_factor"], "psf": float(r["psf_sigma_px"]),
+                    "noise": float(r["noise_sigma"]), "gamma": float(r["gamma"]), "gain": float(r["gain"]), "down": float(r["camera_downscale"]),
+                    "w": r["width_m"], "h": r["height_m"], "frame": r["frame_id"], "sprite": r["sprite_source"], "bg": r["background_file"],
+                    "box": b, "zoom": [x0, y0, 2 * z], "img": r["file_name"], "clean": r["clean_file"], "mask": r["mask_file"]})
+    for old in th.glob("*.jpg"):
+        if old.name not in keep:
+            old.unlink()
+    designs = {k: {"name": v["name"], "era": v["era"], "cls": v["cls"], "body": v["body"],
+                   "footprint_m": round(footprint_m(v), 1), "height_m": round(height_m(v), 1)} for k, v in HARDWARE.items()}
+    dash = HERE / "dashboard"
+    json.dump({"generated": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+               "size": SIZE, "designs": designs, "rows": out}, (dash / "injections.json").open("w"), separators=(",", ":"))
+    link = dash / "injections-full"
+    if not link.exists():
+        link.symlink_to(Path("..") / OUT.relative_to(HERE))
+    print(f"dashboard/injections.json: {len(out)} images; thumbnails in {th}")
+
+
 def _arg(name, default, cast=str):
     return cast(sys.argv[sys.argv.index(name) + 1]) if name in sys.argv else default
 
 
 if __name__ == "__main__":
+    if "--dashboard" in sys.argv:                 # page data and thumbnails only, from the existing set
+        dashboard(); sys.exit()
     run(per_tile=_arg("--per-tile", 1, int), sprite_frac=_arg("--sprite-frac", 0.6, float),
         null_frac=_arg("--null-frac", 0.25, float), limit=_arg("--limit", None, int), seed=_arg("--seed", 7, int),
         val_extra=_arg("--val-extra", 2, int))

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xenarch Synthetic Injections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="xenarch.css">
+<style>
+  :root { --past: var(--s1); --new: var(--s2); --sprite: var(--s3); --null: var(--muted); }
+  .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+  .filters input { font: 13px var(--mono); color: var(--ink); background: var(--paper); border: 1px solid var(--line); padding: 6px 8px; border-radius: 4px; min-width: 0; width: 220px; max-width: 100%; }
+  .toggles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .toggles button, button.more { font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); background: var(--paper);
+    border: 1px solid var(--line); border-radius: 4px; padding: 7px 11px; cursor: pointer; }
+  .toggles button.on { color: var(--accent); border-color: var(--accent); }
+  button.more { color: var(--accent); margin-top: 14px; }
+  .legend { margin-bottom: 10px; } .legend i { height: 8px; }
+  .hbars { display: grid; grid-template-columns: minmax(0, 120px) minmax(0, 1fr) 52px; gap: 8px 12px; align-items: center; margin-bottom: 26px; }
+  .hbars .name { font: 500 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+  .hbars .trk { display: flex; height: 18px; background: rgba(160, 185, 230, .05); }
+  .hbars .trk i { display: block; height: 100%; }
+  .hbars .num { font: 500 12px var(--mono); color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .card { border: 1px solid var(--line); background: var(--paper); padding: 6px; min-width: 0; }
+  .pic { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 3px; background: #000; min-width: 0; }
+  .pic img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .pic .bx { position: absolute; border: 1px solid var(--accent); pointer-events: none; display: none; }
+  .boxes .pic .bx { display: block; }
+  .pic .tag { position: absolute; left: 5px; top: 5px; font: 500 9px var(--mono); letter-spacing: .12em; padding: 2px 5px; background: rgba(12, 22, 40, .78); color: var(--ink-2); }
+  .pic.after .tag { color: var(--accent); }
+  .card .label { display: block; margin-top: 6px; overflow-wrap: anywhere; }
+  .card .ttl { color: var(--ink); font: 500 12px var(--font); letter-spacing: 0; text-transform: none; }
+  .card .sub { color: var(--muted); }
+  .card .k-past { color: var(--past); } .card .k-new { color: var(--new); } .card .k-sprite { color: var(--sprite); } .card .k-null { color: var(--ink-2); }
+  .card a { color: var(--accent); text-decoration: none; }
+  td.left, th.left { text-align: left; white-space: normal; }
+  td.acc { color: var(--accent); }
+  a.dl { color: var(--accent); }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } .hbars { grid-template-columns: minmax(0, 80px) minmax(0, 1fr) 44px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="brand">Xenarch <span class="label">Mission control</span></div>
+    <div class="links">
+      <a class="label" href="index.html">Flight log</a>
+      <a class="label" href="labels.html">Trace labels</a>
+      <a class="label" href="#designs">Designs ↓</a>
+      <a class="label" href="#gallery">Gallery ↓</a>
+      <a class="label" href="#table">Table ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Test data · Synthetic</div>
+    <h1>Synthetic injections</h1>
+    <p class="lede">Natural Moon and Mars terrain with one space-hardware object added: past and new hardware rendered at real size under the tile's own sun, real hardware cut out of orbital images, and null controls that must not be flagged.</p>
+    <div class="stats" id="stats"></div>
+    <div class="coords label"><span id="gen">—</span><a class="label dl" href="injections-full/metadata.csv" download>Download the injection CSV</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="designs">
+    <div class="head"><span class="label">01</span><h2>What was injected</h2><span class="label" id="desCount"></span></div>
+    <div class="legend"><span><i style="background:var(--past)"></i>Rendered past</span><span><i style="background:var(--new)"></i>Rendered new</span>
+      <span><i style="background:var(--sprite)"></i>Real cut-out</span><span><i style="background:var(--null)"></i>Null control</span></div>
+    <div class="hbars" id="bars"></div>
+    <p class="caption">Rendered objects are simple 3D shapes at real dimensions lit by the background tile's own sun; real cut-outs come from the high-confidence boxes and are only pasted where the sun incidence is within 15° of their source frame; null controls are natural patches pasted the same way. Evaluate on the validation split: those backgrounds were never in Mk18's memory.</p>
+    <div class="scroll"><table id="desTbl"></table></div>
+  </section>
+
+  <section id="gallery">
+    <div class="head"><span class="label">02</span><h2>Gallery</h2><span class="label" id="galCount"></span></div>
+    <div class="filters">
+      <select id="fkind" aria-label="Kind"><option value="all">All kinds</option><option value="rendered">Rendered</option><option value="real-sprite">Real cut-out</option><option value="null-control">Null control</option></select>
+      <select id="fbody" aria-label="Body"><option value="all">Moon and Mars</option><option value="Moon">Moon</option><option value="Mars">Mars</option></select>
+      <select id="fera" aria-label="Era"><option value="all">Past and new</option><option value="past">Past</option><option value="new">New</option></select>
+      <select id="fhw" aria-label="Design"><option value="all">All designs</option></select>
+      <select id="fsplit" aria-label="Split"><option value="all">Train and validation</option><option value="validation">Validation</option><option value="train">Train</option></select>
+      <select id="fctx" aria-label="Context"><option value="all">Any context</option><option value="none">No context</option><option value="blast-zone">Blast zone</option><option value="tracks">Tracks</option><option value="footpaths">Footpaths</option></select>
+      <select id="fpx" aria-label="Object size"><option value="0">Any size</option><option value="5">5 px and up</option><option value="10">10 px and up</option><option value="20">20 px and up</option><option value="-5">Under 5 px</option></select>
+      <select id="fsort" aria-label="Order"><option value="mix">Order: mixed designs</option><option value="id">Order: as generated</option><option value="px">Order: largest first</option><option value="pxa">Order: smallest first</option><option value="inc">Order: lowest sun first</option></select>
+      <input id="q" type="search" placeholder="Search design, landform, frame" aria-label="Search">
+    </div>
+    <div class="toggles">
+      <button id="tZoom" class="on">Zoom on the object</button><button id="tFull">Whole image</button>
+      <button id="tBox">Show box on after</button>
+    </div>
+    <p class="caption">Each card: BEFORE is the natural terrain, AFTER the same terrain with the object injected. The zoom shows 112 × 112 px around the object at 2x; the whole image is 512 × 512. OPEN, CLEAN and MASK open the full-size PNGs (mask: 1 object, 2 cast shadow, 3 context).</p>
+    <div class="grid" id="grid"></div>
+    <button class="more" id="more" hidden>Show more</button>
+  </section>
+
+  <section id="table">
+    <div class="head"><span class="label">03</span><h2>Injection table</h2><span class="label" id="tblCount"></span></div>
+    <p class="caption">The same rows as the gallery, with the parameters that were varied. m/px is the image's own scale; sun is the incidence from vertical and the azimuth toward the sun in the image (0° = right, 90° = down).</p>
+    <div class="scroll"><table id="tbl"></table></div>
+  </section>
+</main>
+
+<footer><div class="wrap label">Built by xenarch_inject.py · published to synthetic-injections_lroc-nac_hirise/ of the HF dataset · synthetic test data, never ground truth</div></footer>
+
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const PAGE = 96;
+let R = [], D = {}, shown = PAGE, zoom = true, boxes = false, N = 512;
+const kindOf = r => r.kind === 'rendered' ? r.era : (r.kind === 'real-sprite' ? 'sprite' : 'null');
+const KLABEL = {past: 'RENDERED · PAST', new: 'RENDERED · NEW', sprite: 'REAL CUT-OUT', null: 'NULL CONTROL'};
+fetch('injections.json').then(r => r.json()).then(init).catch(() => {
+  document.getElementById('stats').innerHTML = '<div class="stat"><span class="label">No injections.json</span><b>run xenarch_inject.py --dashboard</b></div>';
+});
+function median(a) { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; }
+function init(d) {
+  R = d.rows; D = d.designs; N = d.size;
+  document.getElementById('gen').textContent = 'Generated ' + d.generated;
+  const n = f => R.filter(f).length;
+  document.getElementById('stats').innerHTML = [['Images', R.length], ['Rendered', n(r => r.kind === 'rendered')], ['Real cut-outs', n(r => r.kind === 'real-sprite')],
+    ['Null controls', n(r => r.kind === 'null-control')], ['Validation', n(r => r.split === 'validation')], ['Moon', n(r => r.body === 'Moon')],
+    ['Mars', n(r => r.body === 'Mars')], ['Median object', median(R.filter(r => r.kind !== 'null-control').map(r => r.px)) + ' px']]
+    .map(([k, v]) => `<div class="stat"><span class="label">${k}</span><b>${v}</b></div>`).join('');
+  designs();
+  const sel = document.getElementById('fhw');
+  const hws = [...new Set(R.filter(r => r.kind !== 'null-control').map(r => r.hw))].sort((a, b) => (D[a] ? 0 : 1) - (D[b] ? 0 : 1) || a.localeCompare(b));
+  hws.forEach(h => { const e = document.createElement('option'); e.value = h; e.textContent = D[h] ? D[h].name : h + ' (real)'; sel.appendChild(e); });
+  const p = new URLSearchParams(location.search);
+  for (const [k, id] of [['kind', 'fkind'], ['body', 'fbody'], ['hw', 'fhw'], ['split', 'fsplit']]) if (p.get(k)) document.getElementById(id).value = p.get(k);
+  ['fkind', 'fbody', 'fera', 'fhw', 'fsplit', 'fctx', 'fpx', 'fsort'].forEach(id => document.getElementById(id).onchange = () => { shown = PAGE; render(); });
+  document.getElementById('q').oninput = () => { shown = PAGE; render(); };
+  document.getElementById('more').onclick = () => { shown += PAGE; render(); };
+  const tz = document.getElementById('tZoom'), tf = document.getElementById('tFull'), tb = document.getElementById('tBox');
+  tz.onclick = () => { zoom = true; tz.classList.add('on'); tf.classList.remove('on'); render(); };
+  tf.onclick = () => { zoom = false; tf.classList.add('on'); tz.classList.remove('on'); render(); };
+  tb.onclick = () => { boxes = !boxes; tb.classList.toggle('on', boxes); document.getElementById('grid').classList.toggle('boxes', boxes); };
+  render();
+}
+function designs() {
+  const bodies = ['Moon', 'Mars'], keys = ['past', 'new', 'sprite', 'null'], col = {past: 'var(--past)', new: 'var(--new)', sprite: 'var(--sprite)', null: 'var(--null)'};
+  const cnt = b => Object.fromEntries(keys.map(k => [k, R.filter(r => r.body === b && kindOf(r) === k).length]));
+  const max = Math.max(...bodies.map(b => R.filter(r => r.body === b).length));
+  document.getElementById('bars').innerHTML = bodies.map(b => { const c = cnt(b), t = keys.reduce((s, k) => s + c[k], 0);
+    return `<span class="name">${b}</span><div class="trk" title="${keys.map(k => KLABEL[k] + ' ' + c[k]).join(' · ')}">` +
+      keys.map(k => `<i style="width:${100 * c[k] / max}%;background:${col[k]}"></i>`).join('') + `</div><span class="num">${t}</span>`; }).join('');
+  const rows = Object.entries(D).map(([k, v]) => { const g = R.filter(r => r.kind === 'rendered' && r.hw === k);
+    return {k, ...v, n: g.length, val: g.filter(r => r.split === 'validation').length, px: median(g.map(r => r.px))}; });
+  document.getElementById('desCount').textContent = rows.length + ' rendered designs';
+  document.getElementById('desTbl').innerHTML = '<tr><th class="left">Design</th><th>Body</th><th>Era</th><th>Class</th><th>Footprint m</th><th>Height m</th><th>Images</th><th>Validation</th><th>Median px</th><th>Show</th></tr>' +
+    rows.map(r => `<tr><td class="left">${esc(r.name)}</td><td>${r.body === 'both' ? 'Moon, Mars' : r.body}</td><td style="color:${r.era === 'new' ? 'var(--new)' : 'var(--past)'}">${r.era}</td>` +
+      `<td>${r.cls}</td><td>${r.footprint_m}</td><td>${r.height_m}</td><td>${r.n}</td><td>${r.val}</td><td>${r.px}</td>` +
+      `<td><a class="dl" href="#gallery" data-hw="${r.k}">Open</a></td></tr>`).join('');
+  document.querySelectorAll('#desTbl a[data-hw]').forEach(a => a.onclick = () => { document.getElementById('fhw').value = a.dataset.hw; document.getElementById('fkind').value = 'rendered'; shown = PAGE; render(); });
+}
+function filtered() {
+  const v = id => document.getElementById(id).value, q = v('q').toLowerCase(), px = +v('fpx');
+  const rows = R.filter(r => (v('fkind') === 'all' || r.kind === v('fkind')) && (v('fbody') === 'all' || r.body === v('fbody')) &&
+    (v('fera') === 'all' || r.era === v('fera')) && (v('fhw') === 'all' || r.hw === v('fhw')) && (v('fsplit') === 'all' || r.split === v('fsplit')) &&
+    (v('fctx') === 'all' || r.ctx === v('fctx')) && (px === 0 || (px > 0 ? r.px >= px : r.px < -px)) &&
+    (!q || (r.name + ' ' + r.hw + ' ' + r.landform + ' ' + r.frame + ' ' + r.id).toLowerCase().includes(q)));
+  const s = v('fsort');
+  if (s === 'mix') return mixed(rows);
+  if (s === 'px') rows.sort((a, b) => b.px - a.px); else if (s === 'pxa') rows.sort((a, b) => a.px - b.px); else if (s === 'inc') rows.sort((a, b) => b.inc - a.inc);
+  return rows;
+}
+function mixed(rows) {
+  // one image of every design in turn; crops mostly in shadow (grazing sun) go last
+  const g = {}; rows.forEach(r => (g[r.hw] = g[r.hw] || []).push(r));
+  const keys = Object.keys(g);
+  keys.forEach(k => g[k].sort((a, b) => (a.shadowed > 0.4) - (b.shadowed > 0.4) || (b.px >= 5) - (a.px >= 5)));
+  const dark = [], out = [];
+  for (let i = 0, left = true; left; i++) {
+    left = false;
+    for (const k of keys) if (i < g[k].length) { left = true; (g[k][i].shadowed > 0.4 ? dark : out).push(g[k][i]); }
+  }
+  return out.concat(dark);
+}
+function boxStyle(r) {
+  const [x0, y0, x1, y1] = r.box; const [zx, zy, zs] = zoom ? r.zoom : [0, 0, N];
+  const l = Math.max(0, (x0 - zx - 2) / zs), t = Math.max(0, (y0 - zy - 2) / zs), w = Math.min(1 - l, (x1 - x0 + 5) / zs), h = Math.min(1 - t, (y1 - y0 + 5) / zs);
+  return `left:${100 * l}%;top:${100 * t}%;width:${100 * w}%;height:${100 * h}%`;
+}
+function render() {
+  const rows = filtered(), part = rows.slice(0, shown);
+  document.getElementById('galCount').textContent = rows.length + (rows.length === 1 ? ' image' : ' images');
+  document.getElementById('grid').innerHTML = part.map(r => {
+    const k = kindOf(r), th = 'injections-full/thumbs/' + r.id;
+    const inj = zoom ? th + '_inj.jpg' : th + '_full.jpg', cl = zoom ? th + '_clean.jpg' : th + '_cleanfull.jpg';
+    return `<div class="card"><div class="pair"><div class="pic"><img src="${cl}" loading="lazy" alt="before: natural terrain"><span class="tag">BEFORE</span></div>` +
+      `<div class="pic after"><img src="${inj}" loading="lazy" alt="after: ${esc(r.name)} injected"><span class="bx" style="${boxStyle(r)}"></span><span class="tag">AFTER</span></div></div>` +
+      `<span class="label k-${k}">${KLABEL[k]}</span><span class="label ttl">${esc(r.kind === 'null-control' ? 'Natural terrain patch' : r.name)}</span>` +
+      `<span class="label sub">${r.body} · ${r.res} m/px · sun ${r.inc.toFixed(0)}° · ${esc(r.landform.replace(/_/g, ' '))}</span>` +
+      `<span class="label sub">${r.px} px object · shadow ${r.shadow} px · ${r.ctx === 'none' ? 'no context' : esc(r.ctx)} · ${r.split === 'validation' ? 'VAL' : 'TRAIN'}</span>` +
+      `<span class="label sub"><a href="injections-full/${esc(r.img)}" target="_blank" rel="noopener">Open</a> · <a href="injections-full/${esc(r.clean)}" target="_blank" rel="noopener">Clean</a> · <a href="injections-full/${esc(r.mask)}" target="_blank" rel="noopener">Mask</a></span></div>`;
+  }).join('');
+  const more = document.getElementById('more'); more.hidden = rows.length <= shown; more.textContent = `Show more (${rows.length - shown} left)`;
+  document.getElementById('tblCount').textContent = rows.length + ' rows';
+  document.getElementById('tbl').innerHTML = '<tr><th>Image</th><th>Kind</th><th class="left">Design</th><th>Body</th><th>m/px</th><th>Sun</th><th>Azimuth</th><th>Object px</th><th>Shadow px</th><th>Context</th><th>Scale</th><th>Albedo</th><th>PSF px</th><th>Gamma</th><th>Split</th></tr>' +
+    part.map(r => `<tr><td>${esc(r.id)}</td><td>${r.kind}</td><td class="left">${esc(r.kind === 'null-control' ? 'natural terrain patch' : r.name)}</td><td>${r.body}</td>` +
+      `<td>${r.res}</td><td>${r.inc.toFixed(1)}°</td><td>${r.az.toFixed(0)}°</td><td class="acc">${r.px}</td><td>${r.shadow}</td><td>${esc(r.ctx)}</td>` +
+      `<td>${esc(r.scale) || '—'}</td><td>${esc(r.albedo || r.contrast) || '—'}</td><td>${r.psf}</td><td>${r.gamma}</td><td>${r.split}</td></tr>`).join('');
+}
+</script>
+</body>
+</html>
